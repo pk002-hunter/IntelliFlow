@@ -1,0 +1,65 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# ─── Virtual Environments ─────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ─── Environment Variables ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── Jupyter ──────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ─── ML / Training Artifacts (kept in local/) ─────────────────────────────────
+models/
+*.pt
+*.pth
+*.pkl
+*.h5
+*.onnx
+tensorboard_logs/
+wandb/
+
+# ─── Large Result Logs ────────────────────────────────────────────────────────
+results/logs/
+results/raw_logs/
+*.log
+
+# ─── SUMO Runtime Outputs ─────────────────────────────────────────────────────
+*.xml.bak
+tripinfo*.xml
+emission*.xml
+summary*.xml
+fcd*.xml
+
+# ─── OS & IDE ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ─── Misc ─────────────────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.rar
+tmp/
+temp/
