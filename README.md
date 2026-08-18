@@ -192,14 +192,14 @@ IntelliFlow/
 
 ## 👥 Team
 
-| Member | Role |
-|--------|------|
-| Member 1 | RL Engineer |
-| Member 2 | Simulation Engineer |
-| Member 3 | Data & Evaluation Lead |
-| Member 4 | Integration & Docs Lead |
+| Name | URN | Section | Role |
+|------|-----|---------|------|
+| Piyush Karnatak *(Team Lead)* | 2361393 | B | RL Engineer |
+| Rahul Bhakuni | 2361432 | B | Simulation Engineer |
+| Vishal Joshi | 2361588 | B | Data & Evaluation Lead |
+| Lalit Joshi | 2361296 | F | Integration & Docs Lead |
 
-> *BTech Final Year Project — CSE (AI/ML), 2026–27*
+> *BTech Final Year Project — CSE (AI/ML) · CSP-701 MPP-I · 2026–27*
 
 ---
 
