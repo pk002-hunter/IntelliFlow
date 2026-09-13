@@ -1,0 +1,1 @@
+To run simulator-> sumo-gui -c sumo/config/simulation.sumocfg --delay 100
