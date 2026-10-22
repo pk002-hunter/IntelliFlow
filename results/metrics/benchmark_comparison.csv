@@ -1,0 +1,5 @@
+Controller,Mean Queue (vehs),Std Queue,Max Queue (vehs),Mean Speed (m/s),Mean Speed (km/h),Queue Reduction vs Fixed (%),Mean Wait Time (s),Total CO2 (kg)
+Fixed-Time (Webster),7.8,5.73,20,10.25,36.92,+0.0%,,
+Sensor-Actuated,9.67,7.42,29,10.09,36.33,-23.9%,,
+DQN Agent,0.32,0.55,2,11.91,42.88,+95.9%,0.44,16.339
+PPO Agent,0.32,0.55,2,11.91,42.88,+95.9%,0.44,16.339
