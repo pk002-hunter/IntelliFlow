@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- Kaladhungi Road (East-West Arterial Corridor) -->
+    <edge id="KW2M" from="KW" to="Mukhani" priority="3" numLanes="3" speed="13.89"/>
+    <edge id="M2KW" from="Mukhani" to="KW" priority="3" numLanes="2" speed="13.89"/>
+    
+    <edge id="KE2M" from="KE" to="Mukhani" priority="3" numLanes="3" speed="13.89"/>
+    <edge id="M2KE" from="Mukhani" to="KE" priority="3" numLanes="2" speed="13.89"/>
+
+    <!-- Canal Road / Heera Nagar (North Connector) -->
+    <edge id="CN2M" from="CN" to="Mukhani" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="M2CN" from="Mukhani" to="CN" priority="2" numLanes="2" speed="11.11"/>
+
+    <!-- Chhoti Mukhani / Rampur Road Link (South Connector) -->
+    <edge id="CS2M" from="CS" to="Mukhani" priority="2" numLanes="2" speed="10.00"/>
+    <edge id="M2CS" from="Mukhani" to="CS" priority="2" numLanes="2" speed="10.00"/>
+</edges>

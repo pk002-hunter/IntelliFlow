@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <tlLogic id="Mukhani" type="static" programID="0" offset="0">
+        <!-- Phase 0: Kaladhungi Road (East-West Arterial) Green -->
+        <phase duration="45" state="rrrrGGGGrrrrGGGG"/>
+        <!-- Phase 1: Kaladhungi Road Yellow Transition -->
+        <phase duration="3"  state="rrrryyyyrrrryyyy"/>
+        <!-- Phase 2: Canal Road & Chhoti Mukhani (North-South Connector) Green -->
+        <phase duration="30" state="GGGGrrrrGGGGrrrr"/>
+        <!-- Phase 3: North-South Yellow Transition -->
+        <phase duration="3"  state="yyyyrrrryyyyrrrr"/>
+    </tlLogic>
+</additional>

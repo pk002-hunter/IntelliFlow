@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <node id="Mukhani" x="0.0" y="0.0" type="traffic_light"/>
+    <node id="KW" x="-500.0" y="0.0" type="priority"/>
+    <node id="KE" x="500.0" y="0.0" type="priority"/>
+    <node id="CN" x="0.0" y="400.0" type="priority"/>
+    <node id="CS" x="0.0" y="-400.0" type="priority"/>
+</nodes>

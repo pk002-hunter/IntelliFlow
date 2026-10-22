@@ -24,6 +24,13 @@ from src.agents.ppo.train_ppo import train_ppo
 def main():
     parser = argparse.ArgumentParser(description="IntelliFlow RL Training CLI")
     parser.add_argument(
+        "--network",
+        type=str,
+        choices=["single", "mukhani"],
+        default="single",
+        help="Road network: 'single' (generic 4-way) or 'mukhani' (Mukhani Chauraha, Haldwani)"
+    )
+    parser.add_argument(
         "--agent",
         type=str,
         choices=["dqn", "ppo"],
@@ -39,8 +46,8 @@ def main():
     parser.add_argument(
         "--config",
         type=str,
-        default="sumo/networks/single_intersection/single_intersection.sumocfg",
-        help="Path to SUMO configuration file"
+        default=None,
+        help="Optional path to custom SUMO configuration file"
     )
     parser.add_argument(
         "--seed",
@@ -59,6 +66,7 @@ def main():
     if args.agent == "dqn":
         train_dqn(
             total_timesteps=args.timesteps,
+            network=args.network,
             config_path=args.config,
             seed=args.seed,
             gui=args.gui
@@ -66,6 +74,7 @@ def main():
     elif args.agent == "ppo":
         train_ppo(
             total_timesteps=args.timesteps,
+            network=args.network,
             config_path=args.config,
             seed=args.seed,
             gui=args.gui

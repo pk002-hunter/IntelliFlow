@@ -71,11 +71,18 @@ class SumoTrafficEnv(gym.Env):
         route_file: str = "sumo/networks/single_intersection/single_intersection.rou.xml",
         cfg_file: Optional[str] = "sumo/networks/single_intersection/single_intersection.sumocfg",
         tls_id: str = "C",
+        incoming_lanes: Optional[List[str]] = None,
+        incoming_edges: Optional[List[str]] = None,
+        phase_ns_green: Optional[int] = None,
+        phase_ns_yellow: Optional[int] = None,
+        phase_ew_green: Optional[int] = None,
+        phase_ew_yellow: Optional[int] = None,
         delta_time: int = 5,
         yellow_duration: int = 3,
         min_green: int = 5,
         max_steps: int = 3600,
         gui: bool = False,
+        gui_delay: int = 50,
         tripinfo_output: Optional[str] = None,
         reward_type: str = "multi_objective",
         reward_weights: Optional[Dict[str, float]] = None,
@@ -92,11 +99,21 @@ class SumoTrafficEnv(gym.Env):
         self.route_file = os.path.abspath(route_file)
         self.cfg_file = os.path.abspath(cfg_file) if cfg_file else None
         self.tls_id = tls_id
+
+        # Modular lane, edge, and phase definitions
+        self.incoming_lanes = incoming_lanes if incoming_lanes is not None else list(self.INCOMING_LANES)
+        self.incoming_edges = incoming_edges if incoming_edges is not None else list(self.INCOMING_EDGES)
+        self.phase_ns_green = phase_ns_green if phase_ns_green is not None else self.PHASE_NS_GREEN
+        self.phase_ns_yellow = phase_ns_yellow if phase_ns_yellow is not None else self.PHASE_NS_YELLOW
+        self.phase_ew_green = phase_ew_green if phase_ew_green is not None else self.PHASE_EW_GREEN
+        self.phase_ew_yellow = phase_ew_yellow if phase_ew_yellow is not None else self.PHASE_EW_YELLOW
+
         self.delta_time = int(delta_time)
         self.yellow_duration = int(yellow_duration)
         self.min_green = int(min_green)
         self.max_steps = int(max_steps)
         self.gui = gui
+        self.gui_delay = int(gui_delay)
         self.tripinfo_output = tripinfo_output
         self.reward_type = reward_type
         self.starvation_threshold = starvation_threshold
@@ -118,11 +135,11 @@ class SumoTrafficEnv(gym.Env):
         # Action: 0 = NS Green, 1 = EW Green
         self.action_space = spaces.Discrete(2)
 
-        # Observation: 8 lanes * 4 features + 2 (one-hot phase) + 1 (phase duration) = 35
+        # Observation: dynamic lanes * 4 features + 2 (one-hot phase) + 1 (phase duration)
         self.observation_space = spaces.Box(
             low=0.0,
             high=1.0,
-            shape=(len(self.INCOMING_LANES) * 4 + 3,),
+            shape=(len(self.incoming_lanes) * 4 + 3,),
             dtype=np.float32
         )
 
@@ -158,6 +175,9 @@ class SumoTrafficEnv(gym.Env):
             "--no-warnings", "true"
         ])
 
+        if self.gui:
+            cmd.extend(["--start", "--delay", str(self.gui_delay)])
+
         if seed is not None:
             cmd.extend(["--seed", str(seed)])
 
@@ -180,9 +200,9 @@ class SumoTrafficEnv(gym.Env):
         self.is_closed = False
 
         self.sim_step = 0
-        self.current_green_phase = 0  # Start with NS green
+        self.current_green_phase = 0  # Action 0 starts active
         self.time_in_phase = 0
-        self.conn.trafficlight.setPhase(self.tls_id, self.PHASE_NS_GREEN)
+        self.conn.trafficlight.setPhase(self.tls_id, self.phase_ns_green)
 
         # Reset episode trackers
         self.episode_rewards = []
@@ -209,7 +229,7 @@ class SumoTrafficEnv(gym.Env):
         if action != self.current_green_phase:
             if self.time_in_phase >= self.min_green:
                 # Transition yellow phase
-                yellow_phase = self.PHASE_NS_YELLOW if self.current_green_phase == 0 else self.PHASE_EW_YELLOW
+                yellow_phase = self.phase_ns_yellow if self.current_green_phase == 0 else self.phase_ew_yellow
                 self.conn.trafficlight.setPhase(self.tls_id, yellow_phase)
                 
                 # Advance yellow interval
@@ -218,7 +238,7 @@ class SumoTrafficEnv(gym.Env):
                     self.sim_step += 1
 
                 # Set new green phase
-                new_green_phase = self.PHASE_NS_GREEN if action == 0 else self.PHASE_EW_GREEN
+                new_green_phase = self.phase_ns_green if action == 0 else self.phase_ew_green
                 self.conn.trafficlight.setPhase(self.tls_id, new_green_phase)
                 self.current_green_phase = action
                 self.time_in_phase = 0
@@ -275,11 +295,11 @@ class SumoTrafficEnv(gym.Env):
 
     def _get_observation(self) -> np.ndarray:
         """
-        Extracts normalized 35-dimensional state representation.
+        Extracts normalized state representation across configured incoming lanes.
         """
         features = []
 
-        for lane_id in self.INCOMING_LANES:
+        for lane_id in self.incoming_lanes:
             try:
                 halting = self.conn.lane.getLastStepHaltingNumber(lane_id)
                 mean_speed = self.conn.lane.getLastStepMeanSpeed(lane_id)
@@ -307,28 +327,34 @@ class SumoTrafficEnv(gym.Env):
 
     def _compute_reward(self, switched: bool = False) -> Tuple[float, Dict[str, float]]:
         """
-        Multi-objective reward shaping combining queues, delays, speed, emissions, and starvation.
+        Multi-objective reward shaping combining queues, delays, speed, emissions, starvation,
+        and emergency vehicle (ambulance) priority preemption.
         """
         total_halting = 0.0
         total_waiting = 0.0
         starvation_count = 0.0
         co2_emissions = 0.0
+        ambulance_delay = 0.0
 
-        for lane_id in self.INCOMING_LANES:
+        for lane_id in self.incoming_lanes:
             try:
                 total_halting += self.conn.lane.getLastStepHaltingNumber(lane_id)
                 total_waiting += self.conn.lane.getWaitingTime(lane_id)
                 
-                # Starvation check on individual vehicles
+                # Check vehicles on this lane
                 lane_vehs = self.conn.lane.getLastStepVehicleIDs(lane_id)
                 for veh in lane_vehs:
-                    if self.conn.vehicle.getWaitingTime(veh) > self.starvation_threshold:
+                    wait_time = self.conn.vehicle.getWaitingTime(veh)
+                    if wait_time > self.starvation_threshold:
                         starvation_count += 1.0
+                    # Emergency ambulance preemption check
+                    if self.conn.vehicle.getVehicleClass(veh) == "emergency" and wait_time > 0:
+                        ambulance_delay += wait_time
             except Exception:
                 pass
 
-        # CO2 emissions across incoming edges
-        for edge_id in self.INCOMING_EDGES:
+        # CO2 emissions across configured incoming edges
+        for edge_id in self.incoming_edges:
             try:
                 co2_emissions += self.conn.edge.getCO2Emission(edge_id)
             except Exception:
@@ -336,7 +362,7 @@ class SumoTrafficEnv(gym.Env):
 
         # Network mean speed
         edge_speeds = []
-        for edge_id in self.INCOMING_EDGES:
+        for edge_id in self.incoming_edges:
             try:
                 edge_speeds.append(self.conn.edge.getLastStepMeanSpeed(edge_id))
             except Exception:
@@ -345,14 +371,13 @@ class SumoTrafficEnv(gym.Env):
 
         w = self.reward_weights
         
-        # Reward calculation:
-        # Penalize queues, accumulated wait time, emissions, starvation, and unnecessary switching
-        # Reward throughput speed
+        # Reward calculation
         reward = (
             - (w["queue"] * total_halting)
             - (w["waiting_time"] * (total_waiting / 10.0))
             - (w["emissions"] * (co2_emissions / 1000.0))
             - (w["starvation"] * starvation_count)
+            - (5.0 * ambulance_delay)  # Priority penalty if ambulance is stuck
             + (w["speed"] * (mean_speed / self.max_speed))
             - (w["switch"] * (1.0 if switched else 0.0))
         )
@@ -385,3 +410,56 @@ class SumoTrafficEnv(gym.Env):
             finally:
                 self.conn = None
                 self.is_closed = True
+
+
+def make_env(
+    network: str = "single",
+    config_path: Optional[str] = None,
+    gui: bool = False,
+    gui_delay: int = 50,
+    tripinfo_output: Optional[str] = None,
+    max_steps: int = 3600,
+    delta_time: int = 5
+) -> SumoTrafficEnv:
+    """
+    Factory function to instantiate SumoTrafficEnv for single_intersection or mukhani_chauraha.
+    """
+    if network.lower() in ["mukhani", "mukhani_chauraha"]:
+        cfg = config_path or "sumo/networks/mukhani_chauraha/mukhani.sumocfg"
+        mukhani_lanes = [
+            "KW2M_0", "KW2M_1", "KW2M_2",
+            "KE2M_0", "KE2M_1", "KE2M_2",
+            "CN2M_0", "CN2M_1",
+            "CS2M_0", "CS2M_1"
+        ]
+        mukhani_edges = ["KW2M", "KE2M", "CN2M", "CS2M"]
+        return SumoTrafficEnv(
+            cfg_file=cfg,
+            tls_id="Mukhani",
+            incoming_lanes=mukhani_lanes,
+            incoming_edges=mukhani_edges,
+            phase_ns_green=2,
+            phase_ns_yellow=3,
+            phase_ew_green=0,
+            phase_ew_yellow=1,
+            max_steps=max_steps,
+            delta_time=delta_time,
+            yellow_duration=3,
+            min_green=5,
+            gui=gui,
+            gui_delay=gui_delay,
+            tripinfo_output=tripinfo_output
+        )
+    else:
+        cfg = config_path or "sumo/networks/single_intersection/single_intersection.sumocfg"
+        return SumoTrafficEnv(
+            cfg_file=cfg,
+            tls_id="C",
+            max_steps=max_steps,
+            delta_time=delta_time,
+            yellow_duration=3,
+            min_green=5,
+            gui=gui,
+            gui_delay=gui_delay,
+            tripinfo_output=tripinfo_output
+        )

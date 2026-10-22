@@ -1,3 +1,3 @@
-from .sumo_env import SumoTrafficEnv
+from .sumo_env import SumoTrafficEnv, make_env
 
-__all__ = ["SumoTrafficEnv"]
+__all__ = ["SumoTrafficEnv", "make_env"]

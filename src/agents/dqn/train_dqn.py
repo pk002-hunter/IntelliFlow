@@ -20,39 +20,46 @@ if hasattr(sys.stdout, "reconfigure"):
 
 from stable_baselines3 import DQN
 from stable_baselines3.common.callbacks import CheckpointCallback, EvalCallback
-from src.environment.sumo_env import SumoTrafficEnv
+from src.environment.sumo_env import SumoTrafficEnv, make_env
 
 
 def train_dqn(
     total_timesteps: int = 15000,
-    config_path: str = "sumo/networks/single_intersection/single_intersection.sumocfg",
-    save_dir: str = "results/models/dqn",
-    log_dir: str = "results/logs/dqn",
-    metrics_path: str = "results/metrics/dqn_baseline.csv",
+    network: str = "single",
+    config_path: Optional[str] = None,
+    save_dir: Optional[str] = None,
+    log_dir: Optional[str] = None,
+    metrics_path: Optional[str] = None,
     seed: int = 42,
     gui: bool = False
 ):
     """
     Trains a DQN agent on SumoTrafficEnv and evaluates its performance against baselines.
     """
+    if save_dir is None:
+        save_dir = f"results/models/dqn/{network}" if network != "single" else "results/models/dqn"
+    if log_dir is None:
+        log_dir = f"results/logs/dqn/{network}" if network != "single" else "results/logs/dqn"
+    if metrics_path is None:
+        metrics_path = f"results/metrics/dqn_{network}.csv" if network != "single" else "results/metrics/dqn_baseline.csv"
+
     os.makedirs(save_dir, exist_ok=True)
     os.makedirs(log_dir, exist_ok=True)
     os.makedirs(os.path.dirname(metrics_path), exist_ok=True)
 
     print("\n========================================================")
-    print("  IntelliFlow [Traffic Signal Control] DQN Training Pipeline")
+    print(f"  IntelliFlow [Traffic Signal Control] DQN Training: {network.upper()}")
     print(f"  Total Timesteps: {total_timesteps} | Seed: {seed}")
     print(f"  Model Save Directory: {save_dir}")
     print("========================================================\n")
 
     # Initialize Training Environment
-    train_env = SumoTrafficEnv(
-        cfg_file=config_path,
+    train_env = make_env(
+        network=network,
+        config_path=config_path,
+        gui=gui,
         max_steps=3600,
-        delta_time=5,
-        yellow_duration=3,
-        min_green=5,
-        gui=gui
+        delta_time=5
     )
 
     # Initialize DQN Model with traffic-optimized hyperparameters
@@ -101,20 +108,23 @@ def train_dqn(
 
     # Evaluate the trained policy for 1 full episode (3600 steps)
     print("\nEvaluating trained DQN agent for baseline comparison...")
-    evaluate_dqn_agent(model, config_path, metrics_path, gui=gui)
+    evaluate_dqn_agent(model, network=network, config_path=config_path, metrics_path=metrics_path, gui=gui)
 
 
-def evaluate_dqn_agent(model, config_path: str, metrics_path: str, gui: bool = False):
+def evaluate_dqn_agent(model, network: str = "single", config_path: Optional[str] = None, metrics_path: Optional[str] = None, gui: bool = False):
     """
     Runs a full 3600-second evaluation episode and exports CSV metrics.
     """
-    eval_env = SumoTrafficEnv(
-        cfg_file=config_path,
+    if metrics_path is None:
+        metrics_path = f"results/metrics/dqn_{network}.csv" if network != "single" else "results/metrics/dqn_baseline.csv"
+    tripinfo_path = f"results/metrics/dqn_{network}_tripinfo.xml" if network != "single" else "results/metrics/dqn_tripinfo.xml"
+
+    eval_env = make_env(
+        network=network,
+        config_path=config_path,
         max_steps=3600,
         delta_time=5,
-        yellow_duration=3,
-        min_green=5,
-        tripinfo_output="results/metrics/dqn_tripinfo.xml",
+        tripinfo_output=tripinfo_path,
         gui=gui
     )
 
@@ -155,16 +165,18 @@ def evaluate_dqn_agent(model, config_path: str, metrics_path: str, gui: bool = F
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train DQN Agent on SUMO Traffic Signal Environment")
+    parser.add_argument("--network", type=str, choices=["single", "mukhani"], default="single", help="Network type: 'single' or 'mukhani'")
     parser.add_argument("--timesteps", type=int, default=10000, help="Total training timesteps")
-    parser.add_argument("--config", type=str, default="sumo/networks/single_intersection/single_intersection.sumocfg", help="SUMO config path")
-    parser.add_argument("--save-dir", type=str, default="results/models/dqn", help="Directory to save model weights")
-    parser.add_argument("--metrics-path", type=str, default="results/metrics/dqn_baseline.csv", help="Evaluation metrics CSV path")
+    parser.add_argument("--config", type=str, default=None, help="SUMO config path (optional override)")
+    parser.add_argument("--save-dir", type=str, default=None, help="Directory to save model weights")
+    parser.add_argument("--metrics-path", type=str, default=None, help="Evaluation metrics CSV path")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
     parser.add_argument("--gui", action="store_true", help="Launch with SUMO-GUI")
     args = parser.parse_args()
 
     train_dqn(
         total_timesteps=args.timesteps,
+        network=args.network,
         config_path=args.config,
         save_dir=args.save_dir,
         metrics_path=args.metrics_path,

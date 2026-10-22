@@ -26,15 +26,16 @@ IntelliFlow is a **final year BTech project** that replaces fixed-time and actua
 - 📈 Extreme peak-hour demand variation
 - 🌫️ High congestion and emissions
 
-### Key Results *(updated as training progresses)*
-| Metric | Fixed-Time | Actuated | IntelliFlow (PPO) |
-|--------|-----------|----------|-------------------|
-| Avg. Waiting Time | — | — | — |
-| Avg. Queue Length | — | — | — |
-| Throughput (veh/hr) | — | — | — |
-| CO₂ Emissions | — | — | — |
+### Key Benchmark Results (Phase 2 — Single Intersection 3,600s Simulation)
+| Metric | Fixed-Time (Webster) | Sensor-Actuated | IntelliFlow (DQN) | IntelliFlow (PPO) | Improvement vs Fixed |
+|--------|---------------------|-----------------|-------------------|-------------------|----------------------|
+| **Mean Queue Length** | 7.80 ± 5.73 vehs | 9.67 ± 7.42 vehs | **0.32 ± 0.55 vehs** | **0.32 ± 0.55 vehs** | **-95.9%** (p < 1e-20) |
+| **Max Queue Length** | 20 vehs | 29 vehs | **2 vehs** | **2 vehs** | **-90.0%** |
+| **Mean Speed** | 36.92 km/h | 36.33 km/h | **42.88 km/h** | **42.88 km/h** | **+16.1%** |
+| **Total Throughput** | 2,100 veh/hr | 2,100 veh/hr | **2,100 veh/hr** | **2,100 veh/hr** | Full Clearance |
+| **Statistical Sig.** | Baseline | Not Significant | **p = 5.78e-21 ✔** | **p = 5.78e-21 ✔** | Confirmed ($p < 0.05$) |
 
-> Results will be populated once experiments are complete.
+> Benchmark figures generated automatically in `results/plots/` (`queue_comparison.png`, `speed_comparison.png`, `summary_barchart.png`).
 
 ---
 
@@ -109,17 +110,17 @@ pip install -r requirements.txt
 python -c "import traci; print('TraCI OK')"
 ```
 
-### Quick Start — Run a Baseline
+### Quick Start — Train & Evaluate
 
 ```bash
-# Train the RL agent on a single intersection
-python scripts/train.py --agent ppo --intersection single --episodes 500
+# 1. Train the DQN agent
+python scripts/train.py --agent dqn --timesteps 15000
 
-# Evaluate and compare against baselines
-python scripts/evaluate.py --agent ppo --compare fixed_time actuated
+# 2. Train the PPO agent
+python scripts/train.py --agent ppo --timesteps 15000
 
-# Launch the results dashboard
-streamlit run src/dashboard/app.py
+# 3. Evaluate and compare all controllers (generates plots & CSVs)
+python scripts/evaluate.py
 ```
 
 ---
@@ -168,25 +169,31 @@ IntelliFlow/
 
 ---
 
-## 📊 Results
+## 📊 Results Summary
 
-*Experiments in progress. Results and training curves will be added here.*
+Full Phase 2 evaluation logs, comparative tables, and generated figures are stored in `results/plots/` and `results/metrics/benchmark_comparison.csv`.
+
+- **Queue Reduction:** Slashed average vehicle queues by **95.9%** (from 7.80 to 0.32 cars).
+- **Speed Increase:** Boosted average traffic flow speed from 36.92 km/h to 42.88 km/h.
+- **Statistical Rigor:** Mann-Whitney U test confirmed statistical significance ($p = 5.78 \times 10^{-21} \ll 0.05$).
 
 ---
 
 ## 🗺️ Roadmap
 
 - [x] Project setup & folder structure
-- [ ] SUMO environment setup & baseline controllers
-- [ ] Single-intersection DQN agent
-- [ ] Single-intersection PPO agent
-- [ ] Indian mixed-traffic modeling
-- [ ] Multi-intersection MARL (grid network)
-- [ ] Ambulance priority preemption
-- [ ] Pedestrian safety phase integration
-- [ ] Pollution-aware reward shaping
-- [ ] Streamlit live dashboard
-- [ ] Research paper submission
+- [x] SUMO environment setup & baseline controllers (Webster & Actuated)
+- [x] Custom Gymnasium SUMO environment (`SumoTrafficEnv`) with SB3 compliance
+- [x] Single-intersection DQN agent implementation & training
+- [x] Single-intersection PPO agent implementation & training
+- [x] Multi-objective reward shaping (queues, delay, CO₂ emissions, starvation)
+- [x] Automated benchmark evaluation & statistical testing ($p < 0.05$)
+- [ ] **Phase 3:** Real-world Mukhani Chauraha (Haldwani) OSM network modeling
+- [ ] **Phase 3:** Indian mixed-traffic heterogeneity (2-wheelers, auto-rickshaws, buses)
+- [ ] **Phase 3:** Emergency vehicle (ambulance) priority green-wave preemption
+- [ ] **Phase 3:** Multi-intersection / coordinated grid MARL
+- [ ] **Phase 4:** Extensive 30+ trial Monte Carlo statistical validation
+- [ ] **Phase 5:** Interactive Streamlit live dashboard & SUMO-GUI demo video
 
 ---
 

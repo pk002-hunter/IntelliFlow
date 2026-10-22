@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-10-22T16:58:28.810055+05:30 by Eclipse SUMO netconvert 1.27.1
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="sumo\networks\mukhani_chauraha\mukhani.nod.xml"/>
+        <edge-files value="sumo\networks\mukhani_chauraha\mukhani.edg.xml"/>
+        <tllogic-files value="sumo\networks\mukhani_chauraha\mukhani.tll.xml"/>
+    </input>
+
+    <output>
+        <output-file value="sumo\networks\mukhani_chauraha\mukhani.net.xml"/>
+    </output>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+    </junctions>
+
+</netconvertConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="500.00,400.00" convBoundary="0.00,0.00,1000.00,800.00" origBoundary="-500.00,-400.00,500.00,400.00" projParameter="!"/>
+
+    <edge id=":Mukhani_0" function="internal">
+        <lane id=":Mukhani_0_0" index="0" speed="7.33" length="11.73" shape="495.20,413.60 494.85,409.75 493.80,407.00 492.05,405.35 489.60,404.80"/>
+    </edge>
+    <edge id=":Mukhani_1" function="internal">
+        <lane id=":Mukhani_1_0" index="0" speed="10.55" length="27.20" shape="495.20,413.60 495.20,386.40"/>
+        <lane id=":Mukhani_1_1" index="1" speed="10.55" length="27.20" shape="498.40,413.60 498.40,386.40"/>
+    </edge>
+    <edge id=":Mukhani_3" function="internal">
+        <lane id=":Mukhani_3_0" index="0" speed="9.84" length="21.99" shape="498.40,413.60 499.15,406.95 501.40,402.20 505.15,399.35 510.40,398.40"/>
+    </edge>
+    <edge id=":Mukhani_4" function="internal">
+        <lane id=":Mukhani_4_0" index="0" speed="6.51" length="9.03" shape="510.40,408.00 507.95,408.35 506.20,409.40 505.15,411.15 504.80,413.60"/>
+    </edge>
+    <edge id=":Mukhani_5" function="internal">
+        <lane id=":Mukhani_5_0" index="0" speed="13.89" length="21.12" shape="510.40,408.00 504.12,407.50 499.80,406.40 495.59,405.30 489.60,404.80"/>
+        <lane id=":Mukhani_5_1" index="1" speed="13.89" length="21.12" shape="510.40,404.80 504.12,404.30 499.80,403.20 495.59,402.10 489.60,401.60"/>
+    </edge>
+    <edge id=":Mukhani_7" function="internal">
+        <lane id=":Mukhani_7_0" index="0" speed="9.84" length="21.99" shape="510.40,401.60 505.15,400.65 501.40,397.80 499.15,393.05 498.40,386.40"/>
+    </edge>
+    <edge id=":Mukhani_8" function="internal">
+        <lane id=":Mukhani_8_0" index="0" speed="7.33" length="11.73" shape="504.80,386.40 505.15,390.25 506.20,393.00 507.95,394.65 510.40,395.20"/>
+    </edge>
+    <edge id=":Mukhani_9" function="internal">
+        <lane id=":Mukhani_9_0" index="0" speed="10.55" length="27.20" shape="504.80,386.40 504.80,413.60"/>
+        <lane id=":Mukhani_9_1" index="1" speed="10.55" length="27.20" shape="501.60,386.40 501.60,413.60"/>
+    </edge>
+    <edge id=":Mukhani_11" function="internal">
+        <lane id=":Mukhani_11_0" index="0" speed="9.84" length="21.99" shape="501.60,386.40 500.85,393.05 498.60,397.80 494.85,400.65 489.60,401.60"/>
+    </edge>
+    <edge id=":Mukhani_12" function="internal">
+        <lane id=":Mukhani_12_0" index="0" speed="6.51" length="9.03" shape="489.60,392.00 492.05,391.65 493.80,390.60 494.85,388.85 495.20,386.40"/>
+    </edge>
+    <edge id=":Mukhani_13" function="internal">
+        <lane id=":Mukhani_13_0" index="0" speed="13.89" length="21.12" shape="489.60,392.00 495.88,392.50 500.20,393.60 504.41,394.70 510.40,395.20"/>
+        <lane id=":Mukhani_13_1" index="1" speed="13.89" length="21.12" shape="489.60,395.20 495.88,395.70 500.20,396.80 504.41,397.90 510.40,398.40"/>
+    </edge>
+    <edge id=":Mukhani_15" function="internal">
+        <lane id=":Mukhani_15_0" index="0" speed="9.84" length="21.99" shape="489.60,398.40 494.85,399.35 498.60,402.20 500.85,406.95 501.60,413.60"/>
+    </edge>
+
+    <edge id="CN2M" from="CN" to="Mukhani" priority="2">
+        <lane id="CN2M_0" index="0" speed="11.11" length="386.40" shape="495.20,800.00 495.20,413.60"/>
+        <lane id="CN2M_1" index="1" speed="11.11" length="386.40" shape="498.40,800.00 498.40,413.60"/>
+    </edge>
+    <edge id="CS2M" from="CS" to="Mukhani" priority="2">
+        <lane id="CS2M_0" index="0" speed="10.00" length="386.40" shape="504.80,0.00 504.80,386.40"/>
+        <lane id="CS2M_1" index="1" speed="10.00" length="386.40" shape="501.60,0.00 501.60,386.40"/>
+    </edge>
+    <edge id="KE2M" from="KE" to="Mukhani" priority="3">
+        <lane id="KE2M_0" index="0" speed="13.89" length="489.60" shape="1000.00,408.00 510.40,408.00"/>
+        <lane id="KE2M_1" index="1" speed="13.89" length="489.60" shape="1000.00,404.80 510.40,404.80"/>
+        <lane id="KE2M_2" index="2" speed="13.89" length="489.60" shape="1000.00,401.60 510.40,401.60"/>
+    </edge>
+    <edge id="KW2M" from="KW" to="Mukhani" priority="3">
+        <lane id="KW2M_0" index="0" speed="13.89" length="489.60" shape="0.00,392.00 489.60,392.00"/>
+        <lane id="KW2M_1" index="1" speed="13.89" length="489.60" shape="0.00,395.20 489.60,395.20"/>
+        <lane id="KW2M_2" index="2" speed="13.89" length="489.60" shape="0.00,398.40 489.60,398.40"/>
+    </edge>
+    <edge id="M2CN" from="Mukhani" to="CN" priority="2">
+        <lane id="M2CN_0" index="0" speed="11.11" length="386.40" shape="504.80,413.60 504.80,800.00"/>
+        <lane id="M2CN_1" index="1" speed="11.11" length="386.40" shape="501.60,413.60 501.60,800.00"/>
+    </edge>
+    <edge id="M2CS" from="Mukhani" to="CS" priority="2">
+        <lane id="M2CS_0" index="0" speed="10.00" length="386.40" shape="495.20,386.40 495.20,0.00"/>
+        <lane id="M2CS_1" index="1" speed="10.00" length="386.40" shape="498.40,386.40 498.40,0.00"/>
+    </edge>
+    <edge id="M2KE" from="Mukhani" to="KE" priority="3">
+        <lane id="M2KE_0" index="0" speed="13.89" length="489.60" shape="510.40,395.20 1000.00,395.20"/>
+        <lane id="M2KE_1" index="1" speed="13.89" length="489.60" shape="510.40,398.40 1000.00,398.40"/>
+    </edge>
+    <edge id="M2KW" from="Mukhani" to="KW" priority="3">
+        <lane id="M2KW_0" index="0" speed="13.89" length="489.60" shape="489.60,404.80 0.00,404.80"/>
+        <lane id="M2KW_1" index="1" speed="13.89" length="489.60" shape="489.60,401.60 0.00,401.60"/>
+    </edge>
+
+    <tlLogic id="Mukhani" type="static" programID="0" offset="0">
+        <phase duration="45" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="3"  state="rrrryyyyrrrryyyy"/>
+        <phase duration="30" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="3"  state="yyyyrrrryyyyrrrr"/>
+    </tlLogic>
+
+    <junction id="CN" type="dead_end" x="500.00" y="800.00" incLanes="M2CN_0 M2CN_1" intLanes="" shape="500.00,800.00 506.40,800.00 500.00,800.00"/>
+    <junction id="CS" type="dead_end" x="500.00" y="0.00" incLanes="M2CS_0 M2CS_1" intLanes="" shape="500.00,0.00 493.60,0.00 500.00,0.00"/>
+    <junction id="KE" type="dead_end" x="1000.00" y="400.00" incLanes="M2KE_0 M2KE_1" intLanes="" shape="1000.00,400.00 1000.00,393.60 1000.00,400.00"/>
+    <junction id="KW" type="dead_end" x="0.00" y="400.00" incLanes="M2KW_0 M2KW_1" intLanes="" shape="0.00,400.00 0.00,406.40 0.00,400.00"/>
+    <junction id="Mukhani" type="traffic_light" x="500.00" y="400.00" incLanes="CN2M_0 CN2M_1 KE2M_0 KE2M_1 KE2M_2 CS2M_0 CS2M_1 KW2M_0 KW2M_1 KW2M_2" intLanes=":Mukhani_0_0 :Mukhani_1_0 :Mukhani_1_1 :Mukhani_3_0 :Mukhani_4_0 :Mukhani_5_0 :Mukhani_5_1 :Mukhani_7_0 :Mukhani_8_0 :Mukhani_9_0 :Mukhani_9_1 :Mukhani_11_0 :Mukhani_12_0 :Mukhani_13_0 :Mukhani_13_1 :Mukhani_15_0" shape="493.60,413.60 506.40,413.60 506.84,411.38 507.40,410.60 508.18,410.04 509.18,409.71 510.40,409.60 510.40,393.60 508.18,392.80 507.40,391.80 506.84,390.40 506.51,388.60 506.40,386.40 493.60,386.40 493.16,388.62 492.60,389.40 491.82,389.96 490.82,390.29 489.60,390.40 489.60,406.40 491.82,407.20 492.60,408.20 493.16,409.60 493.49,411.40">
+        <request index="0"  response="0000000001100000" foes="0000000001100000" cont="0"/>
+        <request index="1"  response="1111000011100000" foes="1111100011100000" cont="0"/>
+        <request index="2"  response="1111000011100000" foes="1111100011100000" cont="0"/>
+        <request index="3"  response="1110011011100000" foes="1110011011100000" cont="0"/>
+        <request index="4"  response="0000000000000000" foes="0000011000000000" cont="0"/>
+        <request index="5"  response="0000000000000000" foes="1000111000001111" cont="0"/>
+        <request index="6"  response="0000000000000000" foes="1000111000001111" cont="0"/>
+        <request index="7"  response="0110000000000000" foes="0110111000001110" cont="0"/>
+        <request index="8"  response="0110000000000000" foes="0110000000000000" cont="0"/>
+        <request index="9"  response="1110000011110000" foes="1110000011111000" cont="0"/>
+        <request index="10" response="1110000011110000" foes="1110000011111000" cont="0"/>
+        <request index="11" response="1110000011100110" foes="1110000011100110" cont="0"/>
+        <request index="12" response="0000000000000000" foes="0000000000000110" cont="0"/>
+        <request index="13" response="0000000000000000" foes="0000111110001110" cont="0"/>
+        <request index="14" response="0000000000000000" foes="0000111110001110" cont="0"/>
+        <request index="15" response="0000000001100000" foes="0000111001101110" cont="0"/>
+    </junction>
+
+    <connection from="CN2M" to="M2KW" fromLane="0" toLane="0" via=":Mukhani_0_0" tl="Mukhani" linkIndex="0" dir="r" state="o"/>
+    <connection from="CN2M" to="M2CS" fromLane="0" toLane="0" via=":Mukhani_1_0" tl="Mukhani" linkIndex="1" dir="s" state="o"/>
+    <connection from="CN2M" to="M2CS" fromLane="1" toLane="1" via=":Mukhani_1_1" tl="Mukhani" linkIndex="2" dir="s" state="o"/>
+    <connection from="CN2M" to="M2KE" fromLane="1" toLane="1" via=":Mukhani_3_0" tl="Mukhani" linkIndex="3" dir="l" state="o"/>
+    <connection from="CS2M" to="M2KE" fromLane="0" toLane="0" via=":Mukhani_8_0" tl="Mukhani" linkIndex="8" dir="r" state="o"/>
+    <connection from="CS2M" to="M2CN" fromLane="0" toLane="0" via=":Mukhani_9_0" tl="Mukhani" linkIndex="9" dir="s" state="o"/>
+    <connection from="CS2M" to="M2CN" fromLane="1" toLane="1" via=":Mukhani_9_1" tl="Mukhani" linkIndex="10" dir="s" state="o"/>
+    <connection from="CS2M" to="M2KW" fromLane="1" toLane="1" via=":Mukhani_11_0" tl="Mukhani" linkIndex="11" dir="l" state="o"/>
+    <connection from="KE2M" to="M2CN" fromLane="0" toLane="0" via=":Mukhani_4_0" tl="Mukhani" linkIndex="4" dir="r" state="O"/>
+    <connection from="KE2M" to="M2KW" fromLane="0" toLane="0" via=":Mukhani_5_0" tl="Mukhani" linkIndex="5" dir="s" state="O"/>
+    <connection from="KE2M" to="M2KW" fromLane="1" toLane="1" via=":Mukhani_5_1" tl="Mukhani" linkIndex="6" dir="s" state="O"/>
+    <connection from="KE2M" to="M2CS" fromLane="2" toLane="1" via=":Mukhani_7_0" tl="Mukhani" linkIndex="7" dir="l" state="o"/>
+    <connection from="KW2M" to="M2CS" fromLane="0" toLane="0" via=":Mukhani_12_0" tl="Mukhani" linkIndex="12" dir="r" state="O"/>
+    <connection from="KW2M" to="M2KE" fromLane="0" toLane="0" via=":Mukhani_13_0" tl="Mukhani" linkIndex="13" dir="s" state="O"/>
+    <connection from="KW2M" to="M2KE" fromLane="1" toLane="1" via=":Mukhani_13_1" tl="Mukhani" linkIndex="14" dir="s" state="O"/>
+    <connection from="KW2M" to="M2CN" fromLane="2" toLane="1" via=":Mukhani_15_0" tl="Mukhani" linkIndex="15" dir="l" state="o"/>
+
+    <connection from=":Mukhani_0" to="M2KW" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mukhani_1" to="M2CS" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mukhani_1" to="M2CS" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mukhani_3" to="M2KE" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Mukhani_4" to="M2CN" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mukhani_5" to="M2KW" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mukhani_5" to="M2KW" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mukhani_7" to="M2CS" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Mukhani_8" to="M2KE" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mukhani_9" to="M2CN" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mukhani_9" to="M2CN" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mukhani_11" to="M2KW" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Mukhani_12" to="M2CS" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mukhani_13" to="M2KE" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mukhani_13" to="M2KE" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mukhani_15" to="M2CN" fromLane="0" toLane="1" dir="l" state="M"/>
+
+</net>
