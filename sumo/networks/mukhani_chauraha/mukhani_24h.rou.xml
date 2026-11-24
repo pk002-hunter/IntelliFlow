@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================== -->
+<!-- 24-HOUR CALIBRATED TRAFFIC DEMAND: MUKHANI CHAURAHA, HALDWANI -->
+<!-- Sourced from 24-Hour Google Maps Typical Probe Congestion Data -->
+<!-- ============================================================== -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Indian PCU Vehicle Fleet (UK-04 Haldwani RTO Calibrated) -->
+    <vType id="two_wheeler" accel="3.2" decel="4.5" length="2.2" width="0.8" maxSpeed="13.89" minGap="0.8" color="yellow" carFollowModel="Krauss"/>
+    <vType id="car" accel="2.6" decel="4.5" length="4.5" width="1.8" maxSpeed="13.89" minGap="1.5" color="blue" carFollowModel="Krauss"/>
+    <vType id="auto" accel="2.0" decel="3.5" length="2.8" width="1.3" maxSpeed="11.11" minGap="1.0" color="green" carFollowModel="Krauss"/>
+    <vType id="bus" accel="1.5" decel="3.0" length="10.5" width="2.5" maxSpeed="10.0" minGap="2.5" color="red" carFollowModel="Krauss"/>
+    <vType id="truck" accel="1.2" decel="2.5" length="9.0" width="2.4" maxSpeed="9.0" minGap="3.0" color="orange" carFollowModel="Krauss"/>
+    <vType id="emergency" vClass="emergency" accel="3.5" decel="5.0" length="5.5" width="2.0" maxSpeed="16.67" color="white" carFollowModel="Krauss"/>
+
+    <!-- Mukhani Chauraha Approach Routes -->
+    <route id="r_KW2KE" edges="KW2M M2KE"/>
+    <route id="r_KE2KW" edges="KE2M M2KW"/>
+    <route id="r_CN2CS" edges="CN2M M2CS"/>
+    <route id="r_CS2CN" edges="CS2M M2CN"/>
+    <route id="r_CN2KW" edges="CN2M M2KW"/>
+    <route id="r_KW2CS" edges="KW2M M2CS"/>
+
+    <!-- HOUR 00:00 - 01:00 | Midnight Lull: Bareilly Freight Trucks (Total: ~216 veh/hr) -->
+    <flow id="h00_N_bike" type="two_wheeler" route="r_CN2CS" begin="0" end="3600" vehsPerHour="34"/>
+    <flow id="h00_N_car"  type="car" route="r_CN2CS" begin="0" end="3600" vehsPerHour="16"/>
+    <flow id="h00_W_bike" type="two_wheeler" route="r_KW2KE" begin="0" end="3600" vehsPerHour="33"/>
+    <flow id="h00_W_car"  type="car" route="r_KW2KE" begin="0" end="3600" vehsPerHour="16"/>
+    <flow id="h00_S_car"  type="car" route="r_CS2CN" begin="0" end="3600" vehsPerHour="17"/>
+    <flow id="h00_E_bike" type="two_wheeler" route="r_KE2KW" begin="0" end="3600" vehsPerHour="28"/>
+    <!-- HOUR 01:00 - 02:00 | Night Quiet: Long-distance Intercity Cabs (Total: ~216 veh/hr) -->
+    <flow id="h01_N_bike" type="two_wheeler" route="r_CN2CS" begin="3600" end="7200" vehsPerHour="34"/>
+    <flow id="h01_N_car"  type="car" route="r_CN2CS" begin="3600" end="7200" vehsPerHour="16"/>
+    <flow id="h01_W_bike" type="two_wheeler" route="r_KW2KE" begin="3600" end="7200" vehsPerHour="33"/>
+    <flow id="h01_W_car"  type="car" route="r_KW2KE" begin="3600" end="7200" vehsPerHour="16"/>
+    <flow id="h01_S_car"  type="car" route="r_CS2CN" begin="3600" end="7200" vehsPerHour="17"/>
+    <flow id="h01_E_bike" type="two_wheeler" route="r_KE2KW" begin="3600" end="7200" vehsPerHour="28"/>
+    <!-- HOUR 02:00 - 03:00 | Night Freight Transfer to Transport Nagar (Total: ~216 veh/hr) -->
+    <flow id="h02_N_bike" type="two_wheeler" route="r_CN2CS" begin="7200" end="10800" vehsPerHour="34"/>
+    <flow id="h02_N_car"  type="car" route="r_CN2CS" begin="7200" end="10800" vehsPerHour="16"/>
+    <flow id="h02_W_bike" type="two_wheeler" route="r_KW2KE" begin="7200" end="10800" vehsPerHour="33"/>
+    <flow id="h02_W_car"  type="car" route="r_KW2KE" begin="7200" end="10800" vehsPerHour="16"/>
+    <flow id="h02_S_car"  type="car" route="r_CS2CN" begin="7200" end="10800" vehsPerHour="17"/>
+    <flow id="h02_E_bike" type="two_wheeler" route="r_KE2KW" begin="7200" end="10800" vehsPerHour="28"/>
+    <!-- HOUR 03:00 - 04:00 | Early Morning Agricultural Supply to Mandi (Total: ~216 veh/hr) -->
+    <flow id="h03_N_bike" type="two_wheeler" route="r_CN2CS" begin="10800" end="14400" vehsPerHour="34"/>
+    <flow id="h03_N_car"  type="car" route="r_CN2CS" begin="10800" end="14400" vehsPerHour="16"/>
+    <flow id="h03_W_bike" type="two_wheeler" route="r_KW2KE" begin="10800" end="14400" vehsPerHour="33"/>
+    <flow id="h03_W_car"  type="car" route="r_KW2KE" begin="10800" end="14400" vehsPerHour="16"/>
+    <flow id="h03_S_car"  type="car" route="r_CS2CN" begin="10800" end="14400" vehsPerHour="17"/>
+    <flow id="h03_E_bike" type="two_wheeler" route="r_KE2KW" begin="10800" end="14400" vehsPerHour="28"/>
+    <!-- HOUR 04:00 - 05:00 | Pre-Dawn Milk & Produce Supply Pickups (Total: ~1367 veh/hr) -->
+    <flow id="h04_N_bike" type="two_wheeler" route="r_CN2CS" begin="14400" end="18000" vehsPerHour="221"/>
+    <flow id="h04_N_car"  type="car" route="r_CN2CS" begin="14400" end="18000" vehsPerHour="106"/>
+    <flow id="h04_W_bike" type="two_wheeler" route="r_KW2KE" begin="14400" end="18000" vehsPerHour="214"/>
+    <flow id="h04_W_car"  type="car" route="r_KW2KE" begin="14400" end="18000" vehsPerHour="103"/>
+    <flow id="h04_S_car"  type="car" route="r_CS2CN" begin="14400" end="18000" vehsPerHour="109"/>
+    <flow id="h04_E_bike" type="two_wheeler" route="r_KE2KW" begin="14400" end="18000" vehsPerHour="180"/>
+    <!-- HOUR 05:00 - 06:00 | Kathgodam Morning Railway Arrivals (Ranikhet Exp) (Total: ~1626 veh/hr) -->
+    <flow id="h05_N_bike" type="two_wheeler" route="r_CN2CS" begin="18000" end="21600" vehsPerHour="263"/>
+    <flow id="h05_N_car"  type="car" route="r_CN2CS" begin="18000" end="21600" vehsPerHour="127"/>
+    <flow id="h05_W_bike" type="two_wheeler" route="r_KW2KE" begin="18000" end="21600" vehsPerHour="254"/>
+    <flow id="h05_W_car"  type="car" route="r_KW2KE" begin="18000" end="21600" vehsPerHour="122"/>
+    <flow id="h05_S_car"  type="car" route="r_CS2CN" begin="18000" end="21600" vehsPerHour="130"/>
+    <flow id="h05_E_bike" type="two_wheeler" route="r_KE2KW" begin="18000" end="21600" vehsPerHour="214"/>
+    <!-- HOUR 06:00 - 07:00 | Early Commute & School Bus Departures (Total: ~1934 veh/hr) -->
+    <flow id="h06_N_bike" type="two_wheeler" route="r_CN2CS" begin="21600" end="25200" vehsPerHour="504"/>
+    <flow id="h06_N_car"  type="car" route="r_CN2CS" begin="21600" end="25200" vehsPerHour="243"/>
+    <flow id="h06_W_bike" type="two_wheeler" route="r_KW2KE" begin="21600" end="25200" vehsPerHour="392"/>
+    <flow id="h06_W_car"  type="car" route="r_KW2KE" begin="21600" end="25200" vehsPerHour="189"/>
+    <flow id="h06_S_car"  type="car" route="r_CS2CN" begin="21600" end="25200" vehsPerHour="67"/>
+    <flow id="h06_E_bike" type="two_wheeler" route="r_KE2KW" begin="21600" end="25200" vehsPerHour="115"/>
+    <!-- HOUR 07:00 - 08:00 | Morning Rush Buildup: Kusumkhera to Center (Total: ~2368 veh/hr) -->
+    <flow id="h07_N_bike" type="two_wheeler" route="r_CN2CS" begin="25200" end="28800" vehsPerHour="617"/>
+    <flow id="h07_N_car"  type="car" route="r_CN2CS" begin="25200" end="28800" vehsPerHour="298"/>
+    <flow id="h07_W_bike" type="two_wheeler" route="r_KW2KE" begin="25200" end="28800" vehsPerHour="480"/>
+    <flow id="h07_W_car"  type="car" route="r_KW2KE" begin="25200" end="28800" vehsPerHour="231"/>
+    <flow id="h07_S_car"  type="car" route="r_CS2CN" begin="25200" end="28800" vehsPerHour="82"/>
+    <flow id="h07_E_bike" type="two_wheeler" route="r_KE2KW" begin="25200" end="28800" vehsPerHour="141"/>
+    <!-- HOUR 08:00 - 09:00 | 🌅 MORNING PEAK HOUR: Severe Office/College Rush (Total: ~2700 veh/hr) -->
+    <flow id="h08_N_bike" type="two_wheeler" route="r_CN2CS" begin="28800" end="32400" vehsPerHour="704"/>
+    <flow id="h08_N_car"  type="car" route="r_CN2CS" begin="28800" end="32400" vehsPerHour="340"/>
+    <flow id="h08_W_bike" type="two_wheeler" route="r_KW2KE" begin="28800" end="32400" vehsPerHour="547"/>
+    <flow id="h08_W_car"  type="car" route="r_KW2KE" begin="28800" end="32400" vehsPerHour="264"/>
+    <flow id="h08_S_car"  type="car" route="r_CS2CN" begin="28800" end="32400" vehsPerHour="94"/>
+    <flow id="h08_E_bike" type="two_wheeler" route="r_KE2KW" begin="28800" end="32400" vehsPerHour="162"/>
+    <flow id="h08_amb" type="emergency" route="r_CN2CS" begin="28920" end="32400" period="450"/>
+    <!-- HOUR 09:00 - 10:00 | 🌅 MORNING PEAK PEAK: Nainital Rd & Kaladhungi Standstill (Total: ~2700 veh/hr) -->
+    <flow id="h09_N_bike" type="two_wheeler" route="r_CN2CS" begin="32400" end="36000" vehsPerHour="704"/>
+    <flow id="h09_N_car"  type="car" route="r_CN2CS" begin="32400" end="36000" vehsPerHour="340"/>
+    <flow id="h09_W_bike" type="two_wheeler" route="r_KW2KE" begin="32400" end="36000" vehsPerHour="547"/>
+    <flow id="h09_W_car"  type="car" route="r_KW2KE" begin="32400" end="36000" vehsPerHour="264"/>
+    <flow id="h09_S_car"  type="car" route="r_CS2CN" begin="32400" end="36000" vehsPerHour="94"/>
+    <flow id="h09_E_bike" type="two_wheeler" route="r_KE2KW" begin="32400" end="36000" vehsPerHour="162"/>
+    <flow id="h09_amb" type="emergency" route="r_CN2CS" begin="32520" end="36000" period="450"/>
+    <!-- HOUR 10:00 - 11:00 | Late Morning Administrative Inflow (Total: ~2700 veh/hr) -->
+    <flow id="h10_N_bike" type="two_wheeler" route="r_CN2CS" begin="36000" end="39600" vehsPerHour="704"/>
+    <flow id="h10_N_car"  type="car" route="r_CN2CS" begin="36000" end="39600" vehsPerHour="340"/>
+    <flow id="h10_W_bike" type="two_wheeler" route="r_KW2KE" begin="36000" end="39600" vehsPerHour="547"/>
+    <flow id="h10_W_car"  type="car" route="r_KW2KE" begin="36000" end="39600" vehsPerHour="264"/>
+    <flow id="h10_S_car"  type="car" route="r_CS2CN" begin="36000" end="39600" vehsPerHour="94"/>
+    <flow id="h10_E_bike" type="two_wheeler" route="r_KE2KW" begin="36000" end="39600" vehsPerHour="162"/>
+    <flow id="h10_amb" type="emergency" route="r_CN2CS" begin="36120" end="39600" period="450"/>
+    <!-- HOUR 11:00 - 12:00 | Midday Commercial & Banking Transit (Total: ~2432 veh/hr) -->
+    <flow id="h11_N_bike" type="two_wheeler" route="r_CN2CS" begin="39600" end="43200" vehsPerHour="394"/>
+    <flow id="h11_N_car"  type="car" route="r_CN2CS" begin="39600" end="43200" vehsPerHour="190"/>
+    <flow id="h11_W_bike" type="two_wheeler" route="r_KW2KE" begin="39600" end="43200" vehsPerHour="380"/>
+    <flow id="h11_W_car"  type="car" route="r_KW2KE" begin="39600" end="43200" vehsPerHour="183"/>
+    <flow id="h11_S_car"  type="car" route="r_CS2CN" begin="39600" end="43200" vehsPerHour="195"/>
+    <flow id="h11_E_bike" type="two_wheeler" route="r_KE2KW" begin="39600" end="43200" vehsPerHour="321"/>
+    <flow id="h11_amb" type="emergency" route="r_CN2CS" begin="39720" end="43200" period="450"/>
+    <!-- HOUR 12:00 - 13:00 | Afternoon Local Shopping & Business (Total: ~2300 veh/hr) -->
+    <flow id="h12_N_bike" type="two_wheeler" route="r_CN2CS" begin="43200" end="46800" vehsPerHour="373"/>
+    <flow id="h12_N_car"  type="car" route="r_CN2CS" begin="43200" end="46800" vehsPerHour="180"/>
+    <flow id="h12_W_bike" type="two_wheeler" route="r_KW2KE" begin="43200" end="46800" vehsPerHour="360"/>
+    <flow id="h12_W_car"  type="car" route="r_KW2KE" begin="43200" end="46800" vehsPerHour="173"/>
+    <flow id="h12_S_car"  type="car" route="r_CS2CN" begin="43200" end="46800" vehsPerHour="185"/>
+    <flow id="h12_E_bike" type="two_wheeler" route="r_KE2KW" begin="43200" end="46800" vehsPerHour="303"/>
+    <flow id="h12_amb" type="emergency" route="r_CN2CS" begin="43320" end="46800" period="450"/>
+    <!-- HOUR 13:00 - 14:00 | Lunch Hour Slump: Moderate Traffic (Total: ~2140 veh/hr) -->
+    <flow id="h13_N_bike" type="two_wheeler" route="r_CN2CS" begin="46800" end="50400" vehsPerHour="347"/>
+    <flow id="h13_N_car"  type="car" route="r_CN2CS" begin="46800" end="50400" vehsPerHour="167"/>
+    <flow id="h13_W_bike" type="two_wheeler" route="r_KW2KE" begin="46800" end="50400" vehsPerHour="334"/>
+    <flow id="h13_W_car"  type="car" route="r_KW2KE" begin="46800" end="50400" vehsPerHour="161"/>
+    <flow id="h13_S_car"  type="car" route="r_CS2CN" begin="46800" end="50400" vehsPerHour="172"/>
+    <flow id="h13_E_bike" type="two_wheeler" route="r_KE2KW" begin="46800" end="50400" vehsPerHour="282"/>
+    <flow id="h13_amb" type="emergency" route="r_CN2CS" begin="46920" end="50400" period="450"/>
+    <!-- HOUR 14:00 - 15:00 | School Dismissal Peak: Buses & Autos (Total: ~2368 veh/hr) -->
+    <flow id="h14_N_bike" type="two_wheeler" route="r_CN2CS" begin="50400" end="54000" vehsPerHour="164"/>
+    <flow id="h14_N_car"  type="car" route="r_CN2CS" begin="50400" end="54000" vehsPerHour="79"/>
+    <flow id="h14_W_bike" type="two_wheeler" route="r_KW2KE" begin="50400" end="54000" vehsPerHour="178"/>
+    <flow id="h14_W_car"  type="car" route="r_KW2KE" begin="50400" end="54000" vehsPerHour="85"/>
+    <flow id="h14_S_car"  type="car" route="r_CS2CN" begin="50400" end="54000" vehsPerHour="289"/>
+    <flow id="h14_E_bike" type="two_wheeler" route="r_KE2KW" begin="50400" end="54000" vehsPerHour="568"/>
+    <flow id="h14_amb" type="emergency" route="r_CN2CS" begin="50520" end="54000" period="450"/>
+    <!-- HOUR 15:00 - 16:00 | Afternoon Inter-City Transit to Kathgodam (Total: ~2224 veh/hr) -->
+    <flow id="h15_N_bike" type="two_wheeler" route="r_CN2CS" begin="54000" end="57600" vehsPerHour="360"/>
+    <flow id="h15_N_car"  type="car" route="r_CN2CS" begin="54000" end="57600" vehsPerHour="174"/>
+    <flow id="h15_W_bike" type="two_wheeler" route="r_KW2KE" begin="54000" end="57600" vehsPerHour="348"/>
+    <flow id="h15_W_car"  type="car" route="r_KW2KE" begin="54000" end="57600" vehsPerHour="168"/>
+    <flow id="h15_S_car"  type="car" route="r_CS2CN" begin="54000" end="57600" vehsPerHour="178"/>
+    <flow id="h15_E_bike" type="two_wheeler" route="r_KE2KW" begin="54000" end="57600" vehsPerHour="293"/>
+    <flow id="h15_amb" type="emergency" route="r_CN2CS" begin="54120" end="57600" period="450"/>
+    <!-- HOUR 16:00 - 17:00 | Early Evening Dispersal Begins (Total: ~2645 veh/hr) -->
+    <flow id="h16_N_bike" type="two_wheeler" route="r_CN2CS" begin="57600" end="61200" vehsPerHour="183"/>
+    <flow id="h16_N_car"  type="car" route="r_CN2CS" begin="57600" end="61200" vehsPerHour="88"/>
+    <flow id="h16_W_bike" type="two_wheeler" route="r_KW2KE" begin="57600" end="61200" vehsPerHour="198"/>
+    <flow id="h16_W_car"  type="car" route="r_KW2KE" begin="57600" end="61200" vehsPerHour="96"/>
+    <flow id="h16_S_car"  type="car" route="r_CS2CN" begin="57600" end="61200" vehsPerHour="323"/>
+    <flow id="h16_E_bike" type="two_wheeler" route="r_KE2KW" begin="57600" end="61200" vehsPerHour="634"/>
+    <flow id="h16_amb" type="emergency" route="r_CN2CS" begin="57720" end="61200" period="450"/>
+    <!-- HOUR 17:00 - 18:00 | 🌆 EVENING PEAK BUILDUP: Commercial Center Exits (Total: ~2700 veh/hr) -->
+    <flow id="h17_N_bike" type="two_wheeler" route="r_CN2CS" begin="61200" end="64800" vehsPerHour="187"/>
+    <flow id="h17_N_car"  type="car" route="r_CN2CS" begin="61200" end="64800" vehsPerHour="90"/>
+    <flow id="h17_W_bike" type="two_wheeler" route="r_KW2KE" begin="61200" end="64800" vehsPerHour="203"/>
+    <flow id="h17_W_car"  type="car" route="r_KW2KE" begin="61200" end="64800" vehsPerHour="98"/>
+    <flow id="h17_S_car"  type="car" route="r_CS2CN" begin="61200" end="64800" vehsPerHour="330"/>
+    <flow id="h17_E_bike" type="two_wheeler" route="r_KE2KW" begin="61200" end="64800" vehsPerHour="648"/>
+    <flow id="h17_amb" type="emergency" route="r_CN2CS" begin="61320" end="64800" period="450"/>
+    <!-- HOUR 18:00 - 19:00 | 🌆 EVENING PEAK MAX: Severe Gridlock at Chauraha (Total: ~2700 veh/hr) -->
+    <flow id="h18_N_bike" type="two_wheeler" route="r_CN2CS" begin="64800" end="68400" vehsPerHour="187"/>
+    <flow id="h18_N_car"  type="car" route="r_CN2CS" begin="64800" end="68400" vehsPerHour="90"/>
+    <flow id="h18_W_bike" type="two_wheeler" route="r_KW2KE" begin="64800" end="68400" vehsPerHour="203"/>
+    <flow id="h18_W_car"  type="car" route="r_KW2KE" begin="64800" end="68400" vehsPerHour="98"/>
+    <flow id="h18_S_car"  type="car" route="r_CS2CN" begin="64800" end="68400" vehsPerHour="330"/>
+    <flow id="h18_E_bike" type="two_wheeler" route="r_KE2KW" begin="64800" end="68400" vehsPerHour="648"/>
+    <flow id="h18_amb" type="emergency" route="r_CN2CS" begin="64920" end="68400" period="450"/>
+    <!-- HOUR 19:00 - 20:00 | 🌆 EVENING PEAK: Suburb Dispersal & Canal Rd Backup (Total: ~2700 veh/hr) -->
+    <flow id="h19_N_bike" type="two_wheeler" route="r_CN2CS" begin="68400" end="72000" vehsPerHour="187"/>
+    <flow id="h19_N_car"  type="car" route="r_CN2CS" begin="68400" end="72000" vehsPerHour="90"/>
+    <flow id="h19_W_bike" type="two_wheeler" route="r_KW2KE" begin="68400" end="72000" vehsPerHour="203"/>
+    <flow id="h19_W_car"  type="car" route="r_KW2KE" begin="68400" end="72000" vehsPerHour="98"/>
+    <flow id="h19_S_car"  type="car" route="r_CS2CN" begin="68400" end="72000" vehsPerHour="330"/>
+    <flow id="h19_E_bike" type="two_wheeler" route="r_KE2KW" begin="68400" end="72000" vehsPerHour="648"/>
+    <flow id="h19_amb" type="emergency" route="r_CN2CS" begin="68520" end="72000" period="450"/>
+    <!-- HOUR 20:00 - 21:00 | Market Shopping & Dinner Rush (Total: ~2700 veh/hr) -->
+    <flow id="h20_N_bike" type="two_wheeler" route="r_CN2CS" begin="72000" end="75600" vehsPerHour="187"/>
+    <flow id="h20_N_car"  type="car" route="r_CN2CS" begin="72000" end="75600" vehsPerHour="90"/>
+    <flow id="h20_W_bike" type="two_wheeler" route="r_KW2KE" begin="72000" end="75600" vehsPerHour="203"/>
+    <flow id="h20_W_car"  type="car" route="r_KW2KE" begin="72000" end="75600" vehsPerHour="98"/>
+    <flow id="h20_S_car"  type="car" route="r_CS2CN" begin="72000" end="75600" vehsPerHour="330"/>
+    <flow id="h20_E_bike" type="two_wheeler" route="r_KE2KW" begin="72000" end="75600" vehsPerHour="648"/>
+    <flow id="h20_amb" type="emergency" route="r_CN2CS" begin="72120" end="75600" period="450"/>
+    <!-- HOUR 21:00 - 22:00 | Market Shop Closures & Bareilly Rd Freight Entry (Total: ~2545 veh/hr) -->
+    <flow id="h21_N_bike" type="two_wheeler" route="r_CN2CS" begin="75600" end="79200" vehsPerHour="412"/>
+    <flow id="h21_N_car"  type="car" route="r_CN2CS" begin="75600" end="79200" vehsPerHour="199"/>
+    <flow id="h21_W_bike" type="two_wheeler" route="r_KW2KE" begin="75600" end="79200" vehsPerHour="398"/>
+    <flow id="h21_W_car"  type="car" route="r_KW2KE" begin="75600" end="79200" vehsPerHour="192"/>
+    <flow id="h21_S_car"  type="car" route="r_CS2CN" begin="75600" end="79200" vehsPerHour="204"/>
+    <flow id="h21_E_bike" type="two_wheeler" route="r_KE2KW" begin="75600" end="79200" vehsPerHour="335"/>
+    <flow id="h21_amb" type="emergency" route="r_CN2CS" begin="75720" end="79200" period="450"/>
+    <!-- HOUR 22:00 - 23:00 | Night Long-distance Buses (Uttarakhand Roadways) (Total: ~2045 veh/hr) -->
+    <flow id="h22_N_bike" type="two_wheeler" route="r_CN2CS" begin="79200" end="82800" vehsPerHour="331"/>
+    <flow id="h22_N_car"  type="car" route="r_CN2CS" begin="79200" end="82800" vehsPerHour="160"/>
+    <flow id="h22_W_bike" type="two_wheeler" route="r_KW2KE" begin="79200" end="82800" vehsPerHour="320"/>
+    <flow id="h22_W_car"  type="car" route="r_KW2KE" begin="79200" end="82800" vehsPerHour="154"/>
+    <flow id="h22_S_car"  type="car" route="r_CS2CN" begin="79200" end="82800" vehsPerHour="164"/>
+    <flow id="h22_E_bike" type="two_wheeler" route="r_KE2KW" begin="79200" end="82800" vehsPerHour="269"/>
+    <!-- HOUR 23:00 - 24:00 | Late Night Easing: Regional Highway Transit (Total: ~1626 veh/hr) -->
+    <flow id="h23_N_bike" type="two_wheeler" route="r_CN2CS" begin="82800" end="86400" vehsPerHour="263"/>
+    <flow id="h23_N_car"  type="car" route="r_CN2CS" begin="82800" end="86400" vehsPerHour="127"/>
+    <flow id="h23_W_bike" type="two_wheeler" route="r_KW2KE" begin="82800" end="86400" vehsPerHour="254"/>
+    <flow id="h23_W_car"  type="car" route="r_KW2KE" begin="82800" end="86400" vehsPerHour="122"/>
+    <flow id="h23_S_car"  type="car" route="r_CS2CN" begin="82800" end="86400" vehsPerHour="130"/>
+    <flow id="h23_E_bike" type="two_wheeler" route="r_KE2KW" begin="82800" end="86400" vehsPerHour="214"/>
+</routes>

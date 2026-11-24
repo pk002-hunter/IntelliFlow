@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewsettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/viewsettings_file.xsd">
+    <viewport zoom="380" x="50" y="0"/>
+    <delay value="60"/>
+    <scheme name="real world">
+        <opengl antialiase="2"/>
+        <background backgroundColor="30,34,42"/>
+    </scheme>
+</viewsettings>

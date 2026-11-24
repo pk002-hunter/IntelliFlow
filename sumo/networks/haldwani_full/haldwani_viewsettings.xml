@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewsettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/viewsettings_file.xsd">
+    <!-- Camera initial view centered over Haldwani City Center, Mukhani, Krishna & Brijlal Hospitals -->
+    <!-- Network coordinate range: X [0..25908], Y [0..24356] -->
+    <viewport zoom="200" x="11500" y="17500"/>
+    <delay value="45"/>
+
+    <!-- Scheme: real world -->
+    <scheme name="real world">
+        <opengl antialiase="2"/>
+        <background backgroundColor="30,34,42"/>
+        <edges laneEdgeMode="0" 
+               laneShowBorders="true" 
+               showLinkDecals="true" 
+               showLinkRules="true"
+               showRails="true"
+               edgeName_show="true" 
+               edgeName_size="35.0" 
+               edgeName_color="1.0,0.95,0.4,1.0"
+               edgeName_bgColor="0.0,0.0,0.0,0.7"
+               streetName_show="true" 
+               streetName_size="40.0" 
+               streetName_color="0.4,0.95,1.0,1.0"
+               streetName_bgColor="0.0,0.0,0.0,0.7"/>
+        <vehicles vehicleMode="0" 
+                  vehicleQuality="2" 
+                  vehicle_size="2.5" 
+                  vehicleName_show="false"/>
+        <pois poiTextMode="1" 
+              poiSize="120.0" 
+              poiName_show="true" 
+              poiName_size="65.0" 
+              poiName_color="1.0,1.0,1.0,1.0"
+              poiName_bgColor="0.85,0.1,0.1,0.95"/>
+        <polygons polyMode="0" 
+                  polySize="1.5" 
+                  polyName_show="true" 
+                  polyName_size="40.0" 
+                  polyName_color="0.2,0.95,0.95,1.0"
+                  polyName_bgColor="0.0,0.0,0.0,0.7"/>
+        <junctions junctionMode="0" 
+                   junctionName_show="true" 
+                   junctionName_size="45.0" 
+                   junctionName_color="1.0,0.85,0.0,1.0"
+                   junctionName_bgColor="0.0,0.0,0.0,0.7"/>
+    </scheme>
+
+    <!-- Scheme: standard (fallback override) -->
+    <scheme name="standard">
+        <opengl antialiase="2"/>
+        <background backgroundColor="30,34,42"/>
+        <edges laneEdgeMode="0" 
+               laneShowBorders="true" 
+               showLinkDecals="true" 
+               showLinkRules="true"
+               showRails="true"
+               edgeName_show="true" 
+               edgeName_size="35.0" 
+               edgeName_color="1.0,0.95,0.4,1.0"
+               edgeName_bgColor="0.0,0.0,0.0,0.7"
+               streetName_show="true" 
+               streetName_size="40.0" 
+               streetName_color="0.4,0.95,1.0,1.0"
+               streetName_bgColor="0.0,0.0,0.0,0.7"/>
+        <vehicles vehicleMode="0" 
+                  vehicleQuality="2" 
+                  vehicle_size="2.5" 
+                  vehicleName_show="false"/>
+        <pois poiTextMode="1" 
+              poiSize="120.0" 
+              poiName_show="true" 
+              poiName_size="65.0" 
+              poiName_color="1.0,1.0,1.0,1.0"
+              poiName_bgColor="0.85,0.1,0.1,0.95"/>
+        <polygons polyMode="0" 
+                  polySize="1.5" 
+                  polyName_show="true" 
+                  polyName_size="40.0" 
+                  polyName_color="0.2,0.95,0.95,1.0"
+                  polyName_bgColor="0.0,0.0,0.0,0.7"/>
+        <junctions junctionMode="0" 
+                   junctionName_show="true" 
+                   junctionName_size="45.0" 
+                   junctionName_color="1.0,0.85,0.0,1.0"
+                   junctionName_bgColor="0.0,0.0,0.0,0.7"/>
+    </scheme>
+</viewsettings>

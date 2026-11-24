@@ -1,0 +1,1631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-11-24T19:46:02.878672+05:30 by Eclipse SUMO netconvert 1.27.1
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="D:\final year\project\sumo\networks\haldwani_full\haldwani.nod.xml"/>
+        <edge-files value="D:\final year\project\sumo\networks\haldwani_full\haldwani.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="D:\final year\project\sumo\networks\haldwani_full\haldwani.net.xml"/>
+    </output>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+    </junctions>
+
+</netconvertConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="2000.00,2400.00" convBoundary="0.00,0.00,3700.00,4750.00" origBoundary="-2000.00,-2400.00,1700.00,2350.00" projParameter="!"/>
+
+    <edge id=":BrijlalHospital_Jct_0" function="internal">
+        <lane id=":BrijlalHospital_Jct_0_0" index="0" speed="15.28" length="14.40" shape="3292.00,4257.20 3292.00,4242.80"/>
+        <lane id=":BrijlalHospital_Jct_0_1" index="1" speed="15.28" length="14.40" shape="3295.20,4257.20 3295.20,4242.80"/>
+        <lane id=":BrijlalHospital_Jct_0_2" index="2" speed="15.28" length="14.40" shape="3298.40,4257.20 3298.40,4242.80"/>
+    </edge>
+    <edge id=":BrijlalHospital_Jct_3" function="internal">
+        <lane id=":BrijlalHospital_Jct_3_0" index="0" speed="9.32" length="3.03" shape="3298.40,4257.20 3299.13,4254.26"/>
+    </edge>
+    <edge id=":BrijlalHospital_Jct_11" function="internal">
+        <lane id=":BrijlalHospital_Jct_11_0" index="0" speed="9.32" length="16.60" shape="3299.13,4254.26 3299.35,4253.35 3302.20,4250.60 3306.95,4248.95 3313.60,4248.40"/>
+    </edge>
+    <edge id=":BrijlalHospital_Jct_4" function="internal">
+        <lane id=":BrijlalHospital_Jct_4_0" index="0" speed="6.51" length="9.03" shape="3313.60,4251.60 3311.15,4251.95 3309.40,4253.00 3308.35,4254.75 3308.00,4257.20"/>
+    </edge>
+    <edge id=":BrijlalHospital_Jct_5" function="internal">
+        <lane id=":BrijlalHospital_Jct_5_0" index="0" speed="9.94" length="22.48" shape="3313.60,4251.60 3305.55,4251.05 3299.80,4249.40 3296.35,4246.65 3295.20,4242.80"/>
+        <lane id=":BrijlalHospital_Jct_5_1" index="1" speed="9.32" length="19.63" shape="3313.60,4251.60 3306.95,4251.05 3302.20,4249.40 3299.35,4246.65 3298.40,4242.80"/>
+    </edge>
+    <edge id=":BrijlalHospital_Jct_7" function="internal">
+        <lane id=":BrijlalHospital_Jct_7_0" index="0" speed="6.51" length="9.03" shape="3308.00,4242.80 3308.35,4245.25 3309.40,4247.00 3311.15,4248.05 3313.60,4248.40"/>
+    </edge>
+    <edge id=":BrijlalHospital_Jct_8" function="internal">
+        <lane id=":BrijlalHospital_Jct_8_0" index="0" speed="15.28" length="14.40" shape="3308.00,4242.80 3308.00,4257.20"/>
+        <lane id=":BrijlalHospital_Jct_8_1" index="1" speed="15.28" length="14.40" shape="3304.80,4242.80 3304.80,4257.20"/>
+        <lane id=":BrijlalHospital_Jct_8_2" index="2" speed="15.28" length="14.40" shape="3301.60,4242.80 3301.60,4257.20"/>
+    </edge>
+    <edge id=":Canal_Mid_0" function="internal">
+        <lane id=":Canal_Mid_0_0" index="0" speed="8.96" length="18.06" shape="2006.40,3154.80 2001.50,3154.10 1998.00,3152.00 1995.90,3148.50 1995.20,3143.60"/>
+        <lane id=":Canal_Mid_0_1" index="1" speed="7.66" length="12.90" shape="2006.40,3151.60 2002.90,3151.10 2000.40,3149.60 1998.90,3147.10 1998.40,3143.60"/>
+    </edge>
+    <edge id=":Canal_Mid_2" function="internal">
+        <lane id=":Canal_Mid_2_0" index="0" speed="3.90" length="2.58" shape="2004.80,3143.60 2004.90,3144.30 2005.20,3144.80 2005.70,3145.10 2006.40,3145.20"/>
+        <lane id=":Canal_Mid_2_1" index="1" speed="6.08" length="7.74" shape="2001.60,3143.60 2001.90,3145.70 2002.80,3147.20 2004.30,3148.10 2006.40,3148.40"/>
+    </edge>
+    <edge id=":ChhotiMukhani_0" function="internal">
+        <lane id=":ChhotiMukhani_0_0" index="0" speed="11.11" length="0.10" shape="1995.20,2000.00 1995.20,2000.00"/>
+        <lane id=":ChhotiMukhani_0_1" index="1" speed="11.11" length="0.10" shape="1998.40,2000.00 1998.40,2000.00"/>
+    </edge>
+    <edge id=":ChhotiMukhani_2" function="internal">
+        <lane id=":ChhotiMukhani_2_0" index="0" speed="11.11" length="0.10" shape="2004.80,2000.00 2004.80,2000.00"/>
+        <lane id=":ChhotiMukhani_2_1" index="1" speed="11.11" length="0.10" shape="2001.60,2000.00 2001.60,2000.00"/>
+    </edge>
+    <edge id=":GasGodam_Mid_0" function="internal">
+        <lane id=":GasGodam_Mid_0_0" index="0" speed="11.11" length="34.61" shape="1429.97,1390.38 1422.36,1393.68 1414.06,1397.26 1406.74,1401.75 1402.07,1407.76"/>
+        <lane id=":GasGodam_Mid_0_1" index="1" speed="11.11" length="34.61" shape="1428.54,1387.52 1420.69,1391.08 1411.86,1395.24 1404.01,1400.30 1399.10,1406.57"/>
+    </edge>
+    <edge id=":GasGodam_Mid_2" function="internal">
+        <lane id=":GasGodam_Mid_2_0" index="0" speed="7.66" length="23.81" shape="1428.54,1387.52 1422.33,1388.34 1417.54,1385.36 1415.46,1380.11 1417.39,1374.15"/>
+    </edge>
+    <edge id=":GasGodam_Mid_3" function="internal">
+        <lane id=":GasGodam_Mid_3_0" index="0" speed="5.60" length="11.85" shape="1422.51,1377.99 1420.28,1381.46 1420.07,1383.25 1421.87,1383.36 1425.68,1381.79"/>
+    </edge>
+    <edge id=":GasGodam_Mid_4" function="internal">
+        <lane id=":GasGodam_Mid_4_0" index="0" speed="11.11" length="36.61" shape="1422.51,1377.99 1417.30,1384.71 1411.43,1392.39 1405.98,1400.31 1402.07,1407.76"/>
+        <lane id=":GasGodam_Mid_4_1" index="1" speed="11.11" length="36.61" shape="1419.95,1376.07 1414.68,1382.91 1408.66,1390.84 1403.08,1399.01 1399.10,1406.57"/>
+    </edge>
+    <edge id=":GasGodam_Mid_6" function="internal">
+        <lane id=":GasGodam_Mid_6_0" index="0" speed="11.11" length="38.28" shape="1393.15,1404.19 1397.26,1396.40 1403.13,1387.73 1409.43,1379.29 1414.83,1372.23"/>
+        <lane id=":GasGodam_Mid_6_1" index="1" speed="11.11" length="38.28" shape="1396.13,1405.38 1400.17,1397.71 1405.90,1389.28 1412.06,1381.10 1417.39,1374.15"/>
+    </edge>
+    <edge id=":GasGodam_Mid_8" function="internal">
+        <lane id=":GasGodam_Mid_8_0" index="0" speed="11.11" length="3.83" shape="1396.13,1405.38 1398.50,1402.37"/>
+    </edge>
+    <edge id=":GasGodam_Mid_9" function="internal">
+        <lane id=":GasGodam_Mid_9_0" index="0" speed="11.11" length="34.03" shape="1398.50,1402.37 1401.28,1398.85 1409.66,1393.21 1419.02,1388.47 1427.11,1384.66"/>
+    </edge>
+    <edge id=":HeeraNagar_Jct_0" function="internal">
+        <lane id=":HeeraNagar_Jct_0_0" index="0" speed="12.50" length="20.45" shape="2612.26,2420.17 2606.99,2414.84 2602.57,2411.04 2598.97,2408.76 2596.21,2408.00"/>
+    </edge>
+    <edge id=":HeeraNagar_Jct_1" function="internal">
+        <lane id=":HeeraNagar_Jct_1_0" index="0" speed="9.39" length="31.39" shape="2614.60,2417.98 2610.03,2410.33 2609.79,2402.96 2613.74,2397.40 2621.71,2395.20"/>
+        <lane id=":HeeraNagar_Jct_1_1" index="1" speed="8.81" length="27.40" shape="2614.60,2417.98 2610.75,2411.35 2610.85,2405.02 2614.61,2400.27 2621.71,2398.40"/>
+    </edge>
+    <edge id=":HeeraNagar_Jct_3" function="internal">
+        <lane id=":HeeraNagar_Jct_3_0" index="0" speed="5.49" length="9.64" shape="2621.71,2408.00 2618.68,2408.35 2617.26,2409.40 2617.46,2411.16 2619.27,2413.62"/>
+    </edge>
+    <edge id=":HeeraNagar_Jct_4" function="internal">
+        <lane id=":HeeraNagar_Jct_4_0" index="0" speed="13.89" length="25.51" shape="2621.71,2408.00 2596.21,2408.00"/>
+        <lane id=":HeeraNagar_Jct_4_1" index="1" speed="13.89" length="25.51" shape="2621.71,2404.80 2596.21,2404.80"/>
+        <lane id=":HeeraNagar_Jct_4_2" index="2" speed="13.89" length="25.51" shape="2621.71,2401.60 2596.21,2401.60"/>
+    </edge>
+    <edge id=":HeeraNagar_Jct_7" function="internal">
+        <lane id=":HeeraNagar_Jct_7_0" index="0" speed="13.89" length="25.51" shape="2596.21,2392.00 2621.71,2392.00"/>
+        <lane id=":HeeraNagar_Jct_7_1" index="1" speed="13.89" length="25.51" shape="2596.21,2395.20 2621.71,2395.20"/>
+        <lane id=":HeeraNagar_Jct_7_2" index="2" speed="13.89" length="25.51" shape="2596.21,2398.40 2621.71,2398.40"/>
+    </edge>
+    <edge id=":HeeraNagar_Jct_10" function="internal">
+        <lane id=":HeeraNagar_Jct_10_0" index="0" speed="12.50" length="2.20" shape="2596.21,2398.40 2598.27,2399.15"/>
+    </edge>
+    <edge id=":HeeraNagar_Jct_11" function="internal">
+        <lane id=":HeeraNagar_Jct_11_0" index="0" speed="12.50" length="25.13" shape="2598.27,2399.15 2599.18,2399.49 2603.63,2402.75 2609.55,2408.19 2616.93,2415.80"/>
+    </edge>
+    <edge id=":JudgeFarm_0" function="internal">
+        <lane id=":JudgeFarm_0_0" index="0" speed="7.80" length="13.43" shape="3292.00,3160.40 3291.33,3157.95 3289.32,3156.20 3285.97,3155.15 3281.27,3154.80"/>
+    </edge>
+    <edge id=":JudgeFarm_1" function="internal">
+        <lane id=":JudgeFarm_1_0" index="0" speed="12.50" length="30.26" shape="3292.00,3160.40 3291.37,3150.93 3289.47,3143.87 3286.29,3138.19 3281.82,3132.87"/>
+    </edge>
+    <edge id=":JudgeFarm_2" function="internal">
+        <lane id=":JudgeFarm_2_0" index="0" speed="13.89" length="34.07" shape="3292.00,3160.40 3292.00,3126.33"/>
+        <lane id=":JudgeFarm_2_1" index="1" speed="13.89" length="34.07" shape="3295.20,3160.40 3295.20,3126.33"/>
+        <lane id=":JudgeFarm_2_2" index="2" speed="13.89" length="34.07" shape="3298.40,3160.40 3298.40,3126.33"/>
+    </edge>
+    <edge id=":JudgeFarm_5" function="internal">
+        <lane id=":JudgeFarm_5_0" index="0" speed="13.89" length="34.07" shape="3308.00,3126.33 3308.00,3160.40"/>
+        <lane id=":JudgeFarm_5_1" index="1" speed="13.89" length="34.07" shape="3304.80,3126.33 3304.80,3160.40"/>
+        <lane id=":JudgeFarm_5_2" index="2" speed="13.89" length="34.07" shape="3301.60,3126.33 3301.60,3160.40"/>
+    </edge>
+    <edge id=":JudgeFarm_8" function="internal">
+        <lane id=":JudgeFarm_8_0" index="0" speed="12.50" length="6.18" shape="3301.60,3126.33 3300.89,3132.48"/>
+    </edge>
+    <edge id=":JudgeFarm_9" function="internal">
+        <lane id=":JudgeFarm_9_0" index="0" speed="8.70" length="2.73" shape="3301.60,3126.33 3300.87,3128.96"/>
+    </edge>
+    <edge id=":JudgeFarm_18" function="internal">
+        <lane id=":JudgeFarm_18_0" index="0" speed="12.50" length="30.67" shape="3300.89,3132.48 3300.33,3137.39 3296.52,3145.28 3290.17,3150.02 3281.27,3151.60"/>
+    </edge>
+    <edge id=":JudgeFarm_19" function="internal">
+        <lane id=":JudgeFarm_19_0" index="0" speed="8.70" length="24.90" shape="3300.87,3128.96 3299.62,3133.43 3294.67,3137.11 3288.24,3137.04 3281.82,3132.87"/>
+    </edge>
+    <edge id=":JudgeFarm_10" function="internal">
+        <lane id=":JudgeFarm_10_0" index="0" speed="5.46" length="9.85" shape="3286.50,3128.50 3288.91,3130.58 3290.63,3130.91 3291.66,3129.49 3292.00,3126.33"/>
+    </edge>
+    <edge id=":JudgeFarm_11" function="internal">
+        <lane id=":JudgeFarm_11_0" index="0" speed="12.50" length="36.63" shape="3286.50,3128.50 3292.24,3134.46 3298.21,3141.57 3302.90,3150.12 3304.80,3160.40"/>
+        <lane id=":JudgeFarm_11_1" index="1" speed="12.50" length="36.63" shape="3284.16,3130.69 3289.76,3136.30 3295.44,3142.66 3299.83,3150.46 3301.60,3160.40"/>
+    </edge>
+    <edge id=":JudgeFarm_13" function="internal">
+        <lane id=":JudgeFarm_13_0" index="0" speed="8.85" length="27.71" shape="3284.16,3130.69 3288.74,3137.57 3290.12,3144.36 3287.80,3149.54 3281.27,3151.60"/>
+    </edge>
+    <edge id=":JudgeFarm_14" function="internal">
+        <lane id=":JudgeFarm_14_0" index="0" speed="6.49" length="14.12" shape="3281.27,3145.20 3284.04,3144.57 3284.67,3142.66 3283.15,3139.49 3279.48,3135.05"/>
+    </edge>
+    <edge id=":JudgeFarm_15" function="internal">
+        <lane id=":JudgeFarm_15_0" index="0" speed="10.77" length="26.56" shape="3281.27,3145.20 3287.37,3144.02 3291.72,3140.48 3294.33,3134.59 3295.20,3126.33"/>
+        <lane id=":JudgeFarm_15_1" index="1" speed="11.73" length="31.70" shape="3281.27,3148.40 3288.77,3147.02 3294.12,3142.88 3297.33,3135.99 3298.40,3126.33"/>
+    </edge>
+    <edge id=":JudgeFarm_17" function="internal">
+        <lane id=":JudgeFarm_17_0" index="0" speed="10.74" length="26.41" shape="3281.27,3148.40 3290.17,3149.15 3296.52,3151.40 3300.33,3155.15 3301.60,3160.40"/>
+    </edge>
+    <edge id=":KathgodamHospital_Jct_0" function="internal">
+        <lane id=":KathgodamHospital_Jct_0_0" index="0" speed="16.67" length="14.40" shape="3292.00,4557.20 3292.00,4542.80"/>
+        <lane id=":KathgodamHospital_Jct_0_1" index="1" speed="16.67" length="14.40" shape="3295.20,4557.20 3295.20,4542.80"/>
+        <lane id=":KathgodamHospital_Jct_0_2" index="2" speed="16.67" length="14.40" shape="3298.40,4557.20 3298.40,4542.80"/>
+    </edge>
+    <edge id=":KathgodamHospital_Jct_3" function="internal">
+        <lane id=":KathgodamHospital_Jct_3_0" index="0" speed="9.32" length="3.03" shape="3298.40,4557.20 3299.13,4554.26"/>
+    </edge>
+    <edge id=":KathgodamHospital_Jct_11" function="internal">
+        <lane id=":KathgodamHospital_Jct_11_0" index="0" speed="9.32" length="16.60" shape="3299.13,4554.26 3299.35,4553.35 3302.20,4550.60 3306.95,4548.95 3313.60,4548.40"/>
+    </edge>
+    <edge id=":KathgodamHospital_Jct_4" function="internal">
+        <lane id=":KathgodamHospital_Jct_4_0" index="0" speed="6.51" length="9.03" shape="3313.60,4551.60 3311.15,4551.95 3309.40,4553.00 3308.35,4554.75 3308.00,4557.20"/>
+    </edge>
+    <edge id=":KathgodamHospital_Jct_5" function="internal">
+        <lane id=":KathgodamHospital_Jct_5_0" index="0" speed="9.94" length="22.48" shape="3313.60,4551.60 3305.55,4551.05 3299.80,4549.40 3296.35,4546.65 3295.20,4542.80"/>
+        <lane id=":KathgodamHospital_Jct_5_1" index="1" speed="9.32" length="19.63" shape="3313.60,4551.60 3306.95,4551.05 3302.20,4549.40 3299.35,4546.65 3298.40,4542.80"/>
+    </edge>
+    <edge id=":KathgodamHospital_Jct_7" function="internal">
+        <lane id=":KathgodamHospital_Jct_7_0" index="0" speed="6.51" length="9.03" shape="3308.00,4542.80 3308.35,4545.25 3309.40,4547.00 3311.15,4548.05 3313.60,4548.40"/>
+    </edge>
+    <edge id=":KathgodamHospital_Jct_8" function="internal">
+        <lane id=":KathgodamHospital_Jct_8_0" index="0" speed="16.67" length="14.40" shape="3308.00,4542.80 3308.00,4557.20"/>
+        <lane id=":KathgodamHospital_Jct_8_1" index="1" speed="16.67" length="14.40" shape="3304.80,4542.80 3304.80,4557.20"/>
+        <lane id=":KathgodamHospital_Jct_8_2" index="2" speed="16.67" length="14.40" shape="3301.60,4542.80 3301.60,4557.20"/>
+    </edge>
+    <edge id=":KrishnaHospital_Jct_0" function="internal">
+        <lane id=":KrishnaHospital_Jct_0_0" index="0" speed="13.89" length="14.40" shape="3292.00,3557.20 3292.00,3542.80"/>
+        <lane id=":KrishnaHospital_Jct_0_1" index="1" speed="13.89" length="14.40" shape="3295.20,3557.20 3295.20,3542.80"/>
+        <lane id=":KrishnaHospital_Jct_0_2" index="2" speed="13.89" length="14.40" shape="3298.40,3557.20 3298.40,3542.80"/>
+    </edge>
+    <edge id=":KrishnaHospital_Jct_3" function="internal">
+        <lane id=":KrishnaHospital_Jct_3_0" index="0" speed="9.32" length="3.03" shape="3298.40,3557.20 3299.13,3554.26"/>
+    </edge>
+    <edge id=":KrishnaHospital_Jct_11" function="internal">
+        <lane id=":KrishnaHospital_Jct_11_0" index="0" speed="9.32" length="16.60" shape="3299.13,3554.26 3299.35,3553.35 3302.20,3550.60 3306.95,3548.95 3313.60,3548.40"/>
+    </edge>
+    <edge id=":KrishnaHospital_Jct_4" function="internal">
+        <lane id=":KrishnaHospital_Jct_4_0" index="0" speed="6.51" length="9.03" shape="3313.60,3551.60 3311.15,3551.95 3309.40,3553.00 3308.35,3554.75 3308.00,3557.20"/>
+    </edge>
+    <edge id=":KrishnaHospital_Jct_5" function="internal">
+        <lane id=":KrishnaHospital_Jct_5_0" index="0" speed="9.94" length="22.48" shape="3313.60,3551.60 3305.55,3551.05 3299.80,3549.40 3296.35,3546.65 3295.20,3542.80"/>
+        <lane id=":KrishnaHospital_Jct_5_1" index="1" speed="9.32" length="19.63" shape="3313.60,3551.60 3306.95,3551.05 3302.20,3549.40 3299.35,3546.65 3298.40,3542.80"/>
+    </edge>
+    <edge id=":KrishnaHospital_Jct_7" function="internal">
+        <lane id=":KrishnaHospital_Jct_7_0" index="0" speed="6.51" length="9.03" shape="3308.00,3542.80 3308.35,3545.25 3309.40,3547.00 3311.15,3548.05 3313.60,3548.40"/>
+    </edge>
+    <edge id=":KrishnaHospital_Jct_8" function="internal">
+        <lane id=":KrishnaHospital_Jct_8_0" index="0" speed="13.89" length="14.40" shape="3308.00,3542.80 3308.00,3557.20"/>
+        <lane id=":KrishnaHospital_Jct_8_1" index="1" speed="13.89" length="14.40" shape="3304.80,3542.80 3304.80,3557.20"/>
+        <lane id=":KrishnaHospital_Jct_8_2" index="2" speed="13.89" length="14.40" shape="3301.60,3542.80 3301.60,3557.20"/>
+    </edge>
+    <edge id=":Kusumkhera_0" function="internal">
+        <lane id=":Kusumkhera_0_0" index="0" speed="15.28" length="21.79" shape="1014.73,2408.00 992.95,2408.00"/>
+        <lane id=":Kusumkhera_0_1" index="1" speed="15.28" length="21.79" shape="1014.73,2404.80 992.95,2404.80"/>
+        <lane id=":Kusumkhera_0_2" index="2" speed="15.28" length="21.79" shape="1014.73,2401.60 992.95,2401.60"/>
+    </edge>
+    <edge id=":Kusumkhera_3" function="internal">
+        <lane id=":Kusumkhera_3_0" index="0" speed="9.45" length="4.53" shape="1014.73,2401.60 1010.26,2400.89"/>
+    </edge>
+    <edge id=":Kusumkhera_11" function="internal">
+        <lane id=":Kusumkhera_11_0" index="0" speed="9.45" length="21.58" shape="1010.26,2400.89 1007.70,2400.48 1003.70,2397.13 1002.73,2391.54 1004.79,2383.71"/>
+    </edge>
+    <edge id=":Kusumkhera_4" function="internal">
+        <lane id=":Kusumkhera_4_0" index="0" speed="5.84" length="9.13" shape="1010.73,2386.09 1010.10,2388.68 1010.55,2390.52 1012.10,2391.63 1014.73,2392.00"/>
+    </edge>
+    <edge id=":Kusumkhera_5" function="internal">
+        <lane id=":Kusumkhera_5_0" index="0" speed="12.52" length="25.74" shape="1007.76,2384.90 1003.85,2393.61 1000.08,2399.83 996.44,2403.56 992.95,2404.80"/>
+        <lane id=":Kusumkhera_5_1" index="1" speed="11.97" length="23.45" shape="1007.76,2384.90 1004.33,2392.21 1000.72,2397.43 996.92,2400.56 992.95,2401.60"/>
+    </edge>
+    <edge id=":Kusumkhera_7" function="internal">
+        <lane id=":Kusumkhera_7_0" index="0" speed="9.24" length="13.68" shape="992.95,2392.00 995.41,2391.41 997.71,2389.63 999.84,2386.67 1001.82,2382.53"/>
+    </edge>
+    <edge id=":Kusumkhera_8" function="internal">
+        <lane id=":Kusumkhera_8_0" index="0" speed="15.28" length="21.79" shape="992.95,2392.00 1014.73,2392.00"/>
+        <lane id=":Kusumkhera_8_1" index="1" speed="15.28" length="21.79" shape="992.95,2395.20 1014.73,2395.20"/>
+        <lane id=":Kusumkhera_8_2" index="2" speed="15.28" length="21.79" shape="992.95,2398.40 1014.73,2398.40"/>
+    </edge>
+    <edge id=":Mandi_Chauraha_0" function="internal">
+        <lane id=":Mandi_Chauraha_0_0" index="0" speed="5.50" length="10.90" shape="1995.20,1626.32 1994.88,1622.63 1993.93,1621.16 1992.34,1621.90 1990.12,1624.86"/>
+    </edge>
+    <edge id=":Mandi_Chauraha_1" function="internal">
+        <lane id=":Mandi_Chauraha_1_0" index="0" speed="12.50" length="27.03" shape="1995.20,1626.32 1995.20,1599.28"/>
+        <lane id=":Mandi_Chauraha_1_1" index="1" speed="12.50" length="27.03" shape="1998.40,1626.32 1998.40,1599.28"/>
+    </edge>
+    <edge id=":Mandi_Chauraha_3" function="internal">
+        <lane id=":Mandi_Chauraha_3_0" index="0" speed="12.50" length="27.27" shape="2008.00,1599.28 2007.50,1607.84 2006.40,1614.15 2005.30,1619.79 2004.80,1626.32"/>
+        <lane id=":Mandi_Chauraha_3_1" index="1" speed="12.50" length="27.27" shape="2004.80,1599.28 2004.30,1607.84 2003.20,1614.15 2002.10,1619.79 2001.60,1626.32"/>
+    </edge>
+    <edge id=":Mandi_Chauraha_5" function="internal">
+        <lane id=":Mandi_Chauraha_5_0" index="0" speed="11.95" length="4.13" shape="2001.60,1599.28 2000.89,1603.36"/>
+    </edge>
+    <edge id=":Mandi_Chauraha_9" function="internal">
+        <lane id=":Mandi_Chauraha_9_0" index="0" speed="11.95" length="24.50" shape="2000.89,1603.36 2000.13,1607.68 1996.49,1613.25 1991.86,1617.81 1987.41,1623.16"/>
+    </edge>
+    <edge id=":Mandi_Chauraha_6" function="internal">
+        <lane id=":Mandi_Chauraha_6_0" index="0" speed="11.95" length="24.29" shape="1981.98,1619.77 1985.78,1614.60 1988.98,1610.62 1991.18,1606.10 1992.00,1599.28"/>
+        <lane id=":Mandi_Chauraha_6_1" index="1" speed="11.95" length="24.29" shape="1984.70,1621.47 1988.57,1616.15 1991.94,1611.80 1994.30,1606.74 1995.20,1599.28"/>
+    </edge>
+    <edge id=":Mandi_Chauraha_8" function="internal">
+        <lane id=":Mandi_Chauraha_8_0" index="0" speed="7.80" length="23.83" shape="1984.70,1621.47 1989.52,1617.36 1995.09,1617.12 1999.69,1620.27 2001.60,1626.32"/>
+    </edge>
+    <edge id=":Mukhani_0" function="internal">
+        <lane id=":Mukhani_0_0" index="0" speed="6.51" length="9.03" shape="1995.20,2413.60 1994.85,2411.15 1993.80,2409.40 1992.05,2408.35 1989.60,2408.00"/>
+    </edge>
+    <edge id=":Mukhani_1" function="internal">
+        <lane id=":Mukhani_1_0" index="0" speed="11.11" length="27.20" shape="1995.20,2413.60 1995.20,2386.40"/>
+        <lane id=":Mukhani_1_1" index="1" speed="11.11" length="27.20" shape="1998.40,2413.60 1998.40,2386.40"/>
+    </edge>
+    <edge id=":Mukhani_3" function="internal">
+        <lane id=":Mukhani_3_0" index="0" speed="9.84" length="6.30" shape="1998.40,2413.60 1999.11,2407.34"/>
+    </edge>
+    <edge id=":Mukhani_18" function="internal">
+        <lane id=":Mukhani_18_0" index="0" speed="9.84" length="15.70" shape="1999.11,2407.34 1999.15,2406.95 2001.40,2402.20 2005.15,2399.35 2010.40,2398.40"/>
+    </edge>
+    <edge id=":Mukhani_4" function="internal">
+        <lane id=":Mukhani_4_0" index="0" speed="6.51" length="9.03" shape="2010.40,2408.00 2007.95,2408.35 2006.20,2409.40 2005.15,2411.15 2004.80,2413.60"/>
+    </edge>
+    <edge id=":Mukhani_5" function="internal">
+        <lane id=":Mukhani_5_0" index="0" speed="13.89" length="20.80" shape="2010.40,2408.00 1989.60,2408.00"/>
+        <lane id=":Mukhani_5_1" index="1" speed="13.89" length="20.80" shape="2010.40,2404.80 1989.60,2404.80"/>
+        <lane id=":Mukhani_5_2" index="2" speed="13.89" length="20.80" shape="2010.40,2401.60 1989.60,2401.60"/>
+    </edge>
+    <edge id=":Mukhani_8" function="internal">
+        <lane id=":Mukhani_8_0" index="0" speed="9.84" length="4.01" shape="2010.40,2401.60 2006.45,2400.89"/>
+    </edge>
+    <edge id=":Mukhani_19" function="internal">
+        <lane id=":Mukhani_19_0" index="0" speed="9.84" length="17.98" shape="2006.45,2400.89 2005.15,2400.65 2001.40,2397.80 1999.15,2393.05 1998.40,2386.40"/>
+    </edge>
+    <edge id=":Mukhani_9" function="internal">
+        <lane id=":Mukhani_9_0" index="0" speed="6.51" length="9.03" shape="2004.80,2386.40 2005.15,2388.85 2006.20,2390.60 2007.95,2391.65 2010.40,2392.00"/>
+    </edge>
+    <edge id=":Mukhani_10" function="internal">
+        <lane id=":Mukhani_10_0" index="0" speed="11.11" length="27.20" shape="2004.80,2386.40 2004.80,2413.60"/>
+        <lane id=":Mukhani_10_1" index="1" speed="11.11" length="27.20" shape="2001.60,2386.40 2001.60,2413.60"/>
+    </edge>
+    <edge id=":Mukhani_12" function="internal">
+        <lane id=":Mukhani_12_0" index="0" speed="9.84" length="6.30" shape="2001.60,2386.40 2000.89,2392.66"/>
+    </edge>
+    <edge id=":Mukhani_20" function="internal">
+        <lane id=":Mukhani_20_0" index="0" speed="9.84" length="15.70" shape="2000.89,2392.66 2000.85,2393.05 1998.60,2397.80 1994.85,2400.65 1989.60,2401.60"/>
+    </edge>
+    <edge id=":Mukhani_13" function="internal">
+        <lane id=":Mukhani_13_0" index="0" speed="6.51" length="9.03" shape="1989.60,2392.00 1992.05,2391.65 1993.80,2390.60 1994.85,2388.85 1995.20,2386.40"/>
+    </edge>
+    <edge id=":Mukhani_14" function="internal">
+        <lane id=":Mukhani_14_0" index="0" speed="13.89" length="20.80" shape="1989.60,2392.00 2010.40,2392.00"/>
+        <lane id=":Mukhani_14_1" index="1" speed="13.89" length="20.80" shape="1989.60,2395.20 2010.40,2395.20"/>
+        <lane id=":Mukhani_14_2" index="2" speed="13.89" length="20.80" shape="1989.60,2398.40 2010.40,2398.40"/>
+    </edge>
+    <edge id=":Mukhani_17" function="internal">
+        <lane id=":Mukhani_17_0" index="0" speed="9.84" length="4.01" shape="1989.60,2398.40 1993.55,2399.11"/>
+    </edge>
+    <edge id=":Mukhani_21" function="internal">
+        <lane id=":Mukhani_21_0" index="0" speed="9.84" length="17.98" shape="1993.55,2399.11 1994.85,2399.35 1998.60,2402.20 2000.85,2406.95 2001.60,2413.60"/>
+    </edge>
+    <edge id=":PatelChowk_0" function="internal">
+        <lane id=":PatelChowk_0_0" index="0" speed="11.11" length="8.81" shape="3292.00,1704.00 3292.50,1701.54 3293.60,1700.00 3294.70,1698.46 3295.20,1696.00"/>
+        <lane id=":PatelChowk_0_1" index="1" speed="11.11" length="8.81" shape="3295.20,1704.00 3295.70,1701.54 3296.80,1700.00 3297.90,1698.46 3298.40,1696.00"/>
+    </edge>
+    <edge id=":PatelChowk_2" function="internal">
+        <lane id=":PatelChowk_2_0" index="0" speed="11.11" length="8.54" shape="3304.80,1696.00 3305.30,1698.46 3306.40,1700.00 3307.50,1701.54 3308.00,1704.00"/>
+        <lane id=":PatelChowk_2_1" index="1" speed="11.11" length="8.54" shape="3301.60,1696.00 3302.10,1698.46 3303.20,1700.00 3304.30,1701.54 3304.80,1704.00"/>
+        <lane id=":PatelChowk_2_2" index="2" speed="11.11" length="8.54" shape="3301.60,1696.00 3301.60,1704.00"/>
+    </edge>
+    <edge id=":RailwayStation_Jct_0" function="internal">
+        <lane id=":RailwayStation_Jct_0_0" index="0" speed="12.50" length="0.10" shape="3295.20,1200.00 3295.20,1200.00"/>
+        <lane id=":RailwayStation_Jct_0_1" index="1" speed="12.50" length="0.10" shape="3298.40,1200.00 3298.40,1200.00"/>
+    </edge>
+    <edge id=":RailwayStation_Jct_2" function="internal">
+        <lane id=":RailwayStation_Jct_2_0" index="0" speed="12.50" length="0.10" shape="3304.80,1200.00 3304.80,1200.00"/>
+        <lane id=":RailwayStation_Jct_2_1" index="1" speed="12.50" length="0.10" shape="3301.60,1200.00 3301.60,1200.00"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_0" function="internal">
+        <lane id=":STH_Hospital_Jct_0_0" index="0" speed="5.46" length="10.33" shape="1992.00,627.47 1991.67,624.06 1990.68,622.63 1989.03,623.18 1986.72,625.71"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_1" function="internal">
+        <lane id=":STH_Hospital_Jct_1_0" index="0" speed="15.28" length="34.67" shape="1992.00,627.47 1992.00,592.80"/>
+        <lane id=":STH_Hospital_Jct_1_1" index="1" speed="15.28" length="34.67" shape="1995.20,627.47 1995.20,592.80"/>
+        <lane id=":STH_Hospital_Jct_1_2" index="2" speed="15.28" length="34.67" shape="1998.40,627.47 1998.40,592.80"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_4" function="internal">
+        <lane id=":STH_Hospital_Jct_4_0" index="0" speed="11.11" length="9.43" shape="1998.40,627.47 1999.10,618.06"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_17" function="internal">
+        <lane id=":STH_Hospital_Jct_17_0" index="0" speed="11.11" length="26.97" shape="1999.10,618.06 1999.35,614.75 2002.20,605.67 2006.95,600.22 2013.60,598.40"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_5" function="internal">
+        <lane id=":STH_Hospital_Jct_5_0" index="0" speed="10.96" length="27.56" shape="2013.60,601.60 2011.15,603.22 2009.40,608.07 2008.35,616.15 2008.00,627.47"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_6" function="internal">
+        <lane id=":STH_Hospital_Jct_6_0" index="0" speed="9.72" length="37.95" shape="2013.60,601.60 2006.96,602.99 1999.84,607.15 1992.24,614.08 1984.16,623.79"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_7" function="internal">
+        <lane id=":STH_Hospital_Jct_7_0" index="0" speed="9.32" length="2.45" shape="2013.60,601.60 2011.16,601.40"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_18" function="internal">
+        <lane id=":STH_Hospital_Jct_18_0" index="0" speed="9.32" length="17.17" shape="2011.16,601.40 2006.95,601.05 2002.20,599.40 1999.35,596.65 1998.40,592.80"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_8" function="internal">
+        <lane id=":STH_Hospital_Jct_8_0" index="0" speed="6.51" length="9.03" shape="2008.00,592.80 2008.35,595.25 2009.40,597.00 2011.15,598.05 2013.60,598.40"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_9" function="internal">
+        <lane id=":STH_Hospital_Jct_9_0" index="0" speed="15.28" length="34.67" shape="2008.00,592.80 2008.00,627.47"/>
+        <lane id=":STH_Hospital_Jct_9_1" index="1" speed="15.28" length="34.67" shape="2004.80,592.80 2004.80,627.47"/>
+        <lane id=":STH_Hospital_Jct_9_2" index="2" speed="15.28" length="34.67" shape="2001.60,592.80 2001.60,627.47"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_12" function="internal">
+        <lane id=":STH_Hospital_Jct_12_0" index="0" speed="13.89" length="3.89" shape="2001.60,592.80 2000.88,596.62"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_19" function="internal">
+        <lane id=":STH_Hospital_Jct_19_0" index="0" speed="13.89" length="32.53" shape="2000.88,596.62 1999.72,602.84 1995.13,610.92 1989.42,617.68 1984.16,623.79"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_13" function="internal">
+        <lane id=":STH_Hospital_Jct_13_0" index="0" speed="13.89" length="31.91" shape="1979.04,619.95 1983.60,614.44 1987.77,609.00 1990.82,602.24 1992.00,592.80"/>
+        <lane id=":STH_Hospital_Jct_13_1" index="1" speed="13.89" length="31.91" shape="1981.60,621.87 1986.26,616.06 1990.65,609.96 1993.92,602.54 1995.20,592.80"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_15" function="internal">
+        <lane id=":STH_Hospital_Jct_15_0" index="0" speed="9.72" length="40.89" shape="1981.60,621.87 1990.20,611.60 1998.40,604.27 2006.20,599.87 2013.60,598.40"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_16" function="internal">
+        <lane id=":STH_Hospital_Jct_16_0" index="0" speed="8.54" length="3.26" shape="1981.60,621.87 1984.19,619.88"/>
+    </edge>
+    <edge id=":STH_Hospital_Jct_20" function="internal">
+        <lane id=":STH_Hospital_Jct_20_0" index="0" speed="8.54" length="24.62" shape="1984.19,619.88 1987.65,617.22 1994.20,616.88 1999.45,620.43 2001.60,627.47"/>
+    </edge>
+    <edge id=":Sheeshmahal_0" function="internal">
+        <lane id=":Sheeshmahal_0_0" index="0" speed="13.89" length="0.10" shape="3292.00,3900.00 3292.00,3900.00"/>
+        <lane id=":Sheeshmahal_0_1" index="1" speed="13.89" length="0.10" shape="3295.20,3900.00 3295.20,3900.00"/>
+        <lane id=":Sheeshmahal_0_2" index="2" speed="13.89" length="0.10" shape="3298.40,3900.00 3298.40,3900.00"/>
+    </edge>
+    <edge id=":Sheeshmahal_3" function="internal">
+        <lane id=":Sheeshmahal_3_0" index="0" speed="13.89" length="0.10" shape="3308.00,3900.00 3308.00,3900.00"/>
+        <lane id=":Sheeshmahal_3_1" index="1" speed="13.89" length="0.10" shape="3304.80,3900.00 3304.80,3900.00"/>
+        <lane id=":Sheeshmahal_3_2" index="2" speed="13.89" length="0.10" shape="3301.60,3900.00 3301.60,3900.00"/>
+    </edge>
+    <edge id=":Teenpani_Jct_0" function="internal">
+        <lane id=":Teenpani_Jct_0_0" index="0" speed="5.96" length="9.09" shape="3295.20,712.67 3294.83,710.08 3293.73,708.49 3291.88,707.90 3289.31,708.31"/>
+    </edge>
+    <edge id=":Teenpani_Jct_1" function="internal">
+        <lane id=":Teenpani_Jct_1_0" index="0" speed="15.28" length="20.63" shape="3295.20,712.67 3294.70,706.71 3293.60,702.58 3292.50,698.40 3292.00,692.26"/>
+        <lane id=":Teenpani_Jct_1_1" index="1" speed="15.28" length="20.63" shape="3298.40,712.67 3297.90,706.71 3296.80,702.58 3295.70,698.40 3295.20,692.26"/>
+        <lane id=":Teenpani_Jct_1_2" index="2" speed="15.28" length="20.63" shape="3298.40,712.67 3298.40,692.26"/>
+    </edge>
+    <edge id=":Teenpani_Jct_4" function="internal">
+        <lane id=":Teenpani_Jct_4_0" index="0" speed="15.28" length="20.74" shape="3308.00,692.26 3307.50,698.40 3306.40,702.58 3305.30,706.71 3304.80,712.67"/>
+        <lane id=":Teenpani_Jct_4_1" index="1" speed="15.28" length="20.74" shape="3304.80,692.26 3304.30,698.40 3303.20,702.58 3302.10,706.71 3301.60,712.67"/>
+    </edge>
+    <edge id=":Teenpani_Jct_6" function="internal">
+        <lane id=":Teenpani_Jct_6_0" index="0" speed="10.62" length="3.68" shape="3301.60,692.26 3300.88,695.86"/>
+    </edge>
+    <edge id=":Teenpani_Jct_10" function="internal">
+        <lane id=":Teenpani_Jct_10_0" index="0" speed="10.62" length="16.22" shape="3300.88,695.86 3300.77,696.42 3298.29,699.97 3294.16,702.91 3288.37,705.25"/>
+    </edge>
+    <edge id=":Teenpani_Jct_7" function="internal">
+        <lane id=":Teenpani_Jct_7_0" index="0" speed="7.50" length="9.52" shape="3286.48,699.14 3288.90,698.07 3290.62,696.57 3291.66,694.63 3292.00,692.26"/>
+        <lane id=":Teenpani_Jct_7_1" index="1" speed="8.86" length="13.63" shape="3287.42,702.20 3290.83,700.68 3293.26,698.51 3294.71,695.71 3295.20,692.26"/>
+    </edge>
+    <edge id=":Teenpani_Jct_9" function="internal">
+        <lane id=":Teenpani_Jct_9_0" index="0" speed="8.90" length="21.86" shape="3287.42,702.20 3293.63,701.21 3298.06,702.63 3300.71,706.45 3301.60,712.67"/>
+    </edge>
+    <edge id=":Tikonia_0" function="internal">
+        <lane id=":Tikonia_0_0" index="0" speed="7.11" length="11.00" shape="3292.00,2415.96 3291.65,2412.47 3290.60,2409.99 3288.85,2408.50 3286.40,2408.00"/>
+    </edge>
+    <edge id=":Tikonia_1" function="internal">
+        <lane id=":Tikonia_1_0" index="0" speed="12.50" length="29.56" shape="3292.00,2415.96 3292.00,2386.40"/>
+        <lane id=":Tikonia_1_1" index="1" speed="12.50" length="29.56" shape="3295.20,2415.96 3295.20,2386.40"/>
+        <lane id=":Tikonia_1_2" index="2" speed="12.50" length="29.56" shape="3298.40,2415.96 3298.40,2386.40"/>
+    </edge>
+    <edge id=":Tikonia_4" function="internal">
+        <lane id=":Tikonia_4_0" index="0" speed="9.24" length="3.60" shape="3298.40,2415.96 3299.12,2412.43"/>
+    </edge>
+    <edge id=":Tikonia_19" function="internal">
+        <lane id=":Tikonia_19_0" index="0" speed="9.24" length="22.50" shape="3299.12,2412.43 3299.83,2408.94 3303.74,2405.06 3309.57,2404.28 3316.76,2406.59"/>
+    </edge>
+    <edge id=":Tikonia_5" function="internal">
+        <lane id=":Tikonia_5_0" index="0" speed="5.74" length="9.18" shape="3313.89,2412.31 3311.31,2411.44 3309.47,2411.75 3308.37,2413.26 3308.00,2415.96"/>
+    </edge>
+    <edge id=":Tikonia_6" function="internal">
+        <lane id=":Tikonia_6_0" index="0" speed="12.50" length="29.38" shape="3313.89,2412.31 3307.78,2409.75 3302.01,2408.48 3295.31,2408.05 3286.40,2408.00"/>
+        <lane id=":Tikonia_6_1" index="1" speed="12.50" length="29.38" shape="3315.32,2409.45 3309.09,2406.84 3303.00,2405.45 3295.84,2404.90 3286.40,2404.80"/>
+        <lane id=":Tikonia_6_2" index="2" speed="12.50" length="29.38" shape="3315.32,2409.45 3309.14,2406.34 3303.13,2403.85 3295.98,2402.20 3286.40,2401.60"/>
+    </edge>
+    <edge id=":Tikonia_9" function="internal">
+        <lane id=":Tikonia_9_0" index="0" speed="11.11" length="9.98" shape="3315.32,2409.45 3307.92,2404.84 3307.04,2403.94"/>
+    </edge>
+    <edge id=":Tikonia_20" function="internal">
+        <lane id=":Tikonia_20_0" index="0" speed="11.11" length="20.20" shape="3307.04,2403.94 3302.63,2399.46 3299.46,2393.31 3298.40,2386.40"/>
+    </edge>
+    <edge id=":Tikonia_10" function="internal">
+        <lane id=":Tikonia_10_0" index="0" speed="11.11" length="21.24" shape="3308.00,2386.40 3308.64,2392.07 3310.55,2396.85 3313.73,2400.73 3318.19,2403.73"/>
+    </edge>
+    <edge id=":Tikonia_11" function="internal">
+        <lane id=":Tikonia_11_0" index="0" speed="12.50" length="29.56" shape="3308.00,2386.40 3308.00,2415.96"/>
+        <lane id=":Tikonia_11_1" index="1" speed="12.50" length="29.56" shape="3304.80,2386.40 3304.80,2415.96"/>
+        <lane id=":Tikonia_11_2" index="2" speed="12.50" length="29.56" shape="3301.60,2386.40 3301.60,2415.96"/>
+    </edge>
+    <edge id=":Tikonia_14" function="internal">
+        <lane id=":Tikonia_14_0" index="0" speed="10.36" length="5.01" shape="3301.60,2386.40 3300.89,2391.36"/>
+    </edge>
+    <edge id=":Tikonia_21" function="internal">
+        <lane id=":Tikonia_21_0" index="0" speed="10.36" length="19.50" shape="3300.89,2391.36 3300.65,2393.05 3297.80,2397.80 3293.05,2400.65 3286.40,2401.60"/>
+    </edge>
+    <edge id=":Tikonia_15" function="internal">
+        <lane id=":Tikonia_15_0" index="0" speed="6.51" length="9.03" shape="3286.40,2392.00 3288.85,2391.65 3290.60,2390.60 3291.65,2388.85 3292.00,2386.40"/>
+    </edge>
+    <edge id=":Tikonia_16" function="internal">
+        <lane id=":Tikonia_16_0" index="0" speed="12.50" length="33.62" shape="3286.40,2392.00 3296.44,2393.20 3304.56,2396.19 3311.56,2400.01 3318.19,2403.73"/>
+        <lane id=":Tikonia_16_1" index="1" speed="12.50" length="33.62" shape="3286.40,2395.20 3296.21,2396.35 3303.85,2399.22 3310.35,2402.92 3316.76,2406.59"/>
+    </edge>
+    <edge id=":Tikonia_18" function="internal">
+        <lane id=":Tikonia_18_0" index="0" speed="10.75" length="6.61" shape="3286.40,2398.40 3292.92,2399.48"/>
+    </edge>
+    <edge id=":Tikonia_22" function="internal">
+        <lane id=":Tikonia_22_0" index="0" speed="10.75" length="19.83" shape="3292.92,2399.48 3293.05,2399.50 3297.80,2402.79 3300.65,2408.27 3301.60,2415.96"/>
+    </edge>
+    <edge id=":TransportNagar_0" function="internal">
+        <lane id=":TransportNagar_0_0" index="0" speed="5.74" length="9.18" shape="1992.00,1115.96 1991.63,1113.26 1990.53,1111.75 1988.69,1111.44 1986.11,1112.31"/>
+    </edge>
+    <edge id=":TransportNagar_1" function="internal">
+        <lane id=":TransportNagar_1_0" index="0" speed="13.89" length="29.61" shape="1992.00,1115.96 1992.00,1086.35"/>
+        <lane id=":TransportNagar_1_1" index="1" speed="13.89" length="29.61" shape="1995.20,1115.96 1995.20,1086.35"/>
+        <lane id=":TransportNagar_1_2" index="2" speed="13.89" length="29.61" shape="1998.40,1115.96 1998.40,1086.35"/>
+    </edge>
+    <edge id=":TransportNagar_4" function="internal">
+        <lane id=":TransportNagar_4_0" index="0" speed="12.91" length="5.43" shape="1998.40,1115.96 1999.11,1110.57"/>
+    </edge>
+    <edge id=":TransportNagar_18" function="internal">
+        <lane id=":TransportNagar_18_0" index="0" speed="12.91" length="24.40" shape="1999.11,1110.57 1999.43,1108.14 2002.51,1101.84 2007.64,1097.04 2014.83,1093.76"/>
+    </edge>
+    <edge id=":TransportNagar_5" function="internal">
+        <lane id=":TransportNagar_5_0" index="0" speed="10.55" length="19.65" shape="2016.72,1099.88 2012.90,1101.89 2010.18,1105.24 2008.54,1109.93 2008.00,1115.96"/>
+    </edge>
+    <edge id=":TransportNagar_6" function="internal">
+        <lane id=":TransportNagar_6_0" index="0" speed="12.50" length="33.33" shape="2016.72,1099.88 2009.16,1102.43 2001.18,1105.52 1993.32,1108.90 1986.11,1112.31"/>
+        <lane id=":TransportNagar_6_1" index="1" speed="12.50" length="33.33" shape="2015.78,1096.82 2008.14,1099.41 2000.00,1102.56 1991.96,1106.00 1984.68,1109.45"/>
+    </edge>
+    <edge id=":TransportNagar_8" function="internal">
+        <lane id=":TransportNagar_8_0" index="0" speed="9.50" length="25.09" shape="2015.78,1096.82 2008.17,1098.17 2002.74,1096.88 1999.49,1092.94 1998.40,1086.35"/>
+    </edge>
+    <edge id=":TransportNagar_9" function="internal">
+        <lane id=":TransportNagar_9_0" index="0" speed="5.96" length="9.09" shape="2008.00,1086.35 2008.37,1088.93 2009.47,1090.52 2011.32,1091.11 2013.89,1090.70"/>
+    </edge>
+    <edge id=":TransportNagar_10" function="internal">
+        <lane id=":TransportNagar_10_0" index="0" speed="13.89" length="29.61" shape="2008.00,1086.35 2008.00,1115.96"/>
+        <lane id=":TransportNagar_10_1" index="1" speed="13.89" length="29.61" shape="2004.80,1086.35 2004.80,1115.96"/>
+        <lane id=":TransportNagar_10_2" index="2" speed="13.89" length="29.61" shape="2001.60,1086.35 2001.60,1115.96"/>
+    </edge>
+    <edge id=":TransportNagar_13" function="internal">
+        <lane id=":TransportNagar_13_0" index="0" speed="12.50" length="4.71" shape="2001.60,1086.35 2000.89,1091.01"/>
+    </edge>
+    <edge id=":TransportNagar_19" function="internal">
+        <lane id=":TransportNagar_19_0" index="0" speed="12.50" length="25.51" shape="2000.89,1091.01 2000.54,1093.28 1997.37,1099.44 1992.08,1104.83 1984.68,1109.45"/>
+    </edge>
+    <edge id=":TransportNagar_14" function="internal">
+        <lane id=":TransportNagar_14_0" index="0" speed="11.95" length="21.29" shape="1981.81,1103.73 1986.27,1100.73 1989.45,1096.84 1991.36,1092.04 1992.00,1086.35"/>
+    </edge>
+    <edge id=":TransportNagar_15" function="internal">
+        <lane id=":TransportNagar_15_0" index="0" speed="12.50" length="34.39" shape="1981.81,1103.73 1989.26,1100.22 1997.62,1096.64 2006.11,1093.35 2013.89,1090.70"/>
+        <lane id=":TransportNagar_15_1" index="1" speed="12.50" length="34.39" shape="1983.24,1106.59 1990.61,1103.11 1998.81,1099.60 2007.12,1096.38 2014.83,1093.76"/>
+    </edge>
+    <edge id=":TransportNagar_17" function="internal">
+        <lane id=":TransportNagar_17_0" index="0" speed="9.24" length="26.10" shape="1983.24,1106.59 1990.43,1104.28 1996.26,1105.06 2000.17,1108.94 2001.60,1115.96"/>
+    </edge>
+    <edge id=":Unchapul_Jct_0" function="internal">
+        <lane id=":Unchapul_Jct_0_0" index="0" speed="13.89" length="23.09" shape="1517.55,2408.00 1494.45,2408.00"/>
+        <lane id=":Unchapul_Jct_0_1" index="1" speed="13.89" length="23.09" shape="1517.55,2404.80 1494.45,2404.80"/>
+        <lane id=":Unchapul_Jct_0_2" index="2" speed="13.89" length="23.09" shape="1517.55,2401.60 1494.45,2401.60"/>
+    </edge>
+    <edge id=":Unchapul_Jct_3" function="internal">
+        <lane id=":Unchapul_Jct_3_0" index="0" speed="9.10" length="3.33" shape="1517.55,2401.60 1514.30,2400.88"/>
+    </edge>
+    <edge id=":Unchapul_Jct_11" function="internal">
+        <lane id=":Unchapul_Jct_11_0" index="0" speed="9.10" length="23.27" shape="1514.30,2400.88 1510.48,2400.03 1506.61,2395.85 1506.04,2389.83 1508.88,2382.77"/>
+    </edge>
+    <edge id=":Unchapul_Jct_4" function="internal">
+        <lane id=":Unchapul_Jct_4_0" index="0" speed="5.63" length="9.28" shape="1514.31,2386.16 1513.14,2388.72 1513.29,2390.54 1514.76,2391.64 1517.55,2392.00"/>
+    </edge>
+    <edge id=":Unchapul_Jct_5" function="internal">
+        <lane id=":Unchapul_Jct_5_0" index="0" speed="11.95" length="26.98" shape="1511.60,2384.46 1505.76,2393.36 1500.96,2399.72 1497.19,2403.53 1494.45,2404.80"/>
+        <lane id=":Unchapul_Jct_5_1" index="1" speed="11.95" length="24.88" shape="1511.60,2384.46 1506.51,2391.96 1501.96,2397.32 1497.94,2400.53 1494.45,2401.60"/>
+    </edge>
+    <edge id=":Unchapul_Jct_7" function="internal">
+        <lane id=":Unchapul_Jct_7_0" index="0" speed="11.20" length="16.51" shape="1494.45,2392.00 1497.02,2391.32 1499.83,2389.27 1502.88,2385.85 1506.17,2381.07"/>
+    </edge>
+    <edge id=":Unchapul_Jct_8" function="internal">
+        <lane id=":Unchapul_Jct_8_0" index="0" speed="13.89" length="23.09" shape="1494.45,2392.00 1517.55,2392.00"/>
+        <lane id=":Unchapul_Jct_8_1" index="1" speed="13.89" length="23.09" shape="1494.45,2395.20 1517.55,2395.20"/>
+        <lane id=":Unchapul_Jct_8_2" index="2" speed="13.89" length="23.09" shape="1494.45,2398.40 1517.55,2398.40"/>
+    </edge>
+
+    <edge id="Bareilly2Teen" from="Bareilly_Out" to="Teenpani_Jct" priority="5">
+        <lane id="Bareilly2Teen_0" index="0" speed="16.67" length="692.26" shape="3308.00,0.00 3308.00,692.26"/>
+        <lane id="Bareilly2Teen_1" index="1" speed="16.67" length="692.26" shape="3304.80,0.00 3304.80,692.26"/>
+        <lane id="Bareilly2Teen_2" index="2" speed="16.67" length="692.26" shape="3301.60,0.00 3301.60,692.26"/>
+    </edge>
+    <edge id="BaseHosp2Tikonia" from="BaseHospital_Jct" to="Tikonia" priority="2">
+        <lane id="BaseHosp2Tikonia_0" index="0" speed="11.11" length="429.28" shape="3697.85,2604.29 3313.89,2412.31"/>
+        <lane id="BaseHosp2Tikonia_1" index="1" speed="11.11" length="429.28" shape="3699.28,2601.43 3315.32,2409.45"/>
+    </edge>
+    <edge id="Brijlal2KathHosp" from="BrijlalHospital_Jct" to="KathgodamHospital_Jct" priority="5">
+        <lane id="Brijlal2KathHosp_0" index="0" speed="16.67" length="285.60" shape="3308.00,4257.20 3308.00,4542.80"/>
+        <lane id="Brijlal2KathHosp_1" index="1" speed="16.67" length="285.60" shape="3304.80,4257.20 3304.80,4542.80"/>
+        <lane id="Brijlal2KathHosp_2" index="2" speed="16.67" length="285.60" shape="3301.60,4257.20 3301.60,4542.80"/>
+    </edge>
+    <edge id="Brijlal2Sheesh" from="BrijlalHospital_Jct" to="Sheeshmahal" priority="5">
+        <lane id="Brijlal2Sheesh_0" index="0" speed="13.89" length="342.80" shape="3292.00,4242.80 3292.00,3900.00"/>
+        <lane id="Brijlal2Sheesh_1" index="1" speed="13.89" length="342.80" shape="3295.20,4242.80 3295.20,3900.00"/>
+        <lane id="Brijlal2Sheesh_2" index="2" speed="13.89" length="342.80" shape="3298.40,4242.80 3298.40,3900.00"/>
+    </edge>
+    <edge id="Brijlal_Gully_In" from="BrijlalHospital_Jct" to="Brijlal_Gully_End" priority="1">
+        <lane id="Brijlal_Gully_In_0" index="0" speed="8.33" length="136.40" shape="3313.60,4248.40 3450.00,4248.40"/>
+    </edge>
+    <edge id="Brijlal_Gully_Out" from="Brijlal_Gully_End" to="BrijlalHospital_Jct" priority="1">
+        <lane id="Brijlal_Gully_Out_0" index="0" speed="8.33" length="136.40" shape="3450.00,4251.60 3313.60,4251.60"/>
+    </edge>
+    <edge id="Canal2Judge" from="Canal_Mid" to="JudgeFarm" priority="2">
+        <lane id="Canal2Judge_0" index="0" speed="11.11" length="1274.87" shape="2006.40,3145.20 3281.27,3145.20"/>
+        <lane id="Canal2Judge_1" index="1" speed="11.11" length="1274.87" shape="2006.40,3148.40 3281.27,3148.40"/>
+    </edge>
+    <edge id="Canal2Mukhani" from="Canal_Mid" to="Mukhani" priority="2">
+        <lane id="Canal2Mukhani_0" index="0" speed="11.11" length="730.00" shape="1995.20,3143.60 1995.20,2413.60"/>
+        <lane id="Canal2Mukhani_1" index="1" speed="11.11" length="730.00" shape="1998.40,3143.60 1998.40,2413.60"/>
+    </edge>
+    <edge id="Chhoti2Mandi" from="ChhotiMukhani" to="Mandi_Chauraha" priority="3">
+        <lane id="Chhoti2Mandi_0" index="0" speed="11.11" length="373.68" shape="1995.20,2000.00 1995.20,1626.32"/>
+        <lane id="Chhoti2Mandi_1" index="1" speed="11.11" length="373.68" shape="1998.40,2000.00 1998.40,1626.32"/>
+    </edge>
+    <edge id="Chhoti2Mukhani" from="ChhotiMukhani" to="Mukhani" priority="3">
+        <lane id="Chhoti2Mukhani_0" index="0" speed="11.11" length="386.40" shape="2004.80,2000.00 2004.80,2386.40"/>
+        <lane id="Chhoti2Mukhani_1" index="1" speed="11.11" length="386.40" shape="2001.60,2000.00 2001.60,2386.40"/>
+    </edge>
+    <edge id="Gas2Kusum" from="GasGodam_Mid" to="Kusumkhera" priority="2">
+        <lane id="Gas2Kusum_0" index="0" speed="11.11" length="1053.70" shape="1402.07,1407.76 1010.73,2386.09"/>
+        <lane id="Gas2Kusum_1" index="1" speed="11.11" length="1053.70" shape="1399.10,1406.57 1007.76,2384.90"/>
+    </edge>
+    <edge id="Gas2STH" from="GasGodam_Mid" to="STH_Hospital_Jct" priority="2">
+        <lane id="Gas2STH_0" index="0" speed="11.11" length="940.36" shape="1414.83,1372.23 1979.04,619.95"/>
+        <lane id="Gas2STH_1" index="1" speed="11.11" length="940.36" shape="1417.39,1374.15 1981.60,621.87"/>
+    </edge>
+    <edge id="Gas2TP" from="GasGodam_Mid" to="TransportNagar" priority="2">
+        <lane id="Gas2TP_0" index="0" speed="11.11" length="621.78" shape="1425.68,1381.79 1981.81,1103.73"/>
+        <lane id="Gas2TP_1" index="1" speed="11.11" length="621.78" shape="1427.11,1384.66 1983.24,1106.59"/>
+    </edge>
+    <edge id="Heera2Judge" from="HeeraNagar_Jct" to="JudgeFarm" priority="2">
+        <lane id="Heera2Judge_0" index="0" speed="11.11" length="977.88" shape="2619.27,2413.62 3286.50,3128.50"/>
+        <lane id="Heera2Judge_1" index="1" speed="11.11" length="977.88" shape="2616.93,2415.80 3284.16,3130.69"/>
+    </edge>
+    <edge id="Heera2Mukhani" from="HeeraNagar_Jct" to="Mukhani" priority="4">
+        <lane id="Heera2Mukhani_0" index="0" speed="13.89" length="585.81" shape="2596.21,2408.00 2010.40,2408.00"/>
+        <lane id="Heera2Mukhani_1" index="1" speed="13.89" length="585.81" shape="2596.21,2404.80 2010.40,2404.80"/>
+        <lane id="Heera2Mukhani_2" index="2" speed="13.89" length="585.81" shape="2596.21,2401.60 2010.40,2401.60"/>
+    </edge>
+    <edge id="Heera2Tikonia" from="HeeraNagar_Jct" to="Tikonia" priority="4">
+        <lane id="Heera2Tikonia_0" index="0" speed="13.89" length="664.69" shape="2621.71,2392.00 3286.40,2392.00"/>
+        <lane id="Heera2Tikonia_1" index="1" speed="13.89" length="664.69" shape="2621.71,2395.20 3286.40,2395.20"/>
+        <lane id="Heera2Tikonia_2" index="2" speed="13.89" length="664.69" shape="2621.71,2398.40 3286.40,2398.40"/>
+    </edge>
+    <edge id="Judge2Canal" from="JudgeFarm" to="Canal_Mid" priority="2">
+        <lane id="Judge2Canal_0" index="0" speed="11.11" length="1274.87" shape="3281.27,3154.80 2006.40,3154.80"/>
+        <lane id="Judge2Canal_1" index="1" speed="11.11" length="1274.87" shape="3281.27,3151.60 2006.40,3151.60"/>
+    </edge>
+    <edge id="Judge2Heera" from="JudgeFarm" to="HeeraNagar_Jct" priority="2">
+        <lane id="Judge2Heera_0" index="0" speed="11.11" length="977.88" shape="3279.48,3135.05 2612.26,2420.17"/>
+        <lane id="Judge2Heera_1" index="1" speed="11.11" length="977.88" shape="3281.82,3132.87 2614.60,2417.98"/>
+    </edge>
+    <edge id="Judge2Krishna" from="JudgeFarm" to="KrishnaHospital_Jct" priority="5">
+        <lane id="Judge2Krishna_0" index="0" speed="13.89" length="382.40" shape="3308.00,3160.40 3308.00,3542.80"/>
+        <lane id="Judge2Krishna_1" index="1" speed="13.89" length="382.40" shape="3304.80,3160.40 3304.80,3542.80"/>
+        <lane id="Judge2Krishna_2" index="2" speed="13.89" length="382.40" shape="3301.60,3160.40 3301.60,3542.80"/>
+    </edge>
+    <edge id="Judge2Tikonia" from="JudgeFarm" to="Tikonia" priority="5">
+        <lane id="Judge2Tikonia_0" index="0" speed="13.89" length="710.38" shape="3292.00,3126.33 3292.00,2415.96"/>
+        <lane id="Judge2Tikonia_1" index="1" speed="13.89" length="710.38" shape="3295.20,3126.33 3295.20,2415.96"/>
+        <lane id="Judge2Tikonia_2" index="2" speed="13.89" length="710.38" shape="3298.40,3126.33 3298.40,2415.96"/>
+    </edge>
+    <edge id="KW2Kusum" from="KW_Out" to="Kusumkhera" priority="4">
+        <lane id="KW2Kusum_0" index="0" speed="16.67" length="992.95" shape="0.00,2392.00 992.95,2392.00"/>
+        <lane id="KW2Kusum_1" index="1" speed="16.67" length="992.95" shape="0.00,2395.20 992.95,2395.20"/>
+        <lane id="KW2Kusum_2" index="2" speed="16.67" length="992.95" shape="0.00,2398.40 992.95,2398.40"/>
+    </edge>
+    <edge id="KathHosp2Brijlal" from="KathgodamHospital_Jct" to="BrijlalHospital_Jct" priority="5">
+        <lane id="KathHosp2Brijlal_0" index="0" speed="16.67" length="285.60" shape="3292.00,4542.80 3292.00,4257.20"/>
+        <lane id="KathHosp2Brijlal_1" index="1" speed="16.67" length="285.60" shape="3295.20,4542.80 3295.20,4257.20"/>
+        <lane id="KathHosp2Brijlal_2" index="2" speed="16.67" length="285.60" shape="3298.40,4542.80 3298.40,4257.20"/>
+    </edge>
+    <edge id="KathHosp2KathOut" from="KathgodamHospital_Jct" to="Kathgodam_Out" priority="5">
+        <lane id="KathHosp2KathOut_0" index="0" speed="16.67" length="192.80" shape="3308.00,4557.20 3308.00,4750.00"/>
+        <lane id="KathHosp2KathOut_1" index="1" speed="16.67" length="192.80" shape="3304.80,4557.20 3304.80,4750.00"/>
+        <lane id="KathHosp2KathOut_2" index="2" speed="16.67" length="192.80" shape="3301.60,4557.20 3301.60,4750.00"/>
+    </edge>
+    <edge id="KathHosp_Gully_In" from="KathgodamHospital_Jct" to="Kathgodam_Hospital_End" priority="1">
+        <lane id="KathHosp_Gully_In_0" index="0" speed="8.33" length="136.40" shape="3313.60,4548.40 3450.00,4548.40"/>
+    </edge>
+    <edge id="KathHosp_Gully_Out" from="Kathgodam_Hospital_End" to="KathgodamHospital_Jct" priority="1">
+        <lane id="KathHosp_Gully_Out_0" index="0" speed="8.33" length="136.40" shape="3450.00,4551.60 3313.60,4551.60"/>
+    </edge>
+    <edge id="KathOut2KathHosp" from="Kathgodam_Out" to="KathgodamHospital_Jct" priority="5">
+        <lane id="KathOut2KathHosp_0" index="0" speed="16.67" length="192.80" shape="3292.00,4750.00 3292.00,4557.20"/>
+        <lane id="KathOut2KathHosp_1" index="1" speed="16.67" length="192.80" shape="3295.20,4750.00 3295.20,4557.20"/>
+        <lane id="KathOut2KathHosp_2" index="2" speed="16.67" length="192.80" shape="3298.40,4750.00 3298.40,4557.20"/>
+    </edge>
+    <edge id="Krishna2Judge" from="KrishnaHospital_Jct" to="JudgeFarm" priority="5">
+        <lane id="Krishna2Judge_0" index="0" speed="13.89" length="382.40" shape="3292.00,3542.80 3292.00,3160.40"/>
+        <lane id="Krishna2Judge_1" index="1" speed="13.89" length="382.40" shape="3295.20,3542.80 3295.20,3160.40"/>
+        <lane id="Krishna2Judge_2" index="2" speed="13.89" length="382.40" shape="3298.40,3542.80 3298.40,3160.40"/>
+    </edge>
+    <edge id="Krishna2Sheesh" from="KrishnaHospital_Jct" to="Sheeshmahal" priority="5">
+        <lane id="Krishna2Sheesh_0" index="0" speed="13.89" length="342.80" shape="3308.00,3557.20 3308.00,3900.00"/>
+        <lane id="Krishna2Sheesh_1" index="1" speed="13.89" length="342.80" shape="3304.80,3557.20 3304.80,3900.00"/>
+        <lane id="Krishna2Sheesh_2" index="2" speed="13.89" length="342.80" shape="3301.60,3557.20 3301.60,3900.00"/>
+    </edge>
+    <edge id="Krishna_Gully_In" from="KrishnaHospital_Jct" to="Krishna_Gully_End" priority="1">
+        <lane id="Krishna_Gully_In_0" index="0" speed="8.33" length="136.40" shape="3313.60,3548.40 3450.00,3548.40"/>
+    </edge>
+    <edge id="Krishna_Gully_Out" from="Krishna_Gully_End" to="KrishnaHospital_Jct" priority="1">
+        <lane id="Krishna_Gully_Out_0" index="0" speed="8.33" length="136.40" shape="3450.00,3551.60 3313.60,3551.60"/>
+    </edge>
+    <edge id="Kusum2Gas" from="Kusumkhera" to="GasGodam_Mid" priority="2">
+        <lane id="Kusum2Gas_0" index="0" speed="11.11" length="1053.70" shape="1001.82,2382.53 1393.15,1404.19"/>
+        <lane id="Kusum2Gas_1" index="1" speed="11.11" length="1053.70" shape="1004.79,2383.71 1396.13,1405.38"/>
+    </edge>
+    <edge id="Kusum2KW" from="Kusumkhera" to="KW_Out" priority="4">
+        <lane id="Kusum2KW_0" index="0" speed="16.67" length="992.95" shape="992.95,2408.00 0.00,2408.00"/>
+        <lane id="Kusum2KW_1" index="1" speed="16.67" length="992.95" shape="992.95,2404.80 0.00,2404.80"/>
+        <lane id="Kusum2KW_2" index="2" speed="16.67" length="992.95" shape="992.95,2401.60 0.00,2401.60"/>
+    </edge>
+    <edge id="Kusum2Uncha" from="Kusumkhera" to="Unchapul_Jct" priority="4">
+        <lane id="Kusum2Uncha_0" index="0" speed="13.89" length="479.72" shape="1014.73,2392.00 1494.45,2392.00"/>
+        <lane id="Kusum2Uncha_1" index="1" speed="13.89" length="479.72" shape="1014.73,2395.20 1494.45,2395.20"/>
+        <lane id="Kusum2Uncha_2" index="2" speed="13.89" length="479.72" shape="1014.73,2398.40 1494.45,2398.40"/>
+    </edge>
+    <edge id="Mandi2Chhoti" from="Mandi_Chauraha" to="ChhotiMukhani" priority="3">
+        <lane id="Mandi2Chhoti_0" index="0" speed="11.11" length="373.68" shape="2004.80,1626.32 2004.80,2000.00"/>
+        <lane id="Mandi2Chhoti_1" index="1" speed="11.11" length="373.68" shape="2001.60,1626.32 2001.60,2000.00"/>
+    </edge>
+    <edge id="Mandi2TP" from="Mandi_Chauraha" to="TransportNagar" priority="4">
+        <lane id="Mandi2TP_0" index="0" speed="13.89" length="483.33" shape="1992.00,1599.28 1992.00,1115.96"/>
+        <lane id="Mandi2TP_1" index="1" speed="13.89" length="483.33" shape="1995.20,1599.28 1995.20,1115.96"/>
+        <lane id="Mandi2TP_2" index="2" speed="13.89" length="483.33" shape="1998.40,1599.28 1998.40,1115.96"/>
+    </edge>
+    <edge id="Mandi2Uncha" from="Mandi_Chauraha" to="Unchapul_Jct" priority="2">
+        <lane id="Mandi2Uncha_0" index="0" speed="10.00" length="897.76" shape="1990.12,1624.86 1514.31,2386.16"/>
+        <lane id="Mandi2Uncha_1" index="1" speed="10.00" length="897.76" shape="1987.41,1623.16 1511.60,2384.46"/>
+    </edge>
+    <edge id="Mukhani2Canal" from="Mukhani" to="Canal_Mid" priority="2">
+        <lane id="Mukhani2Canal_0" index="0" speed="11.11" length="730.00" shape="2004.80,2413.60 2004.80,3143.60"/>
+        <lane id="Mukhani2Canal_1" index="1" speed="11.11" length="730.00" shape="2001.60,2413.60 2001.60,3143.60"/>
+    </edge>
+    <edge id="Mukhani2Chhoti" from="Mukhani" to="ChhotiMukhani" priority="3">
+        <lane id="Mukhani2Chhoti_0" index="0" speed="11.11" length="386.40" shape="1995.20,2386.40 1995.20,2000.00"/>
+        <lane id="Mukhani2Chhoti_1" index="1" speed="11.11" length="386.40" shape="1998.40,2386.40 1998.40,2000.00"/>
+    </edge>
+    <edge id="Mukhani2Heera" from="Mukhani" to="HeeraNagar_Jct" priority="4">
+        <lane id="Mukhani2Heera_0" index="0" speed="13.89" length="585.81" shape="2010.40,2392.00 2596.21,2392.00"/>
+        <lane id="Mukhani2Heera_1" index="1" speed="13.89" length="585.81" shape="2010.40,2395.20 2596.21,2395.20"/>
+        <lane id="Mukhani2Heera_2" index="2" speed="13.89" length="585.81" shape="2010.40,2398.40 2596.21,2398.40"/>
+    </edge>
+    <edge id="Mukhani2Uncha" from="Mukhani" to="Unchapul_Jct" priority="4">
+        <lane id="Mukhani2Uncha_0" index="0" speed="13.89" length="472.05" shape="1989.60,2408.00 1517.55,2408.00"/>
+        <lane id="Mukhani2Uncha_1" index="1" speed="13.89" length="472.05" shape="1989.60,2404.80 1517.55,2404.80"/>
+        <lane id="Mukhani2Uncha_2" index="2" speed="13.89" length="472.05" shape="1989.60,2401.60 1517.55,2401.60"/>
+    </edge>
+    <edge id="Patel2Rail" from="PatelChowk" to="RailwayStation_Jct" priority="4">
+        <lane id="Patel2Rail_0" index="0" speed="11.11" length="496.00" shape="3295.20,1696.00 3295.20,1200.00"/>
+        <lane id="Patel2Rail_1" index="1" speed="11.11" length="496.00" shape="3298.40,1696.00 3298.40,1200.00"/>
+    </edge>
+    <edge id="Patel2Tikonia" from="PatelChowk" to="Tikonia" priority="4">
+        <lane id="Patel2Tikonia_0" index="0" speed="11.11" length="682.40" shape="3308.00,1704.00 3308.00,2386.40"/>
+        <lane id="Patel2Tikonia_1" index="1" speed="11.11" length="682.40" shape="3304.80,1704.00 3304.80,2386.40"/>
+        <lane id="Patel2Tikonia_2" index="2" speed="11.11" length="682.40" shape="3301.60,1704.00 3301.60,2386.40"/>
+    </edge>
+    <edge id="Rail2Patel" from="RailwayStation_Jct" to="PatelChowk" priority="4">
+        <lane id="Rail2Patel_0" index="0" speed="11.11" length="496.00" shape="3304.80,1200.00 3304.80,1696.00"/>
+        <lane id="Rail2Patel_1" index="1" speed="11.11" length="496.00" shape="3301.60,1200.00 3301.60,1696.00"/>
+    </edge>
+    <edge id="Rail2Teen" from="RailwayStation_Jct" to="Teenpani_Jct" priority="4">
+        <lane id="Rail2Teen_0" index="0" speed="13.89" length="487.33" shape="3295.20,1200.00 3295.20,712.67"/>
+        <lane id="Rail2Teen_1" index="1" speed="13.89" length="487.33" shape="3298.40,1200.00 3298.40,712.67"/>
+    </edge>
+    <edge id="Rampur2STH" from="Rampur_Out" to="STH_Hospital_Jct" priority="4">
+        <lane id="Rampur2STH_0" index="0" speed="16.67" length="592.80" shape="2008.00,0.00 2008.00,592.80"/>
+        <lane id="Rampur2STH_1" index="1" speed="16.67" length="592.80" shape="2004.80,0.00 2004.80,592.80"/>
+        <lane id="Rampur2STH_2" index="2" speed="16.67" length="592.80" shape="2001.60,0.00 2001.60,592.80"/>
+    </edge>
+    <edge id="STH2Gas" from="STH_Hospital_Jct" to="GasGodam_Mid" priority="2">
+        <lane id="STH2Gas_0" index="0" speed="11.11" length="940.36" shape="1986.72,625.71 1422.51,1377.99"/>
+        <lane id="STH2Gas_1" index="1" speed="11.11" length="940.36" shape="1984.16,623.79 1419.95,1376.07"/>
+    </edge>
+    <edge id="STH2Rampur" from="STH_Hospital_Jct" to="Rampur_Out" priority="4">
+        <lane id="STH2Rampur_0" index="0" speed="16.67" length="592.80" shape="1992.00,592.80 1992.00,0.00"/>
+        <lane id="STH2Rampur_1" index="1" speed="16.67" length="592.80" shape="1995.20,592.80 1995.20,0.00"/>
+        <lane id="STH2Rampur_2" index="2" speed="16.67" length="592.80" shape="1998.40,592.80 1998.40,0.00"/>
+    </edge>
+    <edge id="STH2TP" from="STH_Hospital_Jct" to="TransportNagar" priority="4">
+        <lane id="STH2TP_0" index="0" speed="13.89" length="458.88" shape="2008.00,627.47 2008.00,1086.35"/>
+        <lane id="STH2TP_1" index="1" speed="13.89" length="458.88" shape="2004.80,627.47 2004.80,1086.35"/>
+        <lane id="STH2TP_2" index="2" speed="13.89" length="458.88" shape="2001.60,627.47 2001.60,1086.35"/>
+    </edge>
+    <edge id="STH_Gully_In" from="STH_Hospital_Jct" to="STH_Gully_End" priority="1">
+        <lane id="STH_Gully_In_0" index="0" speed="8.33" length="236.40" shape="2013.60,598.40 2250.00,598.40"/>
+    </edge>
+    <edge id="STH_Gully_Out" from="STH_Gully_End" to="STH_Hospital_Jct" priority="1">
+        <lane id="STH_Gully_Out_0" index="0" speed="8.33" length="236.40" shape="2250.00,601.60 2013.60,601.60"/>
+    </edge>
+    <edge id="Sheesh2Brijlal" from="Sheeshmahal" to="BrijlalHospital_Jct" priority="5">
+        <lane id="Sheesh2Brijlal_0" index="0" speed="13.89" length="342.80" shape="3308.00,3900.00 3308.00,4242.80"/>
+        <lane id="Sheesh2Brijlal_1" index="1" speed="13.89" length="342.80" shape="3304.80,3900.00 3304.80,4242.80"/>
+        <lane id="Sheesh2Brijlal_2" index="2" speed="13.89" length="342.80" shape="3301.60,3900.00 3301.60,4242.80"/>
+    </edge>
+    <edge id="Sheesh2Krishna" from="Sheeshmahal" to="KrishnaHospital_Jct" priority="5">
+        <lane id="Sheesh2Krishna_0" index="0" speed="13.89" length="342.80" shape="3292.00,3900.00 3292.00,3557.20"/>
+        <lane id="Sheesh2Krishna_1" index="1" speed="13.89" length="342.80" shape="3295.20,3900.00 3295.20,3557.20"/>
+        <lane id="Sheesh2Krishna_2" index="2" speed="13.89" length="342.80" shape="3298.40,3900.00 3298.40,3557.20"/>
+    </edge>
+    <edge id="TP2Gas" from="TransportNagar" to="GasGodam_Mid" priority="2">
+        <lane id="TP2Gas_0" index="0" speed="11.11" length="621.78" shape="1986.11,1112.31 1429.97,1390.38"/>
+        <lane id="TP2Gas_1" index="1" speed="11.11" length="621.78" shape="1984.68,1109.45 1428.54,1387.52"/>
+    </edge>
+    <edge id="TP2Mandi" from="TransportNagar" to="Mandi_Chauraha" priority="4">
+        <lane id="TP2Mandi_0" index="0" speed="13.89" length="483.33" shape="2008.00,1115.96 2008.00,1599.28"/>
+        <lane id="TP2Mandi_1" index="1" speed="13.89" length="483.33" shape="2004.80,1115.96 2004.80,1599.28"/>
+        <lane id="TP2Mandi_2" index="2" speed="13.89" length="483.33" shape="2001.60,1115.96 2001.60,1599.28"/>
+    </edge>
+    <edge id="TP2STH" from="TransportNagar" to="STH_Hospital_Jct" priority="4">
+        <lane id="TP2STH_0" index="0" speed="13.89" length="458.88" shape="1992.00,1086.35 1992.00,627.47"/>
+        <lane id="TP2STH_1" index="1" speed="13.89" length="458.88" shape="1995.20,1086.35 1995.20,627.47"/>
+        <lane id="TP2STH_2" index="2" speed="13.89" length="458.88" shape="1998.40,1086.35 1998.40,627.47"/>
+    </edge>
+    <edge id="TP2Teenpani" from="TransportNagar" to="Teenpani_Jct" priority="3">
+        <lane id="TP2Teenpani_0" index="0" speed="13.89" length="1331.47" shape="2013.89,1090.70 3286.48,699.14"/>
+        <lane id="TP2Teenpani_1" index="1" speed="13.89" length="1331.47" shape="2014.83,1093.76 3287.42,702.20"/>
+    </edge>
+    <edge id="Teen2Bareilly" from="Teenpani_Jct" to="Bareilly_Out" priority="5">
+        <lane id="Teen2Bareilly_0" index="0" speed="16.67" length="692.26" shape="3292.00,692.26 3292.00,0.00"/>
+        <lane id="Teen2Bareilly_1" index="1" speed="16.67" length="692.26" shape="3295.20,692.26 3295.20,0.00"/>
+        <lane id="Teen2Bareilly_2" index="2" speed="16.67" length="692.26" shape="3298.40,692.26 3298.40,0.00"/>
+    </edge>
+    <edge id="Teen2Rail" from="Teenpani_Jct" to="RailwayStation_Jct" priority="4">
+        <lane id="Teen2Rail_0" index="0" speed="13.89" length="487.33" shape="3304.80,712.67 3304.80,1200.00"/>
+        <lane id="Teen2Rail_1" index="1" speed="13.89" length="487.33" shape="3301.60,712.67 3301.60,1200.00"/>
+    </edge>
+    <edge id="Teenpani2TP" from="Teenpani_Jct" to="TransportNagar" priority="3">
+        <lane id="Teenpani2TP_0" index="0" speed="13.89" length="1331.47" shape="3289.31,708.31 2016.72,1099.88"/>
+        <lane id="Teenpani2TP_1" index="1" speed="13.89" length="1331.47" shape="3288.37,705.25 2015.78,1096.82"/>
+    </edge>
+    <edge id="Tikonia2BaseHosp" from="Tikonia" to="BaseHospital_Jct" priority="2">
+        <lane id="Tikonia2BaseHosp_0" index="0" speed="11.11" length="429.28" shape="3318.19,2403.73 3702.15,2595.71"/>
+        <lane id="Tikonia2BaseHosp_1" index="1" speed="11.11" length="429.28" shape="3316.76,2406.59 3700.72,2598.57"/>
+    </edge>
+    <edge id="Tikonia2Heera" from="Tikonia" to="HeeraNagar_Jct" priority="4">
+        <lane id="Tikonia2Heera_0" index="0" speed="13.89" length="664.69" shape="3286.40,2408.00 2621.71,2408.00"/>
+        <lane id="Tikonia2Heera_1" index="1" speed="13.89" length="664.69" shape="3286.40,2404.80 2621.71,2404.80"/>
+        <lane id="Tikonia2Heera_2" index="2" speed="13.89" length="664.69" shape="3286.40,2401.60 2621.71,2401.60"/>
+    </edge>
+    <edge id="Tikonia2Judge" from="Tikonia" to="JudgeFarm" priority="5">
+        <lane id="Tikonia2Judge_0" index="0" speed="13.89" length="710.38" shape="3308.00,2415.96 3308.00,3126.33"/>
+        <lane id="Tikonia2Judge_1" index="1" speed="13.89" length="710.38" shape="3304.80,2415.96 3304.80,3126.33"/>
+        <lane id="Tikonia2Judge_2" index="2" speed="13.89" length="710.38" shape="3301.60,2415.96 3301.60,3126.33"/>
+    </edge>
+    <edge id="Tikonia2Patel" from="Tikonia" to="PatelChowk" priority="4">
+        <lane id="Tikonia2Patel_0" index="0" speed="11.11" length="682.40" shape="3292.00,2386.40 3292.00,1704.00"/>
+        <lane id="Tikonia2Patel_1" index="1" speed="11.11" length="682.40" shape="3295.20,2386.40 3295.20,1704.00"/>
+        <lane id="Tikonia2Patel_2" index="2" speed="11.11" length="682.40" shape="3298.40,2386.40 3298.40,1704.00"/>
+    </edge>
+    <edge id="Uncha2Kusum" from="Unchapul_Jct" to="Kusumkhera" priority="4">
+        <lane id="Uncha2Kusum_0" index="0" speed="13.89" length="479.72" shape="1494.45,2408.00 1014.73,2408.00"/>
+        <lane id="Uncha2Kusum_1" index="1" speed="13.89" length="479.72" shape="1494.45,2404.80 1014.73,2404.80"/>
+        <lane id="Uncha2Kusum_2" index="2" speed="13.89" length="479.72" shape="1494.45,2401.60 1014.73,2401.60"/>
+    </edge>
+    <edge id="Uncha2Mandi" from="Unchapul_Jct" to="Mandi_Chauraha" priority="2">
+        <lane id="Uncha2Mandi_0" index="0" speed="10.00" length="897.76" shape="1506.17,2381.07 1981.98,1619.77"/>
+        <lane id="Uncha2Mandi_1" index="1" speed="10.00" length="897.76" shape="1508.88,2382.77 1984.70,1621.47"/>
+    </edge>
+    <edge id="Uncha2Mukhani" from="Unchapul_Jct" to="Mukhani" priority="4">
+        <lane id="Uncha2Mukhani_0" index="0" speed="13.89" length="472.05" shape="1517.55,2392.00 1989.60,2392.00"/>
+        <lane id="Uncha2Mukhani_1" index="1" speed="13.89" length="472.05" shape="1517.55,2395.20 1989.60,2395.20"/>
+        <lane id="Uncha2Mukhani_2" index="2" speed="13.89" length="472.05" shape="1517.55,2398.40 1989.60,2398.40"/>
+    </edge>
+
+    <tlLogic id="JudgeFarm" type="static" programID="0" offset="0">
+        <phase duration="22" state="GGGGGGGGggrrrrrrrr"/>
+        <phase duration="3"  state="yyyyyGGGggrrrrrrrr"/>
+        <phase duration="6"  state="rrrrrGGGGGrrrrrrrr"/>
+        <phase duration="3"  state="rrrrryyyyyrrrrrrrr"/>
+        <phase duration="1"  state="rrrrrrrrrrrrrrrrrr"/>
+        <phase duration="24" state="rrrrrrrrrrGGGGGrrr"/>
+        <phase duration="3"  state="rrrrrrrrrryyyyyrrr"/>
+        <phase duration="1"  state="rrrrrrrrrrrrrrrrrr"/>
+        <phase duration="24" state="GrrrrrrrrrrrrrGGGG"/>
+        <phase duration="3"  state="Grrrrrrrrrrrrryyyy"/>
+    </tlLogic>
+    <tlLogic id="Kusumkhera" type="static" programID="0" offset="0">
+        <phase duration="41" state="GGGgrrrGGGG"/>
+        <phase duration="4"  state="yyyyrrrGyyy"/>
+        <phase duration="41" state="rrrrGGGGrrr"/>
+        <phase duration="4"  state="rrrryyyGrrr"/>
+    </tlLogic>
+    <tlLogic id="Mandi_Chauraha" type="static" programID="0" offset="0">
+        <phase duration="37" state="GGGGGgrrr"/>
+        <phase duration="3"  state="yyyGGgrrr"/>
+        <phase duration="6"  state="rrrGGGrrr"/>
+        <phase duration="3"  state="rrryyyrrr"/>
+        <phase duration="37" state="GrrrrrGGG"/>
+        <phase duration="3"  state="yrrrrryyy"/>
+        <phase duration="1"  state="rrrrrrrrr"/>
+    </tlLogic>
+    <tlLogic id="Mukhani" type="static" programID="0" offset="0">
+        <phase duration="42" state="rrrrGGGGgrrrrGGGGg"/>
+        <phase duration="3"  state="rrrryyyyyrrrryyyyy"/>
+        <phase duration="42" state="GGGgrrrrrGGGgrrrrr"/>
+        <phase duration="3"  state="yyyyrrrrryyyyrrrrr"/>
+    </tlLogic>
+    <tlLogic id="PatelChowk" type="static" programID="0" offset="0">
+        <phase duration="82" state="GGGGG"/>
+        <phase duration="3"  state="yyyyy"/>
+        <phase duration="5"  state="rrrrr"/>
+    </tlLogic>
+    <tlLogic id="STH_Hospital_Jct" type="static" programID="0" offset="0">
+        <phase duration="36" state="GGGGgrrrGGGGgrrrr"/>
+        <phase duration="4"  state="yyyyyrrryyyyyrrrr"/>
+        <phase duration="36" state="rrrrrGGgrrrrrGGGg"/>
+        <phase duration="4"  state="rrrrryygrrrrryyyg"/>
+        <phase duration="6"  state="rrrrrrrGrrrrrrrrG"/>
+        <phase duration="4"  state="rrrrrrryrrrrrrrry"/>
+    </tlLogic>
+    <tlLogic id="Teenpani_Jct" type="static" programID="0" offset="0">
+        <phase duration="36" state="GGGGGGgrrr"/>
+        <phase duration="4"  state="yyyyGGgrrr"/>
+        <phase duration="6"  state="rrrrGGGrrr"/>
+        <phase duration="4"  state="rrrryyyrrr"/>
+        <phase duration="36" state="GrrrrrrGGG"/>
+        <phase duration="4"  state="Grrrrrryyy"/>
+    </tlLogic>
+    <tlLogic id="Tikonia" type="static" programID="0" offset="0">
+        <phase duration="38" state="GGGGgrrrrrGGGGgrrrr"/>
+        <phase duration="3"  state="yyyyyrrrrryyyyyrrrr"/>
+        <phase duration="37" state="rrrrrGGGGgrrrrrGGGg"/>
+        <phase duration="3"  state="rrrrryyyygrrrrryyyg"/>
+        <phase duration="6"  state="rrrrrrrrrGrrrrrrrrG"/>
+        <phase duration="3"  state="rrrrrrrrryrrrrrrrry"/>
+    </tlLogic>
+
+    <junction id="Bareilly_Out" type="dead_end" x="3300.00" y="0.00" incLanes="Teen2Bareilly_0 Teen2Bareilly_1 Teen2Bareilly_2" intLanes="" shape="3300.00,0.00 3290.40,0.00 3300.00,0.00"/>
+    <junction id="BaseHospital_Jct" type="dead_end" x="3700.00" y="2600.00" incLanes="Tikonia2BaseHosp_0 Tikonia2BaseHosp_1" intLanes="" shape="3700.00,2600.00 3702.86,2594.28 3700.00,2600.00"/>
+    <junction id="BrijlalHospital_Jct" type="priority" x="3300.00" y="4250.00" incLanes="KathHosp2Brijlal_0 KathHosp2Brijlal_1 KathHosp2Brijlal_2 Brijlal_Gully_Out_0 Sheesh2Brijlal_0 Sheesh2Brijlal_1 Sheesh2Brijlal_2" intLanes=":BrijlalHospital_Jct_0_0 :BrijlalHospital_Jct_0_1 :BrijlalHospital_Jct_0_2 :BrijlalHospital_Jct_11_0 :BrijlalHospital_Jct_4_0 :BrijlalHospital_Jct_5_0 :BrijlalHospital_Jct_5_1 :BrijlalHospital_Jct_7_0 :BrijlalHospital_Jct_8_0 :BrijlalHospital_Jct_8_1 :BrijlalHospital_Jct_8_2" shape="3290.40,4257.20 3309.60,4257.20 3310.04,4254.98 3310.60,4254.20 3311.38,4253.64 3312.38,4253.31 3313.60,4253.20 3313.60,4246.80 3311.38,4246.36 3310.60,4245.80 3310.04,4245.02 3309.71,4244.02 3309.60,4242.80 3290.40,4242.80">
+        <request index="0"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="1"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="2"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="3"  response="11110000000" foes="11111100000" cont="1"/>
+        <request index="4"  response="11100000000" foes="11100000000" cont="0"/>
+        <request index="5"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="6"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="7"  response="00000000000" foes="00000001000" cont="0"/>
+        <request index="8"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="9"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="10" response="00000000000" foes="00001111000" cont="0"/>
+    </junction>
+    <junction id="Brijlal_Gully_End" type="dead_end" x="3450.00" y="4250.00" incLanes="Brijlal_Gully_In_0" intLanes="" shape="3450.00,4250.00 3450.00,4246.80 3450.00,4250.00"/>
+    <junction id="Canal_Mid" type="priority" x="2000.00" y="3150.00" incLanes="Judge2Canal_0 Judge2Canal_1 Mukhani2Canal_0 Mukhani2Canal_1" intLanes=":Canal_Mid_0_0 :Canal_Mid_0_1 :Canal_Mid_2_0 :Canal_Mid_2_1" shape="2006.40,3156.40 2006.40,3143.60 1993.60,3143.60 1993.96,3147.51 1995.02,3150.71 1996.80,3153.20 1999.29,3154.98 2002.49,3156.04">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="ChhotiMukhani" type="priority" x="2000.00" y="2000.00" incLanes="Mukhani2Chhoti_0 Mukhani2Chhoti_1 Mandi2Chhoti_0 Mandi2Chhoti_1" intLanes=":ChhotiMukhani_0_0 :ChhotiMukhani_0_1 :ChhotiMukhani_2_0 :ChhotiMukhani_2_1" shape="1993.60,2000.00 2006.40,2000.00 1993.60,2000.00">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="GasGodam_Mid" type="priority" x="1400.00" y="1400.00" incLanes="TP2Gas_0 TP2Gas_1 STH2Gas_0 STH2Gas_1 Kusum2Gas_0 Kusum2Gas_1" intLanes=":GasGodam_Mid_0_0 :GasGodam_Mid_0_1 :GasGodam_Mid_2_0 :GasGodam_Mid_3_0 :GasGodam_Mid_4_0 :GasGodam_Mid_4_1 :GasGodam_Mid_6_0 :GasGodam_Mid_6_1 :GasGodam_Mid_9_0" shape="1430.69,1391.81 1424.96,1380.36 1423.79,1378.95 1413.55,1371.27 1408.36,1377.83 1404.28,1382.56 1400.93,1386.49 1397.96,1390.63 1394.99,1395.99 1391.67,1403.60 1403.55,1408.35 1406.63,1402.50 1410.05,1399.08 1414.00,1397.21 1418.65,1395.98 1424.15,1394.48">
+        <request index="0" response="000110000" foes="000110000" cont="0"/>
+        <request index="1" response="000110000" foes="000110000" cont="0"/>
+        <request index="2" response="111110000" foes="111110000" cont="0"/>
+        <request index="3" response="000000000" foes="000000000" cont="0"/>
+        <request index="4" response="000000000" foes="100000111" cont="0"/>
+        <request index="5" response="000000000" foes="100000111" cont="0"/>
+        <request index="6" response="000000000" foes="000000100" cont="0"/>
+        <request index="7" response="000000000" foes="000000100" cont="0"/>
+        <request index="8" response="000110000" foes="000110100" cont="1"/>
+    </junction>
+    <junction id="HeeraNagar_Jct" type="priority" x="2600.00" y="2400.00" incLanes="Judge2Heera_0 Judge2Heera_1 Tikonia2Heera_0 Tikonia2Heera_1 Tikonia2Heera_2 Mukhani2Heera_0 Mukhani2Heera_1 Mukhani2Heera_2" intLanes=":HeeraNagar_Jct_0_0 :HeeraNagar_Jct_1_0 :HeeraNagar_Jct_1_1 :HeeraNagar_Jct_3_0 :HeeraNagar_Jct_4_0 :HeeraNagar_Jct_4_1 :HeeraNagar_Jct_4_2 :HeeraNagar_Jct_7_0 :HeeraNagar_Jct_7_1 :HeeraNagar_Jct_7_2 :HeeraNagar_Jct_11_0" shape="2611.09,2421.26 2620.44,2412.52 2619.37,2410.90 2619.40,2410.33 2619.80,2409.92 2620.57,2409.68 2621.71,2409.60 2621.71,2390.40 2596.21,2390.40 2596.21,2409.60 2599.64,2410.90 2601.93,2412.51 2604.60,2414.78 2607.65,2417.70">
+        <request index="0"  response="00001110000" foes="00001110000" cont="0"/>
+        <request index="1"  response="11111110000" foes="11111110000" cont="0"/>
+        <request index="2"  response="11111110000" foes="11111110000" cont="0"/>
+        <request index="3"  response="00000000000" foes="00000000000" cont="0"/>
+        <request index="4"  response="00000000000" foes="10000000111" cont="0"/>
+        <request index="5"  response="00000000000" foes="10000000111" cont="0"/>
+        <request index="6"  response="00000000000" foes="10000000111" cont="0"/>
+        <request index="7"  response="00000000000" foes="00000000110" cont="0"/>
+        <request index="8"  response="00000000000" foes="00000000110" cont="0"/>
+        <request index="9"  response="00000000000" foes="00000000110" cont="0"/>
+        <request index="10" response="00001110000" foes="00001110110" cont="1"/>
+    </junction>
+    <junction id="JudgeFarm" type="traffic_light" x="3300.00" y="3150.00" incLanes="Krishna2Judge_0 Krishna2Judge_1 Krishna2Judge_2 Tikonia2Judge_0 Tikonia2Judge_1 Tikonia2Judge_2 Heera2Judge_0 Heera2Judge_1 Canal2Judge_0 Canal2Judge_1" intLanes=":JudgeFarm_0_0 :JudgeFarm_1_0 :JudgeFarm_2_0 :JudgeFarm_2_1 :JudgeFarm_2_2 :JudgeFarm_5_0 :JudgeFarm_5_1 :JudgeFarm_5_2 :JudgeFarm_18_0 :JudgeFarm_19_0 :JudgeFarm_10_0 :JudgeFarm_11_0 :JudgeFarm_11_1 :JudgeFarm_13_0 :JudgeFarm_14_0 :JudgeFarm_15_0 :JudgeFarm_15_1 :JudgeFarm_17_0" shape="3290.40,3160.40 3309.60,3160.40 3309.60,3126.33 3290.40,3126.33 3290.10,3128.23 3289.72,3128.60 3289.19,3128.59 3288.50,3128.19 3287.67,3127.41 3278.31,3136.14 3280.33,3138.42 3281.73,3140.29 3282.53,3141.74 3282.72,3142.77 3282.30,3143.39 3281.27,3143.60 3281.27,3156.40 3284.06,3156.51 3286.34,3156.84 3288.12,3157.40 3289.39,3158.18 3290.15,3159.18">
+        <request index="0"  response="000000000000000000" foes="000000000000000000" cont="0"/>
+        <request index="1"  response="000000000000000000" foes="111010001100000000" cont="0"/>
+        <request index="2"  response="000000000000000000" foes="111001111100000000" cont="0"/>
+        <request index="3"  response="000000000000000000" foes="111001111100000000" cont="0"/>
+        <request index="4"  response="000000000000000000" foes="111001111100000000" cont="0"/>
+        <request index="5"  response="000000000000000000" foes="100001100000000000" cont="0"/>
+        <request index="6"  response="000000000000000000" foes="100001100000000000" cont="0"/>
+        <request index="7"  response="000000000000000000" foes="100001100000000000" cont="0"/>
+        <request index="8"  response="000000000000011110" foes="100011100000011110" cont="1"/>
+        <request index="9"  response="000000000000011110" foes="011011100000011110" cont="1"/>
+        <request index="10" response="000000000000011100" foes="000000000000011100" cont="0"/>
+        <request index="11" response="000000001111111100" foes="111000001111111100" cont="0"/>
+        <request index="12" response="000000001111111100" foes="111000001111111100" cont="0"/>
+        <request index="13" response="000000001100000010" foes="111000001100000010" cont="0"/>
+        <request index="14" response="000000000000000000" foes="000000000000000000" cont="0"/>
+        <request index="15" response="000011101000011110" foes="000011101000011110" cont="0"/>
+        <request index="16" response="000011101000011110" foes="000011101000011110" cont="0"/>
+        <request index="17" response="000011100111111110" foes="000011100111111110" cont="0"/>
+    </junction>
+    <junction id="KW_Out" type="dead_end" x="0.00" y="2400.00" incLanes="Kusum2KW_0 Kusum2KW_1 Kusum2KW_2" intLanes="" shape="0.00,2400.00 0.00,2409.60 0.00,2400.00"/>
+    <junction id="KathgodamHospital_Jct" type="priority" x="3300.00" y="4550.00" incLanes="KathOut2KathHosp_0 KathOut2KathHosp_1 KathOut2KathHosp_2 KathHosp_Gully_Out_0 Brijlal2KathHosp_0 Brijlal2KathHosp_1 Brijlal2KathHosp_2" intLanes=":KathgodamHospital_Jct_0_0 :KathgodamHospital_Jct_0_1 :KathgodamHospital_Jct_0_2 :KathgodamHospital_Jct_11_0 :KathgodamHospital_Jct_4_0 :KathgodamHospital_Jct_5_0 :KathgodamHospital_Jct_5_1 :KathgodamHospital_Jct_7_0 :KathgodamHospital_Jct_8_0 :KathgodamHospital_Jct_8_1 :KathgodamHospital_Jct_8_2" shape="3290.40,4557.20 3309.60,4557.20 3310.04,4554.98 3310.60,4554.20 3311.38,4553.64 3312.38,4553.31 3313.60,4553.20 3313.60,4546.80 3311.38,4546.36 3310.60,4545.80 3310.04,4545.02 3309.71,4544.02 3309.60,4542.80 3290.40,4542.80">
+        <request index="0"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="1"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="2"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="3"  response="11110000000" foes="11111100000" cont="1"/>
+        <request index="4"  response="11100000000" foes="11100000000" cont="0"/>
+        <request index="5"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="6"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="7"  response="00000000000" foes="00000001000" cont="0"/>
+        <request index="8"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="9"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="10" response="00000000000" foes="00001111000" cont="0"/>
+    </junction>
+    <junction id="Kathgodam_Hospital_End" type="dead_end" x="3450.00" y="4550.00" incLanes="KathHosp_Gully_In_0" intLanes="" shape="3450.00,4550.00 3450.00,4546.80 3450.00,4550.00"/>
+    <junction id="Kathgodam_Out" type="dead_end" x="3300.00" y="4750.00" incLanes="KathHosp2KathOut_0 KathHosp2KathOut_1 KathHosp2KathOut_2" intLanes="" shape="3300.00,4750.00 3309.60,4750.00 3300.00,4750.00"/>
+    <junction id="KrishnaHospital_Jct" type="priority" x="3300.00" y="3550.00" incLanes="Sheesh2Krishna_0 Sheesh2Krishna_1 Sheesh2Krishna_2 Krishna_Gully_Out_0 Judge2Krishna_0 Judge2Krishna_1 Judge2Krishna_2" intLanes=":KrishnaHospital_Jct_0_0 :KrishnaHospital_Jct_0_1 :KrishnaHospital_Jct_0_2 :KrishnaHospital_Jct_11_0 :KrishnaHospital_Jct_4_0 :KrishnaHospital_Jct_5_0 :KrishnaHospital_Jct_5_1 :KrishnaHospital_Jct_7_0 :KrishnaHospital_Jct_8_0 :KrishnaHospital_Jct_8_1 :KrishnaHospital_Jct_8_2" shape="3290.40,3557.20 3309.60,3557.20 3310.04,3554.98 3310.60,3554.20 3311.38,3553.64 3312.38,3553.31 3313.60,3553.20 3313.60,3546.80 3311.38,3546.36 3310.60,3545.80 3310.04,3545.02 3309.71,3544.02 3309.60,3542.80 3290.40,3542.80">
+        <request index="0"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="1"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="2"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="3"  response="11110000000" foes="11111100000" cont="1"/>
+        <request index="4"  response="11100000000" foes="11100000000" cont="0"/>
+        <request index="5"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="6"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="7"  response="00000000000" foes="00000001000" cont="0"/>
+        <request index="8"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="9"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="10" response="00000000000" foes="00001111000" cont="0"/>
+    </junction>
+    <junction id="Krishna_Gully_End" type="dead_end" x="3450.00" y="3550.00" incLanes="Krishna_Gully_In_0" intLanes="" shape="3450.00,3550.00 3450.00,3546.80 3450.00,3550.00"/>
+    <junction id="Kusumkhera" type="traffic_light" x="1000.00" y="2400.00" incLanes="Uncha2Kusum_0 Uncha2Kusum_1 Uncha2Kusum_2 Gas2Kusum_0 Gas2Kusum_1 KW2Kusum_0 KW2Kusum_1 KW2Kusum_2" intLanes=":Kusumkhera_0_0 :Kusumkhera_0_1 :Kusumkhera_0_2 :Kusumkhera_11_0 :Kusumkhera_4_0 :Kusumkhera_5_0 :Kusumkhera_5_1 :Kusumkhera_7_0 :Kusumkhera_8_0 :Kusumkhera_8_1 :Kusumkhera_8_2" shape="1014.73,2409.60 1014.73,2390.40 1012.68,2389.99 1012.10,2389.47 1011.84,2388.75 1011.88,2387.82 1012.22,2386.69 1000.33,2381.93 999.19,2384.52 998.01,2386.64 996.79,2388.28 995.55,2389.46 994.26,2390.16 992.95,2390.40 992.95,2409.60">
+        <request index="0"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="1"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="2"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="3"  response="11100000000" foes="11101100000" cont="1"/>
+        <request index="4"  response="11100000000" foes="11100000000" cont="0"/>
+        <request index="5"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="6"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="7"  response="00000000000" foes="00000000000" cont="0"/>
+        <request index="8"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="9"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="10" response="00000000000" foes="00001111000" cont="0"/>
+    </junction>
+    <junction id="Mandi_Chauraha" type="traffic_light" x="2000.00" y="1600.00" incLanes="Chhoti2Mandi_0 Chhoti2Mandi_1 TP2Mandi_0 TP2Mandi_1 TP2Mandi_2 Uncha2Mandi_0 Uncha2Mandi_1" intLanes=":Mandi_Chauraha_0_0 :Mandi_Chauraha_1_0 :Mandi_Chauraha_1_1 :Mandi_Chauraha_3_0 :Mandi_Chauraha_3_1 :Mandi_Chauraha_9_0 :Mandi_Chauraha_6_0 :Mandi_Chauraha_6_1 :Mandi_Chauraha_8_0" shape="1993.60,1626.32 2006.40,1626.32 2006.64,1620.53 2007.23,1616.28 2008.77,1609.32 2009.36,1605.07 2009.60,1599.28 1990.40,1599.28 1990.08,1603.90 1989.16,1607.18 1987.69,1609.73 1985.74,1612.14 1983.37,1615.00 1980.63,1618.92 1991.48,1625.71">
+        <request index="0" response="000000000" foes="000000000" cont="0"/>
+        <request index="1" response="000000000" foes="111100000" cont="0"/>
+        <request index="2" response="000000000" foes="111100000" cont="0"/>
+        <request index="3" response="000000000" foes="100000000" cont="0"/>
+        <request index="4" response="000000000" foes="100000000" cont="0"/>
+        <request index="5" response="000000110" foes="100000110" cont="1"/>
+        <request index="6" response="000000110" foes="000000110" cont="0"/>
+        <request index="7" response="000000110" foes="000000110" cont="0"/>
+        <request index="8" response="000111110" foes="000111110" cont="0"/>
+    </junction>
+    <junction id="Mukhani" type="traffic_light" x="2000.00" y="2400.00" incLanes="Canal2Mukhani_0 Canal2Mukhani_1 Heera2Mukhani_0 Heera2Mukhani_1 Heera2Mukhani_2 Chhoti2Mukhani_0 Chhoti2Mukhani_1 Uncha2Mukhani_0 Uncha2Mukhani_1 Uncha2Mukhani_2" intLanes=":Mukhani_0_0 :Mukhani_1_0 :Mukhani_1_1 :Mukhani_18_0 :Mukhani_4_0 :Mukhani_5_0 :Mukhani_5_1 :Mukhani_5_2 :Mukhani_19_0 :Mukhani_9_0 :Mukhani_10_0 :Mukhani_10_1 :Mukhani_20_0 :Mukhani_13_0 :Mukhani_14_0 :Mukhani_14_1 :Mukhani_14_2 :Mukhani_21_0" shape="1993.60,2413.60 2006.40,2413.60 2006.84,2411.38 2007.40,2410.60 2008.18,2410.04 2009.18,2409.71 2010.40,2409.60 2010.40,2390.40 2008.18,2389.96 2007.40,2389.40 2006.84,2388.62 2006.51,2387.62 2006.40,2386.40 1993.60,2386.40 1993.16,2388.62 1992.60,2389.40 1991.82,2389.96 1990.82,2390.29 1989.60,2390.40 1989.60,2409.60 1991.82,2410.04 1992.60,2410.60 1993.16,2411.38 1993.49,2412.38">
+        <request index="0"  response="000000000011100000" foes="000000000011100000" cont="0"/>
+        <request index="1"  response="111110000111100000" foes="111111000111100000" cont="0"/>
+        <request index="2"  response="111110000111100000" foes="111111000111100000" cont="0"/>
+        <request index="3"  response="111100110111100000" foes="111100110111100000" cont="1"/>
+        <request index="4"  response="000000000000000000" foes="000000110000000000" cont="0"/>
+        <request index="5"  response="000000000000001000" foes="100001110000001111" cont="0"/>
+        <request index="6"  response="000000000000001000" foes="100001110000001111" cont="0"/>
+        <request index="7"  response="000001000000001000" foes="100001110000001111" cont="0"/>
+        <request index="8"  response="011101000000001000" foes="011101110000001110" cont="1"/>
+        <request index="9"  response="011100000000000000" foes="011100000000000000" cont="0"/>
+        <request index="10" response="111100000111110000" foes="111100000111111000" cont="0"/>
+        <request index="11" response="111100000111110000" foes="111100000111111000" cont="0"/>
+        <request index="12" response="111100000111100110" foes="111100000111100110" cont="1"/>
+        <request index="13" response="000000000000000000" foes="000000000000000110" cont="0"/>
+        <request index="14" response="000001000000000000" foes="000001111100001110" cont="0"/>
+        <request index="15" response="000001000000000000" foes="000001111100001110" cont="0"/>
+        <request index="16" response="000001000000001000" foes="000001111100001110" cont="0"/>
+        <request index="17" response="000001000011101000" foes="000001110011101110" cont="1"/>
+    </junction>
+    <junction id="PatelChowk" type="traffic_light" x="3300.00" y="1700.00" incLanes="Tikonia2Patel_0 Tikonia2Patel_1 Tikonia2Patel_2 Rail2Patel_0 Rail2Patel_1" intLanes=":PatelChowk_0_0 :PatelChowk_0_1 :PatelChowk_2_0 :PatelChowk_2_1 :PatelChowk_2_2" shape="3290.40,1704.00 3309.60,1704.00 3308.77,1700.97 3307.23,1699.03 3306.64,1697.79 3306.40,1696.00 3293.60,1696.00 3292.77,1699.03 3291.23,1700.97 3290.64,1702.21">
+        <request index="0" response="00000" foes="00000" cont="0"/>
+        <request index="1" response="00000" foes="00000" cont="0"/>
+        <request index="2" response="00000" foes="00000" cont="0"/>
+        <request index="3" response="00000" foes="00000" cont="0"/>
+        <request index="4" response="00000" foes="00000" cont="0"/>
+    </junction>
+    <junction id="RailwayStation_Jct" type="priority" x="3300.00" y="1200.00" incLanes="Patel2Rail_0 Patel2Rail_1 Teen2Rail_0 Teen2Rail_1" intLanes=":RailwayStation_Jct_0_0 :RailwayStation_Jct_0_1 :RailwayStation_Jct_2_0 :RailwayStation_Jct_2_1" shape="3293.60,1200.00 3306.40,1200.00 3293.60,1200.00">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="Rampur_Out" type="dead_end" x="2000.00" y="0.00" incLanes="STH2Rampur_0 STH2Rampur_1 STH2Rampur_2" intLanes="" shape="2000.00,0.00 1990.40,0.00 2000.00,0.00"/>
+    <junction id="STH_Gully_End" type="dead_end" x="2250.00" y="600.00" incLanes="STH_Gully_In_0" intLanes="" shape="2250.00,600.00 2250.00,596.80 2250.00,600.00"/>
+    <junction id="STH_Hospital_Jct" type="traffic_light" x="2000.00" y="600.00" incLanes="TP2STH_0 TP2STH_1 TP2STH_2 STH_Gully_Out_0 Rampur2STH_0 Rampur2STH_1 Rampur2STH_2 Gas2STH_0 Gas2STH_1" intLanes=":STH_Hospital_Jct_0_0 :STH_Hospital_Jct_1_0 :STH_Hospital_Jct_1_1 :STH_Hospital_Jct_1_2 :STH_Hospital_Jct_17_0 :STH_Hospital_Jct_5_0 :STH_Hospital_Jct_6_0 :STH_Hospital_Jct_18_0 :STH_Hospital_Jct_8_0 :STH_Hospital_Jct_9_0 :STH_Hospital_Jct_9_1 :STH_Hospital_Jct_9_2 :STH_Hospital_Jct_19_0 :STH_Hospital_Jct_13_0 :STH_Hospital_Jct_13_1 :STH_Hospital_Jct_15_0 :STH_Hospital_Jct_20_0" shape="1990.40,627.47 2009.60,627.47 2009.71,620.05 2010.04,613.99 2010.60,609.27 2011.38,605.90 2012.38,603.87 2013.60,603.20 2013.60,596.80 2011.38,596.36 2010.60,595.80 2010.04,595.02 2009.71,594.02 2009.60,592.80 1990.40,592.80 1990.07,598.98 1989.06,603.47 1987.35,606.98 1984.91,610.26 1981.73,614.02 1977.76,618.99 1988.00,626.67 1989.33,625.33 1989.80,625.27 1990.13,625.60 1990.33,626.33">
+        <request index="0"  response="00000000000000000" foes="00000000000000000" cont="0"/>
+        <request index="1"  response="10000000000000000" foes="11111000011000000" cont="0"/>
+        <request index="2"  response="10000000000000000" foes="11111000011000000" cont="0"/>
+        <request index="3"  response="10000000010000000" foes="11111000011000000" cont="0"/>
+        <request index="4"  response="10000111110000000" foes="11000111111000000" cont="1"/>
+        <request index="5"  response="00000111000000000" foes="00000111000000000" cont="0"/>
+        <request index="6"  response="00001111000011110" foes="10001111000011110" cont="0"/>
+        <request index="7"  response="01001111000011110" foes="01001111000011110" cont="1"/>
+        <request index="8"  response="00000000000000000" foes="01000000000010000" cont="0"/>
+        <request index="9"  response="00000000010000000" foes="11000000011110000" cont="0"/>
+        <request index="10" response="00000000010000000" foes="11000000011110000" cont="0"/>
+        <request index="11" response="10000000010000000" foes="11000000011110000" cont="0"/>
+        <request index="12" response="10000000010001110" foes="11000000011001110" cont="1"/>
+        <request index="13" response="00000000000001110" foes="00000000000001110" cont="0"/>
+        <request index="14" response="00000000000001110" foes="00000000000001110" cont="0"/>
+        <request index="15" response="00001111100011110" foes="00001111110011110" cont="0"/>
+        <request index="16" response="00001111001011110" foes="00001111001011110" cont="1"/>
+    </junction>
+    <junction id="Sheeshmahal" type="priority" x="3300.00" y="3900.00" incLanes="Brijlal2Sheesh_0 Brijlal2Sheesh_1 Brijlal2Sheesh_2 Krishna2Sheesh_0 Krishna2Sheesh_1 Krishna2Sheesh_2" intLanes=":Sheeshmahal_0_0 :Sheeshmahal_0_1 :Sheeshmahal_0_2 :Sheeshmahal_3_0 :Sheeshmahal_3_1 :Sheeshmahal_3_2" shape="3290.40,3900.00 3309.60,3900.00 3290.40,3900.00">
+        <request index="0" response="000000" foes="000000" cont="0"/>
+        <request index="1" response="000000" foes="000000" cont="0"/>
+        <request index="2" response="000000" foes="000000" cont="0"/>
+        <request index="3" response="000000" foes="000000" cont="0"/>
+        <request index="4" response="000000" foes="000000" cont="0"/>
+        <request index="5" response="000000" foes="000000" cont="0"/>
+    </junction>
+    <junction id="Teenpani_Jct" type="traffic_light" x="3300.00" y="700.00" incLanes="Rail2Teen_0 Rail2Teen_1 Bareilly2Teen_0 Bareilly2Teen_1 Bareilly2Teen_2 TP2Teenpani_0 TP2Teenpani_1" intLanes=":Teenpani_Jct_0_0 :Teenpani_Jct_1_0 :Teenpani_Jct_1_1 :Teenpani_Jct_1_2 :Teenpani_Jct_4_0 :Teenpani_Jct_4_1 :Teenpani_Jct_10_0 :Teenpani_Jct_7_0 :Teenpani_Jct_7_1 :Teenpani_Jct_9_0" shape="3293.60,712.67 3306.40,712.67 3306.64,708.28 3307.23,705.08 3308.77,699.84 3309.36,696.64 3309.60,692.26 3290.40,692.26 3289.91,694.63 3289.30,695.60 3288.45,696.41 3287.35,697.08 3286.01,697.61 3289.78,709.84 3291.90,709.63 3292.64,709.96 3293.18,710.57 3293.49,711.48">
+        <request index="0" response="0000000000" foes="0000000000" cont="0"/>
+        <request index="1" response="0000000000" foes="1111000000" cont="0"/>
+        <request index="2" response="0000000000" foes="1111000000" cont="0"/>
+        <request index="3" response="0000000000" foes="1111000000" cont="0"/>
+        <request index="4" response="0000000000" foes="1000000000" cont="0"/>
+        <request index="5" response="0000000000" foes="1000000000" cont="0"/>
+        <request index="6" response="0000001110" foes="1000001110" cont="1"/>
+        <request index="7" response="0000001110" foes="0000001110" cont="0"/>
+        <request index="8" response="0000001110" foes="0000001110" cont="0"/>
+        <request index="9" response="0001111110" foes="0001111110" cont="0"/>
+    </junction>
+    <junction id="Tikonia" type="traffic_light" x="3300.00" y="2400.00" incLanes="Judge2Tikonia_0 Judge2Tikonia_1 Judge2Tikonia_2 BaseHosp2Tikonia_0 BaseHosp2Tikonia_1 Patel2Tikonia_0 Patel2Tikonia_1 Patel2Tikonia_2 Heera2Tikonia_0 Heera2Tikonia_1 Heera2Tikonia_2" intLanes=":Tikonia_0_0 :Tikonia_1_0 :Tikonia_1_1 :Tikonia_1_2 :Tikonia_19_0 :Tikonia_5_0 :Tikonia_6_0 :Tikonia_6_1 :Tikonia_6_2 :Tikonia_20_0 :Tikonia_10_0 :Tikonia_11_0 :Tikonia_11_1 :Tikonia_11_2 :Tikonia_21_0 :Tikonia_15_0 :Tikonia_16_0 :Tikonia_16_1 :Tikonia_22_0" shape="3290.40,2415.96 3309.60,2415.96 3310.00,2413.93 3310.49,2413.40 3311.19,2413.19 3312.08,2413.31 3313.18,2413.74 3318.90,2402.30 3316.06,2400.56 3313.73,2398.46 3311.93,2396.00 3310.63,2393.16 3309.86,2389.97 3309.60,2386.40 3290.40,2386.40 3289.96,2388.62 3289.40,2389.40 3288.62,2389.96 3287.62,2390.29 3286.40,2390.40 3286.40,2409.60 3288.62,2410.31 3289.40,2411.19 3289.96,2412.42 3290.29,2414.01">
+        <request index="0"  response="0000000000000000000" foes="0000000000111000000" cont="0"/>
+        <request index="1"  response="1000000000000000000" foes="1111100001111000000" cont="0"/>
+        <request index="2"  response="1000000000000000000" foes="1111100001111000000" cont="0"/>
+        <request index="3"  response="1000000001000000000" foes="1111100001111000000" cont="0"/>
+        <request index="4"  response="1000011101000000000" foes="1110011101111000000" cont="1"/>
+        <request index="5"  response="0000011100000000000" foes="0000011100000000000" cont="0"/>
+        <request index="6"  response="0000111100000011111" foes="1000111100000011111" cont="0"/>
+        <request index="7"  response="0000111100000011111" foes="1000111100000011111" cont="0"/>
+        <request index="8"  response="0000111100000011111" foes="1000111100000011111" cont="0"/>
+        <request index="9"  response="0110111100000011110" foes="0110111100000011110" cont="1"/>
+        <request index="10" response="0000000000000000000" foes="0110000000000000000" cont="0"/>
+        <request index="11" response="0000000001000000000" foes="1110000001111110000" cont="0"/>
+        <request index="12" response="0000000001000000000" foes="1110000001111110000" cont="0"/>
+        <request index="13" response="1000000001000000000" foes="1110000001111110000" cont="0"/>
+        <request index="14" response="1000000001000001110" foes="1110000001111001110" cont="1"/>
+        <request index="15" response="0000000000000001110" foes="0000000000000001110" cont="0"/>
+        <request index="16" response="0000111110000011110" foes="0000111111000011110" cont="0"/>
+        <request index="17" response="0000111110000011110" foes="0000111111000011110" cont="0"/>
+        <request index="18" response="0000111100111011110" foes="0000111100111011110" cont="1"/>
+    </junction>
+    <junction id="TransportNagar" type="priority" x="2000.00" y="1100.00" incLanes="Mandi2TP_0 Mandi2TP_1 Mandi2TP_2 Teenpani2TP_0 Teenpani2TP_1 STH2TP_0 STH2TP_1 STH2TP_2 Gas2TP_0 Gas2TP_1" intLanes=":TransportNagar_0_0 :TransportNagar_1_0 :TransportNagar_1_1 :TransportNagar_1_2 :TransportNagar_18_0 :TransportNagar_5_0 :TransportNagar_6_0 :TransportNagar_6_1 :TransportNagar_8_0 :TransportNagar_9_0 :TransportNagar_10_0 :TransportNagar_10_1 :TransportNagar_10_2 :TransportNagar_19_0 :TransportNagar_14_0 :TransportNagar_15_0 :TransportNagar_15_1 :TransportNagar_17_0" shape="1990.40,1115.96 2009.60,1115.96 2009.81,1112.16 2010.44,1108.91 2011.50,1106.21 2012.97,1104.06 2014.87,1102.46 2017.19,1101.41 2013.42,1089.17 2011.30,1089.38 2010.56,1089.06 2010.02,1088.44 2009.71,1087.54 2009.60,1086.35 1990.40,1086.35 1990.14,1089.93 1989.37,1093.14 1988.07,1095.98 1986.27,1098.46 1983.94,1100.56 1981.10,1102.30 1986.82,1113.74 1988.81,1113.19 1989.51,1113.40 1990.00,1113.93 1990.30,1114.78">
+        <request index="0"  response="000000000000000000" foes="000000000011000000" cont="0"/>
+        <request index="1"  response="000000000000000000" foes="111110000111000000" cont="0"/>
+        <request index="2"  response="000000000000000000" foes="111110000111000000" cont="0"/>
+        <request index="3"  response="000000000000000000" foes="111110000111000000" cont="0"/>
+        <request index="4"  response="000001110000000000" foes="111001110111000000" cont="1"/>
+        <request index="5"  response="000001110000000000" foes="000001110000000000" cont="0"/>
+        <request index="6"  response="000011110000011111" foes="100011110000011111" cont="0"/>
+        <request index="7"  response="000011110000011111" foes="100011110000011111" cont="0"/>
+        <request index="8"  response="011011110000011110" foes="011011110000011110" cont="0"/>
+        <request index="9"  response="000000000000000000" foes="011000000000000000" cont="0"/>
+        <request index="10" response="000000000000000000" foes="111000000111110000" cont="0"/>
+        <request index="11" response="000000000000000000" foes="111000000111110000" cont="0"/>
+        <request index="12" response="000000000000000000" foes="111000000111110000" cont="0"/>
+        <request index="13" response="000000000000001110" foes="111000000111001110" cont="1"/>
+        <request index="14" response="000000000000001110" foes="000000000000001110" cont="0"/>
+        <request index="15" response="000011111000011110" foes="000011111100011110" cont="0"/>
+        <request index="16" response="000011111000011110" foes="000011111100011110" cont="0"/>
+        <request index="17" response="000011110011011110" foes="000011110011011110" cont="0"/>
+    </junction>
+    <junction id="Unchapul_Jct" type="priority" x="1500.00" y="2400.00" incLanes="Mukhani2Uncha_0 Mukhani2Uncha_1 Mukhani2Uncha_2 Mandi2Uncha_0 Mandi2Uncha_1 Kusum2Uncha_0 Kusum2Uncha_1 Kusum2Uncha_2" intLanes=":Unchapul_Jct_0_0 :Unchapul_Jct_0_1 :Unchapul_Jct_0_2 :Unchapul_Jct_11_0 :Unchapul_Jct_4_0 :Unchapul_Jct_5_0 :Unchapul_Jct_5_1 :Unchapul_Jct_7_0 :Unchapul_Jct_8_0 :Unchapul_Jct_8_1 :Unchapul_Jct_8_2" shape="1517.55,2409.60 1517.55,2390.40 1515.56,2390.02 1515.08,2389.55 1514.93,2388.89 1515.13,2388.04 1515.67,2387.01 1504.81,2380.22 1502.76,2383.33 1500.84,2385.88 1499.04,2387.86 1497.38,2389.27 1495.85,2390.12 1494.45,2390.40 1494.45,2409.60">
+        <request index="0"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="1"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="2"  response="00000000000" foes="00001100000" cont="0"/>
+        <request index="3"  response="11100000000" foes="11101100000" cont="1"/>
+        <request index="4"  response="11100000000" foes="11100000000" cont="0"/>
+        <request index="5"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="6"  response="11100001111" foes="11100001111" cont="0"/>
+        <request index="7"  response="00000000000" foes="00000000000" cont="0"/>
+        <request index="8"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="9"  response="00000000000" foes="00001111000" cont="0"/>
+        <request index="10" response="00000000000" foes="00001111000" cont="0"/>
+    </junction>
+
+    <junction id=":BrijlalHospital_Jct_11_0" type="internal" x="3299.13" y="4254.26" incLanes=":BrijlalHospital_Jct_3_0 Sheesh2Brijlal_0 Sheesh2Brijlal_1 Sheesh2Brijlal_2" intLanes=":BrijlalHospital_Jct_5_0 :BrijlalHospital_Jct_5_1 :BrijlalHospital_Jct_7_0 :BrijlalHospital_Jct_8_0 :BrijlalHospital_Jct_8_1 :BrijlalHospital_Jct_8_2"/>
+    <junction id=":GasGodam_Mid_9_0" type="internal" x="1398.50" y="1402.37" incLanes=":GasGodam_Mid_8_0 STH2Gas_0 STH2Gas_1" intLanes=":GasGodam_Mid_2_0 :GasGodam_Mid_4_0 :GasGodam_Mid_4_1"/>
+    <junction id=":HeeraNagar_Jct_11_0" type="internal" x="2598.27" y="2399.15" incLanes=":HeeraNagar_Jct_10_0 Tikonia2Heera_0 Tikonia2Heera_1 Tikonia2Heera_2" intLanes=":HeeraNagar_Jct_1_0 :HeeraNagar_Jct_1_1 :HeeraNagar_Jct_4_0 :HeeraNagar_Jct_4_1 :HeeraNagar_Jct_4_2"/>
+    <junction id=":JudgeFarm_18_0" type="internal" x="3300.89" y="3132.48" incLanes=":JudgeFarm_8_0 Krishna2Judge_0 Krishna2Judge_1 Krishna2Judge_2" intLanes=":JudgeFarm_0_0 :JudgeFarm_1_0 :JudgeFarm_2_0 :JudgeFarm_2_1 :JudgeFarm_2_2 :JudgeFarm_11_0 :JudgeFarm_11_1 :JudgeFarm_13_0 :JudgeFarm_17_0"/>
+    <junction id=":JudgeFarm_19_0" type="internal" x="3300.87" y="3128.96" incLanes=":JudgeFarm_9_0 Krishna2Judge_0 Krishna2Judge_1 Krishna2Judge_2" intLanes=":JudgeFarm_1_0 :JudgeFarm_2_0 :JudgeFarm_2_1 :JudgeFarm_2_2 :JudgeFarm_11_0 :JudgeFarm_11_1 :JudgeFarm_13_0 :JudgeFarm_14_0 :JudgeFarm_15_0 :JudgeFarm_15_1"/>
+    <junction id=":KathgodamHospital_Jct_11_0" type="internal" x="3299.13" y="4554.26" incLanes=":KathgodamHospital_Jct_3_0 Brijlal2KathHosp_0 Brijlal2KathHosp_1 Brijlal2KathHosp_2" intLanes=":KathgodamHospital_Jct_5_0 :KathgodamHospital_Jct_5_1 :KathgodamHospital_Jct_7_0 :KathgodamHospital_Jct_8_0 :KathgodamHospital_Jct_8_1 :KathgodamHospital_Jct_8_2"/>
+    <junction id=":KrishnaHospital_Jct_11_0" type="internal" x="3299.13" y="3554.26" incLanes=":KrishnaHospital_Jct_3_0 Judge2Krishna_0 Judge2Krishna_1 Judge2Krishna_2" intLanes=":KrishnaHospital_Jct_5_0 :KrishnaHospital_Jct_5_1 :KrishnaHospital_Jct_7_0 :KrishnaHospital_Jct_8_0 :KrishnaHospital_Jct_8_1 :KrishnaHospital_Jct_8_2"/>
+    <junction id=":Kusumkhera_11_0" type="internal" x="1010.26" y="2400.89" incLanes=":Kusumkhera_3_0 KW2Kusum_0 KW2Kusum_1 KW2Kusum_2" intLanes=":Kusumkhera_5_0 :Kusumkhera_5_1 :Kusumkhera_8_0 :Kusumkhera_8_1 :Kusumkhera_8_2"/>
+    <junction id=":Mandi_Chauraha_9_0" type="internal" x="2000.89" y="1603.36" incLanes=":Mandi_Chauraha_5_0 Chhoti2Mandi_0 Chhoti2Mandi_1" intLanes=":Mandi_Chauraha_1_0 :Mandi_Chauraha_1_1 :Mandi_Chauraha_8_0"/>
+    <junction id=":Mukhani_18_0" type="internal" x="1999.11" y="2407.34" incLanes=":Mukhani_3_0 Chhoti2Mukhani_0 Chhoti2Mukhani_1" intLanes=":Mukhani_5_0 :Mukhani_5_1 :Mukhani_5_2 :Mukhani_8_0 :Mukhani_9_0 :Mukhani_10_0 :Mukhani_10_1 :Mukhani_14_0 :Mukhani_14_1 :Mukhani_14_2 :Mukhani_17_0"/>
+    <junction id=":Mukhani_19_0" type="internal" x="2006.45" y="2400.89" incLanes=":Mukhani_8_0 Uncha2Mukhani_0 Uncha2Mukhani_1 Uncha2Mukhani_2" intLanes=":Mukhani_1_0 :Mukhani_1_1 :Mukhani_3_0 :Mukhani_10_0 :Mukhani_10_1 :Mukhani_12_0 :Mukhani_13_0 :Mukhani_14_0 :Mukhani_14_1 :Mukhani_14_2"/>
+    <junction id=":Mukhani_20_0" type="internal" x="2000.89" y="2392.66" incLanes=":Mukhani_12_0 Canal2Mukhani_0 Canal2Mukhani_1" intLanes=":Mukhani_0_0 :Mukhani_1_0 :Mukhani_1_1 :Mukhani_5_0 :Mukhani_5_1 :Mukhani_5_2 :Mukhani_8_0 :Mukhani_14_0 :Mukhani_14_1 :Mukhani_14_2 :Mukhani_17_0"/>
+    <junction id=":Mukhani_21_0" type="internal" x="1993.55" y="2399.11" incLanes=":Mukhani_17_0 Heera2Mukhani_0 Heera2Mukhani_1 Heera2Mukhani_2" intLanes=":Mukhani_1_0 :Mukhani_1_1 :Mukhani_3_0 :Mukhani_4_0 :Mukhani_5_0 :Mukhani_5_1 :Mukhani_5_2 :Mukhani_10_0 :Mukhani_10_1 :Mukhani_12_0"/>
+    <junction id=":STH_Hospital_Jct_17_0" type="internal" x="1999.10" y="618.06" incLanes=":STH_Hospital_Jct_4_0 Rampur2STH_0 Rampur2STH_1 Rampur2STH_2" intLanes=":STH_Hospital_Jct_6_0 :STH_Hospital_Jct_7_0 :STH_Hospital_Jct_8_0 :STH_Hospital_Jct_9_0 :STH_Hospital_Jct_9_1 :STH_Hospital_Jct_9_2 :STH_Hospital_Jct_15_0 :STH_Hospital_Jct_16_0"/>
+    <junction id=":STH_Hospital_Jct_18_0" type="internal" x="2011.16" y="601.40" incLanes=":STH_Hospital_Jct_7_0 Gas2STH_0 Gas2STH_1" intLanes=":STH_Hospital_Jct_1_0 :STH_Hospital_Jct_1_1 :STH_Hospital_Jct_1_2 :STH_Hospital_Jct_4_0 :STH_Hospital_Jct_9_0 :STH_Hospital_Jct_9_1 :STH_Hospital_Jct_9_2 :STH_Hospital_Jct_12_0 :STH_Hospital_Jct_13_0 :STH_Hospital_Jct_13_1 :STH_Hospital_Jct_15_0"/>
+    <junction id=":STH_Hospital_Jct_19_0" type="internal" x="2000.88" y="596.62" incLanes=":STH_Hospital_Jct_12_0 TP2STH_0 TP2STH_1 TP2STH_2" intLanes=":STH_Hospital_Jct_0_0 :STH_Hospital_Jct_1_0 :STH_Hospital_Jct_1_1 :STH_Hospital_Jct_1_2 :STH_Hospital_Jct_6_0 :STH_Hospital_Jct_7_0 :STH_Hospital_Jct_15_0 :STH_Hospital_Jct_16_0"/>
+    <junction id=":STH_Hospital_Jct_20_0" type="internal" x="1984.19" y="619.88" incLanes=":STH_Hospital_Jct_16_0 STH_Gully_Out_0" intLanes=":STH_Hospital_Jct_1_0 :STH_Hospital_Jct_1_1 :STH_Hospital_Jct_1_2 :STH_Hospital_Jct_4_0 :STH_Hospital_Jct_5_0 :STH_Hospital_Jct_6_0 :STH_Hospital_Jct_9_0 :STH_Hospital_Jct_9_1 :STH_Hospital_Jct_9_2 :STH_Hospital_Jct_12_0"/>
+    <junction id=":Teenpani_Jct_10_0" type="internal" x="3300.88" y="695.86" incLanes=":Teenpani_Jct_6_0 Rail2Teen_0 Rail2Teen_1" intLanes=":Teenpani_Jct_1_0 :Teenpani_Jct_1_1 :Teenpani_Jct_1_2 :Teenpani_Jct_9_0"/>
+    <junction id=":Tikonia_19_0" type="internal" x="3299.12" y="2412.43" incLanes=":Tikonia_4_0 Patel2Tikonia_0 Patel2Tikonia_1 Patel2Tikonia_2" intLanes=":Tikonia_6_0 :Tikonia_6_1 :Tikonia_6_2 :Tikonia_9_0 :Tikonia_10_0 :Tikonia_11_0 :Tikonia_11_1 :Tikonia_11_2 :Tikonia_16_0 :Tikonia_16_1 :Tikonia_18_0"/>
+    <junction id=":Tikonia_20_0" type="internal" x="3307.04" y="2403.94" incLanes=":Tikonia_9_0 Heera2Tikonia_0 Heera2Tikonia_1" intLanes=":Tikonia_1_0 :Tikonia_1_1 :Tikonia_1_2 :Tikonia_4_0 :Tikonia_11_0 :Tikonia_11_1 :Tikonia_11_2 :Tikonia_14_0 :Tikonia_15_0 :Tikonia_16_0 :Tikonia_16_1"/>
+    <junction id=":Tikonia_21_0" type="internal" x="3300.89" y="2391.36" incLanes=":Tikonia_14_0 Judge2Tikonia_0 Judge2Tikonia_1 Judge2Tikonia_2" intLanes=":Tikonia_0_0 :Tikonia_1_0 :Tikonia_1_1 :Tikonia_1_2 :Tikonia_6_0 :Tikonia_6_1 :Tikonia_6_2 :Tikonia_9_0 :Tikonia_16_0 :Tikonia_16_1 :Tikonia_18_0"/>
+    <junction id=":Tikonia_22_0" type="internal" x="3292.92" y="2399.48" incLanes=":Tikonia_18_0 BaseHosp2Tikonia_0 BaseHosp2Tikonia_1" intLanes=":Tikonia_1_0 :Tikonia_1_1 :Tikonia_1_2 :Tikonia_4_0 :Tikonia_5_0 :Tikonia_6_0 :Tikonia_6_1 :Tikonia_6_2 :Tikonia_11_0 :Tikonia_11_1 :Tikonia_11_2 :Tikonia_14_0"/>
+    <junction id=":TransportNagar_18_0" type="internal" x="1999.11" y="1110.57" incLanes=":TransportNagar_4_0 STH2TP_0 STH2TP_1 STH2TP_2" intLanes=":TransportNagar_6_0 :TransportNagar_6_1 :TransportNagar_8_0 :TransportNagar_9_0 :TransportNagar_10_0 :TransportNagar_10_1 :TransportNagar_10_2 :TransportNagar_15_0 :TransportNagar_15_1 :TransportNagar_17_0"/>
+    <junction id=":TransportNagar_19_0" type="internal" x="2000.89" y="1091.01" incLanes=":TransportNagar_13_0 Mandi2TP_0 Mandi2TP_1 Mandi2TP_2" intLanes=":TransportNagar_0_0 :TransportNagar_1_0 :TransportNagar_1_1 :TransportNagar_1_2 :TransportNagar_6_0 :TransportNagar_6_1 :TransportNagar_8_0 :TransportNagar_15_0 :TransportNagar_15_1 :TransportNagar_17_0"/>
+    <junction id=":Unchapul_Jct_11_0" type="internal" x="1514.30" y="2400.88" incLanes=":Unchapul_Jct_3_0 Kusum2Uncha_0 Kusum2Uncha_1 Kusum2Uncha_2" intLanes=":Unchapul_Jct_5_0 :Unchapul_Jct_5_1 :Unchapul_Jct_8_0 :Unchapul_Jct_8_1 :Unchapul_Jct_8_2"/>
+
+    <connection from="Bareilly2Teen" to="Teen2Rail" fromLane="0" toLane="0" via=":Teenpani_Jct_4_0" tl="Teenpani_Jct" linkIndex="4" dir="s" state="O"/>
+    <connection from="Bareilly2Teen" to="Teen2Rail" fromLane="1" toLane="1" via=":Teenpani_Jct_4_1" tl="Teenpani_Jct" linkIndex="5" dir="s" state="O"/>
+    <connection from="Bareilly2Teen" to="Teenpani2TP" fromLane="2" toLane="1" via=":Teenpani_Jct_6_0" tl="Teenpani_Jct" linkIndex="6" dir="l" state="o"/>
+    <connection from="BaseHosp2Tikonia" to="Tikonia2Judge" fromLane="0" toLane="0" via=":Tikonia_5_0" tl="Tikonia" linkIndex="5" dir="r" state="o"/>
+    <connection from="BaseHosp2Tikonia" to="Tikonia2Heera" fromLane="0" toLane="0" via=":Tikonia_6_0" tl="Tikonia" linkIndex="6" dir="s" state="o"/>
+    <connection from="BaseHosp2Tikonia" to="Tikonia2Heera" fromLane="1" toLane="1" via=":Tikonia_6_1" tl="Tikonia" linkIndex="7" dir="s" state="o"/>
+    <connection from="BaseHosp2Tikonia" to="Tikonia2Heera" fromLane="1" toLane="2" via=":Tikonia_6_2" tl="Tikonia" linkIndex="8" dir="s" state="o"/>
+    <connection from="BaseHosp2Tikonia" to="Tikonia2Patel" fromLane="1" toLane="2" via=":Tikonia_9_0" tl="Tikonia" linkIndex="9" dir="l" state="o"/>
+    <connection from="Brijlal2KathHosp" to="KathHosp_Gully_In" fromLane="0" toLane="0" via=":KathgodamHospital_Jct_7_0" dir="r" state="M"/>
+    <connection from="Brijlal2KathHosp" to="KathHosp2KathOut" fromLane="0" toLane="0" via=":KathgodamHospital_Jct_8_0" dir="s" state="M"/>
+    <connection from="Brijlal2KathHosp" to="KathHosp2KathOut" fromLane="1" toLane="1" via=":KathgodamHospital_Jct_8_1" dir="s" state="M"/>
+    <connection from="Brijlal2KathHosp" to="KathHosp2KathOut" fromLane="2" toLane="2" via=":KathgodamHospital_Jct_8_2" dir="s" state="M"/>
+    <connection from="Brijlal2Sheesh" to="Sheesh2Krishna" fromLane="0" toLane="0" via=":Sheeshmahal_0_0" dir="s" state="M"/>
+    <connection from="Brijlal2Sheesh" to="Sheesh2Krishna" fromLane="1" toLane="1" via=":Sheeshmahal_0_1" dir="s" state="M"/>
+    <connection from="Brijlal2Sheesh" to="Sheesh2Krishna" fromLane="2" toLane="2" via=":Sheeshmahal_0_2" dir="s" state="M"/>
+    <connection from="Brijlal_Gully_Out" to="Brijlal2KathHosp" fromLane="0" toLane="0" via=":BrijlalHospital_Jct_4_0" dir="r" state="m"/>
+    <connection from="Brijlal_Gully_Out" to="Brijlal2Sheesh" fromLane="0" toLane="1" via=":BrijlalHospital_Jct_5_0" dir="l" state="m"/>
+    <connection from="Brijlal_Gully_Out" to="Brijlal2Sheesh" fromLane="0" toLane="2" via=":BrijlalHospital_Jct_5_1" dir="l" state="m"/>
+    <connection from="Canal2Judge" to="Judge2Heera" fromLane="0" toLane="0" via=":JudgeFarm_14_0" tl="JudgeFarm" linkIndex="14" dir="r" state="O"/>
+    <connection from="Canal2Judge" to="Judge2Tikonia" fromLane="0" toLane="1" via=":JudgeFarm_15_0" tl="JudgeFarm" linkIndex="15" dir="R" state="o"/>
+    <connection from="Canal2Judge" to="Judge2Tikonia" fromLane="1" toLane="2" via=":JudgeFarm_15_1" tl="JudgeFarm" linkIndex="16" dir="R" state="o"/>
+    <connection from="Canal2Judge" to="Judge2Krishna" fromLane="1" toLane="2" via=":JudgeFarm_17_0" tl="JudgeFarm" linkIndex="17" dir="l" state="o"/>
+    <connection from="Canal2Mukhani" to="Mukhani2Uncha" fromLane="0" toLane="0" via=":Mukhani_0_0" tl="Mukhani" linkIndex="0" dir="r" state="o"/>
+    <connection from="Canal2Mukhani" to="Mukhani2Chhoti" fromLane="0" toLane="0" via=":Mukhani_1_0" tl="Mukhani" linkIndex="1" dir="s" state="o"/>
+    <connection from="Canal2Mukhani" to="Mukhani2Chhoti" fromLane="1" toLane="1" via=":Mukhani_1_1" tl="Mukhani" linkIndex="2" dir="s" state="o"/>
+    <connection from="Canal2Mukhani" to="Mukhani2Heera" fromLane="1" toLane="2" via=":Mukhani_3_0" tl="Mukhani" linkIndex="3" dir="l" state="o"/>
+    <connection from="Chhoti2Mandi" to="Mandi2Uncha" fromLane="0" toLane="0" via=":Mandi_Chauraha_0_0" tl="Mandi_Chauraha" linkIndex="0" dir="r" state="O"/>
+    <connection from="Chhoti2Mandi" to="Mandi2TP" fromLane="0" toLane="1" via=":Mandi_Chauraha_1_0" tl="Mandi_Chauraha" linkIndex="1" dir="s" state="O"/>
+    <connection from="Chhoti2Mandi" to="Mandi2TP" fromLane="1" toLane="2" via=":Mandi_Chauraha_1_1" tl="Mandi_Chauraha" linkIndex="2" dir="s" state="O"/>
+    <connection from="Chhoti2Mukhani" to="Mukhani2Heera" fromLane="0" toLane="0" via=":Mukhani_9_0" tl="Mukhani" linkIndex="9" dir="r" state="o"/>
+    <connection from="Chhoti2Mukhani" to="Mukhani2Canal" fromLane="0" toLane="0" via=":Mukhani_10_0" tl="Mukhani" linkIndex="10" dir="s" state="o"/>
+    <connection from="Chhoti2Mukhani" to="Mukhani2Canal" fromLane="1" toLane="1" via=":Mukhani_10_1" tl="Mukhani" linkIndex="11" dir="s" state="o"/>
+    <connection from="Chhoti2Mukhani" to="Mukhani2Uncha" fromLane="1" toLane="2" via=":Mukhani_12_0" tl="Mukhani" linkIndex="12" dir="l" state="o"/>
+    <connection from="Gas2Kusum" to="Kusum2Uncha" fromLane="0" toLane="0" via=":Kusumkhera_4_0" tl="Kusumkhera" linkIndex="4" dir="r" state="o"/>
+    <connection from="Gas2Kusum" to="Kusum2KW" fromLane="1" toLane="1" via=":Kusumkhera_5_0" tl="Kusumkhera" linkIndex="5" dir="l" state="o"/>
+    <connection from="Gas2Kusum" to="Kusum2KW" fromLane="1" toLane="2" via=":Kusumkhera_5_1" tl="Kusumkhera" linkIndex="6" dir="l" state="o"/>
+    <connection from="Gas2STH" to="STH2Rampur" fromLane="0" toLane="0" via=":STH_Hospital_Jct_13_0" tl="STH_Hospital_Jct" linkIndex="13" dir="s" state="o"/>
+    <connection from="Gas2STH" to="STH2Rampur" fromLane="1" toLane="1" via=":STH_Hospital_Jct_13_1" tl="STH_Hospital_Jct" linkIndex="14" dir="s" state="o"/>
+    <connection from="Gas2STH" to="STH_Gully_In" fromLane="1" toLane="0" via=":STH_Hospital_Jct_15_0" tl="STH_Hospital_Jct" linkIndex="15" dir="L" state="o"/>
+    <connection from="Gas2STH" to="STH2TP" fromLane="1" toLane="2" via=":STH_Hospital_Jct_16_0" tl="STH_Hospital_Jct" linkIndex="16" dir="l" state="o"/>
+    <connection from="Gas2TP" to="TP2STH" fromLane="0" toLane="0" via=":TransportNagar_14_0" dir="r" state="m"/>
+    <connection from="Gas2TP" to="TP2Teenpani" fromLane="0" toLane="0" via=":TransportNagar_15_0" dir="s" state="m"/>
+    <connection from="Gas2TP" to="TP2Teenpani" fromLane="1" toLane="1" via=":TransportNagar_15_1" dir="s" state="m"/>
+    <connection from="Gas2TP" to="TP2Mandi" fromLane="1" toLane="2" via=":TransportNagar_17_0" dir="l" state="m"/>
+    <connection from="Heera2Judge" to="Judge2Tikonia" fromLane="0" toLane="0" via=":JudgeFarm_10_0" tl="JudgeFarm" linkIndex="10" dir="r" state="o"/>
+    <connection from="Heera2Judge" to="Judge2Krishna" fromLane="0" toLane="1" via=":JudgeFarm_11_0" tl="JudgeFarm" linkIndex="11" dir="s" state="o"/>
+    <connection from="Heera2Judge" to="Judge2Krishna" fromLane="1" toLane="2" via=":JudgeFarm_11_1" tl="JudgeFarm" linkIndex="12" dir="s" state="o"/>
+    <connection from="Heera2Judge" to="Judge2Canal" fromLane="1" toLane="1" via=":JudgeFarm_13_0" tl="JudgeFarm" linkIndex="13" dir="l" state="o"/>
+    <connection from="Heera2Mukhani" to="Mukhani2Canal" fromLane="0" toLane="0" via=":Mukhani_4_0" tl="Mukhani" linkIndex="4" dir="r" state="O"/>
+    <connection from="Heera2Mukhani" to="Mukhani2Uncha" fromLane="0" toLane="0" via=":Mukhani_5_0" tl="Mukhani" linkIndex="5" dir="s" state="O"/>
+    <connection from="Heera2Mukhani" to="Mukhani2Uncha" fromLane="1" toLane="1" via=":Mukhani_5_1" tl="Mukhani" linkIndex="6" dir="s" state="O"/>
+    <connection from="Heera2Mukhani" to="Mukhani2Uncha" fromLane="2" toLane="2" via=":Mukhani_5_2" tl="Mukhani" linkIndex="7" dir="s" state="O"/>
+    <connection from="Heera2Mukhani" to="Mukhani2Chhoti" fromLane="2" toLane="1" via=":Mukhani_8_0" tl="Mukhani" linkIndex="8" dir="l" state="o"/>
+    <connection from="Heera2Tikonia" to="Tikonia2Patel" fromLane="0" toLane="0" via=":Tikonia_15_0" tl="Tikonia" linkIndex="15" dir="r" state="o"/>
+    <connection from="Heera2Tikonia" to="Tikonia2BaseHosp" fromLane="0" toLane="0" via=":Tikonia_16_0" tl="Tikonia" linkIndex="16" dir="s" state="o"/>
+    <connection from="Heera2Tikonia" to="Tikonia2BaseHosp" fromLane="1" toLane="1" via=":Tikonia_16_1" tl="Tikonia" linkIndex="17" dir="s" state="o"/>
+    <connection from="Heera2Tikonia" to="Tikonia2Judge" fromLane="2" toLane="2" via=":Tikonia_18_0" tl="Tikonia" linkIndex="18" dir="l" state="o"/>
+    <connection from="Judge2Canal" to="Canal2Mukhani" fromLane="0" toLane="0" via=":Canal_Mid_0_0" dir="l" state="M"/>
+    <connection from="Judge2Canal" to="Canal2Mukhani" fromLane="1" toLane="1" via=":Canal_Mid_0_1" dir="l" state="M"/>
+    <connection from="Judge2Heera" to="Heera2Mukhani" fromLane="0" toLane="0" via=":HeeraNagar_Jct_0_0" dir="r" state="m"/>
+    <connection from="Judge2Heera" to="Heera2Tikonia" fromLane="1" toLane="1" via=":HeeraNagar_Jct_1_0" dir="l" state="m"/>
+    <connection from="Judge2Heera" to="Heera2Tikonia" fromLane="1" toLane="2" via=":HeeraNagar_Jct_1_1" dir="l" state="m"/>
+    <connection from="Judge2Krishna" to="Krishna_Gully_In" fromLane="0" toLane="0" via=":KrishnaHospital_Jct_7_0" dir="r" state="M"/>
+    <connection from="Judge2Krishna" to="Krishna2Sheesh" fromLane="0" toLane="0" via=":KrishnaHospital_Jct_8_0" dir="s" state="M"/>
+    <connection from="Judge2Krishna" to="Krishna2Sheesh" fromLane="1" toLane="1" via=":KrishnaHospital_Jct_8_1" dir="s" state="M"/>
+    <connection from="Judge2Krishna" to="Krishna2Sheesh" fromLane="2" toLane="2" via=":KrishnaHospital_Jct_8_2" dir="s" state="M"/>
+    <connection from="Judge2Tikonia" to="Tikonia2Heera" fromLane="0" toLane="0" via=":Tikonia_0_0" tl="Tikonia" linkIndex="0" dir="r" state="O"/>
+    <connection from="Judge2Tikonia" to="Tikonia2Patel" fromLane="0" toLane="0" via=":Tikonia_1_0" tl="Tikonia" linkIndex="1" dir="s" state="O"/>
+    <connection from="Judge2Tikonia" to="Tikonia2Patel" fromLane="1" toLane="1" via=":Tikonia_1_1" tl="Tikonia" linkIndex="2" dir="s" state="O"/>
+    <connection from="Judge2Tikonia" to="Tikonia2Patel" fromLane="2" toLane="2" via=":Tikonia_1_2" tl="Tikonia" linkIndex="3" dir="s" state="O"/>
+    <connection from="Judge2Tikonia" to="Tikonia2BaseHosp" fromLane="2" toLane="1" via=":Tikonia_4_0" tl="Tikonia" linkIndex="4" dir="l" state="o"/>
+    <connection from="KW2Kusum" to="Kusum2Gas" fromLane="0" toLane="0" via=":Kusumkhera_7_0" tl="Kusumkhera" linkIndex="7" dir="r" state="O"/>
+    <connection from="KW2Kusum" to="Kusum2Uncha" fromLane="0" toLane="0" via=":Kusumkhera_8_0" tl="Kusumkhera" linkIndex="8" dir="s" state="O"/>
+    <connection from="KW2Kusum" to="Kusum2Uncha" fromLane="1" toLane="1" via=":Kusumkhera_8_1" tl="Kusumkhera" linkIndex="9" dir="s" state="O"/>
+    <connection from="KW2Kusum" to="Kusum2Uncha" fromLane="2" toLane="2" via=":Kusumkhera_8_2" tl="Kusumkhera" linkIndex="10" dir="s" state="O"/>
+    <connection from="KathHosp2Brijlal" to="Brijlal2Sheesh" fromLane="0" toLane="0" via=":BrijlalHospital_Jct_0_0" dir="s" state="M"/>
+    <connection from="KathHosp2Brijlal" to="Brijlal2Sheesh" fromLane="1" toLane="1" via=":BrijlalHospital_Jct_0_1" dir="s" state="M"/>
+    <connection from="KathHosp2Brijlal" to="Brijlal2Sheesh" fromLane="2" toLane="2" via=":BrijlalHospital_Jct_0_2" dir="s" state="M"/>
+    <connection from="KathHosp2Brijlal" to="Brijlal_Gully_In" fromLane="2" toLane="0" via=":BrijlalHospital_Jct_3_0" dir="l" state="m"/>
+    <connection from="KathHosp_Gully_Out" to="KathHosp2KathOut" fromLane="0" toLane="0" via=":KathgodamHospital_Jct_4_0" dir="r" state="m"/>
+    <connection from="KathHosp_Gully_Out" to="KathHosp2Brijlal" fromLane="0" toLane="1" via=":KathgodamHospital_Jct_5_0" dir="l" state="m"/>
+    <connection from="KathHosp_Gully_Out" to="KathHosp2Brijlal" fromLane="0" toLane="2" via=":KathgodamHospital_Jct_5_1" dir="l" state="m"/>
+    <connection from="KathOut2KathHosp" to="KathHosp2Brijlal" fromLane="0" toLane="0" via=":KathgodamHospital_Jct_0_0" dir="s" state="M"/>
+    <connection from="KathOut2KathHosp" to="KathHosp2Brijlal" fromLane="1" toLane="1" via=":KathgodamHospital_Jct_0_1" dir="s" state="M"/>
+    <connection from="KathOut2KathHosp" to="KathHosp2Brijlal" fromLane="2" toLane="2" via=":KathgodamHospital_Jct_0_2" dir="s" state="M"/>
+    <connection from="KathOut2KathHosp" to="KathHosp_Gully_In" fromLane="2" toLane="0" via=":KathgodamHospital_Jct_3_0" dir="l" state="m"/>
+    <connection from="Krishna2Judge" to="Judge2Canal" fromLane="0" toLane="0" via=":JudgeFarm_0_0" tl="JudgeFarm" linkIndex="0" dir="r" state="O"/>
+    <connection from="Krishna2Judge" to="Judge2Heera" fromLane="0" toLane="1" via=":JudgeFarm_1_0" tl="JudgeFarm" linkIndex="1" dir="R" state="O"/>
+    <connection from="Krishna2Judge" to="Judge2Tikonia" fromLane="0" toLane="0" via=":JudgeFarm_2_0" tl="JudgeFarm" linkIndex="2" dir="s" state="O"/>
+    <connection from="Krishna2Judge" to="Judge2Tikonia" fromLane="1" toLane="1" via=":JudgeFarm_2_1" tl="JudgeFarm" linkIndex="3" dir="s" state="O"/>
+    <connection from="Krishna2Judge" to="Judge2Tikonia" fromLane="2" toLane="2" via=":JudgeFarm_2_2" tl="JudgeFarm" linkIndex="4" dir="s" state="O"/>
+    <connection from="Krishna2Sheesh" to="Sheesh2Brijlal" fromLane="0" toLane="0" via=":Sheeshmahal_3_0" dir="s" state="M"/>
+    <connection from="Krishna2Sheesh" to="Sheesh2Brijlal" fromLane="1" toLane="1" via=":Sheeshmahal_3_1" dir="s" state="M"/>
+    <connection from="Krishna2Sheesh" to="Sheesh2Brijlal" fromLane="2" toLane="2" via=":Sheeshmahal_3_2" dir="s" state="M"/>
+    <connection from="Krishna_Gully_Out" to="Krishna2Sheesh" fromLane="0" toLane="0" via=":KrishnaHospital_Jct_4_0" dir="r" state="m"/>
+    <connection from="Krishna_Gully_Out" to="Krishna2Judge" fromLane="0" toLane="1" via=":KrishnaHospital_Jct_5_0" dir="l" state="m"/>
+    <connection from="Krishna_Gully_Out" to="Krishna2Judge" fromLane="0" toLane="2" via=":KrishnaHospital_Jct_5_1" dir="l" state="m"/>
+    <connection from="Kusum2Gas" to="Gas2STH" fromLane="0" toLane="0" via=":GasGodam_Mid_6_0" dir="s" state="M"/>
+    <connection from="Kusum2Gas" to="Gas2STH" fromLane="1" toLane="1" via=":GasGodam_Mid_6_1" dir="s" state="M"/>
+    <connection from="Kusum2Gas" to="Gas2TP" fromLane="1" toLane="1" via=":GasGodam_Mid_8_0" dir="L" state="m"/>
+    <connection from="Kusum2Uncha" to="Uncha2Mandi" fromLane="0" toLane="0" via=":Unchapul_Jct_7_0" dir="r" state="M"/>
+    <connection from="Kusum2Uncha" to="Uncha2Mukhani" fromLane="0" toLane="0" via=":Unchapul_Jct_8_0" dir="s" state="M"/>
+    <connection from="Kusum2Uncha" to="Uncha2Mukhani" fromLane="1" toLane="1" via=":Unchapul_Jct_8_1" dir="s" state="M"/>
+    <connection from="Kusum2Uncha" to="Uncha2Mukhani" fromLane="2" toLane="2" via=":Unchapul_Jct_8_2" dir="s" state="M"/>
+    <connection from="Mandi2Chhoti" to="Chhoti2Mukhani" fromLane="0" toLane="0" via=":ChhotiMukhani_2_0" dir="s" state="M"/>
+    <connection from="Mandi2Chhoti" to="Chhoti2Mukhani" fromLane="1" toLane="1" via=":ChhotiMukhani_2_1" dir="s" state="M"/>
+    <connection from="Mandi2TP" to="TP2Gas" fromLane="0" toLane="0" via=":TransportNagar_0_0" dir="r" state="M"/>
+    <connection from="Mandi2TP" to="TP2STH" fromLane="0" toLane="0" via=":TransportNagar_1_0" dir="s" state="M"/>
+    <connection from="Mandi2TP" to="TP2STH" fromLane="1" toLane="1" via=":TransportNagar_1_1" dir="s" state="M"/>
+    <connection from="Mandi2TP" to="TP2STH" fromLane="2" toLane="2" via=":TransportNagar_1_2" dir="s" state="M"/>
+    <connection from="Mandi2TP" to="TP2Teenpani" fromLane="2" toLane="1" via=":TransportNagar_4_0" dir="l" state="m"/>
+    <connection from="Mandi2Uncha" to="Uncha2Mukhani" fromLane="0" toLane="0" via=":Unchapul_Jct_4_0" dir="r" state="m"/>
+    <connection from="Mandi2Uncha" to="Uncha2Kusum" fromLane="1" toLane="1" via=":Unchapul_Jct_5_0" dir="l" state="m"/>
+    <connection from="Mandi2Uncha" to="Uncha2Kusum" fromLane="1" toLane="2" via=":Unchapul_Jct_5_1" dir="l" state="m"/>
+    <connection from="Mukhani2Canal" to="Canal2Judge" fromLane="0" toLane="0" via=":Canal_Mid_2_0" dir="r" state="M"/>
+    <connection from="Mukhani2Canal" to="Canal2Judge" fromLane="1" toLane="1" via=":Canal_Mid_2_1" dir="r" state="M"/>
+    <connection from="Mukhani2Chhoti" to="Chhoti2Mandi" fromLane="0" toLane="0" via=":ChhotiMukhani_0_0" dir="s" state="M"/>
+    <connection from="Mukhani2Chhoti" to="Chhoti2Mandi" fromLane="1" toLane="1" via=":ChhotiMukhani_0_1" dir="s" state="M"/>
+    <connection from="Mukhani2Heera" to="Heera2Tikonia" fromLane="0" toLane="0" via=":HeeraNagar_Jct_7_0" dir="s" state="M"/>
+    <connection from="Mukhani2Heera" to="Heera2Tikonia" fromLane="1" toLane="1" via=":HeeraNagar_Jct_7_1" dir="s" state="M"/>
+    <connection from="Mukhani2Heera" to="Heera2Tikonia" fromLane="2" toLane="2" via=":HeeraNagar_Jct_7_2" dir="s" state="M"/>
+    <connection from="Mukhani2Heera" to="Heera2Judge" fromLane="2" toLane="1" via=":HeeraNagar_Jct_10_0" dir="l" state="m"/>
+    <connection from="Mukhani2Uncha" to="Uncha2Kusum" fromLane="0" toLane="0" via=":Unchapul_Jct_0_0" dir="s" state="M"/>
+    <connection from="Mukhani2Uncha" to="Uncha2Kusum" fromLane="1" toLane="1" via=":Unchapul_Jct_0_1" dir="s" state="M"/>
+    <connection from="Mukhani2Uncha" to="Uncha2Kusum" fromLane="2" toLane="2" via=":Unchapul_Jct_0_2" dir="s" state="M"/>
+    <connection from="Mukhani2Uncha" to="Uncha2Mandi" fromLane="2" toLane="1" via=":Unchapul_Jct_3_0" dir="l" state="m"/>
+    <connection from="Patel2Rail" to="Rail2Teen" fromLane="0" toLane="0" via=":RailwayStation_Jct_0_0" dir="s" state="M"/>
+    <connection from="Patel2Rail" to="Rail2Teen" fromLane="1" toLane="1" via=":RailwayStation_Jct_0_1" dir="s" state="M"/>
+    <connection from="Patel2Tikonia" to="Tikonia2BaseHosp" fromLane="0" toLane="0" via=":Tikonia_10_0" tl="Tikonia" linkIndex="10" dir="r" state="O"/>
+    <connection from="Patel2Tikonia" to="Tikonia2Judge" fromLane="0" toLane="0" via=":Tikonia_11_0" tl="Tikonia" linkIndex="11" dir="s" state="O"/>
+    <connection from="Patel2Tikonia" to="Tikonia2Judge" fromLane="1" toLane="1" via=":Tikonia_11_1" tl="Tikonia" linkIndex="12" dir="s" state="O"/>
+    <connection from="Patel2Tikonia" to="Tikonia2Judge" fromLane="2" toLane="2" via=":Tikonia_11_2" tl="Tikonia" linkIndex="13" dir="s" state="O"/>
+    <connection from="Patel2Tikonia" to="Tikonia2Heera" fromLane="2" toLane="2" via=":Tikonia_14_0" tl="Tikonia" linkIndex="14" dir="l" state="o"/>
+    <connection from="Rail2Patel" to="Patel2Tikonia" fromLane="0" toLane="0" via=":PatelChowk_2_0" tl="PatelChowk" linkIndex="2" dir="s" state="O"/>
+    <connection from="Rail2Patel" to="Patel2Tikonia" fromLane="1" toLane="1" via=":PatelChowk_2_1" tl="PatelChowk" linkIndex="3" dir="s" state="O"/>
+    <connection from="Rail2Patel" to="Patel2Tikonia" fromLane="1" toLane="2" via=":PatelChowk_2_2" tl="PatelChowk" linkIndex="4" dir="s" state="O"/>
+    <connection from="Rail2Teen" to="Teenpani2TP" fromLane="0" toLane="0" via=":Teenpani_Jct_0_0" tl="Teenpani_Jct" linkIndex="0" dir="r" state="O"/>
+    <connection from="Rail2Teen" to="Teen2Bareilly" fromLane="0" toLane="0" via=":Teenpani_Jct_1_0" tl="Teenpani_Jct" linkIndex="1" dir="s" state="O"/>
+    <connection from="Rail2Teen" to="Teen2Bareilly" fromLane="1" toLane="1" via=":Teenpani_Jct_1_1" tl="Teenpani_Jct" linkIndex="2" dir="s" state="O"/>
+    <connection from="Rail2Teen" to="Teen2Bareilly" fromLane="1" toLane="2" via=":Teenpani_Jct_1_2" tl="Teenpani_Jct" linkIndex="3" dir="s" state="O"/>
+    <connection from="Rampur2STH" to="STH_Gully_In" fromLane="0" toLane="0" via=":STH_Hospital_Jct_8_0" tl="STH_Hospital_Jct" linkIndex="8" dir="r" state="O"/>
+    <connection from="Rampur2STH" to="STH2TP" fromLane="0" toLane="0" via=":STH_Hospital_Jct_9_0" tl="STH_Hospital_Jct" linkIndex="9" dir="s" state="O"/>
+    <connection from="Rampur2STH" to="STH2TP" fromLane="1" toLane="1" via=":STH_Hospital_Jct_9_1" tl="STH_Hospital_Jct" linkIndex="10" dir="s" state="O"/>
+    <connection from="Rampur2STH" to="STH2TP" fromLane="2" toLane="2" via=":STH_Hospital_Jct_9_2" tl="STH_Hospital_Jct" linkIndex="11" dir="s" state="O"/>
+    <connection from="Rampur2STH" to="STH2Gas" fromLane="2" toLane="1" via=":STH_Hospital_Jct_12_0" tl="STH_Hospital_Jct" linkIndex="12" dir="L" state="o"/>
+    <connection from="STH2Gas" to="Gas2TP" fromLane="0" toLane="0" via=":GasGodam_Mid_3_0" dir="r" state="M"/>
+    <connection from="STH2Gas" to="Gas2Kusum" fromLane="0" toLane="0" via=":GasGodam_Mid_4_0" dir="s" state="M"/>
+    <connection from="STH2Gas" to="Gas2Kusum" fromLane="1" toLane="1" via=":GasGodam_Mid_4_1" dir="s" state="M"/>
+    <connection from="STH2TP" to="TP2Teenpani" fromLane="0" toLane="0" via=":TransportNagar_9_0" dir="r" state="M"/>
+    <connection from="STH2TP" to="TP2Mandi" fromLane="0" toLane="0" via=":TransportNagar_10_0" dir="s" state="M"/>
+    <connection from="STH2TP" to="TP2Mandi" fromLane="1" toLane="1" via=":TransportNagar_10_1" dir="s" state="M"/>
+    <connection from="STH2TP" to="TP2Mandi" fromLane="2" toLane="2" via=":TransportNagar_10_2" dir="s" state="M"/>
+    <connection from="STH2TP" to="TP2Gas" fromLane="2" toLane="1" via=":TransportNagar_13_0" dir="l" state="m"/>
+    <connection from="STH_Gully_Out" to="STH2TP" fromLane="0" toLane="0" via=":STH_Hospital_Jct_5_0" tl="STH_Hospital_Jct" linkIndex="5" dir="r" state="o"/>
+    <connection from="STH_Gully_Out" to="STH2Gas" fromLane="0" toLane="1" via=":STH_Hospital_Jct_6_0" tl="STH_Hospital_Jct" linkIndex="6" dir="R" state="o"/>
+    <connection from="STH_Gully_Out" to="STH2Rampur" fromLane="0" toLane="2" via=":STH_Hospital_Jct_7_0" tl="STH_Hospital_Jct" linkIndex="7" dir="l" state="o"/>
+    <connection from="Sheesh2Brijlal" to="Brijlal_Gully_In" fromLane="0" toLane="0" via=":BrijlalHospital_Jct_7_0" dir="r" state="M"/>
+    <connection from="Sheesh2Brijlal" to="Brijlal2KathHosp" fromLane="0" toLane="0" via=":BrijlalHospital_Jct_8_0" dir="s" state="M"/>
+    <connection from="Sheesh2Brijlal" to="Brijlal2KathHosp" fromLane="1" toLane="1" via=":BrijlalHospital_Jct_8_1" dir="s" state="M"/>
+    <connection from="Sheesh2Brijlal" to="Brijlal2KathHosp" fromLane="2" toLane="2" via=":BrijlalHospital_Jct_8_2" dir="s" state="M"/>
+    <connection from="Sheesh2Krishna" to="Krishna2Judge" fromLane="0" toLane="0" via=":KrishnaHospital_Jct_0_0" dir="s" state="M"/>
+    <connection from="Sheesh2Krishna" to="Krishna2Judge" fromLane="1" toLane="1" via=":KrishnaHospital_Jct_0_1" dir="s" state="M"/>
+    <connection from="Sheesh2Krishna" to="Krishna2Judge" fromLane="2" toLane="2" via=":KrishnaHospital_Jct_0_2" dir="s" state="M"/>
+    <connection from="Sheesh2Krishna" to="Krishna_Gully_In" fromLane="2" toLane="0" via=":KrishnaHospital_Jct_3_0" dir="l" state="m"/>
+    <connection from="TP2Gas" to="Gas2Kusum" fromLane="0" toLane="0" via=":GasGodam_Mid_0_0" dir="s" state="m"/>
+    <connection from="TP2Gas" to="Gas2Kusum" fromLane="1" toLane="1" via=":GasGodam_Mid_0_1" dir="s" state="m"/>
+    <connection from="TP2Gas" to="Gas2STH" fromLane="1" toLane="1" via=":GasGodam_Mid_2_0" dir="l" state="m"/>
+    <connection from="TP2Mandi" to="Mandi2Chhoti" fromLane="0" toLane="0" via=":Mandi_Chauraha_3_0" tl="Mandi_Chauraha" linkIndex="3" dir="s" state="O"/>
+    <connection from="TP2Mandi" to="Mandi2Chhoti" fromLane="1" toLane="1" via=":Mandi_Chauraha_3_1" tl="Mandi_Chauraha" linkIndex="4" dir="s" state="O"/>
+    <connection from="TP2Mandi" to="Mandi2Uncha" fromLane="2" toLane="1" via=":Mandi_Chauraha_5_0" tl="Mandi_Chauraha" linkIndex="5" dir="L" state="o"/>
+    <connection from="TP2STH" to="STH2Gas" fromLane="0" toLane="0" via=":STH_Hospital_Jct_0_0" tl="STH_Hospital_Jct" linkIndex="0" dir="r" state="O"/>
+    <connection from="TP2STH" to="STH2Rampur" fromLane="0" toLane="0" via=":STH_Hospital_Jct_1_0" tl="STH_Hospital_Jct" linkIndex="1" dir="s" state="O"/>
+    <connection from="TP2STH" to="STH2Rampur" fromLane="1" toLane="1" via=":STH_Hospital_Jct_1_1" tl="STH_Hospital_Jct" linkIndex="2" dir="s" state="O"/>
+    <connection from="TP2STH" to="STH2Rampur" fromLane="2" toLane="2" via=":STH_Hospital_Jct_1_2" tl="STH_Hospital_Jct" linkIndex="3" dir="s" state="O"/>
+    <connection from="TP2STH" to="STH_Gully_In" fromLane="2" toLane="0" via=":STH_Hospital_Jct_4_0" tl="STH_Hospital_Jct" linkIndex="4" dir="l" state="o"/>
+    <connection from="TP2Teenpani" to="Teen2Bareilly" fromLane="0" toLane="0" via=":Teenpani_Jct_7_0" tl="Teenpani_Jct" linkIndex="7" dir="r" state="o"/>
+    <connection from="TP2Teenpani" to="Teen2Bareilly" fromLane="1" toLane="1" via=":Teenpani_Jct_7_1" tl="Teenpani_Jct" linkIndex="8" dir="r" state="o"/>
+    <connection from="TP2Teenpani" to="Teen2Rail" fromLane="1" toLane="1" via=":Teenpani_Jct_9_0" tl="Teenpani_Jct" linkIndex="9" dir="l" state="o"/>
+    <connection from="Teen2Rail" to="Rail2Patel" fromLane="0" toLane="0" via=":RailwayStation_Jct_2_0" dir="s" state="M"/>
+    <connection from="Teen2Rail" to="Rail2Patel" fromLane="1" toLane="1" via=":RailwayStation_Jct_2_1" dir="s" state="M"/>
+    <connection from="Teenpani2TP" to="TP2Mandi" fromLane="0" toLane="0" via=":TransportNagar_5_0" dir="r" state="m"/>
+    <connection from="Teenpani2TP" to="TP2Gas" fromLane="0" toLane="0" via=":TransportNagar_6_0" dir="s" state="m"/>
+    <connection from="Teenpani2TP" to="TP2Gas" fromLane="1" toLane="1" via=":TransportNagar_6_1" dir="s" state="m"/>
+    <connection from="Teenpani2TP" to="TP2STH" fromLane="1" toLane="2" via=":TransportNagar_8_0" dir="l" state="m"/>
+    <connection from="Tikonia2Heera" to="Heera2Judge" fromLane="0" toLane="0" via=":HeeraNagar_Jct_3_0" dir="r" state="M"/>
+    <connection from="Tikonia2Heera" to="Heera2Mukhani" fromLane="0" toLane="0" via=":HeeraNagar_Jct_4_0" dir="s" state="M"/>
+    <connection from="Tikonia2Heera" to="Heera2Mukhani" fromLane="1" toLane="1" via=":HeeraNagar_Jct_4_1" dir="s" state="M"/>
+    <connection from="Tikonia2Heera" to="Heera2Mukhani" fromLane="2" toLane="2" via=":HeeraNagar_Jct_4_2" dir="s" state="M"/>
+    <connection from="Tikonia2Judge" to="Judge2Krishna" fromLane="0" toLane="0" via=":JudgeFarm_5_0" tl="JudgeFarm" linkIndex="5" dir="s" state="O"/>
+    <connection from="Tikonia2Judge" to="Judge2Krishna" fromLane="1" toLane="1" via=":JudgeFarm_5_1" tl="JudgeFarm" linkIndex="6" dir="s" state="O"/>
+    <connection from="Tikonia2Judge" to="Judge2Krishna" fromLane="2" toLane="2" via=":JudgeFarm_5_2" tl="JudgeFarm" linkIndex="7" dir="s" state="O"/>
+    <connection from="Tikonia2Judge" to="Judge2Canal" fromLane="2" toLane="1" via=":JudgeFarm_8_0" tl="JudgeFarm" linkIndex="8" dir="L" state="o"/>
+    <connection from="Tikonia2Judge" to="Judge2Heera" fromLane="2" toLane="1" via=":JudgeFarm_9_0" tl="JudgeFarm" linkIndex="9" dir="l" state="o"/>
+    <connection from="Tikonia2Patel" to="Patel2Rail" fromLane="0" toLane="0" via=":PatelChowk_0_0" tl="PatelChowk" linkIndex="0" dir="s" state="O"/>
+    <connection from="Tikonia2Patel" to="Patel2Rail" fromLane="1" toLane="1" via=":PatelChowk_0_1" tl="PatelChowk" linkIndex="1" dir="s" state="O"/>
+    <connection from="Uncha2Kusum" to="Kusum2KW" fromLane="0" toLane="0" via=":Kusumkhera_0_0" tl="Kusumkhera" linkIndex="0" dir="s" state="O"/>
+    <connection from="Uncha2Kusum" to="Kusum2KW" fromLane="1" toLane="1" via=":Kusumkhera_0_1" tl="Kusumkhera" linkIndex="1" dir="s" state="O"/>
+    <connection from="Uncha2Kusum" to="Kusum2KW" fromLane="2" toLane="2" via=":Kusumkhera_0_2" tl="Kusumkhera" linkIndex="2" dir="s" state="O"/>
+    <connection from="Uncha2Kusum" to="Kusum2Gas" fromLane="2" toLane="1" via=":Kusumkhera_3_0" tl="Kusumkhera" linkIndex="3" dir="l" state="o"/>
+    <connection from="Uncha2Mandi" to="Mandi2TP" fromLane="0" toLane="0" via=":Mandi_Chauraha_6_0" tl="Mandi_Chauraha" linkIndex="6" dir="s" state="o"/>
+    <connection from="Uncha2Mandi" to="Mandi2TP" fromLane="1" toLane="1" via=":Mandi_Chauraha_6_1" tl="Mandi_Chauraha" linkIndex="7" dir="s" state="o"/>
+    <connection from="Uncha2Mandi" to="Mandi2Chhoti" fromLane="1" toLane="1" via=":Mandi_Chauraha_8_0" tl="Mandi_Chauraha" linkIndex="8" dir="l" state="o"/>
+    <connection from="Uncha2Mukhani" to="Mukhani2Chhoti" fromLane="0" toLane="0" via=":Mukhani_13_0" tl="Mukhani" linkIndex="13" dir="r" state="O"/>
+    <connection from="Uncha2Mukhani" to="Mukhani2Heera" fromLane="0" toLane="0" via=":Mukhani_14_0" tl="Mukhani" linkIndex="14" dir="s" state="O"/>
+    <connection from="Uncha2Mukhani" to="Mukhani2Heera" fromLane="1" toLane="1" via=":Mukhani_14_1" tl="Mukhani" linkIndex="15" dir="s" state="O"/>
+    <connection from="Uncha2Mukhani" to="Mukhani2Heera" fromLane="2" toLane="2" via=":Mukhani_14_2" tl="Mukhani" linkIndex="16" dir="s" state="O"/>
+    <connection from="Uncha2Mukhani" to="Mukhani2Canal" fromLane="2" toLane="1" via=":Mukhani_17_0" tl="Mukhani" linkIndex="17" dir="l" state="o"/>
+
+    <connection from=":BrijlalHospital_Jct_0" to="Brijlal2Sheesh" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":BrijlalHospital_Jct_0" to="Brijlal2Sheesh" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":BrijlalHospital_Jct_0" to="Brijlal2Sheesh" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":BrijlalHospital_Jct_3" to="Brijlal_Gully_In" fromLane="0" toLane="0" via=":BrijlalHospital_Jct_11_0" dir="l" state="m"/>
+    <connection from=":BrijlalHospital_Jct_11" to="Brijlal_Gully_In" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":BrijlalHospital_Jct_4" to="Brijlal2KathHosp" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":BrijlalHospital_Jct_5" to="Brijlal2Sheesh" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":BrijlalHospital_Jct_5" to="Brijlal2Sheesh" fromLane="1" toLane="2" dir="l" state="M"/>
+    <connection from=":BrijlalHospital_Jct_7" to="Brijlal_Gully_In" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":BrijlalHospital_Jct_8" to="Brijlal2KathHosp" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":BrijlalHospital_Jct_8" to="Brijlal2KathHosp" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":BrijlalHospital_Jct_8" to="Brijlal2KathHosp" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Canal_Mid_0" to="Canal2Mukhani" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":Canal_Mid_0" to="Canal2Mukhani" fromLane="1" toLane="1" dir="l" state="M"/>
+    <connection from=":Canal_Mid_2" to="Canal2Judge" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Canal_Mid_2" to="Canal2Judge" fromLane="1" toLane="1" dir="r" state="M"/>
+    <connection from=":ChhotiMukhani_0" to="Chhoti2Mandi" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":ChhotiMukhani_0" to="Chhoti2Mandi" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":ChhotiMukhani_2" to="Chhoti2Mukhani" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":ChhotiMukhani_2" to="Chhoti2Mukhani" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":GasGodam_Mid_0" to="Gas2Kusum" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":GasGodam_Mid_0" to="Gas2Kusum" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":GasGodam_Mid_2" to="Gas2STH" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":GasGodam_Mid_3" to="Gas2TP" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":GasGodam_Mid_4" to="Gas2Kusum" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":GasGodam_Mid_4" to="Gas2Kusum" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":GasGodam_Mid_6" to="Gas2STH" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":GasGodam_Mid_6" to="Gas2STH" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":GasGodam_Mid_8" to="Gas2TP" fromLane="0" toLane="1" via=":GasGodam_Mid_9_0" dir="L" state="m"/>
+    <connection from=":GasGodam_Mid_9" to="Gas2TP" fromLane="0" toLane="1" dir="L" state="M"/>
+    <connection from=":HeeraNagar_Jct_0" to="Heera2Mukhani" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":HeeraNagar_Jct_1" to="Heera2Tikonia" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":HeeraNagar_Jct_1" to="Heera2Tikonia" fromLane="1" toLane="2" dir="l" state="M"/>
+    <connection from=":HeeraNagar_Jct_3" to="Heera2Judge" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":HeeraNagar_Jct_4" to="Heera2Mukhani" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":HeeraNagar_Jct_4" to="Heera2Mukhani" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":HeeraNagar_Jct_4" to="Heera2Mukhani" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":HeeraNagar_Jct_7" to="Heera2Tikonia" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":HeeraNagar_Jct_7" to="Heera2Tikonia" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":HeeraNagar_Jct_7" to="Heera2Tikonia" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":HeeraNagar_Jct_10" to="Heera2Judge" fromLane="0" toLane="1" via=":HeeraNagar_Jct_11_0" dir="l" state="m"/>
+    <connection from=":HeeraNagar_Jct_11" to="Heera2Judge" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":JudgeFarm_0" to="Judge2Canal" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":JudgeFarm_1" to="Judge2Heera" fromLane="0" toLane="1" dir="R" state="M"/>
+    <connection from=":JudgeFarm_2" to="Judge2Tikonia" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":JudgeFarm_2" to="Judge2Tikonia" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":JudgeFarm_2" to="Judge2Tikonia" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":JudgeFarm_5" to="Judge2Krishna" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":JudgeFarm_5" to="Judge2Krishna" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":JudgeFarm_5" to="Judge2Krishna" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":JudgeFarm_8" to="Judge2Canal" fromLane="0" toLane="1" via=":JudgeFarm_18_0" dir="L" state="m"/>
+    <connection from=":JudgeFarm_18" to="Judge2Canal" fromLane="0" toLane="1" dir="L" state="M"/>
+    <connection from=":JudgeFarm_9" to="Judge2Heera" fromLane="0" toLane="1" via=":JudgeFarm_19_0" dir="l" state="m"/>
+    <connection from=":JudgeFarm_19" to="Judge2Heera" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":JudgeFarm_10" to="Judge2Tikonia" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":JudgeFarm_11" to="Judge2Krishna" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":JudgeFarm_11" to="Judge2Krishna" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":JudgeFarm_13" to="Judge2Canal" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":JudgeFarm_14" to="Judge2Heera" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":JudgeFarm_15" to="Judge2Tikonia" fromLane="0" toLane="1" dir="R" state="M"/>
+    <connection from=":JudgeFarm_15" to="Judge2Tikonia" fromLane="1" toLane="2" dir="R" state="M"/>
+    <connection from=":JudgeFarm_17" to="Judge2Krishna" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":KathgodamHospital_Jct_0" to="KathHosp2Brijlal" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":KathgodamHospital_Jct_0" to="KathHosp2Brijlal" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":KathgodamHospital_Jct_0" to="KathHosp2Brijlal" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":KathgodamHospital_Jct_3" to="KathHosp_Gully_In" fromLane="0" toLane="0" via=":KathgodamHospital_Jct_11_0" dir="l" state="m"/>
+    <connection from=":KathgodamHospital_Jct_11" to="KathHosp_Gully_In" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":KathgodamHospital_Jct_4" to="KathHosp2KathOut" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":KathgodamHospital_Jct_5" to="KathHosp2Brijlal" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":KathgodamHospital_Jct_5" to="KathHosp2Brijlal" fromLane="1" toLane="2" dir="l" state="M"/>
+    <connection from=":KathgodamHospital_Jct_7" to="KathHosp_Gully_In" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":KathgodamHospital_Jct_8" to="KathHosp2KathOut" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":KathgodamHospital_Jct_8" to="KathHosp2KathOut" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":KathgodamHospital_Jct_8" to="KathHosp2KathOut" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":KrishnaHospital_Jct_0" to="Krishna2Judge" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":KrishnaHospital_Jct_0" to="Krishna2Judge" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":KrishnaHospital_Jct_0" to="Krishna2Judge" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":KrishnaHospital_Jct_3" to="Krishna_Gully_In" fromLane="0" toLane="0" via=":KrishnaHospital_Jct_11_0" dir="l" state="m"/>
+    <connection from=":KrishnaHospital_Jct_11" to="Krishna_Gully_In" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":KrishnaHospital_Jct_4" to="Krishna2Sheesh" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":KrishnaHospital_Jct_5" to="Krishna2Judge" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":KrishnaHospital_Jct_5" to="Krishna2Judge" fromLane="1" toLane="2" dir="l" state="M"/>
+    <connection from=":KrishnaHospital_Jct_7" to="Krishna_Gully_In" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":KrishnaHospital_Jct_8" to="Krishna2Sheesh" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":KrishnaHospital_Jct_8" to="Krishna2Sheesh" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":KrishnaHospital_Jct_8" to="Krishna2Sheesh" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Kusumkhera_0" to="Kusum2KW" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Kusumkhera_0" to="Kusum2KW" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Kusumkhera_0" to="Kusum2KW" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Kusumkhera_3" to="Kusum2Gas" fromLane="0" toLane="1" via=":Kusumkhera_11_0" dir="l" state="m"/>
+    <connection from=":Kusumkhera_11" to="Kusum2Gas" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Kusumkhera_4" to="Kusum2Uncha" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Kusumkhera_5" to="Kusum2KW" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Kusumkhera_5" to="Kusum2KW" fromLane="1" toLane="2" dir="l" state="M"/>
+    <connection from=":Kusumkhera_7" to="Kusum2Gas" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Kusumkhera_8" to="Kusum2Uncha" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Kusumkhera_8" to="Kusum2Uncha" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Kusumkhera_8" to="Kusum2Uncha" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Mandi_Chauraha_0" to="Mandi2Uncha" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mandi_Chauraha_1" to="Mandi2TP" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":Mandi_Chauraha_1" to="Mandi2TP" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":Mandi_Chauraha_3" to="Mandi2Chhoti" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mandi_Chauraha_3" to="Mandi2Chhoti" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mandi_Chauraha_5" to="Mandi2Uncha" fromLane="0" toLane="1" via=":Mandi_Chauraha_9_0" dir="L" state="m"/>
+    <connection from=":Mandi_Chauraha_9" to="Mandi2Uncha" fromLane="0" toLane="1" dir="L" state="M"/>
+    <connection from=":Mandi_Chauraha_6" to="Mandi2TP" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mandi_Chauraha_6" to="Mandi2TP" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mandi_Chauraha_8" to="Mandi2Chhoti" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Mukhani_0" to="Mukhani2Uncha" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mukhani_1" to="Mukhani2Chhoti" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mukhani_1" to="Mukhani2Chhoti" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mukhani_3" to="Mukhani2Heera" fromLane="0" toLane="2" via=":Mukhani_18_0" dir="l" state="m"/>
+    <connection from=":Mukhani_18" to="Mukhani2Heera" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":Mukhani_4" to="Mukhani2Canal" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mukhani_5" to="Mukhani2Uncha" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mukhani_5" to="Mukhani2Uncha" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mukhani_5" to="Mukhani2Uncha" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Mukhani_8" to="Mukhani2Chhoti" fromLane="0" toLane="1" via=":Mukhani_19_0" dir="l" state="m"/>
+    <connection from=":Mukhani_19" to="Mukhani2Chhoti" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Mukhani_9" to="Mukhani2Heera" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mukhani_10" to="Mukhani2Canal" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mukhani_10" to="Mukhani2Canal" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mukhani_12" to="Mukhani2Uncha" fromLane="0" toLane="2" via=":Mukhani_20_0" dir="l" state="m"/>
+    <connection from=":Mukhani_20" to="Mukhani2Uncha" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":Mukhani_13" to="Mukhani2Chhoti" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Mukhani_14" to="Mukhani2Heera" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Mukhani_14" to="Mukhani2Heera" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Mukhani_14" to="Mukhani2Heera" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Mukhani_17" to="Mukhani2Canal" fromLane="0" toLane="1" via=":Mukhani_21_0" dir="l" state="m"/>
+    <connection from=":Mukhani_21" to="Mukhani2Canal" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":PatelChowk_0" to="Patel2Rail" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":PatelChowk_0" to="Patel2Rail" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":PatelChowk_2" to="Patel2Tikonia" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":PatelChowk_2" to="Patel2Tikonia" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":PatelChowk_2" to="Patel2Tikonia" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":RailwayStation_Jct_0" to="Rail2Teen" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":RailwayStation_Jct_0" to="Rail2Teen" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":RailwayStation_Jct_2" to="Rail2Patel" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":RailwayStation_Jct_2" to="Rail2Patel" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_0" to="STH2Gas" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":STH_Hospital_Jct_1" to="STH2Rampur" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_1" to="STH2Rampur" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_1" to="STH2Rampur" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_4" to="STH_Gully_In" fromLane="0" toLane="0" via=":STH_Hospital_Jct_17_0" dir="l" state="m"/>
+    <connection from=":STH_Hospital_Jct_17" to="STH_Gully_In" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":STH_Hospital_Jct_5" to="STH2TP" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":STH_Hospital_Jct_6" to="STH2Gas" fromLane="0" toLane="1" dir="R" state="M"/>
+    <connection from=":STH_Hospital_Jct_7" to="STH2Rampur" fromLane="0" toLane="2" via=":STH_Hospital_Jct_18_0" dir="l" state="m"/>
+    <connection from=":STH_Hospital_Jct_18" to="STH2Rampur" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":STH_Hospital_Jct_8" to="STH_Gully_In" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":STH_Hospital_Jct_9" to="STH2TP" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_9" to="STH2TP" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_9" to="STH2TP" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_12" to="STH2Gas" fromLane="0" toLane="1" via=":STH_Hospital_Jct_19_0" dir="L" state="m"/>
+    <connection from=":STH_Hospital_Jct_19" to="STH2Gas" fromLane="0" toLane="1" dir="L" state="M"/>
+    <connection from=":STH_Hospital_Jct_13" to="STH2Rampur" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_13" to="STH2Rampur" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":STH_Hospital_Jct_15" to="STH_Gully_In" fromLane="0" toLane="0" dir="L" state="M"/>
+    <connection from=":STH_Hospital_Jct_16" to="STH2TP" fromLane="0" toLane="2" via=":STH_Hospital_Jct_20_0" dir="l" state="m"/>
+    <connection from=":STH_Hospital_Jct_20" to="STH2TP" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":Sheeshmahal_0" to="Sheesh2Krishna" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Sheeshmahal_0" to="Sheesh2Krishna" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Sheeshmahal_0" to="Sheesh2Krishna" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Sheeshmahal_3" to="Sheesh2Brijlal" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Sheeshmahal_3" to="Sheesh2Brijlal" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Sheeshmahal_3" to="Sheesh2Brijlal" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Teenpani_Jct_0" to="Teenpani2TP" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Teenpani_Jct_1" to="Teen2Bareilly" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Teenpani_Jct_1" to="Teen2Bareilly" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Teenpani_Jct_1" to="Teen2Bareilly" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Teenpani_Jct_4" to="Teen2Rail" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Teenpani_Jct_4" to="Teen2Rail" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Teenpani_Jct_6" to="Teenpani2TP" fromLane="0" toLane="1" via=":Teenpani_Jct_10_0" dir="l" state="m"/>
+    <connection from=":Teenpani_Jct_10" to="Teenpani2TP" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Teenpani_Jct_7" to="Teen2Bareilly" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Teenpani_Jct_7" to="Teen2Bareilly" fromLane="1" toLane="1" dir="r" state="M"/>
+    <connection from=":Teenpani_Jct_9" to="Teen2Rail" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Tikonia_0" to="Tikonia2Heera" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Tikonia_1" to="Tikonia2Patel" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Tikonia_1" to="Tikonia2Patel" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Tikonia_1" to="Tikonia2Patel" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Tikonia_4" to="Tikonia2BaseHosp" fromLane="0" toLane="1" via=":Tikonia_19_0" dir="l" state="m"/>
+    <connection from=":Tikonia_19" to="Tikonia2BaseHosp" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Tikonia_5" to="Tikonia2Judge" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Tikonia_6" to="Tikonia2Heera" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Tikonia_6" to="Tikonia2Heera" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Tikonia_6" to="Tikonia2Heera" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Tikonia_9" to="Tikonia2Patel" fromLane="0" toLane="2" via=":Tikonia_20_0" dir="l" state="m"/>
+    <connection from=":Tikonia_20" to="Tikonia2Patel" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":Tikonia_10" to="Tikonia2BaseHosp" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Tikonia_11" to="Tikonia2Judge" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Tikonia_11" to="Tikonia2Judge" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Tikonia_11" to="Tikonia2Judge" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Tikonia_14" to="Tikonia2Heera" fromLane="0" toLane="2" via=":Tikonia_21_0" dir="l" state="m"/>
+    <connection from=":Tikonia_21" to="Tikonia2Heera" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":Tikonia_15" to="Tikonia2Patel" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Tikonia_16" to="Tikonia2BaseHosp" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Tikonia_16" to="Tikonia2BaseHosp" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Tikonia_18" to="Tikonia2Judge" fromLane="0" toLane="2" via=":Tikonia_22_0" dir="l" state="m"/>
+    <connection from=":Tikonia_22" to="Tikonia2Judge" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":TransportNagar_0" to="TP2Gas" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":TransportNagar_1" to="TP2STH" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":TransportNagar_1" to="TP2STH" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":TransportNagar_1" to="TP2STH" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":TransportNagar_4" to="TP2Teenpani" fromLane="0" toLane="1" via=":TransportNagar_18_0" dir="l" state="m"/>
+    <connection from=":TransportNagar_18" to="TP2Teenpani" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":TransportNagar_5" to="TP2Mandi" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":TransportNagar_6" to="TP2Gas" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":TransportNagar_6" to="TP2Gas" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":TransportNagar_8" to="TP2STH" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":TransportNagar_9" to="TP2Teenpani" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":TransportNagar_10" to="TP2Mandi" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":TransportNagar_10" to="TP2Mandi" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":TransportNagar_10" to="TP2Mandi" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":TransportNagar_13" to="TP2Gas" fromLane="0" toLane="1" via=":TransportNagar_19_0" dir="l" state="m"/>
+    <connection from=":TransportNagar_19" to="TP2Gas" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":TransportNagar_14" to="TP2STH" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":TransportNagar_15" to="TP2Teenpani" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":TransportNagar_15" to="TP2Teenpani" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":TransportNagar_17" to="TP2Mandi" fromLane="0" toLane="2" dir="l" state="M"/>
+    <connection from=":Unchapul_Jct_0" to="Uncha2Kusum" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Unchapul_Jct_0" to="Uncha2Kusum" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Unchapul_Jct_0" to="Uncha2Kusum" fromLane="2" toLane="2" dir="s" state="M"/>
+    <connection from=":Unchapul_Jct_3" to="Uncha2Mandi" fromLane="0" toLane="1" via=":Unchapul_Jct_11_0" dir="l" state="m"/>
+    <connection from=":Unchapul_Jct_11" to="Uncha2Mandi" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Unchapul_Jct_4" to="Uncha2Mukhani" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Unchapul_Jct_5" to="Uncha2Kusum" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":Unchapul_Jct_5" to="Uncha2Kusum" fromLane="1" toLane="2" dir="l" state="M"/>
+    <connection from=":Unchapul_Jct_7" to="Uncha2Mandi" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":Unchapul_Jct_8" to="Uncha2Mukhani" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":Unchapul_Jct_8" to="Uncha2Mukhani" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":Unchapul_Jct_8" to="Uncha2Mukhani" fromLane="2" toLane="2" dir="s" state="M"/>
+
+</net>

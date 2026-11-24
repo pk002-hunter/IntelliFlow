@@ -41,6 +41,8 @@ def run_live_gui_demo(
     model = None
     if agent.lower() == "ppo":
         model_path = os.path.join(PROJECT_ROOT, "results", "models", "ppo", network if network != "single" else "", "ppo_final.zip")
+        if not os.path.exists(model_path) and network == "haldwani":
+            model_path = os.path.join(PROJECT_ROOT, "results", "models", "ppo", "mukhani", "ppo_final.zip")
         if not os.path.exists(model_path):
             model_path = os.path.join(PROJECT_ROOT, "results", "models", "ppo", "ppo_final.zip")
         if os.path.exists(model_path):
@@ -128,7 +130,7 @@ def run_live_gui_demo(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Live SUMO-GUI Visual Simulation Demo")
-    parser.add_argument("--network", type=str, choices=["single", "mukhani"], default="mukhani", help="Road network to visualize")
+    parser.add_argument("--network", type=str, choices=["single", "mukhani", "haldwani"], default="haldwani", help="Road network to visualize")
     parser.add_argument("--agent", type=str, choices=["ppo", "dqn", "fixed"], default="ppo", help="Controller type")
     parser.add_argument("--delay", type=int, default=60, help="Simulation step delay in ms for visible motion (default: 60)")
     parser.add_argument("--steps", type=int, default=1800, help="Total simulation seconds to run")

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- ============================================================== -->
+    <!-- 1. Kaladhungi Road (East-West Highway Arterial Corridor)       -->
+    <!-- ============================================================== -->
+    <edge id="KW2Kusum" from="KW_Out" to="Kusumkhera" priority="4" numLanes="3" speed="16.67"/>
+    <edge id="Kusum2KW" from="Kusumkhera" to="KW_Out" priority="4" numLanes="3" speed="16.67"/>
+
+    <edge id="Kusum2Uncha" from="Kusumkhera" to="Unchapul_Jct" priority="4" numLanes="3" speed="13.89"/>
+    <edge id="Uncha2Kusum" from="Unchapul_Jct" to="Kusumkhera" priority="4" numLanes="3" speed="13.89"/>
+
+    <edge id="Uncha2Mukhani" from="Unchapul_Jct" to="Mukhani" priority="4" numLanes="3" speed="13.89"/>
+    <edge id="Mukhani2Uncha" from="Mukhani" to="Unchapul_Jct" priority="4" numLanes="3" speed="13.89"/>
+
+    <edge id="Mukhani2Heera" from="Mukhani" to="HeeraNagar_Jct" priority="4" numLanes="3" speed="13.89"/>
+    <edge id="Heera2Mukhani" from="HeeraNagar_Jct" to="Mukhani" priority="4" numLanes="3" speed="13.89"/>
+
+    <edge id="Heera2Tikonia" from="HeeraNagar_Jct" to="Tikonia" priority="4" numLanes="3" speed="13.89"/>
+    <edge id="Tikonia2Heera" from="Tikonia" to="HeeraNagar_Jct" priority="4" numLanes="3" speed="13.89"/>
+
+    <!-- ============================================================== -->
+    <!-- 2. Nainital Road (North-South National Highway NH-109)         -->
+    <!-- Featuring: Kathgodam, Brijlal Hospital, Krishna Hospital, Tikonia -->
+    <!-- ============================================================== -->
+    <!-- Kathgodam Outskirts to Kathgodam Hospital Junction -->
+    <edge id="KathOut2KathHosp" from="Kathgodam_Out" to="KathgodamHospital_Jct" priority="5" numLanes="3" speed="16.67"/>
+    <edge id="KathHosp2KathOut" from="KathgodamHospital_Jct" to="Kathgodam_Out" priority="5" numLanes="3" speed="16.67"/>
+
+    <!-- Kathgodam Hospital Junction to Brijlal Hospital Junction -->
+    <edge id="KathHosp2Brijlal" from="KathgodamHospital_Jct" to="BrijlalHospital_Jct" priority="5" numLanes="3" speed="16.67"/>
+    <edge id="Brijlal2KathHosp" from="BrijlalHospital_Jct" to="KathgodamHospital_Jct" priority="5" numLanes="3" speed="16.67"/>
+
+    <!-- Brijlal Hospital Junction to Sheeshmahal -->
+    <edge id="Brijlal2Sheesh" from="BrijlalHospital_Jct" to="Sheeshmahal" priority="5" numLanes="3" speed="13.89"/>
+    <edge id="Sheesh2Brijlal" from="Sheeshmahal" to="BrijlalHospital_Jct" priority="5" numLanes="3" speed="13.89"/>
+
+    <!-- Sheeshmahal to Krishna Hospital Junction -->
+    <edge id="Sheesh2Krishna" from="Sheeshmahal" to="KrishnaHospital_Jct" priority="5" numLanes="3" speed="13.89"/>
+    <edge id="Krishna2Sheesh" from="KrishnaHospital_Jct" to="Sheeshmahal" priority="5" numLanes="3" speed="13.89"/>
+
+    <!-- Krishna Hospital Junction to Judge Farm -->
+    <edge id="Krishna2Judge" from="KrishnaHospital_Jct" to="JudgeFarm" priority="5" numLanes="3" speed="13.89"/>
+    <edge id="Judge2Krishna" from="JudgeFarm" to="KrishnaHospital_Jct" priority="5" numLanes="3" speed="13.89"/>
+
+    <!-- Judge Farm to Tikonia -->
+    <edge id="Judge2Tikonia" from="JudgeFarm" to="Tikonia" priority="5" numLanes="3" speed="13.89"/>
+    <edge id="Tikonia2Judge" from="Tikonia" to="JudgeFarm" priority="5" numLanes="3" speed="13.89"/>
+
+    <!-- Tikonia to Patel Chowk (City Center) -->
+    <edge id="Tikonia2Patel" from="Tikonia" to="PatelChowk" priority="4" numLanes="3" speed="11.11"/>
+    <edge id="Patel2Tikonia" from="PatelChowk" to="Tikonia" priority="4" numLanes="3" speed="11.11"/>
+
+    <!-- Patel Chowk to Railway Station -->
+    <edge id="Patel2Rail" from="PatelChowk" to="RailwayStation_Jct" priority="4" numLanes="2" speed="11.11"/>
+    <edge id="Rail2Patel" from="RailwayStation_Jct" to="PatelChowk" priority="4" numLanes="2" speed="11.11"/>
+
+    <!-- Railway Station to Teenpani -->
+    <edge id="Rail2Teen" from="RailwayStation_Jct" to="Teenpani_Jct" priority="4" numLanes="2" speed="13.89"/>
+    <edge id="Teen2Rail" from="Teenpani_Jct" to="RailwayStation_Jct" priority="4" numLanes="2" speed="13.89"/>
+
+    <!-- Teenpani to Bareilly Outskirts -->
+    <edge id="Teen2Bareilly" from="Teenpani_Jct" to="Bareilly_Out" priority="5" numLanes="3" speed="16.67"/>
+    <edge id="Bareilly2Teen" from="Bareilly_Out" to="Teenpani_Jct" priority="5" numLanes="3" speed="16.67"/>
+
+    <!-- ============================================================== -->
+    <!-- 3. Rampur Road (SH-49 Arterial towards STH Hospital)           -->
+    <!-- ============================================================== -->
+    <edge id="Mukhani2Chhoti" from="Mukhani" to="ChhotiMukhani" priority="3" numLanes="2" speed="11.11"/>
+    <edge id="Chhoti2Mukhani" from="ChhotiMukhani" to="Mukhani" priority="3" numLanes="2" speed="11.11"/>
+
+    <edge id="Chhoti2Mandi" from="ChhotiMukhani" to="Mandi_Chauraha" priority="3" numLanes="2" speed="11.11"/>
+    <edge id="Mandi2Chhoti" from="Mandi_Chauraha" to="ChhotiMukhani" priority="3" numLanes="2" speed="11.11"/>
+
+    <edge id="Mandi2TP" from="Mandi_Chauraha" to="TransportNagar" priority="4" numLanes="3" speed="13.89"/>
+    <edge id="TP2Mandi" from="TransportNagar" to="Mandi_Chauraha" priority="4" numLanes="3" speed="13.89"/>
+
+    <edge id="TP2STH" from="TransportNagar" to="STH_Hospital_Jct" priority="4" numLanes="3" speed="13.89"/>
+    <edge id="STH2TP" from="STH_Hospital_Jct" to="TransportNagar" priority="4" numLanes="3" speed="13.89"/>
+
+    <edge id="STH2Rampur" from="STH_Hospital_Jct" to="Rampur_Out" priority="4" numLanes="3" speed="16.67"/>
+    <edge id="Rampur2STH" from="Rampur_Out" to="STH_Hospital_Jct" priority="4" numLanes="3" speed="16.67"/>
+
+    <!-- ============================================================== -->
+    <!-- 4. 🏥 DEDICATED EMERGENCY GULLY ACCESS ROADS                   -->
+    <!-- ============================================================== -->
+    <!-- Brijlal Hospital Direct Emergency Gully -->
+    <edge id="Brijlal_Gully_In" from="BrijlalHospital_Jct" to="Brijlal_Gully_End" priority="1" numLanes="1" speed="8.33"/>
+    <edge id="Brijlal_Gully_Out" from="Brijlal_Gully_End" to="BrijlalHospital_Jct" priority="1" numLanes="1" speed="8.33"/>
+
+    <!-- Krishna Hospital Direct Emergency Gully -->
+    <edge id="Krishna_Gully_In" from="KrishnaHospital_Jct" to="Krishna_Gully_End" priority="1" numLanes="1" speed="8.33"/>
+    <edge id="Krishna_Gully_Out" from="Krishna_Gully_End" to="KrishnaHospital_Jct" priority="1" numLanes="1" speed="8.33"/>
+
+    <!-- Kathgodam Railway Hospital Direct Gully -->
+    <edge id="KathHosp_Gully_In" from="KathgodamHospital_Jct" to="Kathgodam_Hospital_End" priority="1" numLanes="1" speed="8.33"/>
+    <edge id="KathHosp_Gully_Out" from="Kathgodam_Hospital_End" to="KathgodamHospital_Jct" priority="1" numLanes="1" speed="8.33"/>
+
+    <!-- STH Hospital Direct Emergency Gully -->
+    <edge id="STH_Gully_In" from="STH_Hospital_Jct" to="STH_Gully_End" priority="1" numLanes="1" speed="8.33"/>
+    <edge id="STH_Gully_Out" from="STH_Gully_End" to="STH_Hospital_Jct" priority="1" numLanes="1" speed="8.33"/>
+
+    <!-- ============================================================== -->
+    <!-- 5. Strategic Local Shortcuts & Bypasses                        -->
+    <!-- ============================================================== -->
+    <edge id="Mukhani2Canal" from="Mukhani" to="Canal_Mid" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="Canal2Mukhani" from="Canal_Mid" to="Mukhani" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="Canal2Judge" from="Canal_Mid" to="JudgeFarm" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="Judge2Canal" from="JudgeFarm" to="Canal_Mid" priority="2" numLanes="2" speed="11.11"/>
+
+    <edge id="Kusum2Gas" from="Kusumkhera" to="GasGodam_Mid" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="Gas2Kusum" from="GasGodam_Mid" to="Kusumkhera" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="Gas2TP" from="GasGodam_Mid" to="TransportNagar" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="TP2Gas" from="TransportNagar" to="GasGodam_Mid" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="Gas2STH" from="GasGodam_Mid" to="STH_Hospital_Jct" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="STH2Gas" from="STH_Hospital_Jct" to="GasGodam_Mid" priority="2" numLanes="2" speed="11.11"/>
+
+    <edge id="Uncha2Mandi" from="Unchapul_Jct" to="Mandi_Chauraha" priority="2" numLanes="2" speed="10.00"/>
+    <edge id="Mandi2Uncha" from="Mandi_Chauraha" to="Unchapul_Jct" priority="2" numLanes="2" speed="10.00"/>
+
+    <edge id="Heera2Judge" from="HeeraNagar_Jct" to="JudgeFarm" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="Judge2Heera" from="JudgeFarm" to="HeeraNagar_Jct" priority="2" numLanes="2" speed="11.11"/>
+
+    <edge id="TP2Teenpani" from="TransportNagar" to="Teenpani_Jct" priority="3" numLanes="2" speed="13.89"/>
+    <edge id="Teenpani2TP" from="Teenpani_Jct" to="TransportNagar" priority="3" numLanes="2" speed="13.89"/>
+
+    <edge id="Tikonia2BaseHosp" from="Tikonia" to="BaseHospital_Jct" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="BaseHosp2Tikonia" from="BaseHospital_Jct" to="Tikonia" priority="2" numLanes="2" speed="11.11"/>
+</edges>

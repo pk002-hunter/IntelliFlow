@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- ============================================================== -->
+    <!-- 🏥 MAJOR HOSPITALS & EMERGENCY TRAUMA CENTERS                  -->
+    <!-- ============================================================== -->
+
+    <!-- 1. BRIJ LAL HOSPITAL & RESEARCH CENTRE (Kathgodam / Upper Nainital Road) -->
+    <poi id="HOSP_BRIJLAL" type="hospital" color="1.0,0.05,0.05" layer="150" x="1450.0" y="1850.0" width="80" height="80" name="🏥 BRIJLAL HOSPITAL &amp; RESEARCH CENTRE (Kathgodam/Nainital Rd - Cardiac &amp; Neuro Trauma)"/>
+    <poly id="poly_BRIJLAL_campus" type="hospital_campus" color="0.9,0.15,0.15" fill="true" layer="5" shape="1350,1780 1550,1780 1550,1920 1350,1920"/>
+    <poi id="POI_GULLY_BRIJLAL" type="gully_label" color="0.1,0.95,0.95" layer="140" x="1380.0" y="1850.0" width="30" height="30" name="⚡ Gully Road: Brijlal Hospital Direct Emergency Access Gali"/>
+
+    <!-- 2. KRISHNA HOSPITAL & RESEARCH CENTRE (Upper Nainital Road / Judges Court) -->
+    <poi id="HOSP_KRISHNA" type="hospital" color="1.0,0.05,0.05" layer="150" x="1450.0" y="1150.0" width="80" height="80" name="🏥 KRISHNA HOSPITAL &amp; RESEARCH CENTRE (Emergency &amp; Trauma Centre)"/>
+    <poly id="poly_KRISHNA_campus" type="hospital_campus" color="0.9,0.15,0.15" fill="true" layer="5" shape="1350,1080 1550,1080 1550,1220 1350,1220"/>
+    <poi id="POI_GULLY_KRISHNA" type="gully_label" color="0.1,0.95,0.95" layer="140" x="1380.0" y="1150.0" width="30" height="30" name="⚡ Gully Road: Krishna Hospital Direct Gali &amp; Emergency Gate"/>
+
+    <!-- 3. KATHGODAM RAILWAY HOSPITAL & UPHC (Kathgodam Station Side) -->
+    <poi id="HOSP_KATHGODAM" type="hospital" color="1.0,0.05,0.05" layer="150" x="1450.0" y="2150.0" width="80" height="80" name="🏥 KATHGODAM RAILWAY HOSPITAL &amp; UPHC (Northern Foothills Trauma Center)"/>
+    <poly id="poly_KATHGODAM_campus" type="hospital_campus" color="0.9,0.15,0.15" fill="true" layer="5" shape="1350,2080 1550,2080 1550,2220 1350,2220"/>
+    <poi id="POI_GULLY_KATHGODAM" type="gully_label" color="0.1,0.95,0.95" layer="140" x="1380.0" y="2150.0" width="30" height="30" name="⚡ Gully Road: Kathgodam Hospital Link Gali"/>
+
+    <!-- 4. DR. SUSHEELA TIWARI GOVT HOSPITAL (STH) & GMC HALDWANI (Rampur Road) -->
+    <poi id="HOSP_STH" type="hospital" color="1.0,0.0,0.0" layer="150" x="250.0" y="-1800.0" width="90" height="90" name="🏥 DR. SUSHEELA TIWARI GOVT. HOSPITAL (STH) &amp; GMC (1000-Bed Apex Hub)"/>
+    <poly id="poly_STH_campus" type="hospital_campus" color="0.8,0.1,0.1" fill="true" layer="5" shape="100,-1700 400,-1700 400,-1900 100,-1900"/>
+    <poi id="POI_GULLY_STH" type="gully_label" color="0.1,0.95,0.95" layer="140" x="120.0" y="-1800.0" width="30" height="30" name="⚡ Gully Road: STH Medical College Emergency Access Gali"/>
+
+    <!-- 5. SOBAN SINGH JEENA BASE HOSPITAL (Tikonia / Jail Road Govt Hospital) -->
+    <poi id="HOSP_BASE" type="hospital" color="0.95,0.1,0.1" layer="150" x="1700.0" y="200.0" width="70" height="70" name="🏥 SOBAN SINGH JEENA BASE HOSPITAL (Govt Civil Hospital)"/>
+    <poly id="poly_BASE_campus" type="hospital_campus" color="0.85,0.2,0.2" fill="true" layer="5" shape="1620,130 1780,130 1780,270 1620,270"/>
+
+    <!-- 6. NEELKANTH HOSPITAL (Kaladhungi Road / Kusumkhera) -->
+    <poi id="HOSP_NEELKANTH" type="hospital" color="0.9,0.2,0.2" layer="150" x="-1000.0" y="150.0" width="60" height="60" name="🏥 NEELKANTH HOSPITAL (Kusumkhera)"/>
+
+    <!-- 7. UJALA CYGNUS CENTRAL HOSPITAL (Rampur Road) -->
+    <poi id="HOSP_UJALA" type="hospital" color="0.9,0.2,0.2" layer="150" x="150.0" y="-1300.0" width="60" height="60" name="🏥 UJALA CYGNUS CENTRAL HOSPITAL (Rampur Rd)"/>
+
+    <!-- 8. BOMBAY HOSPITAL & MATERNITY CENTER (Patel Chowk / Station) -->
+    <poi id="HOSP_BOMBAY" type="hospital" color="0.9,0.2,0.2" layer="150" x="1450.0" y="-700.0" width="60" height="60" name="🏥 BOMBAY HOSPITAL &amp; MATERNITY CENTER"/>
+
+    <!-- ============================================================== -->
+    <!-- 🛣️ STRATEGIC SHORTCUTS & GULLY BYPASS LABELS                   -->
+    <!-- ============================================================== -->
+    <poi id="SC_CANAL" type="shortcut" color="0.2,1.0,0.4" layer="140" x="650.0" y="750.0" width="40" height="40" name="⚡ SHORTCUT: Canal Nahar Road - Direct Bypass to Krishna &amp; Brijlal Hospitals"/>
+    <poi id="SC_GASGODAM" type="shortcut" color="0.2,1.0,0.4" layer="140" x="-600.0" y="-1000.0" width="40" height="40" name="⚡ SHORTCUT: Gas Godam Road - Direct Mukhani-to-STH Bypass"/>
+    <poi id="SC_UNCHAPUL" type="shortcut" color="0.2,1.0,0.4" layer="140" x="-250.0" y="-400.0" width="35" height="35" name="⚡ SHORTCUT: Unchapul Link - Bypasses Mukhani to Mandi"/>
+    <poi id="SC_HEERANAGAR" type="shortcut" color="0.2,1.0,0.4" layer="140" x="950.0" y="375.0" width="35" height="35" name="⚡ SHORTCUT: Heera Nagar Gully - Direct to Upper Nainital Rd"/>
+    <poi id="SC_TEENPANI" type="shortcut" color="0.2,1.0,0.4" layer="140" x="650.0" y="-1500.0" width="35" height="35" name="⚡ SHORTCUT: Teenpani Bypass - Rampur to Bareilly Rd Bypass"/>
+
+    <!-- Directional Highway Signboards -->
+    <poi id="SIGN_RAMNAGAR" type="sign" color="1.0,0.85,0.0" layer="140" x="-1950.0" y="40.0" width="30" height="30" name="◄ Kaladhungi / Ramnagar / Corbett National Park"/>
+    <poi id="SIGN_NAINITAL" type="sign" color="1.0,0.85,0.0" layer="140" x="1300.0" y="2380.0" width="35" height="35" name="▲ Nainital / Kathgodam / Almora (NH-109 Foothills)"/>
+    <poi id="SIGN_DELHI" type="sign" color="1.0,0.85,0.0" layer="140" x="0.0" y="-2450.0" width="35" height="35" name="▼ Rampur / Rudrapur / Pantnagar / New Delhi (SH-49)"/>
+    <poi id="SIGN_BAREILLY" type="sign" color="1.0,0.85,0.0" layer="140" x="1300.0" y="-2450.0" width="35" height="35" name="▼ Bareilly / Lalkuan / Lucknow (NH-109)"/>
+</additional>

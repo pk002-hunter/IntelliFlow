@@ -40,6 +40,10 @@ results/logs/
 results/raw_logs/
 *.log
 
+# ─── Large XML Networks (SUMO reads .net.xml.gz directly) ─────────────────────
+sumo/networks/haldwani_full/haldwani_osm_real.net.xml
+*.net.xml.bak
+
 # ─── SUMO Runtime Outputs ─────────────────────────────────────────────────────
 *.xml.bak
 tripinfo*.xml

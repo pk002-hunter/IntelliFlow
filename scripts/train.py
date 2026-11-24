@@ -26,9 +26,9 @@ def main():
     parser.add_argument(
         "--network",
         type=str,
-        choices=["single", "mukhani"],
+        choices=["single", "mukhani", "haldwani"],
         default="single",
-        help="Road network: 'single' (generic 4-way) or 'mukhani' (Mukhani Chauraha, Haldwani)"
+        help="Road network: 'single' (generic 4-way), 'mukhani' (Mukhani Chauraha), or 'haldwani' (Full City Network)"
     )
     parser.add_argument(
         "--agent",

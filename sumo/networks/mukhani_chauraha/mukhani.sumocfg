@@ -3,7 +3,11 @@
     <input>
         <net-file value="mukhani.net.xml"/>
         <route-files value="mukhani.rou.xml"/>
+        <additional-files value="haldwani_landmarks.add.xml"/>
     </input>
+    <gui_only>
+        <gui-settings-file value="gui-settings.xml"/>
+    </gui_only>
     <time>
         <begin value="0"/>
         <end value="3600"/>

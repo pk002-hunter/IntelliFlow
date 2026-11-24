@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- Major Healthcare Infrastructure around Mukhani Corridor -->
+    <!-- 1. Dr. Susheela Tiwari Government Hospital (STH) & GMC Haldwani - Principal Emergency Hub -->
+    <poi id="HOSPITAL_STH" type="hospital" color="0.9,0.1,0.1" layer="100" x="420" y="-180" width="22" height="22" name="🏥 Dr. Susheela Tiwari Hospital (STH)"/>
+    <poly id="poly_STH" type="hospital_building" color="0.85,0.2,0.2" fill="true" layer="-1" shape="380,-140 460,-140 460,-220 380,-220"/>
+
+    <!-- 2. Soban Singh Jeena Base Hospital - Eastern Corridor near Tikonia -->
+    <poi id="HOSPITAL_BASE" type="hospital" color="0.9,0.15,0.15" layer="100" x="450" y="80" width="18" height="18" name="🏥 Base Hospital (Tikonia Link)"/>
+    <poly id="poly_BASE" type="hospital_building" color="0.8,0.25,0.25" fill="true" layer="-1" shape="420,110 480,110 480,50 420,50"/>
+
+    <!-- 3. Krishna Hospital / Local Emergency Care (Mukhani) -->
+    <poi id="HOSPITAL_KRISHNA" type="hospital" color="0.95,0.2,0.2" layer="100" x="-180" y="100" width="16" height="16" name="🏥 Krishna Hospital (Mukhani)"/>
+    <poly id="poly_KRISHNA" type="hospital_building" color="0.75,0.2,0.2" fill="true" layer="-1" shape="-210,120 -150,120 -150,70 -210,70"/>
+
+    <!-- Civic & Traffic Enforcement Landmarks -->
+    <!-- Mukhani Traffic Police Chowki -->
+    <poi id="TRAFFIC_POLICE_BOOTH" type="police" color="0.1,0.5,1.0" layer="100" x="18" y="18" width="12" height="12" name="👮 Mukhani Traffic Police Chowki"/>
+    <poly id="poly_POLICE" type="police_post" color="0.15,0.4,0.85" fill="true" layer="-1" shape="12,24 24,24 24,12 12,12"/>
+
+    <!-- Road Corridor Labels -->
+    <poi id="LBL_KALADHUNGI_W" type="corridor" color="1.0,0.85,0.0" layer="90" x="-320" y="25" name="◄ To Kamaluaganja / Lamachaur / Ramnagar"/>
+    <poi id="LBL_KALADHUNGI_E" type="corridor" color="1.0,0.85,0.0" layer="90" x="260" y="25" name="To Tikonia / Kathgodam / STH Hospital ►"/>
+    <poi id="LBL_CANAL_RD" type="corridor" color="0.2,0.8,0.4" layer="90" x="25" y="280" name="▲ To Heera Nagar / Canal Road Link"/>
+    <poi id="LBL_CHHOTI_MUKHANI" type="corridor" color="0.9,0.5,0.1" layer="90" x="25" y="-280" name="▼ To Chhoti Mukhani / Rampur Road"/>
+</additional>

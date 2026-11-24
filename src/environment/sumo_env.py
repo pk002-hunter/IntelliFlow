@@ -97,7 +97,17 @@ class SumoTrafficEnv(gym.Env):
 
         self.net_file = os.path.abspath(net_file)
         self.route_file = os.path.abspath(route_file)
-        self.cfg_file = os.path.abspath(cfg_file) if cfg_file else None
+        
+        # Robust configuration path resolution
+        if cfg_file:
+            resolved_cfg = os.path.abspath(cfg_file)
+            if not os.path.exists(resolved_cfg):
+                cand = os.path.join(PROJECT_ROOT, cfg_file)
+                if os.path.exists(cand):
+                    resolved_cfg = cand
+            self.cfg_file = resolved_cfg
+        else:
+            self.cfg_file = None
         self.tls_id = tls_id
 
         # Modular lane, edge, and phase definitions
@@ -438,6 +448,32 @@ def make_env(
             tls_id="Mukhani",
             incoming_lanes=mukhani_lanes,
             incoming_edges=mukhani_edges,
+            phase_ns_green=2,
+            phase_ns_yellow=3,
+            phase_ew_green=0,
+            phase_ew_yellow=1,
+            max_steps=max_steps,
+            delta_time=delta_time,
+            yellow_duration=3,
+            min_green=5,
+            gui=gui,
+            gui_delay=gui_delay,
+            tripinfo_output=tripinfo_output
+        )
+    elif network.lower() in ["haldwani", "haldwani_full"]:
+        cfg = config_path or "sumo/networks/haldwani_full/haldwani.sumocfg"
+        haldwani_lanes = [
+            "Uncha2Mukhani_0", "Uncha2Mukhani_1", "Uncha2Mukhani_2",
+            "Heera2Mukhani_0", "Heera2Mukhani_1", "Heera2Mukhani_2",
+            "Canal2Mukhani_0", "Canal2Mukhani_1",
+            "Chhoti2Mukhani_0", "Chhoti2Mukhani_1"
+        ]
+        haldwani_edges = ["Uncha2Mukhani", "Heera2Mukhani", "Canal2Mukhani", "Chhoti2Mukhani"]
+        return SumoTrafficEnv(
+            cfg_file=cfg,
+            tls_id="Mukhani",
+            incoming_lanes=haldwani_lanes,
+            incoming_edges=haldwani_edges,
             phase_ns_green=2,
             phase_ns_yellow=3,
             phase_ew_green=0,

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <!-- ============================================================== -->
+    <!-- Major Arterial Intersections (Traffic Lights)                   -->
+    <!-- ============================================================== -->
+    <node id="Mukhani" x="0.0" y="0.0" type="traffic_light"/>
+    <node id="Kusumkhera" x="-1000.0" y="0.0" type="traffic_light"/>
+    <node id="Tikonia" x="1300.0" y="0.0" type="traffic_light"/>
+    <node id="JudgeFarm" x="1300.0" y="750.0" type="traffic_light"/>
+    <node id="PatelChowk" x="1300.0" y="-700.0" type="traffic_light"/>
+    <node id="Mandi_Chauraha" x="0.0" y="-800.0" type="traffic_light"/>
+    <node id="STH_Hospital_Jct" x="0.0" y="-1800.0" type="traffic_light"/>
+    <node id="Teenpani_Jct" x="1300.0" y="-1700.0" type="traffic_light"/>
+
+    <!-- ============================================================== -->
+    <!-- 🏥 DEDICATED HOSPITAL JUNCTIONS & EMERGENCY ACCESS GULLIES     -->
+    <!-- ============================================================== -->
+    <!-- Krishna Hospital Junction & Emergency Gate (Nainital Road) -->
+    <node id="KrishnaHospital_Jct" x="1300.0" y="1150.0" type="priority"/>
+    <node id="Krishna_Gully_End" x="1450.0" y="1150.0" type="priority"/>
+
+    <!-- Brij Lal Hospital Junction & Emergency Gate (Kathgodam Approach) -->
+    <node id="BrijlalHospital_Jct" x="1300.0" y="1850.0" type="priority"/>
+    <node id="Brijlal_Gully_End" x="1450.0" y="1850.0" type="priority"/>
+
+    <!-- Kathgodam Railway Hospital Junction & Emergency Gate -->
+    <node id="KathgodamHospital_Jct" x="1300.0" y="2150.0" type="priority"/>
+    <node id="Kathgodam_Hospital_End" x="1450.0" y="2150.0" type="priority"/>
+
+    <!-- STH Hospital Dedicated Emergency Gully Gate -->
+    <node id="STH_Gully_End" x="250.0" y="-1800.0" type="priority"/>
+
+    <!-- ============================================================== -->
+    <!-- Peripheral Gateways (City Entry / Exit Outskirts)              -->
+    <!-- ============================================================== -->
+    <node id="KW_Out" x="-2000.0" y="0.0" type="priority"/>
+    <node id="Kathgodam_Out" x="1300.0" y="2350.0" type="priority"/>
+    <node id="Rampur_Out" x="0.0" y="-2400.0" type="priority"/>
+    <node id="Bareilly_Out" x="1300.0" y="-2400.0" type="priority"/>
+
+    <!-- ============================================================== -->
+    <!-- Connector & Shortcut Junctions (Local Bypass Nodes)            -->
+    <!-- ============================================================== -->
+    <node id="Unchapul_Jct" x="-500.0" y="0.0" type="priority"/>
+    <node id="HeeraNagar_Jct" x="600.0" y="0.0" type="priority"/>
+    <node id="Sheeshmahal" x="1300.0" y="1500.0" type="priority"/>
+    <node id="RailwayStation_Jct" x="1300.0" y="-1200.0" type="priority"/>
+    <node id="ChhotiMukhani" x="0.0" y="-400.0" type="priority"/>
+    <node id="TransportNagar" x="0.0" y="-1300.0" type="priority"/>
+    
+    <!-- Shortcuts -->
+    <node id="Canal_Mid" x="0.0" y="750.0" type="priority"/>
+    <node id="GasGodam_Mid" x="-600.0" y="-1000.0" type="priority"/>
+    <node id="BaseHospital_Jct" x="1700.0" y="200.0" type="priority"/>
+</nodes>

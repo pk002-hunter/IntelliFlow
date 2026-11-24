@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- ============================================================== -->
+    <!-- Indian Mixed-Traffic Heterogeneous Vehicle Types               -->
+    <!-- ============================================================== -->
+    <vType id="two_wheeler" vClass="motorcycle" length="2.1" width="0.8" 
+           accel="3.5" decel="5.0" sigma="0.6" maxSpeed="16.67" 
+           minGap="1.0" color="0.2,0.85,0.4" latAlignment="arbitrary"/>
+
+    <vType id="auto_rickshaw" vClass="passenger" length="3.2" width="1.4" 
+           accel="1.8" decel="3.5" sigma="0.7" maxSpeed="11.11" 
+           minGap="1.5" color="0.95,0.75,0.1" latAlignment="arbitrary"/>
+
+    <vType id="car" vClass="passenger" length="4.6" width="1.8" 
+           accel="2.6" decel="4.5" sigma="0.5" maxSpeed="13.89" 
+           minGap="2.5" color="0.85,0.25,0.2"/>
+
+    <vType id="bus" vClass="bus" length="11.0" width="2.5" 
+           accel="1.2" decel="3.5" sigma="0.4" maxSpeed="10.0" 
+           minGap="3.0" color="0.15,0.35,0.85"/>
+
+    <vType id="ambulance" vClass="emergency" length="5.5" width="2.0" 
+           accel="3.8" decel="5.5" sigma="0.2" maxSpeed="19.44" 
+           minGap="1.5" color="1.0,1.0,1.0" speedFactor="1.35"/>
+
+    <!-- ============================================================== -->
+    <!-- Major Arterial Routes & Corridor Connections                   -->
+    <!-- ============================================================== -->
+    <route id="r_Kaladhungi_W2E" edges="KW2Kusum Kusum2Uncha Uncha2Mukhani Mukhani2Heera Heera2Tikonia"/>
+    <route id="r_Kaladhungi_E2W" edges="Tikonia2Heera Heera2Mukhani Mukhani2Uncha Uncha2Kusum Kusum2KW"/>
+
+    <route id="r_Nainital_N2S" edges="KathOut2KathHosp KathHosp2Brijlal Brijlal2Sheesh Sheesh2Krishna Krishna2Judge Judge2Tikonia Tikonia2Patel Patel2Rail Rail2Teen Teen2Bareilly"/>
+    <route id="r_Nainital_S2N" edges="Bareilly2Teen Teen2Rail Rail2Patel Patel2Tikonia Tikonia2Judge Judge2Krishna Krishna2Sheesh Sheesh2Brijlal Brijlal2KathHosp KathHosp2KathOut"/>
+
+    <route id="r_Rampur_N2S" edges="Mukhani2Chhoti Chhoti2Mandi Mandi2TP TP2STH STH2Rampur"/>
+    <route id="r_Rampur_S2N" edges="Rampur2STH STH2TP TP2Mandi Mandi2Chhoti Chhoti2Mukhani"/>
+
+    <!-- ============================================================== -->
+    <!-- Strategic Shortcuts & City Bypass Routes                       -->
+    <!-- ============================================================== -->
+    <route id="r_Shortcut_Canal_N" edges="Uncha2Mukhani Mukhani2Canal Canal2Judge Judge2Krishna Krishna2Sheesh Sheesh2Brijlal Brijlal2KathHosp KathHosp2KathOut"/>
+    <route id="r_Shortcut_Canal_S" edges="KathOut2KathHosp KathHosp2Brijlal Brijlal2Sheesh Sheesh2Krishna Krishna2Judge Judge2Canal Canal2Mukhani Mukhani2Uncha Uncha2Kusum"/>
+
+    <route id="r_Shortcut_GasGodam" edges="KW2Kusum Kusum2Gas Gas2STH STH2Rampur"/>
+    <route id="r_Shortcut_Unchapul" edges="KW2Kusum Kusum2Uncha Uncha2Mandi Mandi2TP TP2STH"/>
+    <route id="r_Shortcut_Teenpani_EB" edges="Rampur2STH STH2TP TP2Teenpani Teen2Bareilly"/>
+    <route id="r_Shortcut_Teenpani_WB" edges="Bareilly2Teen Teenpani2TP TP2STH STH2Rampur"/>
+
+    <!-- ============================================================== -->
+    <!-- 🚑 Direct Gully Emergency Routes to Hospitals                  -->
+    <!-- ============================================================== -->
+    <!-- 1. Ambulance directly entering Brijlal Hospital via Emergency Gully -->
+    <route id="r_Amb_to_BrijLal" edges="KathOut2KathHosp KathHosp2Brijlal Brijlal_Gully_In"/>
+    <!-- 2. Ambulance directly entering Krishna Hospital via Emergency Gully -->
+    <route id="r_Amb_to_Krishna" edges="Tikonia2Judge Judge2Krishna Krishna_Gully_In"/>
+    <!-- 3. Ambulance directly entering Kathgodam Railway Hospital via Gully -->
+    <route id="r_Amb_to_KathgodamHosp" edges="Brijlal2KathHosp KathHosp_Gully_In"/>
+    <!-- 4. Ambulance to STH Hospital via Gas Godam shortcut -->
+    <route id="r_Amb_West_to_STH" edges="KW2Kusum Kusum2Gas Gas2STH STH_Gully_In"/>
+    <!-- 5. Ambulance to Soban Singh Jeena Base Hospital -->
+    <route id="r_Amb_Kaladhungi_to_Base" edges="KW2Kusum Kusum2Uncha Uncha2Mukhani Mukhani2Heera Heera2Tikonia Tikonia2BaseHosp"/>
+
+    <!-- ============================================================== -->
+    <!-- Arterial Traffic Demand Flows                                  -->
+    <!-- ============================================================== -->
+    <flow id="f_Kaladhungi_W_bike" type="two_wheeler" route="r_Kaladhungi_W2E" begin="0" end="3600" vehsPerHour="320"/>
+    <flow id="f_Kaladhungi_W_auto" type="auto_rickshaw" route="r_Kaladhungi_W2E" begin="0" end="3600" vehsPerHour="240"/>
+    <flow id="f_Kaladhungi_W_car"  type="car"          route="r_Kaladhungi_W2E" begin="0" end="3600" vehsPerHour="180"/>
+    <flow id="f_Kaladhungi_W_bus"  type="bus"          route="r_Kaladhungi_W2E" begin="0" end="3600" vehsPerHour="60"/>
+
+    <flow id="f_Kaladhungi_E_bike" type="two_wheeler" route="r_Kaladhungi_E2W" begin="0" end="3600" vehsPerHour="320"/>
+    <flow id="f_Kaladhungi_E_auto" type="auto_rickshaw" route="r_Kaladhungi_E2W" begin="0" end="3600" vehsPerHour="240"/>
+    <flow id="f_Kaladhungi_E_car"  type="car"          route="r_Kaladhungi_E2W" begin="0" end="3600" vehsPerHour="180"/>
+
+    <flow id="f_Nainital_N_bike" type="two_wheeler" route="r_Nainital_N2S" begin="0" end="3600" vehsPerHour="300"/>
+    <flow id="f_Nainital_N_auto" type="auto_rickshaw" route="r_Nainital_N2S" begin="0" end="3600" vehsPerHour="220"/>
+    <flow id="f_Nainital_N_car"  type="car"          route="r_Nainital_N2S" begin="0" end="3600" vehsPerHour="200"/>
+    <flow id="f_Nainital_N_bus"  type="bus"          route="r_Nainital_N2S" begin="0" end="3600" vehsPerHour="70"/>
+
+    <flow id="f_Nainital_S_bike" type="two_wheeler" route="r_Nainital_S2N" begin="0" end="3600" vehsPerHour="300"/>
+    <flow id="f_Nainital_S_car"  type="car"          route="r_Nainital_S2N" begin="0" end="3600" vehsPerHour="200"/>
+
+    <flow id="f_Rampur_S_bike" type="two_wheeler" route="r_Rampur_S2N" begin="0" end="3600" vehsPerHour="250"/>
+    <flow id="f_Rampur_S_auto" type="auto_rickshaw" route="r_Rampur_S2N" begin="0" end="3600" vehsPerHour="180"/>
+    <flow id="f_Rampur_S_car"  type="car"          route="r_Rampur_S2N" begin="0" end="3600" vehsPerHour="160"/>
+
+    <flow id="f_Canal_bike" type="two_wheeler" route="r_Shortcut_Canal_N" begin="0" end="3600" vehsPerHour="180"/>
+    <flow id="f_Canal_auto" type="auto_rickshaw" route="r_Shortcut_Canal_N" begin="0" end="3600" vehsPerHour="120"/>
+    <flow id="f_Canal_car"  type="car"          route="r_Shortcut_Canal_N" begin="0" end="3600" vehsPerHour="90"/>
+
+    <flow id="f_GasGodam_bike" type="two_wheeler" route="r_Shortcut_GasGodam" begin="0" end="3600" vehsPerHour="150"/>
+    <flow id="f_GasGodam_car"  type="car"          route="r_Shortcut_GasGodam" begin="0" end="3600" vehsPerHour="110"/>
+
+    <!-- Scheduled Ambulances directly using Hospital Emergency Gullies -->
+    <vehicle id="amb_brijlal_01" type="ambulance" route="r_Amb_to_BrijLal" depart="45" departLane="best" departSpeed="max"/>
+    <vehicle id="amb_krishna_01" type="ambulance" route="r_Amb_to_Krishna" depart="120" departLane="best" departSpeed="max"/>
+    <vehicle id="amb_kathgodam_01" type="ambulance" route="r_Amb_to_KathgodamHosp" depart="200" departLane="best" departSpeed="max"/>
+    <vehicle id="amb_sth_01" type="ambulance" route="r_Amb_West_to_STH" depart="300" departLane="best" departSpeed="max"/>
+</routes>

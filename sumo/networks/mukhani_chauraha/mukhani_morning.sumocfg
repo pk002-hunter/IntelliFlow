@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+    <input>
+        <net-file value="mukhani.net.xml"/>
+        <route-files value="mukhani_morning_peak.rou.xml"/>
+        <additional-files value="haldwani_landmarks.add.xml"/>
+    </input>
+    <gui_only>
+        <gui-settings-file value="gui-settings.xml"/>
+    </gui_only>
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="1.0"/>
+    </time>
+    <processing>
+        <lateral-resolution value="0.8"/>
+        <collision.action value="none"/>
+        <time-to-teleport value="-1"/>
+    </processing>
+    <report>
+        <verbose value="false"/>
+        <no-step-log value="true"/>
+        <no-warnings value="true"/>
+    </report>
+</configuration>
