@@ -13,6 +13,9 @@ if not exist "%SUMO_BIN%" set SUMO_BIN=sumo-gui
 
 if "%1"=="dashboard" goto :run_dashboard
 if "%1"=="demo_mukhani" goto :run_demo_mukhani
+if "%1"=="demo_fixed" goto :run_demo_fixed
+if "%1"=="demo_actuated" goto :run_demo_actuated
+if "%1"=="demo_dqn" goto :run_demo_dqn
 if "%1"=="demo_haldwani" goto :run_demo_haldwani
 if "%1"=="real" goto :run_gui_real
 if "%1"=="morning" goto :run_gui_morning
@@ -27,34 +30,40 @@ echo ===================================================================
 echo   IntelliFlow: AI Adaptive Traffic Signal Control (Team #54)
 echo   Case Study: Mukhani Chauraha and Full Haldwani Road Network
 echo ===================================================================
-echo   [AI-CONTROLLED LIVE DEMOS - PPO REINFORCEMENT LEARNING]
-echo   1. Mukhani Chauraha 10-Lane Junction (Live AI Signal Control)
-echo   2. Full Haldwani City Corridors (Live AI Signal Control)
+echo   [LIVE SUMO-GUI SIMULATIONS: AI vs CLASSICAL BASELINES]
+echo   1. Mukhani Chauraha - Trained PPO AI Control (Live SUMO-GUI)
+echo   2. Mukhani Chauraha - Webster's Fixed-Time Cycles (Baseline 1)
+echo   3. Mukhani Chauraha - Inductive Loop Sensor-Actuated (Baseline 2)
+echo   4. Mukhani Chauraha - Double DQN Agent (Baseline 3)
+echo   5. Full Haldwani City Corridors (Live AI Signal Control)
 echo.
 echo   [STANDALONE ROAD NETWORK AND PEAK TRAFFIC VISUALIZERS]
-echo   3. View Complete 37,000+ Streets Real OSM City Network
+echo   6. View Complete 37,000+ Streets Real OSM City Network
 echo      - Matches Google Maps: Kathgodam down to Motahaldu
-echo   4. View Morning Peak Hour Traffic Rush (8:00 AM - 10:30 AM)
-echo   5. View Evening Peak Hour Traffic Rush (5:30 PM - 8:30 PM)
+echo   7. View Morning Peak Hour Traffic Rush (8:00 AM - 10:30 AM)
+echo   8. View Evening Peak Hour Traffic Rush (5:30 PM - 8:30 PM)
 echo.
-echo   [COMPUTER VISION, DASHBOARD AND VALIDATION]
-echo   6. Run YOLOv8 Computer Vision Bridge (Traffic State Estimation)
-echo   7. Launch Interactive Web Dashboard (Streamlit App)
-echo   8. Run Empirical Benchmark and Statistical Hypothesis Tests
-echo   9. Run Project Test Suite (pytest - 4/4 Tests)
+echo   [COMPUTER VISION, DASHBOARD AND EMPIRICAL BENCHMARK]
+echo   9. Run YOLOv8 Computer Vision Bridge (Traffic State Estimation)
+echo   10. Launch Interactive Web Dashboard (Streamlit App - Full Metrics)
+echo   11. Run Empirical Benchmark and Statistical Tests (Summary + Plots)
+echo   12. Run Project Test Suite (pytest - 4/4 Tests)
 echo   0. Exit
 echo ===================================================================
-set /p choice="Select an option [1-9, or 0]: "
+set /p choice="Select an option [1-12, or 0]: "
 
 if "%choice%"=="1" goto :run_demo_mukhani
-if "%choice%"=="2" goto :run_demo_haldwani
-if "%choice%"=="3" goto :run_gui_real
-if "%choice%"=="4" goto :run_gui_morning
-if "%choice%"=="5" goto :run_gui_evening
-if "%choice%"=="6" goto :run_yolo
-if "%choice%"=="7" goto :run_dashboard
-if "%choice%"=="8" goto :run_eval
-if "%choice%"=="9" goto :run_test
+if "%choice%"=="2" goto :run_demo_fixed
+if "%choice%"=="3" goto :run_demo_actuated
+if "%choice%"=="4" goto :run_demo_dqn
+if "%choice%"=="5" goto :run_demo_haldwani
+if "%choice%"=="6" goto :run_gui_real
+if "%choice%"=="7" goto :run_gui_morning
+if "%choice%"=="8" goto :run_gui_evening
+if "%choice%"=="9" goto :run_yolo
+if "%choice%"=="10" goto :run_dashboard
+if "%choice%"=="11" goto :run_eval
+if "%choice%"=="12" goto :run_test
 if "%choice%"=="0" exit /b 0
 goto :menu
 
@@ -65,6 +74,35 @@ echo   Launching Live AI Demo with PPO Agent: Mukhani Chauraha
 echo   (AI model actively optimizes green phases via TraCI)
 echo ===================================================================
 "%PYTHON%" scripts\demo.py --network mukhani --agent ppo --delay 45
+pause
+goto :menu
+
+:run_demo_fixed
+echo.
+echo ===================================================================
+echo   Launching Webster's Fixed-Time Simulation: Mukhani Chauraha
+echo   (Fixed splits: 45s EW Kaladhungi Rd, 30s NS Canal Rd, 3s Yellow)
+echo ===================================================================
+"%PYTHON%" scripts\demo.py --network mukhani --agent fixed --delay 45
+pause
+goto :menu
+
+:run_demo_actuated
+echo.
+echo ===================================================================
+echo   Launching Sensor-Actuated Simulation: Mukhani Chauraha
+echo   (Inductive Loop Gap-Out: Min Green 10s, Max Green 50s)
+echo ===================================================================
+"%PYTHON%" scripts\demo.py --network mukhani --agent actuated --delay 45
+pause
+goto :menu
+
+:run_demo_dqn
+echo.
+echo ===================================================================
+echo   Launching Live AI Demo with Double DQN: Mukhani Chauraha
+echo ===================================================================
+"%PYTHON%" scripts\demo.py --network mukhani --agent dqn --delay 45
 pause
 goto :menu
 
@@ -129,7 +167,7 @@ echo.
 echo ===================================================================
 echo   Running Empirical Benchmark: Fixed vs Actuated vs DQN vs PPO
 echo ===================================================================
-"%PYTHON%" scripts\evaluate.py --network mukhani --episodes 10 --gui
+"%PYTHON%" scripts\evaluate.py
 pause
 goto :menu
 

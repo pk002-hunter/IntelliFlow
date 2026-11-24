@@ -86,12 +86,44 @@ def run_live_gui_demo(
             1: "Canal/Chhoti Green (NS)" if network == "mukhani" else "East-West Green"
         }
 
+        actuated_current_action = 0
+        actuated_time_in_phase = 0
+
         while not terminated and step_idx * 5 < steps:
             if model is not None:
                 action, _ = model.predict(obs, deterministic=True)
             elif agent.lower() == "fixed":
-                # Fixed 30s cycle
-                action = 0 if (step_idx // 6) % 2 == 0 else 1
+                # Webster's Optimal Split for Mukhani (45s East-West Kaladhungi, 30s North-South Canal Rd)
+                if network == "mukhani":
+                    cycle_step = step_idx % 15  # 15 steps * 5s = 75s green cycle
+                    action = 0 if cycle_step < 9 else 1
+                else:
+                    action = 0 if (step_idx // 6) % 2 == 0 else 1
+            elif agent.lower() == "actuated":
+                # Sensor-Actuated Inductive Loop Controller (Min green 10s, Max green 50s, Gap-Out logic)
+                actuated_time_in_phase += 5
+                active_lanes = []
+                if network == "mukhani":
+                    if actuated_current_action == 0:
+                        active_lanes = ["KW2M_0", "KW2M_1", "KW2M_2", "KE2M_0", "KE2M_1", "KE2M_2"]
+                    else:
+                        active_lanes = ["CN2M_0", "CN2M_1", "CS2M_0", "CS2M_1"]
+                else:
+                    active_lanes = env.incoming_lanes[:len(env.incoming_lanes)//2] if actuated_current_action == 0 else env.incoming_lanes[len(env.incoming_lanes)//2:]
+
+                active_queue = 0
+                try:
+                    active_queue = sum(env.conn.lane.getLastStepHaltingNumber(lane) for lane in active_lanes if lane in env.conn.lane.getIDList())
+                except Exception:
+                    active_queue = 0
+
+                # Gap-out when queue is clear after min green (10s), or force switch at max green (50s)
+                if actuated_time_in_phase >= 10:
+                    if active_queue == 0 or actuated_time_in_phase >= 50:
+                        actuated_current_action = 1 - actuated_current_action
+                        actuated_time_in_phase = 0
+
+                action = actuated_current_action
             else:
                 action = env.action_space.sample()
 
@@ -131,7 +163,7 @@ def run_live_gui_demo(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Live SUMO-GUI Visual Simulation Demo")
     parser.add_argument("--network", type=str, choices=["single", "mukhani", "haldwani"], default="haldwani", help="Road network to visualize")
-    parser.add_argument("--agent", type=str, choices=["ppo", "dqn", "fixed"], default="ppo", help="Controller type")
+    parser.add_argument("--agent", type=str, choices=["ppo", "dqn", "fixed", "actuated"], default="ppo", help="Controller type")
     parser.add_argument("--delay", type=int, default=60, help="Simulation step delay in ms for visible motion (default: 60)")
     parser.add_argument("--steps", type=int, default=1800, help="Total simulation seconds to run")
     args = parser.parse_args()
