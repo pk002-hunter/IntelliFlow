@@ -1,0 +1,1 @@
+export { HaldwaniCorridorMap } from "./HaldwaniCorridorMap";

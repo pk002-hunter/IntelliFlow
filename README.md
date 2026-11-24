@@ -7,8 +7,11 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.2%2B-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![SUMO](https://img.shields.io/badge/SUMO-1.19%2B-00BCD4?style=for-the-badge)
-![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-00599C?style=for-the-badge)
+![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![YOLOv8](https://img.shields.io/badge/YOLOv8-Phase_2_Roadmap-00599C?style=for-the-badge)
 ![Tests](https://img.shields.io/badge/Tests-4%2F4%20Passing-22C55E?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)
 
@@ -46,14 +49,14 @@ Conventional traffic control in developing nations relies predominantly on **fix
 * 🛵 **Indian Mixed-Traffic Calibration:**
   - Realistic Krauss car-following parameters calibrated for 6 distinct vehicle classes: motorcycles, three-wheeler autos, compact cars, SUVs, public buses, and commercial trucks.
   - Sublane model integration accounting for motorcycle filtering and lateral lane sharing.
-* 👁️ **YOLOv8 Edge Computer Vision Bridge:**
-  - Real-time video detection pipeline estimating physical approach queues from roadside CCTV footage to feed live traffic states into the RL agent.
+* 👁️ **YOLOv8 Edge Computer Vision Bridge *(Phase 2 Hardware Roadmap)*:**
+  - Architecture and pipeline designed for estimating physical approach queues from roadside CCTV feeds; real-time hardware camera deployment is scoped for Phase 2 while Phase 1 operates directly over Eclipse SUMO & TraCI telemetry.
 * 🌿 **Green AI & Economic Impact Ledger:**
   - Comprehensive environmental accounting tracking CO₂, CO, NOx, PMx, and idling fuel consumption.
   - Projected annual economic savings of **₹2.48+ Crores** in commuter fuel for Haldwani arterial corridors.
-* 📊 **Interactive Web Dashboard & Master Menu:**
-  - Streamlit-powered telemetry dashboard tracking real-time phase distribution, average speed, and wait times.
-  - Master interactive launcher (`run.bat`) providing one-click access to all 9 demo, visualizer, vision, and evaluation modules.
+* 📊 **Dual Interactive UIs (React Operations Console & Streamlit TOC Dashboard):**
+  - **React + TypeScript + Tailwind v4 Frontend (`frontend/`):** Features a synchronized **Split-Screen "AI vs. Legacy" Traffic Duel** (60fps HTML5 Canvas mixed-traffic micro-simulation comparing Webster Fixed-Time / Sensor-Actuated against PPO / DQN), **Light & Dark Mode**, **Network & Model Checkpoint Switchers**, **4-Controller Delay Race & 5-Axis Radar**, **Haldwani Green-Wave Corridor Map**, and an interactive **24-Hour Google Maps BPR Wave & Fuel Ledger**.
+  - **Streamlit TOC Dashboard (`src/dashboard/app.py`):** 5-tab Python operations console powered by Plotly dark telemetry charts and coordinate-accurate Haldwani XML mapping, integrated into `run.bat`.
 
 ---
 
@@ -141,6 +144,7 @@ Evaluated across a 3,600-second continuous simulation under peak Indian mixed-tr
 
 ### 1. Prerequisites
 - **Python:** 3.10 or higher
+- **Node.js:** 18+ (for the React + TypeScript frontend in `frontend/`)
 - **SUMO:** [Eclipse SUMO 1.19+](https://eclipse.dev/sumo/) installed with `SUMO_HOME` set in environment variables.
 
 ### 2. Installation
@@ -202,6 +206,12 @@ python scripts/train.py --agent dqn --timesteps 30000
 # Run evaluation & generate publication figures
 python scripts/evaluate.py
 
+# Launch React + TypeScript Operations UI (AI vs. Legacy Duel + Haldwani Map)
+cd frontend && npm install && npm run dev
+
+# Build React Frontend for Production
+cd frontend && npm run build
+
 # Launch Streamlit Telemetry Web App
 streamlit run src/dashboard/app.py
 
@@ -231,6 +241,23 @@ For high-speed GPU training and headless evaluation, open the canonical notebook
 
 ```
 IntelliFlow/
+├── frontend/                                        # React 19 + TypeScript + Tailwind v4 Operations UI
+│   ├── src/
+│   │   ├── components/ui/                           # shadcn/ui primitives (button, card, input, label, select, tabs)
+│   │   ├── features/
+│   │   │   ├── operations/                          # TopCommandBar, TrafficDuelArena, 60fps MukhaniFlowCanvas, Specs
+│   │   │   ├── benchmarks/                          # ControllerRaceArena (delay race + 5-axis SVG radar)
+│   │   │   ├── corridors/                           # HaldwaniCorridorMap (SUMO XML coords + Green-Wave routes)
+│   │   │   └── economics/                           # DiurnalGreenSection (24h BPR wave + fuel/CO2 ledger)
+│   │   ├── data/                                    # Exported 360-step telemetry.json & typed models/networks
+│   │   ├── lib/                                     # Traffic phase derivation, Green AI calculations & cn()
+│   │   ├── types/                                   # Shared TypeScript domain interfaces
+│   │   ├── App.tsx                                  # 4-Act Operations & Viva Showcase shell
+│   │   └── index.css                                # Light & Dark mode CSS tokens
+│   ├── components.json
+│   ├── package.json
+│   └── vite.config.ts
+│
 ├── notebooks/
 │   └── IntelliFlow_Google_Colab_Haldwani_PPO.ipynb  # Cloud GPU training & benchmark notebook
 │
@@ -243,7 +270,7 @@ IntelliFlow/
 │   ├── train.py                                     # Training script for PPO & DQN
 │   ├── evaluate.py                                  # Statistical evaluation & plotting
 │   ├── google_maps_24h_traffic.py                   # BPR 24-hour diurnal demand generator
-│   └── yolo_traffic_detector.py                     # YOLOv8 CCTV queue estimator
+│   └── yolo_traffic_detector.py                     # YOLOv8 CCTV queue estimator (Phase 2)
 │
 ├── src/
 │   ├── agents/
@@ -252,8 +279,12 @@ IntelliFlow/
 │   ├── baselines/
 │   │   ├── actuated.py                              # Dynamic sensor-actuated baseline
 │   │   └── fixed_time.py                            # Webster fixed-time baseline
-│   ├── dashboard/
-│   │   └── app.py                                   # Streamlit telemetry web application
+│   ├── dashboard/                                   # Modular Streamlit TOC dashboard
+│   │   ├── app.py                                   # Main 5-tab Streamlit entrypoint
+│   │   ├── charts.py                                # Dark-obsidian Plotly telemetry & Haldwani map
+│   │   ├── components.py                            # HTML/SVG digital twin & LED queue components
+│   │   ├── data_loader.py                           # CSV/XML loader & statistical hypothesis tests
+│   │   └── styles.py                                # Obsidian CSS design tokens
 │   ├── environment/
 │   │   └── sumo_env.py                              # Custom Gymnasium SUMO TraCI environment
 │   ├── evaluation/
@@ -310,11 +341,13 @@ IntelliFlow/
   - [x] 24-Hour Diurnal Google Maps traffic generation using BPR capacity-delay functions.
   - [x] Calibrated Morning Peak (8:00 AM – 10:30 AM) and Evening Peak (5:30 PM – 8:30 PM) scenarios.
   - [x] Automated 4/4 pytest regression suite verifying all environments and routes.
-- [x] **Phase 5: Computer Vision, Web Dashboard & Green AI Ledger**
-  - [x] Edge YOLOv8 camera vision bridge for real-time queue length estimation from video feeds.
-  - [x] Live interactive Streamlit telemetry dashboard.
-  - [x] Green AI carbon emissions and economic benefit analysis (₹2.48 Crores annual commuter savings).
+- [x] **Phase 5: Operations UI, Web Dashboard & Green AI Ledger**
+  - [x] React 19 + TypeScript + Tailwind v4 Operations Console (`frontend/`) featuring a Split-Screen "AI vs. Legacy" Traffic Duel, 60fps Canvas mixed-traffic flow, Light & Dark modes, Network/Model switchers, 5-Axis Controller Radar, and Haldwani Green-Wave map.
+  - [x] Live interactive Streamlit TOC telemetry dashboard (`src/dashboard/app.py`).
+  - [x] Green AI carbon emissions and economic benefit analysis (₹2.48+ Crores annual commuter savings).
   - [x] Google Colab cloud GPU training notebook with pretrained weights auto-detection.
+- [ ] **Phase 6 (Future Hardware Roadmap): Edge Computer Vision Deployment**
+  - [ ] Physical pole-mounted CCTV RTSP ingestion via TensorRT YOLOv8 (`scripts/yolo_traffic_detector.py` prototype ready for later hardware integration).
 
 ---
 

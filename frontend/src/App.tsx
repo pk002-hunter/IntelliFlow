@@ -1,0 +1,145 @@
+import * as React from "react";
+import { ControllerRaceArena } from "@/features/benchmarks";
+import { HaldwaniCorridorMap } from "@/features/corridors";
+import { DiurnalGreenSection } from "@/features/economics";
+import {
+  EngineeringSpecDrawer,
+  TopCommandBar,
+  TrafficDuelArena,
+} from "@/features/operations";
+import { DIURNAL_BPR_HOURS, TELEMETRY_SERIES } from "@/data/telemetry";
+import type {
+  BaselineId,
+  ModelCheckpointId,
+  NetworkId,
+  ThemeMode,
+} from "@/types/telemetry";
+
+export function App() {
+  const [theme, setTheme] = React.useState<ThemeMode>(() => {
+    const saved = window.localStorage.getItem("intelliflow-theme");
+    return saved === "light" ? "light" : "dark";
+  });
+  const [networkId, setNetworkId] = React.useState<NetworkId>("mukhani");
+  const [baselineId, setBaselineId] = React.useState<BaselineId>("fixed");
+  const [aiModelId, setAiModelId] =
+    React.useState<ModelCheckpointId>("ppo_mukhani");
+  const [selectedHour, setSelectedHour] = React.useState<number>(9);
+  const [preemption, setPreemption] = React.useState<boolean>(false);
+  const [specsOpen, setSpecsOpen] = React.useState<boolean>(false);
+  const [stepIdx, setStepIdx] = React.useState<number>(8);
+  const [isPlaying, setIsPlaying] = React.useState<boolean>(true);
+
+  React.useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    window.localStorage.setItem("intelliflow-theme", theme);
+  }, [theme]);
+
+  // Synchronized duel advance across 30 aligned 10s intervals (10s..300s)
+  React.useEffect(() => {
+    if (!isPlaying) return;
+    const maxLen = TELEMETRY_SERIES.fixed.length;
+    const id = window.setInterval(() => {
+      setStepIdx((prev) => (prev + 1) % maxLen);
+    }, 850);
+    return () => window.clearInterval(id);
+  }, [isPlaying]);
+
+  const handleSelectNetwork = (net: NetworkId) => {
+    setNetworkId(net);
+    if (net === "single" && aiModelId === "ppo_mukhani") {
+      setAiModelId("ppo_single");
+    } else if (net !== "single" && aiModelId === "ppo_single") {
+      setAiModelId("ppo_mukhani");
+    }
+  };
+
+  const activeHour =
+    DIURNAL_BPR_HOURS.find((h) => h.hour === selectedHour) ??
+    DIURNAL_BPR_HOURS[9];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground transition-colors">
+      <main className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4">
+        <TopCommandBar
+          theme={theme}
+          onToggleTheme={() =>
+            setTheme((prev) => (prev === "dark" ? "light" : "dark"))
+          }
+          networkId={networkId}
+          onSelectNetwork={handleSelectNetwork}
+          selectedHour={selectedHour}
+          onSelectHour={setSelectedHour}
+          preemption={preemption}
+          onTogglePreemption={() => setPreemption((prev) => !prev)}
+          specsOpen={specsOpen}
+          onToggleSpecs={() => setSpecsOpen((prev) => !prev)}
+        />
+
+        <EngineeringSpecDrawer
+          open={specsOpen}
+          onClose={() => setSpecsOpen(false)}
+          networkId={networkId}
+          modelId={aiModelId}
+        />
+
+        {preemption && (
+          <div className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-rose-500/50 bg-rose-500/10 px-3.5 py-2 text-xs">
+            <span className="font-medium text-rose-900 dark:text-rose-100">
+              EMERGENCY PREEMPTION ACTIVE: Legacy baseline stalls in spillback while IntelliFlow locks EW Green &rarr; Rampur Rd (SH-49) &rarr; STH Hospital (0s delay)
+            </span>
+            <span className="rounded bg-rose-500/20 px-2 py-0.5 font-mono text-[10px] font-semibold text-rose-700 dark:text-rose-300">
+              3s YELLOW INTERLOCK ARMED
+            </span>
+          </div>
+        )}
+
+        {/* ACT 1: Synchronized Split-Screen AI vs. Legacy Traffic Duel */}
+        <TrafficDuelArena
+          networkId={networkId}
+          baselineId={baselineId}
+          onSelectBaseline={setBaselineId}
+          aiModelId={aiModelId}
+          onSelectAiModel={setAiModelId}
+          stepIdx={stepIdx}
+          onChangeStep={(idx) => {
+            setIsPlaying(false);
+            setStepIdx(idx);
+          }}
+          isPlaying={isPlaying}
+          onTogglePlay={() => setIsPlaying((p) => !p)}
+          onReset={() => {
+            setIsPlaying(false);
+            setStepIdx(0);
+          }}
+          preemption={preemption}
+          theme={theme}
+          activeHour={activeHour}
+        />
+
+        {/* ACT 2: Synchronized 4-Controller Cumulative Delay Race & 5-Axis Radar */}
+        <ControllerRaceArena
+          stepIdx={stepIdx}
+          baselineId={baselineId}
+          aiModelId={aiModelId}
+        />
+
+        {/* ACT 3: Haldwani Spatial Corridor & Hospital Green-Wave Map */}
+        <HaldwaniCorridorMap preemption={preemption} />
+
+        {/* ACT 4: 24-Hour Google Maps BPR Wave & Green AI Impact Ledger */}
+        <DiurnalGreenSection
+          selectedHour={selectedHour}
+          onSelectHour={setSelectedHour}
+        />
+      </main>
+    </div>
+  );
+}
+
+export default App;
