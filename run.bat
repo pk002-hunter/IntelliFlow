@@ -5,13 +5,12 @@ cd /d "%~dp0"
 set PYTHON=%~dp0venv\Scripts\python.exe
 if not exist "%PYTHON%" set PYTHON=python
 
-set STREAMLIT=%~dp0venv\Scripts\streamlit.exe
-if not exist "%STREAMLIT%" set STREAMLIT=streamlit
-
 set SUMO_BIN=C:\Program Files (x86)\Eclipse\Sumo\bin\sumo-gui.exe
 if not exist "%SUMO_BIN%" set SUMO_BIN=sumo-gui
 
-if "%1"=="dashboard" goto :run_dashboard
+if "%1"=="ui" goto :run_ui
+if "%1"=="frontend" goto :run_ui
+if "%1"=="dashboard" goto :run_ui
 if "%1"=="demo_mukhani" goto :run_demo_mukhani
 if "%1"=="demo_fixed" goto :run_demo_fixed
 if "%1"=="demo_actuated" goto :run_demo_actuated
@@ -43,9 +42,9 @@ echo      - Matches Google Maps: Kathgodam down to Motahaldu
 echo   7. View Morning Peak Hour Traffic Rush (8:00 AM - 10:30 AM)
 echo   8. View Evening Peak Hour Traffic Rush (5:30 PM - 8:30 PM)
 echo.
-echo   [COMPUTER VISION, DASHBOARD AND EMPIRICAL BENCHMARK]
+echo   [COMPUTER VISION, WEB UI AND EMPIRICAL BENCHMARK]
 echo   9. Run YOLOv8 Computer Vision Bridge (Traffic State Estimation)
-echo   10. Launch Interactive Web Dashboard (Streamlit App - Full Metrics)
+echo   10. Launch Interactive Operations UI (React + TypeScript Web App)
 echo   11. Run Empirical Benchmark and Statistical Tests (Summary + Plots)
 echo   12. Run Project Test Suite (pytest - 4/4 Tests)
 echo   0. Exit
@@ -61,7 +60,7 @@ if "%choice%"=="6" goto :run_gui_real
 if "%choice%"=="7" goto :run_gui_morning
 if "%choice%"=="8" goto :run_gui_evening
 if "%choice%"=="9" goto :run_yolo
-if "%choice%"=="10" goto :run_dashboard
+if "%choice%"=="10" goto :run_ui
 if "%choice%"=="11" goto :run_eval
 if "%choice%"=="12" goto :run_test
 if "%choice%"=="0" exit /b 0
@@ -152,13 +151,26 @@ echo ===================================================================
 pause
 goto :menu
 
-:run_dashboard
+:run_ui
 echo.
 echo ===================================================================
-echo   Starting IntelliFlow Web Dashboard...
-echo   Open your browser at: http://localhost:8501
+echo   Starting IntelliFlow Operations UI (React + Vite)...
+echo   Open your browser at: http://localhost:5173
+echo   Press Ctrl+C to stop the UI server and return to menu.
 echo ===================================================================
-"%STREAMLIT%" run src\dashboard\app.py
+where npm >nul 2>&1
+if errorlevel 1 (
+    echo [ERROR] Node.js / npm not found in PATH. Please install Node.js 18+.
+    pause
+    goto :menu
+)
+pushd "%~dp0frontend"
+if not exist "node_modules" (
+    echo Installing frontend dependencies...
+    call npm install
+)
+call npm run dev -- --open
+popd
 pause
 goto :menu
 

@@ -123,10 +123,9 @@ export const TEAM_MEMBERS: TeamMemberProfile[] = [
     role: "Full-Stack Operations UI, Testing & Phase 2 Vision Bridge",
     accentColor: "#F59E0B",
     summary:
-      "Built the interactive React & Streamlit operations dashboards, one-click Windows automation, automated pytest verification suite, and Phase 2 edge vision prototype.",
+      "Built the interactive React Operations Console, one-click Windows automation, automated pytest verification suite, and Phase 2 edge vision prototype.",
     ownedFiles: [
       "frontend/src/*",
-      "src/dashboard/*",
       "scripts/demo.py",
       "tests/test_*.py",
       "run.bat / stop.bat",
@@ -134,9 +133,9 @@ export const TEAM_MEMBERS: TeamMemberProfile[] = [
     ],
     contributions: [
       "Built the React 19 + TypeScript Operations Console featuring the 60fps Split-Screen AI vs. Legacy Duel, Haldwani live traffic flow map, Light/Dark themes, and 5-Axis Radar.",
-      "Architected the modular 5-tab Streamlit TOC Dashboard (styles, data_loader, components, charts, app) wired into run.bat Option 10.",
+      "Wired one-click Windows launch & termination lifecycle via run.bat (Option 10 React UI) and stop.bat.",
       "Authored the 4/4 automated pytest compliance suite validating Gymnasium spaces, Mukhani 10-lane geometry, and full Haldwani network loading.",
-      "Engineered the Phase 2 Edge YOLOv8 camera-to-PCU bridge prototype (deferred for physical CCTV deployment) and clean Windows process lifecycle scripts (run.bat / stop.bat).",
+      "Engineered the Phase 2 Edge YOLOv8 camera-to-PCU bridge prototype (deferred for physical CCTV deployment) and TraCI live SUMO-GUI demo runner.",
     ],
     vivaFocus: [
       {

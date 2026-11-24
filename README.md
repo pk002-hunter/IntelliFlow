@@ -10,7 +10,6 @@
 ![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![YOLOv8](https://img.shields.io/badge/YOLOv8-Phase_2_Roadmap-00599C?style=for-the-badge)
 ![Tests](https://img.shields.io/badge/Tests-4%2F4%20Passing-22C55E?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)
@@ -54,9 +53,9 @@ Conventional traffic control in developing nations relies predominantly on **fix
 * 🌿 **Green AI & Economic Impact Ledger:**
   - Comprehensive environmental accounting tracking CO₂, CO, NOx, PMx, and idling fuel consumption.
   - Projected annual economic savings of **₹2.48+ Crores** in commuter fuel for Haldwani arterial corridors.
-* 📊 **Dual Interactive UIs (React Operations Console & Streamlit TOC Dashboard):**
-  - **React + TypeScript + Tailwind v4 Frontend (`frontend/`):** Features a synchronized **Split-Screen "AI vs. Legacy" Traffic Duel** (60fps HTML5 Canvas mixed-traffic micro-simulation comparing Webster Fixed-Time / Sensor-Actuated against PPO / Double DQN), **Full-Screen Animated Haldwani City Flow Map** (auto-promoted when `Haldwani City` is selected), **Dedicated Team #54 Individual Contributions Page**, **Light & Dark Mode**, **5-Axis Controller Radar & BPR Stress-Tester**, and **24-Hour Google Maps BPR Wave & Fuel Ledger**.
-  - **Streamlit TOC Dashboard (`src/dashboard/app.py`):** 5-tab Python operations console powered by Plotly dark telemetry charts and coordinate-accurate Haldwani XML mapping, integrated into `run.bat`.
+* 📊 **Interactive Operations UI & Master Launcher:**
+  - **React + TypeScript + Tailwind v4 Frontend (`frontend/`):** Features a synchronized **Split-Screen "AI vs. Legacy" Traffic Duel** (60fps HTML5 Canvas mixed-traffic micro-simulation comparing Webster Fixed-Time / Sensor-Actuated against PPO / Double DQN), **Full-Screen Animated Haldwani City Flow Map**, **Dedicated Team #54 Individual Contributions Page**, **Light & Dark Mode**, **5-Axis Controller Radar & BPR Stress-Tester**, and **24-Hour Google Maps BPR Wave & Fuel Ledger**.
+  - **One-Click Master Launcher (`run.bat`):** Launches live SUMO-GUI simulations, the React Operations UI (Option 10), evaluation suites, and automated tests from a single terminal menu (`stop.bat` terminates all SUMO, Python, and Vite UI processes cleanly).
 
 ---
 
@@ -185,11 +184,11 @@ run.bat
   4. View Morning Peak Hour Traffic Rush (8:00 AM - 10:30 AM)
   5. View Evening Peak Hour Traffic Rush (5:30 PM - 8:30 PM)
 
-  [COMPUTER VISION, DASHBOARD AND VALIDATION]
-  6. Run YOLOv8 Computer Vision Bridge (Traffic State Estimation)
-  7. Launch Interactive Web Dashboard (Streamlit App)
-  8. Run Empirical Benchmark and Statistical Hypothesis Tests
-  9. Run Project Test Suite (pytest - 4/4 Tests)
+  [COMPUTER VISION, WEB UI AND VALIDATION]
+  9. Run YOLOv8 Computer Vision Bridge (Traffic State Estimation)
+  10. Launch Interactive Operations UI (React + TypeScript Web App)
+  11. Run Empirical Benchmark and Statistical Hypothesis Tests
+  12. Run Project Test Suite (pytest - 4/4 Tests)
   0. Exit
 ===================================================================
 ```
@@ -211,9 +210,6 @@ cd frontend && npm install && npm run dev
 
 # Build React Frontend for Production
 cd frontend && npm run build
-
-# Launch Streamlit Telemetry Web App
-streamlit run src/dashboard/app.py
 
 # Run YOLOv8 Vision Bridge
 python scripts/yolo_traffic_detector.py
@@ -280,12 +276,6 @@ IntelliFlow/
 │   ├── baselines/
 │   │   ├── actuated.py                              # Dynamic sensor-actuated baseline
 │   │   └── fixed_time.py                            # Webster fixed-time baseline
-│   ├── dashboard/                                   # Modular Streamlit TOC dashboard
-│   │   ├── app.py                                   # Main 5-tab Streamlit entrypoint
-│   │   ├── charts.py                                # Dark-obsidian Plotly telemetry & Haldwani map
-│   │   ├── components.py                            # HTML/SVG digital twin & LED queue components
-│   │   ├── data_loader.py                           # CSV/XML loader & statistical hypothesis tests
-│   │   └── styles.py                                # Obsidian CSS design tokens
 │   ├── environment/
 │   │   └── sumo_env.py                              # Custom Gymnasium SUMO TraCI environment
 │   ├── evaluation/
@@ -342,9 +332,8 @@ IntelliFlow/
   - [x] 24-Hour Diurnal Google Maps traffic generation using BPR capacity-delay functions.
   - [x] Calibrated Morning Peak (8:00 AM – 10:30 AM) and Evening Peak (5:30 PM – 8:30 PM) scenarios.
   - [x] Automated 4/4 pytest regression suite verifying all environments and routes.
-- [x] **Phase 5: Operations UI, Web Dashboard & Green AI Ledger**
-  - [x] React 19 + TypeScript + Tailwind v4 Operations Console (`frontend/`) featuring a Split-Screen "AI vs. Legacy" Traffic Duel, 60fps Canvas mixed-traffic flow, Light & Dark modes, Network/Model switchers, 5-Axis Controller Radar, and Haldwani Green-Wave map.
-  - [x] Live interactive Streamlit TOC telemetry dashboard (`src/dashboard/app.py`).
+- [x] **Phase 5: Operations UI & Green AI Ledger**
+  - [x] React 19 + TypeScript + Tailwind v4 Operations Console (`frontend/`) featuring a Split-Screen "AI vs. Legacy" Traffic Duel, 60fps Canvas mixed-traffic flow, Animated Haldwani City Map, Team #54 Page, Light & Dark modes, 5-Axis Controller Radar, and BPR Stress-Tester.
   - [x] Green AI carbon emissions and economic benefit analysis (₹2.48+ Crores annual commuter savings).
   - [x] Google Colab cloud GPU training notebook with pretrained weights auto-detection.
 - [ ] **Phase 6 (Future Hardware Roadmap): Edge Computer Vision Deployment**
