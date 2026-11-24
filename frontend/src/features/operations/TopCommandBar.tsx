@@ -4,6 +4,8 @@ import { Select } from "@/components/ui/select";
 import { NETWORK_PROFILES } from "@/data/telemetry";
 import type { NetworkId, ThemeMode } from "@/types/telemetry";
 
+export type DemoPresetId = "custom" | "loop_failure" | "morning_ppo" | "sth_emergency";
+
 interface TopCommandBarProps {
   theme: ThemeMode;
   onToggleTheme: () => void;
@@ -11,6 +13,8 @@ interface TopCommandBarProps {
   onSelectNetwork: (id: NetworkId) => void;
   selectedHour: number;
   onSelectHour: (hour: number) => void;
+  activePreset: DemoPresetId;
+  onApplyPreset: (preset: DemoPresetId) => void;
   preemption: boolean;
   onTogglePreemption: () => void;
   specsOpen: boolean;
@@ -31,6 +35,8 @@ export function TopCommandBar({
   onSelectNetwork,
   selectedHour,
   onSelectHour,
+  activePreset,
+  onApplyPreset,
   preemption,
   onTogglePreemption,
   specsOpen,
@@ -38,7 +44,6 @@ export function TopCommandBar({
 }: TopCommandBarProps) {
   return (
     <header className="sticky top-2 z-30 flex flex-wrap items-center justify-between gap-2.5 rounded-md border border-border bg-card/95 px-3.5 py-2 backdrop-blur-md shadow-xs dark:shadow-none">
-      {/* Brand + Network Segmented Pill */}
       <div className="flex flex-wrap items-center gap-3">
         <div className="flex items-center gap-2">
           <div className="h-6 w-1.5 rounded-xs bg-gradient-to-b from-emerald-500 to-blue-600" />
@@ -74,9 +79,21 @@ export function TopCommandBar({
         </div>
       </div>
 
-      {/* Scenario + Emergency CTA + Specs + Theme */}
       <div className="flex flex-wrap items-center gap-2">
         <div className="w-44">
+          <Select
+            aria-label="1-Click Viva Preset"
+            value={activePreset}
+            onChange={(e) => onApplyPreset(e.target.value as DemoPresetId)}
+          >
+            <option value="custom">Demo: Custom Sandbox</option>
+            <option value="loop_failure">1. Actuated Loop Failure</option>
+            <option value="morning_ppo">2. Morning Peak PPO</option>
+            <option value="sth_emergency">3. STH Ambulance Wave</option>
+          </Select>
+        </div>
+
+        <div className="w-40">
           <Select
             aria-label="Diurnal Traffic Scenario"
             value={String(selectedHour)}
@@ -102,7 +119,7 @@ export function TopCommandBar({
           className="font-mono text-[11px]"
         >
           <Ambulance className="mr-1.5 h-3.5 w-3.5" />
-          {preemption ? "CLEAR STH PREEMPTION" : "DISPATCH STH AMBULANCE"}
+          {preemption ? "CLEAR STH" : "DISPATCH STH"}
         </Button>
 
         <Button

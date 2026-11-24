@@ -13,6 +13,7 @@ interface MukhaniFlowCanvasProps {
   preemption: boolean;
   isAiSide: boolean;
   isPlaying: boolean;
+  speedMultiplier: number;
 }
 
 type VehicleKind = "2w" | "auto" | "car" | "bus";
@@ -20,9 +21,8 @@ type VehicleKind = "2w" | "auto" | "car" | "bus";
 interface Sprite {
   approach: "W" | "E" | "N" | "S";
   kind: VehicleKind;
-  progress: number; // 0 (edge entry) -> 1 (stop line) -> 1.65 (cleared exit)
+  progress: number;
   laneIdx: number;
-  lateralOffset: number;
   baseSpeed: number;
 }
 
@@ -42,10 +42,10 @@ function createInitialPool(): Sprite[] {
     pool.push({
       approach: app,
       kind,
-      progress: ((i * 0.13) % 1.45),
+      progress: (i * 0.13) % 1.45,
       laneIdx: i % 2,
-      lateralOffset: ((i % 3) - 1) * 4,
-      baseSpeed: kind === "2w" ? 1.18 : kind === "auto" ? 0.92 : kind === "bus" ? 0.78 : 1.0,
+      baseSpeed:
+        kind === "2w" ? 1.18 : kind === "auto" ? 0.92 : kind === "bus" ? 0.78 : 1.0,
     });
   }
   return pool;
@@ -94,15 +94,30 @@ export function MukhaniFlowCanvas({
   preemption,
   isAiSide,
   isPlaying,
+  speedMultiplier,
 }: MukhaniFlowCanvasProps) {
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const poolRef = React.useRef<Sprite[]>(createInitialPool());
   const ambProgressRef = React.useRef(0.15);
   const frameRef = React.useRef(frame);
-  const propsRef = React.useRef({ networkId, theme, preemption, isAiSide, isPlaying });
+  const propsRef = React.useRef({
+    networkId,
+    theme,
+    preemption,
+    isAiSide,
+    isPlaying,
+    speedMultiplier,
+  });
 
   frameRef.current = frame;
-  propsRef.current = { networkId, theme, preemption, isAiSide, isPlaying };
+  propsRef.current = {
+    networkId,
+    theme,
+    preemption,
+    isAiSide,
+    isPlaying,
+    speedMultiplier,
+  };
 
   React.useEffect(() => {
     let rafId = 0;
@@ -131,7 +146,14 @@ export function MukhaniFlowCanvas({
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       const cur = frameRef.current;
-      const { networkId: net, theme: th, preemption: pre, isAiSide: ai, isPlaying: playing } = propsRef.current;
+      const {
+        networkId: net,
+        theme: th,
+        preemption: pre,
+        isAiSide: ai,
+        isPlaying: playing,
+        speedMultiplier: mult,
+      } = propsRef.current;
 
       const isDark = th === "dark";
       const bgCanvas = isDark ? "#080B10" : "#E8EEF5";
@@ -152,14 +174,12 @@ export function MukhaniFlowCanvas({
       const yT = cy - hRoadH / 2;
       const yB = cy + hRoadH / 2;
 
-      // Roads
       ctx.fillStyle = roadColor;
       ctx.fillRect(0, yT, W, hRoadH);
       ctx.fillRect(xL, 0, vRoadW, H);
       ctx.fillStyle = jctColor;
       ctx.fillRect(xL, yT, vRoadW, hRoadH);
 
-      // Curbs
       ctx.strokeStyle = curbColor;
       ctx.lineWidth = 1.2;
       ctx.strokeRect(0, yT, xL, 0.5);
@@ -167,7 +187,6 @@ export function MukhaniFlowCanvas({
       ctx.strokeRect(0, yB, xL, 0.5);
       ctx.strokeRect(xR, yB, W - xR, 0.5);
 
-      // Medians (amber centerline)
       ctx.strokeStyle = "rgba(245, 158, 11, 0.72)";
       ctx.lineWidth = 1.5;
       ctx.beginPath();
@@ -177,7 +196,6 @@ export function MukhaniFlowCanvas({
       ctx.moveTo(cx, yB + 6); ctx.lineTo(cx, H);
       ctx.stroke();
 
-      // Sublane dashed markings
       ctx.strokeStyle = "rgba(148, 163, 184, 0.3)";
       ctx.setLineDash([5, 6]);
       ctx.lineWidth = 1;
@@ -196,7 +214,6 @@ export function MukhaniFlowCanvas({
       ctx.stroke();
       ctx.setLineDash([]);
 
-      // Stop lines
       ctx.strokeStyle = "#E2E8F0";
       ctx.lineWidth = 2;
       ctx.beginPath();
@@ -206,13 +223,12 @@ export function MukhaniFlowCanvas({
       ctx.moveTo(cx + 2, yB + 3); ctx.lineTo(xR - 2, yB + 3);
       ctx.stroke();
 
-      // Emergency Green-Wave Path Vector
       if (pre && ai) {
         ctx.save();
         ctx.strokeStyle = "#F43F5E";
         ctx.lineWidth = 3;
         ctx.setLineDash([7, 5]);
-        ctx.lineDashOffset = -(now * 0.04);
+        ctx.lineDashOffset = -(now * 0.04 * mult);
         ctx.beginPath();
         ctx.moveTo(12, cy + 26);
         ctx.lineTo(cx - 10, cy + 26);
@@ -222,7 +238,6 @@ export function MukhaniFlowCanvas({
         ctx.restore();
       }
 
-      // Update and render vehicles proportional to real CSV halting_vehicles + speed
       const speedNorm = Math.max(0.35, Math.min(1.3, cur.speedKmh / 38));
       const queueNorm = Math.min(1, cur.totalQueue / 20);
       const activeSpritesPerApproach = ai
@@ -237,50 +252,47 @@ export function MukhaniFlowCanvas({
 
         const isEW = s.approach === "W" || s.approach === "E";
         const sig = isEW ? cur.ewSignal : cur.nsSignal;
-        const stopPos = 0.88 - ((counts[s.approach] - 1) * (ai ? 0.05 : 0.075));
+        const stopPos = 0.88 - (counts[s.approach] - 1) * (ai ? 0.05 : 0.075);
 
         if (playing) {
+          const effDt = dt * Math.min(2.5, Math.max(0.5, mult));
           if (sig === "GREEN" || s.progress > 0.94) {
-            s.progress += dt * 0.34 * s.baseSpeed * speedNorm;
+            s.progress += effDt * 0.34 * s.baseSpeed * speedNorm;
           } else {
-            // Approach queue creep; two-wheelers filter closer toward stop line
             const filterBonus = s.kind === "2w" ? 0.08 : s.kind === "auto" ? 0.03 : 0;
             const targetStop = Math.min(0.92, stopPos + filterBonus);
             if (s.progress < targetStop) {
-              s.progress = Math.min(targetStop, s.progress + dt * 0.25 * s.baseSpeed);
+              s.progress = Math.min(targetStop, s.progress + effDt * 0.25 * s.baseSpeed);
             }
           }
-          if (s.progress > 1.72) {
-            s.progress = 0.02;
-          }
+          if (s.progress > 1.72) s.progress = 0.02;
         }
 
-        // Convert progress into canvas (x, y)
         let vx = 0;
         let vy = 0;
         let horiz = true;
         const laneShift = s.laneIdx === 0 ? 15 : 32;
-        const sublaneWeave = s.kind === "2w" && sig === "RED" ? Math.sin(now * 0.004 + s.laneIdx) * 3 : 0;
+        const sublaneWeave =
+          s.kind === "2w" && sig === "RED" ? Math.sin(now * 0.004 + s.laneIdx) * 3 : 0;
 
         if (s.approach === "W") {
           horiz = true;
-          vx = s.progress <= 1 ? s.progress * (xL - 8) : (xL - 8) + (s.progress - 1) * (W - xL + 40);
+          vx = s.progress <= 1 ? s.progress * (xL - 8) : xL - 8 + (s.progress - 1) * (W - xL + 40);
           vy = cy + laneShift + sublaneWeave;
         } else if (s.approach === "E") {
           horiz = true;
-          vx = s.progress <= 1 ? W - s.progress * (W - xR - 8) : (xR + 8) - (s.progress - 1) * (xR + 40);
+          vx = s.progress <= 1 ? W - s.progress * (W - xR - 8) : xR + 8 - (s.progress - 1) * (xR + 40);
           vy = cy - laneShift - sublaneWeave;
         } else if (s.approach === "N") {
           horiz = false;
           vx = cx - (s.laneIdx === 0 ? 14 : 30) - sublaneWeave;
-          vy = s.progress <= 1 ? s.progress * (yT - 8) : (yT - 8) + (s.progress - 1) * (H - yT + 40);
+          vy = s.progress <= 1 ? s.progress * (yT - 8) : yT - 8 + (s.progress - 1) * (H - yT + 40);
         } else {
           horiz = false;
           vx = cx + (s.laneIdx === 0 ? 14 : 30) + sublaneWeave;
-          vy = s.progress <= 1 ? H - s.progress * (H - yB - 8) : (yB + 8) - (s.progress - 1) * (yB + 40);
+          vy = s.progress <= 1 ? H - s.progress * (H - yB - 8) : yB + 8 - (s.progress - 1) * (yB + 40);
         }
 
-        // Vehicle dimensions & colors from mukhani.rou.xml
         let len = 13;
         let wid = 6.5;
         let col = "#3B82F6";
@@ -302,24 +314,22 @@ export function MukhaniFlowCanvas({
         ctx.fill();
         ctx.stroke();
 
-        // Red brake lights when queued at RED
         if (sig === "RED" && s.progress > 0.25 && s.progress < 0.95) {
           ctx.fillStyle = "#EF4444";
           ctx.fillRect(vx - 1.5, vy - 1.5, 2.5, 2.5);
         }
       }
 
-      // Emergency Ambulance Sprite
       if (pre) {
         if (playing) {
+          const effDt = dt * Math.min(2.5, Math.max(0.5, mult));
           if (ai) {
-            ambProgressRef.current += dt * 0.42;
+            ambProgressRef.current += effDt * 0.42;
             if (ambProgressRef.current > 1.7) ambProgressRef.current = 0.05;
           } else {
-            // Stalled behind Legacy red-phase spillback
             const target = cur.ewSignal === "GREEN" ? 1.5 : 0.62;
             if (ambProgressRef.current < target) {
-              ambProgressRef.current += dt * 0.22;
+              ambProgressRef.current += effDt * 0.22;
             }
             if (ambProgressRef.current > 1.7) ambProgressRef.current = 0.05;
           }
@@ -344,15 +354,19 @@ export function MukhaniFlowCanvas({
         ctx.restore();
       }
 
-      // 4 Signal Pods
       drawSignalPod(ctx, xL - 26, yB + 6, cur.ewSignal);
       drawSignalPod(ctx, xR + 8, yT - 50, cur.ewSignal);
       drawSignalPod(ctx, xL - 26, yT - 50, cur.nsSignal);
       drawSignalPod(ctx, xR + 8, yB + 6, cur.nsSignal);
 
-      // Center Junction Phase Readout
+      // Center Junction Phase Pill (96px width for comfortable padding)
       ctx.fillStyle = isDark ? "rgba(11, 14, 20, 0.92)" : "rgba(15, 23, 42, 0.92)";
-      ctx.strokeStyle = pre && ai ? "#F43F5E" : cur.ewSignal === "GREEN" || cur.nsSignal === "GREEN" ? "#10B981" : "#F59E0B";
+      ctx.strokeStyle =
+        pre && ai
+          ? "#F43F5E"
+          : cur.ewSignal === "GREEN" || cur.nsSignal === "GREEN"
+            ? "#10B981"
+            : "#F59E0B";
       ctx.lineWidth = 1.4;
       ctx.beginPath();
       ctx.roundRect(cx - 48, cy - 22, 96, 44, 5);
@@ -362,19 +376,41 @@ export function MukhaniFlowCanvas({
       ctx.fillStyle = "#94A3B8";
       ctx.font = "600 8.5px 'JetBrains Mono', monospace";
       ctx.textAlign = "center";
-      ctx.fillText(pre && ai ? "PREEMPT" : cur.phaseLabel.slice(0, 11), cx, cy - 5);
+      ctx.fillText(
+        pre && ai ? "PREEMPT" : `${cur.phaseLabel.slice(0, 9)} · ${cur.dwellSec}s`,
+        cx,
+        cy - 5,
+      );
 
       ctx.fillStyle = "#F8FAFC";
-      ctx.font = "700 10px 'JetBrains Mono', monospace";
+      ctx.font = "700 9.5px 'JetBrains Mono', monospace";
       ctx.fillText(`Q:${cur.totalQueue.toFixed(1)} | ${cur.speedKmh}k`, cx, cy + 12);
 
-      // Road axis labels
+      // Road axis labels + corner fleet legend
       ctx.fillStyle = labelColor;
       ctx.font = "600 9px 'Inter', sans-serif";
       ctx.textAlign = "left";
       ctx.fillText(net === "single" ? "WEST (2L)" : "KALADHUNGI W (3L)", 10, yT - 8);
       ctx.textAlign = "right";
       ctx.fillText(net === "single" ? "EAST (2L)" : "KALADHUNGI E (3L)", W - 10, yT - 8);
+
+      // Subtle bottom-left fleet legend
+      ctx.textAlign = "left";
+      ctx.font = "600 8.5px 'JetBrains Mono', monospace";
+      const legendItems: Array<[string, string]> = [
+        ["2W", "#10B981"],
+        ["AUTO", "#F59E0B"],
+        ["CAR", "#3B82F6"],
+        ["BUS", "#8B5CF6"],
+      ];
+      let lx = 10;
+      for (const [lbl, col] of legendItems) {
+        ctx.fillStyle = col;
+        ctx.fillRect(lx, H - 15, 7, 5);
+        ctx.fillStyle = labelColor;
+        ctx.fillText(lbl, lx + 10, H - 10);
+        lx += lbl.length * 6 + 18;
+      }
 
       rafId = requestAnimationFrame(render);
     };

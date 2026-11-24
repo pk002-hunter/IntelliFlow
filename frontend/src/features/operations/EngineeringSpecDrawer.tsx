@@ -1,6 +1,10 @@
-import { Cpu, EyeOff, ShieldCheck, X } from "lucide-react";
+import { Cpu, Download, EyeOff, ShieldCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { MODEL_CHECKPOINTS, NETWORK_PROFILES } from "@/data/telemetry";
+import {
+  CONTROLLER_BENCHMARKS,
+  MODEL_CHECKPOINTS,
+  NETWORK_PROFILES,
+} from "@/data/telemetry";
 import type { ModelCheckpointId, NetworkId } from "@/types/telemetry";
 
 interface EngineeringSpecDrawerProps {
@@ -21,16 +25,52 @@ export function EngineeringSpecDrawer({
   const net = NETWORK_PROFILES[networkId];
   const model = MODEL_CHECKPOINTS[modelId];
 
+  const handleExportReport = () => {
+    const payload = {
+      project: "IntelliFlow Adaptive Traffic Signal Control",
+      exportedAt: new Date().toISOString(),
+      activeNetwork: net,
+      activeCheckpoint: model,
+      empiricalBenchmarks: CONTROLLER_BENCHMARKS,
+      statisticalTests: {
+        mannWhitneyU: 822.5,
+        mannWhitneyPValue: 5.778e-21,
+        welchTStat: -7.14,
+        welchPValue: 7.27e-8,
+      },
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `intelliflow_report_${net.id}_${model.id}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="rounded-md border border-blue-500/40 bg-card p-4">
-      <div className="mb-3 flex items-center justify-between border-b border-border pb-2.5">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-border pb-2.5">
         <div className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-blue-700 dark:text-blue-400">
           <Cpu className="h-4 w-4" />
           Under-the-Hood Engineering Spec & Phase 2 Roadmap
         </div>
-        <Button size="sm" variant="ghost" onClick={onClose} className="h-7 px-2">
-          <X className="h-4 w-4" />
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={handleExportReport}
+            className="h-7 gap-1.5 font-mono text-[10.5px]"
+          >
+            <Download className="h-3.5 w-3.5" />
+            EXPORT JSON REPORT
+          </Button>
+          <Button size="sm" variant="ghost" onClick={onClose} className="h-7 px-2">
+            <X className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">

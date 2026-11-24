@@ -1,4 +1,4 @@
-import { AlertTriangle, CheckCircle2, Pause, Play, RotateCcw } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Pause, Play, RotateCcw, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Select } from "@/components/ui/select";
 import {
@@ -28,6 +28,10 @@ interface TrafficDuelArenaProps {
   isPlaying: boolean;
   onTogglePlay: () => void;
   onReset: () => void;
+  speedMultiplier: number;
+  onChangeSpeed: (mult: number) => void;
+  fullHorizon: boolean;
+  onToggleHorizon: () => void;
   preemption: boolean;
   theme: ThemeMode;
   activeHour: DiurnalHourSpec;
@@ -38,6 +42,12 @@ const AI_MODEL_OPTIONS: ModelCheckpointId[] = [
   "ppo_colab",
   "ppo_single",
   "dqn_final",
+];
+
+const PEAK_JUMPS = [
+  { label: "T+90s Fixed Spike", idx: 8 },
+  { label: "T+220s Actuated Collapse", idx: 21 },
+  { label: "T+300s Window End", idx: 29 },
 ];
 
 export function TrafficDuelArena({
@@ -51,6 +61,10 @@ export function TrafficDuelArena({
   isPlaying,
   onTogglePlay,
   onReset,
+  speedMultiplier,
+  onChangeSpeed,
+  fullHorizon,
+  onToggleHorizon,
   preemption,
   theme,
   activeHour,
@@ -67,11 +81,15 @@ export function TrafficDuelArena({
     return TELEMETRY_SERIES.mukhani_ppo;
   })();
 
-  const maxAlignedIdx = Math.min(baselineSeries.length, aiSeries.length) - 1;
-  const safeIdx = Math.min(stepIdx, maxAlignedIdx);
+  const maxIdx = fullHorizon
+    ? aiSeries.length - 1
+    : Math.min(baselineSeries.length, aiSeries.length) - 1;
+  const safeIdx = Math.min(stepIdx, maxIdx);
+  // When scrubbing past 300s in 1-hr AI horizon, hold baseline on cyclic loop to contrast
+  const baseIdx = safeIdx % baselineSeries.length;
 
   const leftFrame = deriveJunctionFrameState(
-    baselineSeries[safeIdx],
+    baselineSeries[baseIdx],
     baselineId,
     networkId,
     preemption,
@@ -86,9 +104,8 @@ export function TrafficDuelArena({
     activeHour.direction,
   );
 
-  // Use aligned benchmark comparison (ppo_baseline vs fixed/actuated) for true empirical delta
-  const aiBenchRow = TELEMETRY_SERIES.bench_ppo[safeIdx];
-  const baseRow = baselineSeries[safeIdx];
+  const aiBenchRow = TELEMETRY_SERIES.bench_ppo[Math.min(safeIdx, TELEMETRY_SERIES.bench_ppo.length - 1)];
+  const baseRow = baselineSeries[baseIdx];
   const queueDeltaPct =
     baseRow.halting_vehicles > 0
       ? Math.round(
@@ -100,7 +117,7 @@ export function TrafficDuelArena({
 
   return (
     <section className="space-y-3">
-      {/* Headline Empirical Delta Strip (4 Truthful Numbers, Zero Form Clutter) */}
+      {/* Headline Empirical Delta Strip */}
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4">
         <div className="rounded-md border border-border bg-card px-3.5 py-2.5">
           <div className="font-mono text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
@@ -134,7 +151,7 @@ export function TrafficDuelArena({
 
         <div className="rounded-md border border-border bg-card px-3.5 py-2.5">
           <div className="font-mono text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-            Live Step Delta (T+{leftFrame.simStep}s)
+            Live Step Delta (T+{rightFrame.simStep}s)
           </div>
           <div className="mt-0.5 font-mono text-lg font-bold tabular-nums text-foreground sm:text-xl">
             {baseRow.halting_vehicles.toFixed(0)} vs{" "}
@@ -164,7 +181,6 @@ export function TrafficDuelArena({
 
       {/* Synchronized Split-Screen Duel */}
       <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
-        {/* LEFT: LEGACY BASELINE */}
         <div className="rounded-md border border-amber-500/35 bg-card p-3.5">
           <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2">
@@ -200,6 +216,7 @@ export function TrafficDuelArena({
             preemption={preemption}
             isAiSide={false}
             isPlaying={isPlaying}
+            speedMultiplier={speedMultiplier}
           />
 
           <div className="mt-2.5 grid grid-cols-4 gap-1.5">
@@ -230,12 +247,9 @@ export function TrafficDuelArena({
           </div>
         </div>
 
-        {/* RIGHT: INTELLIFLOW DEEP RL */}
         <div
           className={`rounded-md border bg-card p-3.5 ${
-            preemption
-              ? "border-rose-500/60"
-              : "border-emerald-500/40"
+            preemption ? "border-rose-500/60" : "border-emerald-500/40"
           }`}
         >
           <div className="mb-2.5 flex flex-wrap items-center justify-between gap-2">
@@ -277,6 +291,7 @@ export function TrafficDuelArena({
             preemption={preemption}
             isAiSide={true}
             isPlaying={isPlaying}
+            speedMultiplier={speedMultiplier}
           />
 
           <div className="mt-2.5 grid grid-cols-4 gap-1.5">
@@ -308,51 +323,110 @@ export function TrafficDuelArena({
         </div>
       </div>
 
-      {/* Synchronized Playback & Timeline Bar */}
-      <div className="flex flex-wrap items-center gap-3 rounded-md border border-border bg-card px-3.5 py-2.5">
-        <div className="flex items-center gap-1.5">
-          <Button
-            size="sm"
-            variant="default"
-            onClick={onTogglePlay}
-            className="font-mono"
-          >
-            {isPlaying ? (
-              <>
-                <Pause className="mr-1 h-3.5 w-3.5" /> PAUSE DUEL
-              </>
-            ) : (
-              <>
-                <Play className="mr-1 h-3.5 w-3.5" /> PLAY DUEL
-              </>
-            )}
-          </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            onClick={onReset}
-            className="font-mono"
-          >
-            <RotateCcw className="mr-1 h-3.5 w-3.5" /> RESET
-          </Button>
+      {/* Synchronized Playback, Speed, Horizon & Quick Spike Jumps */}
+      <div className="flex flex-col gap-2.5 rounded-md border border-border bg-card px-3.5 py-2.5">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="flex items-center gap-1.5">
+            <Button
+              size="sm"
+              variant="default"
+              onClick={onTogglePlay}
+              className="font-mono"
+            >
+              {isPlaying ? (
+                <>
+                  <Pause className="mr-1 h-3.5 w-3.5" /> PAUSE
+                </>
+              ) : (
+                <>
+                  <Play className="mr-1 h-3.5 w-3.5" /> PLAY
+                </>
+              )}
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={onReset}
+              className="font-mono"
+            >
+              <RotateCcw className="mr-1 h-3.5 w-3.5" /> RESET
+            </Button>
+          </div>
+
+          {/* Speed selector */}
+          <div className="inline-flex rounded border border-border bg-background p-0.5">
+            {[0.5, 1, 2, 4].map((m) => (
+              <button
+                key={m}
+                type="button"
+                onClick={() => onChangeSpeed(m)}
+                className={`cursor-pointer rounded px-2 py-0.5 font-mono text-[10px] font-semibold ${
+                  speedMultiplier === m
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {m}x
+              </button>
+            ))}
+          </div>
+
+          <input
+            type="range"
+            min={0}
+            max={maxIdx}
+            value={safeIdx}
+            onChange={(e) => onChangeStep(Number(e.target.value))}
+            className="h-1.5 min-w-40 flex-1 cursor-pointer accent-blue-600"
+          />
+
+          <div className="flex items-center gap-2 font-mono text-[11px] tabular-nums">
+            <span className="font-semibold text-foreground">
+              T+{String(rightFrame.simStep).padStart(4, "0")}s / {fullHorizon ? "3600s" : "300s"}
+            </span>
+            <button
+              type="button"
+              onClick={onToggleHorizon}
+              className={`cursor-pointer rounded border px-2 py-0.5 text-[10px] font-semibold ${
+                fullHorizon
+                  ? "border-cyan-500/50 bg-cyan-500/15 text-cyan-700 dark:text-cyan-400"
+                  : "border-border bg-background text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {fullHorizon ? "1-HR RL HORIZON" : "300s DUEL"}
+            </button>
+          </div>
         </div>
 
-        <input
-          type="range"
-          min={0}
-          max={maxAlignedIdx}
-          value={safeIdx}
-          onChange={(e) => onChangeStep(Number(e.target.value))}
-          className="h-1.5 min-w-44 flex-1 cursor-pointer accent-blue-600"
-        />
+        {/* Viva Quick-Jump Spike Pills */}
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border pt-2">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="flex items-center gap-1 font-mono text-[10px] font-semibold uppercase text-muted-foreground">
+              <Zap className="h-3 w-3 text-amber-500" /> Quick Jump:
+            </span>
+            {PEAK_JUMPS.map((jump) => (
+              <button
+                key={jump.idx}
+                type="button"
+                onClick={() => onChangeStep(jump.idx)}
+                className="cursor-pointer rounded border border-border bg-background px-2 py-0.5 font-mono text-[10px] text-muted-foreground hover:border-blue-500/50 hover:text-foreground"
+              >
+                {jump.label}
+              </button>
+            ))}
+            {fullHorizon && (
+              <button
+                type="button"
+                onClick={() => onChangeStep(202)}
+                className="cursor-pointer rounded border border-border bg-background px-2 py-0.5 font-mono text-[10px] text-cyan-700 hover:border-cyan-500/50 dark:text-cyan-400"
+              >
+                T+2030s Mukhani Surge (22 veh)
+              </button>
+            )}
+          </div>
 
-        <div className="flex items-center gap-3 font-mono text-[11px] tabular-nums">
-          <span className="text-foreground font-semibold">
-            T+{String(leftFrame.simStep).padStart(3, "0")}s / 300s
-          </span>
-          <span className="hidden text-muted-foreground sm:inline">
-            Demand: {activeHour.timeLabel} ({activeHour.flowVph} veh/hr ·{" "}
-            {activeHour.direction.toUpperCase()})
+          <span className="font-mono text-[10.5px] text-muted-foreground">
+            {activeHour.timeLabel} · {activeHour.flowVph} veh/hr ({activeHour.direction.toUpperCase()})
           </span>
         </div>
       </div>

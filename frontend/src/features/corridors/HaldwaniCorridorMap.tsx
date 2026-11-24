@@ -8,27 +8,68 @@ interface HaldwaniCorridorMapProps {
   preemption: boolean;
 }
 
+const HOSPITAL_TO_CORRIDOR: Record<string, string> = {
+  HOSP_STH: "sth_rampur",
+  HOSP_UJALA: "sth_rampur",
+  HOSP_NEELKANTH: "sth_gasgodam",
+  HOSP_BASE: "base_nh109",
+  HOSP_BRIJLAL: "base_nh109",
+  HOSP_KRISHNA: "base_nh109",
+  HOSP_KATHGODAM: "base_nh109",
+  HOSP_BOMBAY: "base_nh109",
+};
+
 export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
   const [corridorKey, setCorridorKey] = React.useState("sth_rampur");
   const [showShortcuts, setShowShortcuts] = React.useState(true);
   const [query, setQuery] = React.useState("");
   const [selectedHospitalId, setSelectedHospitalId] = React.useState<string>("HOSP_STH");
+  const [hoveredTls, setHoveredTls] = React.useState<string | null>(null);
+  const [sweepProgress, setSweepProgress] = React.useState(0);
 
   const nodeMap = React.useMemo(
     () => Object.fromEntries(HALDWANI_TOPOLOGY.nodes.map((n) => [n.id, n])),
     [],
   );
 
-  // Project Haldwani meter coordinates (X: -2100..1850, Y: -2550..2500) into SVG (740x430)
+  // Animate emergency ambulance wave along selected corridor when preemption is active
+  React.useEffect(() => {
+    if (!preemption) {
+      setSweepProgress(0);
+      return;
+    }
+    const id = window.setInterval(() => {
+      setSweepProgress((p) => (p >= 1 ? 0 : Number((p + 0.025).toFixed(3))));
+    }, 60);
+    return () => window.clearInterval(id);
+  }, [preemption, corridorKey]);
+
   const projX = (x: number) => ((x + 2150) / 4050) * 690 + 25;
   const projY = (y: number) => 405 - ((y + 2550) / 5100) * 380;
 
   const corridor = EMERGENCY_CORRIDORS[corridorKey];
-  const routePoints = corridor.routeNodes
+  const routeNodeObjs = corridor.routeNodes
     .map((id) => nodeMap[id])
-    .filter(Boolean)
+    .filter(Boolean);
+  const routePoints = routeNodeObjs
     .map((n) => `${projX(n.x).toFixed(1)},${projY(n.y).toFixed(1)}`)
     .join(" ");
+
+  // Compute interpolated ambulance position along polyline
+  const ambPoint = React.useMemo(() => {
+    if (!preemption || routeNodeObjs.length < 2) return null;
+    const segCount = routeNodeObjs.length - 1;
+    const scaled = sweepProgress * segCount;
+    const idx = Math.min(segCount - 1, Math.floor(scaled));
+    const t = scaled - idx;
+    const a = routeNodeObjs[idx];
+    const b = routeNodeObjs[idx + 1];
+    return {
+      x: projX(a.x + (b.x - a.x) * t),
+      y: projY(a.y + (b.y - a.y) * t),
+      activeSegIdx: idx,
+    };
+  }, [preemption, routeNodeObjs, sweepProgress]);
 
   const hospitals = HALDWANI_TOPOLOGY.landmarks.filter(
     (l) =>
@@ -42,6 +83,12 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
     if (cat === "rampur") return "#64748B";
     if (cat === "shortcut") return "#10B981";
     return "#F43F5E";
+  };
+
+  const selectHospital = (hid: string) => {
+    setSelectedHospitalId(hid);
+    const matched = HOSPITAL_TO_CORRIDOR[hid];
+    if (matched) setCorridorKey(matched);
   };
 
   return (
@@ -94,7 +141,6 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
           className="w-full rounded-md border border-border"
           style={{ backgroundColor: "var(--twin-canvas)" }}
         >
-          {/* Road Edges */}
           {HALDWANI_TOPOLOGY.edges.map((edge) => {
             if (edge.category === "shortcut" && !showShortcuts) return null;
             const n1 = nodeMap[edge.from];
@@ -115,7 +161,6 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
             );
           })}
 
-          {/* Highlighted Emergency Green-Wave Corridor */}
           {routePoints && (
             <polyline
               points={routePoints}
@@ -128,18 +173,42 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
             />
           )}
 
-          {/* Traffic Light Junctions */}
           {HALDWANI_TOPOLOGY.nodes
             .filter((n) => n.type === "traffic_light")
             .map((n) => {
-              const onRoute = corridor.routeNodes.includes(n.id);
+              const routeIdx = corridor.routeNodes.indexOf(n.id);
+              const onRoute = routeIdx !== -1;
+              const cleared =
+                ambPoint !== null && onRoute && routeIdx <= ambPoint.activeSegIdx + 1;
               return (
-                <g key={n.id}>
+                <g
+                  key={n.id}
+                  onMouseEnter={() => setHoveredTls(n.id)}
+                  onMouseLeave={() => setHoveredTls(null)}
+                  className="cursor-pointer"
+                >
+                  {cleared && (
+                    <circle
+                      cx={projX(n.x)}
+                      cy={projY(n.y)}
+                      r={11}
+                      fill="#10B981"
+                      fillOpacity={0.28}
+                    />
+                  )}
                   <circle
                     cx={projX(n.x)}
                     cy={projY(n.y)}
                     r={onRoute ? 6.5 : 5}
-                    fill={onRoute ? (preemption ? "#F43F5E" : "#10B981") : "#06B6D4"}
+                    fill={
+                      cleared
+                        ? "#10B981"
+                        : onRoute
+                          ? preemption
+                            ? "#F43F5E"
+                            : "#10B981"
+                          : "#06B6D4"
+                    }
                     stroke="#0B0E14"
                     strokeWidth={1.5}
                   />
@@ -157,7 +226,6 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
               );
             })}
 
-          {/* Hospital Markers */}
           {HALDWANI_TOPOLOGY.landmarks
             .filter((l) => l.type === "hospital")
             .map((h) => {
@@ -165,22 +233,38 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
               return (
                 <g
                   key={h.id}
-                  onClick={() => setSelectedHospitalId(h.id)}
+                  onClick={() => selectHospital(h.id)}
                   className="cursor-pointer"
                 >
                   <rect
-                    x={projX(h.x) - (selected ? 6 : 4.5)}
-                    y={projY(h.y) - (selected ? 6 : 4.5)}
-                    width={selected ? 12 : 9}
-                    height={selected ? 12 : 9}
+                    x={projX(h.x) - (selected ? 6.5 : 4.5)}
+                    y={projY(h.y) - (selected ? 6.5 : 4.5)}
+                    width={selected ? 13 : 9}
+                    height={selected ? 13 : 9}
                     rx={2}
                     fill="#F43F5E"
                     stroke="#FFFFFF"
-                    strokeWidth={selected ? 1.6 : 1}
+                    strokeWidth={selected ? 1.8 : 1}
                   />
                 </g>
               );
             })}
+
+          {ambPoint && (
+            <g>
+              <circle cx={ambPoint.x} cy={ambPoint.y} r={11} fill="#F43F5E" fillOpacity={0.32} />
+              <circle cx={ambPoint.x} cy={ambPoint.y} r={5.5} fill="#FFFFFF" stroke="#F43F5E" strokeWidth={2} />
+            </g>
+          )}
+
+          {hoveredTls && nodeMap[hoveredTls] && (
+            <g>
+              <rect x={14} y={14} width={220} height={24} rx={4} fill="#0B0E14" fillOpacity={0.9} stroke="#2E3A52" />
+              <text x={22} y={29} fill="#F8FAFC" fontSize={9.5} fontFamily="JetBrains Mono, monospace">
+                TLS: {hoveredTls} ({nodeMap[hoveredTls].x}m, {nodeMap[hoveredTls].y}m)
+              </text>
+            </g>
+          )}
         </svg>
 
         <div className="mt-2 flex flex-wrap items-center justify-between gap-2 font-mono text-[10.5px] text-muted-foreground">
@@ -195,7 +279,7 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
               <span className="inline-block h-2 w-3 bg-emerald-500" /> Strategic Shortcuts
             </span>
             <span className="flex items-center gap-1">
-              <span className="inline-block h-2.5 w-2.5 rounded-xs bg-rose-500" /> Trauma Centers
+              <span className="inline-block h-2.5 w-2.5 rounded-xs bg-rose-500" /> Trauma Centers (click to route)
             </span>
           </div>
           <span className="flex items-center gap-1 font-semibold text-foreground">
@@ -205,7 +289,6 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
         </div>
       </div>
 
-      {/* Compact Hospital & Bypass Inspector */}
       <div className="flex flex-col rounded-md border border-border bg-card p-3.5 lg:col-span-4">
         <div className="mb-2 flex items-center justify-between">
           <div className="flex items-center gap-1.5 text-xs font-semibold text-foreground">
@@ -214,7 +297,7 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
           </div>
           {preemption && (
             <span className="inline-flex items-center gap-1 rounded bg-rose-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-rose-700 dark:text-rose-300">
-              <Ambulance className="h-3 w-3" /> PREEMPTING
+              <Ambulance className="h-3 w-3" /> SWEEPING
             </span>
           )}
         </div>
@@ -236,7 +319,7 @@ export function HaldwaniCorridorMap({ preemption }: HaldwaniCorridorMapProps) {
               <button
                 key={h.id}
                 type="button"
-                onClick={() => setSelectedHospitalId(h.id)}
+                onClick={() => selectHospital(h.id)}
                 className={`w-full cursor-pointer rounded border p-2 text-left transition-colors ${
                   active
                     ? "border-rose-500/50 bg-rose-500/10"

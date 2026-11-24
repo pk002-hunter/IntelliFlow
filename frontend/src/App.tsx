@@ -6,6 +6,7 @@ import {
   EngineeringSpecDrawer,
   TopCommandBar,
   TrafficDuelArena,
+  type DemoPresetId,
 } from "@/features/operations";
 import { DIURNAL_BPR_HOURS, TELEMETRY_SERIES } from "@/data/telemetry";
 import type {
@@ -29,6 +30,41 @@ export function App() {
   const [specsOpen, setSpecsOpen] = React.useState<boolean>(false);
   const [stepIdx, setStepIdx] = React.useState<number>(8);
   const [isPlaying, setIsPlaying] = React.useState<boolean>(true);
+  const [speedMultiplier, setSpeedMultiplier] = React.useState<number>(1);
+  const [fullHorizon, setFullHorizon] = React.useState<boolean>(false);
+  const [activePreset, setActivePreset] = React.useState<DemoPresetId>("custom");
+
+  const applyDemoPreset = (preset: DemoPresetId) => {
+    setActivePreset(preset);
+    if (preset === "loop_failure") {
+      setNetworkId("mukhani");
+      setBaselineId("actuated");
+      setAiModelId("ppo_mukhani");
+      setSelectedHour(9);
+      setPreemption(false);
+      setFullHorizon(false);
+      setStepIdx(21); // T+220s Actuated 29-veh collapse
+      setIsPlaying(false);
+    } else if (preset === "morning_ppo") {
+      setNetworkId("mukhani");
+      setBaselineId("fixed");
+      setAiModelId("ppo_mukhani");
+      setSelectedHour(9);
+      setPreemption(false);
+      setFullHorizon(false);
+      setStepIdx(8);
+      setIsPlaying(true);
+    } else if (preset === "sth_emergency") {
+      setNetworkId("haldwani");
+      setBaselineId("fixed");
+      setAiModelId("ppo_colab");
+      setSelectedHour(18);
+      setPreemption(true);
+      setFullHorizon(false);
+      setStepIdx(12);
+      setIsPlaying(true);
+    }
+  };
 
   React.useEffect(() => {
     const root = document.documentElement;
@@ -40,15 +76,18 @@ export function App() {
     window.localStorage.setItem("intelliflow-theme", theme);
   }, [theme]);
 
-  // Synchronized duel advance across 30 aligned 10s intervals (10s..300s)
+  // Synchronized duel advance honoring selected playback speed & episode horizon
   React.useEffect(() => {
     if (!isPlaying) return;
-    const maxLen = TELEMETRY_SERIES.fixed.length;
+    const maxLen = fullHorizon
+      ? TELEMETRY_SERIES.mukhani_ppo.length
+      : TELEMETRY_SERIES.fixed.length;
+    const intervalMs = Math.max(180, Math.round(850 / speedMultiplier));
     const id = window.setInterval(() => {
       setStepIdx((prev) => (prev + 1) % maxLen);
-    }, 850);
+    }, intervalMs);
     return () => window.clearInterval(id);
-  }, [isPlaying]);
+  }, [isPlaying, speedMultiplier, fullHorizon]);
 
   const handleSelectNetwork = (net: NetworkId) => {
     setNetworkId(net);
@@ -57,6 +96,16 @@ export function App() {
     } else if (net !== "single" && aiModelId === "ppo_single") {
       setAiModelId("ppo_mukhani");
     }
+  };
+
+  const handleToggleHorizon = () => {
+    setFullHorizon((prev) => {
+      const next = !prev;
+      if (!next && stepIdx >= TELEMETRY_SERIES.fixed.length) {
+        setStepIdx(TELEMETRY_SERIES.fixed.length - 1);
+      }
+      return next;
+    });
   };
 
   const activeHour =
@@ -75,6 +124,8 @@ export function App() {
           onSelectNetwork={handleSelectNetwork}
           selectedHour={selectedHour}
           onSelectHour={setSelectedHour}
+          activePreset={activePreset}
+          onApplyPreset={applyDemoPreset}
           preemption={preemption}
           onTogglePreemption={() => setPreemption((prev) => !prev)}
           specsOpen={specsOpen}
@@ -117,19 +168,23 @@ export function App() {
             setIsPlaying(false);
             setStepIdx(0);
           }}
+          speedMultiplier={speedMultiplier}
+          onChangeSpeed={setSpeedMultiplier}
+          fullHorizon={fullHorizon}
+          onToggleHorizon={handleToggleHorizon}
           preemption={preemption}
           theme={theme}
           activeHour={activeHour}
         />
 
-        {/* ACT 2: Synchronized 4-Controller Cumulative Delay Race & 5-Axis Radar */}
+        {/* ACT 2: Synchronized 4-Controller Cumulative Delay Race & 5-Axis Radar / BPR Stress */}
         <ControllerRaceArena
           stepIdx={stepIdx}
           baselineId={baselineId}
           aiModelId={aiModelId}
         />
 
-        {/* ACT 3: Haldwani Spatial Corridor & Hospital Green-Wave Map */}
+        {/* ACT 3: Haldwani Spatial Corridor & Animated Hospital Green-Wave Map */}
         <HaldwaniCorridorMap preemption={preemption} />
 
         {/* ACT 4: 24-Hour Google Maps BPR Wave & Green AI Impact Ledger */}
