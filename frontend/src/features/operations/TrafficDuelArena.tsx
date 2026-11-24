@@ -37,12 +37,21 @@ interface TrafficDuelArenaProps {
   activeHour: DiurnalHourSpec;
 }
 
-const AI_MODEL_OPTIONS: ModelCheckpointId[] = [
-  "ppo_mukhani",
-  "ppo_colab",
-  "ppo_single",
-  "dqn_final",
-];
+const AI_MODEL_BY_NETWORK: Record<
+  "ppo" | "dqn",
+  Record<NetworkId, ModelCheckpointId>
+> = {
+  ppo: {
+    mukhani: "ppo_mukhani",
+    haldwani: "ppo_colab",
+    single: "ppo_single",
+  },
+  dqn: {
+    mukhani: "dqn_final",
+    haldwani: "dqn_final",
+    single: "dqn_final",
+  },
+};
 
 const PEAK_JUMPS = [
   { label: "T+90s Fixed Spike", idx: 8 },
@@ -73,11 +82,12 @@ export function TrafficDuelArena({
   const baselineSeries: TelemetryStep[] =
     baselineId === "fixed" ? TELEMETRY_SERIES.fixed : TELEMETRY_SERIES.actuated;
 
+  const activeAlgo: "ppo" | "dqn" =
+    aiModelId === "dqn_final" ? "dqn" : "ppo";
+
   const aiSeries: TelemetryStep[] = (() => {
-    if (aiModelId === "dqn_final") return TELEMETRY_SERIES.bench_dqn;
-    if (networkId === "single" || aiModelId === "ppo_single") {
-      return TELEMETRY_SERIES.bench_ppo;
-    }
+    if (activeAlgo === "dqn") return TELEMETRY_SERIES.bench_dqn;
+    if (networkId === "single") return TELEMETRY_SERIES.bench_ppo;
     return TELEMETRY_SERIES.mukhani_ppo;
   })();
 
@@ -267,19 +277,19 @@ export function TrafficDuelArena({
               </div>
             </div>
 
-            <div className="w-52">
+            <div className="w-56">
               <Select
-                aria-label="Select AI Model Checkpoint"
-                value={aiModelId}
-                onChange={(e) =>
-                  onSelectAiModel(e.target.value as ModelCheckpointId)
-                }
+                aria-label="Select RL Algorithm"
+                value={activeAlgo}
+                onChange={(e) => {
+                  const algo = e.target.value as "ppo" | "dqn";
+                  onSelectAiModel(AI_MODEL_BY_NETWORK[algo][networkId]);
+                }}
               >
-                {AI_MODEL_OPTIONS.map((id) => (
-                  <option key={id} value={id}>
-                    {MODEL_CHECKPOINTS[id].shortLabel}
-                  </option>
-                ))}
+                <option value="ppo">
+                  PPO Agent ({networkId === "single" ? "35D Bench" : "43D Mixed"})
+                </option>
+                <option value="dqn">Double DQN (35D Bench)</option>
               </Select>
             </div>
           </div>

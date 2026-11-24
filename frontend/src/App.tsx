@@ -7,7 +7,9 @@ import {
   TopCommandBar,
   TrafficDuelArena,
   type DemoPresetId,
+  type PageViewId,
 } from "@/features/operations";
+import { TeamContributionsPage } from "@/features/team";
 import { DIURNAL_BPR_HOURS, TELEMETRY_SERIES } from "@/data/telemetry";
 import type {
   BaselineId,
@@ -17,6 +19,7 @@ import type {
 } from "@/types/telemetry";
 
 export function App() {
+  const [pageView, setPageView] = React.useState<PageViewId>("operations");
   const [theme, setTheme] = React.useState<ThemeMode>(() => {
     const saved = window.localStorage.getItem("intelliflow-theme");
     return saved === "light" ? "light" : "dark";
@@ -36,6 +39,7 @@ export function App() {
 
   const applyDemoPreset = (preset: DemoPresetId) => {
     setActivePreset(preset);
+    setPageView("operations");
     if (preset === "loop_failure") {
       setNetworkId("mukhani");
       setBaselineId("actuated");
@@ -43,7 +47,7 @@ export function App() {
       setSelectedHour(9);
       setPreemption(false);
       setFullHorizon(false);
-      setStepIdx(21); // T+220s Actuated 29-veh collapse
+      setStepIdx(21);
       setIsPlaying(false);
     } else if (preset === "morning_ppo") {
       setNetworkId("mukhani");
@@ -76,7 +80,6 @@ export function App() {
     window.localStorage.setItem("intelliflow-theme", theme);
   }, [theme]);
 
-  // Synchronized duel advance honoring selected playback speed & episode horizon
   React.useEffect(() => {
     if (!isPlaying) return;
     const maxLen = fullHorizon
@@ -91,10 +94,10 @@ export function App() {
 
   const handleSelectNetwork = (net: NetworkId) => {
     setNetworkId(net);
-    if (net === "single" && aiModelId === "ppo_mukhani") {
-      setAiModelId("ppo_single");
-    } else if (net !== "single" && aiModelId === "ppo_single") {
-      setAiModelId("ppo_mukhani");
+    if (aiModelId !== "dqn_final") {
+      if (net === "single") setAiModelId("ppo_single");
+      else if (net === "haldwani") setAiModelId("ppo_colab");
+      else setAiModelId("ppo_mukhani");
     }
   };
 
@@ -112,10 +115,14 @@ export function App() {
     DIURNAL_BPR_HOURS.find((h) => h.hour === selectedHour) ??
     DIURNAL_BPR_HOURS[9];
 
+  const isHaldwaniHero = networkId === "haldwani";
+
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors">
       <main className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4">
         <TopCommandBar
+          pageView={pageView}
+          onSelectPage={setPageView}
           theme={theme}
           onToggleTheme={() =>
             setTheme((prev) => (prev === "dark" ? "light" : "dark"))
@@ -132,66 +139,95 @@ export function App() {
           onToggleSpecs={() => setSpecsOpen((prev) => !prev)}
         />
 
-        <EngineeringSpecDrawer
-          open={specsOpen}
-          onClose={() => setSpecsOpen(false)}
-          networkId={networkId}
-          modelId={aiModelId}
-        />
+        {pageView === "team" ? (
+          <TeamContributionsPage />
+        ) : (
+          <>
+            <EngineeringSpecDrawer
+              open={specsOpen}
+              onClose={() => setSpecsOpen(false)}
+              networkId={networkId}
+              modelId={aiModelId}
+            />
 
-        {preemption && (
-          <div className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-rose-500/50 bg-rose-500/10 px-3.5 py-2 text-xs">
-            <span className="font-medium text-rose-900 dark:text-rose-100">
-              EMERGENCY PREEMPTION ACTIVE: Legacy baseline stalls in spillback while IntelliFlow locks EW Green &rarr; Rampur Rd (SH-49) &rarr; STH Hospital (0s delay)
-            </span>
-            <span className="rounded bg-rose-500/20 px-2 py-0.5 font-mono text-[10px] font-semibold text-rose-700 dark:text-rose-300">
-              3s YELLOW INTERLOCK ARMED
-            </span>
-          </div>
+            {preemption && (
+              <div className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-rose-500/50 bg-rose-500/10 px-3.5 py-2 text-xs">
+                <span className="font-medium text-rose-900 dark:text-rose-100">
+                  EMERGENCY PREEMPTION ACTIVE: Legacy baseline stalls in spillback while IntelliFlow locks EW Green &rarr; Rampur Rd (SH-49) &rarr; STH Hospital (0s delay)
+                </span>
+                <span className="rounded bg-rose-500/20 px-2 py-0.5 font-mono text-[10px] font-semibold text-rose-700 dark:text-rose-300">
+                  3s YELLOW INTERLOCK ARMED
+                </span>
+              </div>
+            )}
+
+            {/* When Haldwani City is selected, promote the live animated city-wide traffic flow map to Hero */}
+            {isHaldwaniHero && (
+              <HaldwaniCorridorMap
+                preemption={preemption}
+                heroMode={true}
+                theme={theme}
+                activeHour={activeHour}
+                isPlaying={isPlaying}
+                onTogglePlay={() => setIsPlaying((p) => !p)}
+                speedMultiplier={speedMultiplier}
+                onZoomMukhani={() => handleSelectNetwork("mukhani")}
+              />
+            )}
+
+            {/* Split-Screen AI vs. Legacy Traffic Duel */}
+            <TrafficDuelArena
+              networkId={networkId}
+              baselineId={baselineId}
+              onSelectBaseline={setBaselineId}
+              aiModelId={aiModelId}
+              onSelectAiModel={setAiModelId}
+              stepIdx={stepIdx}
+              onChangeStep={(idx) => {
+                setIsPlaying(false);
+                setStepIdx(idx);
+              }}
+              isPlaying={isPlaying}
+              onTogglePlay={() => setIsPlaying((p) => !p)}
+              onReset={() => {
+                setIsPlaying(false);
+                setStepIdx(0);
+              }}
+              speedMultiplier={speedMultiplier}
+              onChangeSpeed={setSpeedMultiplier}
+              fullHorizon={fullHorizon}
+              onToggleHorizon={handleToggleHorizon}
+              preemption={preemption}
+              theme={theme}
+              activeHour={activeHour}
+            />
+
+            {/* Empirical Delay Race & 5-Axis Radar / BPR Stress Curve */}
+            <ControllerRaceArena
+              stepIdx={stepIdx}
+              baselineId={baselineId}
+              aiModelId={aiModelId}
+            />
+
+            {/* Show Haldwani Corridor Map below when viewing junction-level networks */}
+            {!isHaldwaniHero && (
+              <HaldwaniCorridorMap
+                preemption={preemption}
+                heroMode={false}
+                theme={theme}
+                activeHour={activeHour}
+                isPlaying={isPlaying}
+                speedMultiplier={speedMultiplier}
+              />
+            )}
+
+            {/* 24-Hour Google Maps BPR Wave & Green AI Impact Ledger */}
+            <DiurnalGreenSection
+              selectedHour={selectedHour}
+              onSelectHour={setSelectedHour}
+            />
+          </>
         )}
-
-        {/* ACT 1: Synchronized Split-Screen AI vs. Legacy Traffic Duel */}
-        <TrafficDuelArena
-          networkId={networkId}
-          baselineId={baselineId}
-          onSelectBaseline={setBaselineId}
-          aiModelId={aiModelId}
-          onSelectAiModel={setAiModelId}
-          stepIdx={stepIdx}
-          onChangeStep={(idx) => {
-            setIsPlaying(false);
-            setStepIdx(idx);
-          }}
-          isPlaying={isPlaying}
-          onTogglePlay={() => setIsPlaying((p) => !p)}
-          onReset={() => {
-            setIsPlaying(false);
-            setStepIdx(0);
-          }}
-          speedMultiplier={speedMultiplier}
-          onChangeSpeed={setSpeedMultiplier}
-          fullHorizon={fullHorizon}
-          onToggleHorizon={handleToggleHorizon}
-          preemption={preemption}
-          theme={theme}
-          activeHour={activeHour}
-        />
-
-        {/* ACT 2: Synchronized 4-Controller Cumulative Delay Race & 5-Axis Radar / BPR Stress */}
-        <ControllerRaceArena
-          stepIdx={stepIdx}
-          baselineId={baselineId}
-          aiModelId={aiModelId}
-        />
-
-        {/* ACT 3: Haldwani Spatial Corridor & Animated Hospital Green-Wave Map */}
-        <HaldwaniCorridorMap preemption={preemption} />
-
-        {/* ACT 4: 24-Hour Google Maps BPR Wave & Green AI Impact Ledger */}
-        <DiurnalGreenSection
-          selectedHour={selectedHour}
-          onSelectHour={setSelectedHour}
-        />
       </main>
     </div>
   );

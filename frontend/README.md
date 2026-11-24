@@ -1,6 +1,6 @@
 # IntelliFlow Frontend (React + TypeScript + Tailwind v4)
 
-Interactive **AI vs. Legacy Traffic Duel**, **Haldwani Spatial Corridor Map**, **4-Controller Delay Race + 5-Axis Radar**, and **24h BPR Diurnal & Green AI Ledger** with Light & Dark mode support.
+Interactive **AI vs. Legacy Traffic Duel**, **Animated Haldwani City Traffic Flow Map**, **4-Controller Delay Race + 5-Axis Radar + BPR Stress-Tester**, **24h BPR Diurnal & Green AI Ledger**, and **Team #54 Individual Contributions Page** with Light & Dark mode support.
 
 ## Directory Layout
 
@@ -8,14 +8,15 @@ Interactive **AI vs. Legacy Traffic Duel**, **Haldwani Spatial Corridor Map**, *
 src/
 ├── components/ui/      # Pure shadcn/ui primitives (button, card, input, label, select, tabs)
 ├── features/
-│   ├── operations/     # TopCommandBar, TrafficDuelArena, 60fps MukhaniFlowCanvas, EngineeringSpecDrawer
-│   ├── benchmarks/     # ControllerRaceArena (cumulative delay race + 5-axis SVG radar)
-│   ├── corridors/      # HaldwaniCorridorMap (real SUMO coordinates + Green-Wave routes + hospitals)
-│   └── economics/      # DiurnalGreenSection (24h Google Maps BPR wave + fuel/CO2 ledger)
+│   ├── operations/     # TopCommandBar, TrafficDuelArena, 60fps MukhaniFlowCanvas, Specs
+│   ├── benchmarks/     # ControllerRaceArena (delay race, 5-axis radar & BPR stress tester)
+│   ├── corridors/      # HaldwaniCorridorMap (animated city traffic flow + Green-Wave routes)
+│   ├── economics/      # DiurnalGreenSection (24h BPR wave + fuel/CO2 ledger)
+│   └── team/           # TeamContributionsPage (Team #54 individual member work & viva Q&As)
 ├── data/               # Exported 360-step CSVs & Haldwani XML topology (telemetry.json + ts)
 ├── lib/                # Pure helpers (cn, traffic signal & fuel math)
 ├── types/              # Shared TypeScript interfaces
-├── App.tsx             # 4-Act Operations & Viva Showcase shell
+├── App.tsx             # Operations & Team #54 shell
 └── index.css           # Light & Dark tokens + Tailwind v4 @custom-variant dark
 ```
 

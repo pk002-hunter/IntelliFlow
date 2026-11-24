@@ -55,7 +55,7 @@ Conventional traffic control in developing nations relies predominantly on **fix
   - Comprehensive environmental accounting tracking CO₂, CO, NOx, PMx, and idling fuel consumption.
   - Projected annual economic savings of **₹2.48+ Crores** in commuter fuel for Haldwani arterial corridors.
 * 📊 **Dual Interactive UIs (React Operations Console & Streamlit TOC Dashboard):**
-  - **React + TypeScript + Tailwind v4 Frontend (`frontend/`):** Features a synchronized **Split-Screen "AI vs. Legacy" Traffic Duel** (60fps HTML5 Canvas mixed-traffic micro-simulation comparing Webster Fixed-Time / Sensor-Actuated against PPO / DQN), **Light & Dark Mode**, **Network & Model Checkpoint Switchers**, **4-Controller Delay Race & 5-Axis Radar**, **Haldwani Green-Wave Corridor Map**, and an interactive **24-Hour Google Maps BPR Wave & Fuel Ledger**.
+  - **React + TypeScript + Tailwind v4 Frontend (`frontend/`):** Features a synchronized **Split-Screen "AI vs. Legacy" Traffic Duel** (60fps HTML5 Canvas mixed-traffic micro-simulation comparing Webster Fixed-Time / Sensor-Actuated against PPO / Double DQN), **Full-Screen Animated Haldwani City Flow Map** (auto-promoted when `Haldwani City` is selected), **Dedicated Team #54 Individual Contributions Page**, **Light & Dark Mode**, **5-Axis Controller Radar & BPR Stress-Tester**, and **24-Hour Google Maps BPR Wave & Fuel Ledger**.
   - **Streamlit TOC Dashboard (`src/dashboard/app.py`):** 5-tab Python operations console powered by Plotly dark telemetry charts and coordinate-accurate Haldwani XML mapping, integrated into `run.bat`.
 
 ---
@@ -247,8 +247,9 @@ IntelliFlow/
 │   │   ├── features/
 │   │   │   ├── operations/                          # TopCommandBar, TrafficDuelArena, 60fps MukhaniFlowCanvas, Specs
 │   │   │   ├── benchmarks/                          # ControllerRaceArena (delay race + 5-axis SVG radar)
-│   │   │   ├── corridors/                           # HaldwaniCorridorMap (SUMO XML coords + Green-Wave routes)
-│   │   │   └── economics/                           # DiurnalGreenSection (24h BPR wave + fuel/CO2 ledger)
+│   │   │   ├── corridors/                           # HaldwaniCorridorMap (animated city traffic flow + Green-Wave)
+│   │   │   ├── economics/                           # DiurnalGreenSection (24h BPR wave + fuel/CO2 ledger)
+│   │   │   └── team/                                # TeamContributionsPage (individual member deliverables)
 │   │   ├── data/                                    # Exported 360-step telemetry.json & typed models/networks
 │   │   ├── lib/                                     # Traffic phase derivation, Green AI calculations & cn()
 │   │   ├── types/                                   # Shared TypeScript domain interfaces
