@@ -20,22 +20,23 @@ export const TEAM_MEMBERS: TeamMemberProfile[] = [
     name: "Piyush Karnatak",
     urn: "2361393",
     section: "B",
-    badge: "TEAM LEAD · DEEP RL",
-    role: "Deep RL Architecture, MDP Design & Colab Pipeline",
+    badge: "TEAM LEAD · DL & RL",
+    role: "Deep Learning & Reinforcement Learning (DL/RL) Architecture Lead",
     accentColor: "#2563EB",
     summary:
-      "Designed the custom Gymnasium SUMO environment, multi-objective reward shaping, TraCI socket communication, and PPO/DQN training pipelines.",
+      "Owned the entire Deep Learning & Reinforcement Learning pipeline: custom Gymnasium MDP wrapper, multi-objective reward shaping, PPO (100k-step Colab policy), and Double DQN agents.",
     ownedFiles: [
       "src/environment/sumo_env.py",
       "src/agents/ppo/train_ppo.py",
       "src/agents/dqn/train_dqn.py",
       "notebooks/IntelliFlow_Google_Colab_Haldwani_PPO.ipynb",
+      "results/models/*",
     ],
     contributions: [
       "Formulated the 43D (Mukhani 10-lane) and 35D (Single 4-way) normalized Box observation spaces and discrete phase action wrapper.",
       "Engineered multi-objective reward shaping balancing halting queues, waiting time, HBEFA3 CO2 emissions, velocity bonus, switch penalty (1.5), starvation guard (120s), and 5.0x ambulance priority.",
       "Implemented hardware-safe phase transitions enforcing 5s minimum green floor and mandatory 3s yellow clearance intervals.",
-      "Built the automated Google Colab GPU training & evaluation notebook with pretrained weight auto-detection.",
+      "Built and executed the Google Colab cloud training notebook producing the converged 100,096-step PPO policy alongside the Double DQN baseline.",
     ],
     vivaFocus: [
       {
@@ -54,21 +55,23 @@ export const TEAM_MEMBERS: TeamMemberProfile[] = [
     urn: "2361432",
     section: "B",
     badge: "SIMULATION · SUMO",
-    role: "Microscopic Traffic Simulation & Haldwani Network Modeling",
+    role: "SUMO Microscopic Traffic Simulation & Network Modeling Lead",
     accentColor: "#10B981",
     summary:
-      "Modeled the Mukhani Chauraha 10-lane arterial junction, extracted the full Haldwani OpenStreetMap network, and calibrated Indian mixed-traffic physics.",
+      "Owned the entire Eclipse SUMO simulation layer: Mukhani Chauraha 10-lane junction, 37,000+ street Haldwani OSM extraction, Indian mixed-traffic sublane physics, and classical SUMO baselines.",
     ownedFiles: [
       "sumo/networks/mukhani_chauraha/*",
       "sumo/networks/haldwani_full/*",
+      "sumo/networks/single_intersection/*",
       "scripts/google_maps_24h_traffic.py",
       "scripts/build_real_haldwani_osm.py",
+      "src/baselines/fixed_time.py / actuated.py",
     ],
     contributions: [
       "Compiled Mukhani Chauraha (.nod.xml, .edg.xml, .tll.xml) with 3-lane Kaladhungi approaches, 2-lane Canal/Rampur approaches, and turn bays.",
       "Calibrated Krauss car-following & 0.8m sublane filtering dynamics for Indian mixed traffic (40% 2W, 30% Auto, 22% Car, 8% Bus + Emergency Ambulance).",
       "Extracted the 37,000+ street Haldwani OSM network (Kathgodam to Motahaldu) plus 8 signalized junctions, 5 strategic bypass shortcuts, and 8 trauma hospital hubs.",
-      "Built the 24-hour Google Maps probe congestion generator using inverse BPR capacity-delay formulation (216–2,700 veh/hr).",
+      "Built the 24-hour Google Maps probe congestion generator (inverse BPR) and implemented Webster Fixed-Time & Inductive Loop Actuated SUMO baselines.",
     ],
     vivaFocus: [
       {
@@ -86,31 +89,31 @@ export const TEAM_MEMBERS: TeamMemberProfile[] = [
     name: "Vishal Joshi",
     urn: "2361588",
     section: "B",
-    badge: "EVALUATION · STATS",
-    role: "Empirical Evaluation, Baselines & Statistical Rigor",
+    badge: "VISION · YOLOV8 & EVAL",
+    role: "Computer Vision (YOLOv8) & Empirical Evaluation Lead",
     accentColor: "#06B6D4",
     summary:
-      "Implemented classical traffic control baselines, ran paired multi-controller benchmarks, and proved RL significance via non-parametric and parametric hypothesis tests.",
+      "Owned the entire YOLOv8 computer vision detection pipeline for traffic state estimation alongside multi-controller statistical hypothesis testing and Green AI fuel impact modeling.",
     ownedFiles: [
-      "src/baselines/fixed_time.py",
-      "src/baselines/actuated.py",
+      "scripts/yolo_traffic_detector.py",
       "src/evaluation/evaluate.py",
       "results/metrics/*",
+      "results/plots/*",
     ],
     contributions: [
-      "Implemented Webster's Optimal Fixed-Time controller (81s Mukhani cycle: 45s EW / 3s Y / 30s NS / 3s Y) and Inductive Loop Gap-Out Actuated baseline.",
-      "Diagnosed why Sensor-Actuated control performed 23.9% worse than Fixed-Time (9.67 vs. 7.80 mean queue) due to sublane two-wheeler detector tripping.",
+      "Engineered the end-to-end YOLOv8 computer vision detector transforming CCTV streams into multi-class bounding boxes (two-wheelers, Vikram autos, cars, buses, and ambulances).",
+      "Implemented virtual 150m stop-line approach polygons and Indian PCU weighting (0.5 / 0.8 / 1.0 / 3.0) to construct live traffic state vectors ready for edge Jetson deployment.",
       "Executed Mann-Whitney U (U = 822.5, p = 5.78e-21) and Welch's two-sample t-test (t = -7.14, p = 7.27e-08) confirming -95.9% queue reduction and +16.1% speed gain.",
       "Quantified HBEFA3 CO2 reductions (16.34 kg/hr benchmark) and projected ₹2.48+ Crore annual commuter idling fuel savings for Haldwani corridors.",
     ],
     vivaFocus: [
       {
-        q: "Why use Mann-Whitney U instead of only a Student's t-test?",
-        a: "Traffic queue lengths are heavily right-skewed and non-Gaussian; Mann-Whitney U validates rank-order superiority without normality assumptions, backed by Welch's t-test.",
+        q: "How does the YOLOv8 module handle Indian mixed traffic?",
+        a: "YOLOv8 detects heterogeneous classes inside virtual approach polygons and scales counts by Indian PCU weights (0.5 for bikes, 0.8 for autos, 3.0 for buses) instead of naive raw counts.",
       },
       {
-        q: "Why did Sensor-Actuated fail in mixed Indian traffic?",
-        a: "Continuous motorcycle filtering keeps tripping inductive loops inside the 3s passage gap, locking phases up to max green and causing upstream spillback.",
+        q: "Why use Mann-Whitney U instead of only a Student's t-test?",
+        a: "Traffic queue lengths are heavily right-skewed and non-Gaussian; Mann-Whitney U validates rank-order superiority without normality assumptions, backed by Welch's t-test.",
       },
     ],
   },
@@ -119,32 +122,34 @@ export const TEAM_MEMBERS: TeamMemberProfile[] = [
     name: "Lalit Joshi",
     urn: "2361296",
     section: "F",
-    badge: "SYSTEMS · UI & ROADMAP",
-    role: "Full-Stack Operations UI, Testing & Phase 2 Vision Bridge",
+    badge: "BRIDGE · TESTS & RUN.BAT",
+    role: "Bridge Engineer, Automated Testing (tests/*.py) & Lifecycle Tooling (run.bat)",
     accentColor: "#F59E0B",
     summary:
-      "Built the interactive React Operations Console, one-click Windows automation, automated pytest verification suite, and Phase 2 edge vision prototype.",
+      "Served as Bridge Engineer connecting SUMO, YOLO, and RL modules into a unified runtime, authored all pytest test files (tests/test_*.py), and built the run.bat / stop.bat automation and Operations UI.",
     ownedFiles: [
-      "frontend/src/*",
-      "scripts/demo.py",
-      "tests/test_*.py",
+      "tests/test_sumo_env.py",
+      "tests/test_mukhani_env.py",
+      "tests/test_haldwani_env.py",
       "run.bat / stop.bat",
-      "scripts/yolo_traffic_detector.py",
+      "scripts/demo.py",
+      "src/utils/sumo_utils.py",
+      "frontend/src/*",
     ],
     contributions: [
-      "Built the React 19 + TypeScript Operations Console featuring the 60fps Split-Screen AI vs. Legacy Duel, Haldwani live traffic flow map, Light/Dark themes, and 5-Axis Radar.",
-      "Wired one-click Windows launch & termination lifecycle via run.bat (Option 10 React UI) and stop.bat.",
-      "Authored the 4/4 automated pytest compliance suite validating Gymnasium spaces, Mukhani 10-lane geometry, and full Haldwani network loading.",
-      "Engineered the Phase 2 Edge YOLOv8 camera-to-PCU bridge prototype (deferred for physical CCTV deployment) and TraCI live SUMO-GUI demo runner.",
+      "Acted as Bridge Engineer authoring the TraCI runtime & utility bridge (scripts/demo.py, sumo_utils.py) linking Rahul's SUMO networks, Vishal's YOLO state estimation, and Piyush's PPO/DQN checkpoints.",
+      "Created the complete automated pytest suite (test_sumo_env.py, test_mukhani_env.py, test_haldwani_env.py) passing 4/4 checks on Gymnasium spaces, bounds [0,1], Mukhani 10-lane, and Haldwani networks.",
+      "Engineered the 12-option Windows master command launcher (run.bat) and cleanup script (stop.bat) orchestrating SUMO-GUI, live AI demos, YOLO detector, React UI, and pytest checks.",
+      "Co-built and wired the React 19 + TypeScript Operations Console uniting telemetry CSVs, Split-Screen AI vs. Legacy Duel, and Haldwani interactive maps.",
     ],
     vivaFocus: [
       {
-        q: "How do run.bat and stop.bat prevent orphaned SUMO ports?",
-        a: "sumo_env.py requests free ephemeral ports dynamically and stop.bat cleans lingering sumo.exe / sumo-gui.exe processes safely.",
+        q: "What does your pytest suite in tests/ verify?",
+        a: "The 3 test files (test_sumo_env.py, test_mukhani_env.py, test_haldwani_env.py) enforce 4/4 checks on SB3/Gymnasium API compliance, [0, 1] observation bounds, and network asset loading.",
       },
       {
-        q: "How is Edge YOLO integrated without blocking Phase 1?",
-        a: "Phase 1 runs deterministically over SUMO/TraCI telemetry; yolo_traffic_detector.py implements the PCU-weighted camera-to-43D-vector adapter ready for Phase 2 Jetson deployment.",
+        q: "How do run.bat and stop.bat bridge the system cleanly?",
+        a: "run.bat automates venv Python routing, TraCI live demos, YOLO estimation, and the Vite React UI, while stop.bat kills lingering sumo.exe/Node processes to prevent Windows port locks.",
       },
     ],
   },
@@ -167,7 +172,7 @@ export function TeamContributionsPage() {
               Individual Member Contributions & Owned Subsystems
             </h1>
             <p className="mt-0.5 text-xs text-muted-foreground">
-              B.Tech Computer Science & Engineering (AI & ML) · Verified subsystem ownership across RL, SUMO Simulation, Statistical Evaluation, and UI/Tooling.
+              B.Tech Computer Science & Engineering (AI & ML) · Verified ownership across Deep RL (DL/RL), SUMO Simulation, YOLOv8 Vision & Evaluation, and Bridge/Tests/Tooling.
             </p>
           </div>
 

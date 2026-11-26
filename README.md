@@ -345,10 +345,10 @@ IntelliFlow/
 
 | Name | University Roll No. (URN) | Section | Project Role |
 | :--- | :---: | :---: | :--- |
-| **Piyush Karnatak** *(Lead)* | 2361393 | B | Deep RL Architecture, SUMO Modeling & Colab Pipeline |
-| **Rahul Bhakuni** | 2361432 | B | Microscopic Traffic Simulation & Network Optimization |
-| **Vishal Joshi** | 2361588 | B | Empirical Evaluation, Statistical Rigor & Data Science |
-| **Lalit Joshi** | 2361296 | F | Edge YOLOv8 Vision Integration & System Documentation |
+| **Piyush Karnatak** *(Lead)* | 2361393 | B | Deep Learning & Reinforcement Learning (DL/RL) & Colab Pipeline |
+| **Rahul Bhakuni** | 2361432 | B | SUMO Microscopic Traffic Simulation & Network Modeling |
+| **Vishal Joshi** | 2361588 | B | YOLOv8 Computer Vision Integration & Empirical Evaluation |
+| **Lalit Joshi** | 2361296 | F | Bridge Engineer, Automated Testing (`tests/*.py`) & Lifecycle Tooling (`run.bat`) |
 
 *B.Tech Final Year Capstone Project · Computer Science & Engineering (AI/ML) · Project Code: CSP-701 / MPP-I (2026–27)*
 
