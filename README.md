@@ -7,8 +7,10 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.2%2B-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![SUMO](https://img.shields.io/badge/SUMO-1.19%2B-00BCD4?style=for-the-badge)
-![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-00599C?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![YOLOv8](https://img.shields.io/badge/YOLOv8-Phase_2_Roadmap-00599C?style=for-the-badge)
 ![Tests](https://img.shields.io/badge/Tests-4%2F4%20Passing-22C55E?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)
 
@@ -46,14 +48,14 @@ Conventional traffic control in developing nations relies predominantly on **fix
 * 🛵 **Indian Mixed-Traffic Calibration:**
   - Realistic Krauss car-following parameters calibrated for 6 distinct vehicle classes: motorcycles, three-wheeler autos, compact cars, SUVs, public buses, and commercial trucks.
   - Sublane model integration accounting for motorcycle filtering and lateral lane sharing.
-* 👁️ **YOLOv8 Edge Computer Vision Bridge:**
-  - Real-time video detection pipeline estimating physical approach queues from roadside CCTV footage to feed live traffic states into the RL agent.
+* 👁️ **YOLOv8 Edge Computer Vision Bridge *(Phase 2 Hardware Roadmap)*:**
+  - Architecture and pipeline designed for estimating physical approach queues from roadside CCTV feeds; real-time hardware camera deployment is scoped for Phase 2 while Phase 1 operates directly over Eclipse SUMO & TraCI telemetry.
 * 🌿 **Green AI & Economic Impact Ledger:**
   - Comprehensive environmental accounting tracking CO₂, CO, NOx, PMx, and idling fuel consumption.
   - Projected annual economic savings of **₹2.48+ Crores** in commuter fuel for Haldwani arterial corridors.
-* 📊 **Interactive Web Dashboard & Master Menu:**
-  - Streamlit-powered telemetry dashboard tracking real-time phase distribution, average speed, and wait times.
-  - Master interactive launcher (`run.bat`) providing one-click access to all 9 demo, visualizer, vision, and evaluation modules.
+* 📊 **Interactive Operations UI & Master Launcher:**
+  - **React + TypeScript + Tailwind v4 Frontend (`frontend/`):** Features a synchronized **Split-Screen "AI vs. Legacy" Traffic Duel** (60fps HTML5 Canvas mixed-traffic micro-simulation comparing Webster Fixed-Time / Sensor-Actuated against PPO / Double DQN), **Full-Screen Animated Haldwani City Flow Map**, **Dedicated Team #54 Individual Contributions Page**, **Light & Dark Mode**, **5-Axis Controller Radar & BPR Stress-Tester**, and **24-Hour Google Maps BPR Wave & Fuel Ledger**.
+  - **One-Click Master Launcher (`run.bat`):** Launches live SUMO-GUI simulations, the React Operations UI (Option 10), evaluation suites, and automated tests from a single terminal menu (`stop.bat` terminates all SUMO, Python, and Vite UI processes cleanly).
 
 ---
 
@@ -141,6 +143,7 @@ Evaluated across a 3,600-second continuous simulation under peak Indian mixed-tr
 
 ### 1. Prerequisites
 - **Python:** 3.10 or higher
+- **Node.js:** 18+ (for the React + TypeScript frontend in `frontend/`)
 - **SUMO:** [Eclipse SUMO 1.19+](https://eclipse.dev/sumo/) installed with `SUMO_HOME` set in environment variables.
 
 ### 2. Installation
@@ -181,11 +184,11 @@ run.bat
   4. View Morning Peak Hour Traffic Rush (8:00 AM - 10:30 AM)
   5. View Evening Peak Hour Traffic Rush (5:30 PM - 8:30 PM)
 
-  [COMPUTER VISION, DASHBOARD AND VALIDATION]
-  6. Run YOLOv8 Computer Vision Bridge (Traffic State Estimation)
-  7. Launch Interactive Web Dashboard (Streamlit App)
-  8. Run Empirical Benchmark and Statistical Hypothesis Tests
-  9. Run Project Test Suite (pytest - 4/4 Tests)
+  [COMPUTER VISION, WEB UI AND VALIDATION]
+  9. Run YOLOv8 Computer Vision Bridge (Traffic State Estimation)
+  10. Launch Interactive Operations UI (React + TypeScript Web App)
+  11. Run Empirical Benchmark and Statistical Hypothesis Tests
+  12. Run Project Test Suite (pytest - 4/4 Tests)
   0. Exit
 ===================================================================
 ```
@@ -202,8 +205,11 @@ python scripts/train.py --agent dqn --timesteps 30000
 # Run evaluation & generate publication figures
 python scripts/evaluate.py
 
-# Launch Streamlit Telemetry Web App
-streamlit run src/dashboard/app.py
+# Launch React + TypeScript Operations UI (AI vs. Legacy Duel + Haldwani Map)
+cd frontend && npm install && npm run dev
+
+# Build React Frontend for Production
+cd frontend && npm run build
 
 # Run YOLOv8 Vision Bridge
 python scripts/yolo_traffic_detector.py
@@ -231,6 +237,24 @@ For high-speed GPU training and headless evaluation, open the canonical notebook
 
 ```
 IntelliFlow/
+├── frontend/                                        # React 19 + TypeScript + Tailwind v4 Operations UI
+│   ├── src/
+│   │   ├── components/ui/                           # shadcn/ui primitives (button, card, input, label, select, tabs)
+│   │   ├── features/
+│   │   │   ├── operations/                          # TopCommandBar, TrafficDuelArena, 60fps MukhaniFlowCanvas, Specs
+│   │   │   ├── benchmarks/                          # ControllerRaceArena (delay race + 5-axis SVG radar)
+│   │   │   ├── corridors/                           # HaldwaniCorridorMap (animated city traffic flow + Green-Wave)
+│   │   │   ├── economics/                           # DiurnalGreenSection (24h BPR wave + fuel/CO2 ledger)
+│   │   │   └── team/                                # TeamContributionsPage (individual member deliverables)
+│   │   ├── data/                                    # Exported 360-step telemetry.json & typed models/networks
+│   │   ├── lib/                                     # Traffic phase derivation, Green AI calculations & cn()
+│   │   ├── types/                                   # Shared TypeScript domain interfaces
+│   │   ├── App.tsx                                  # 4-Act Operations & Viva Showcase shell
+│   │   └── index.css                                # Light & Dark mode CSS tokens
+│   ├── components.json
+│   ├── package.json
+│   └── vite.config.ts
+│
 ├── notebooks/
 │   └── IntelliFlow_Google_Colab_Haldwani_PPO.ipynb  # Cloud GPU training & benchmark notebook
 │
@@ -243,7 +267,7 @@ IntelliFlow/
 │   ├── train.py                                     # Training script for PPO & DQN
 │   ├── evaluate.py                                  # Statistical evaluation & plotting
 │   ├── google_maps_24h_traffic.py                   # BPR 24-hour diurnal demand generator
-│   └── yolo_traffic_detector.py                     # YOLOv8 CCTV queue estimator
+│   └── yolo_traffic_detector.py                     # YOLOv8 CCTV queue estimator (Phase 2)
 │
 ├── src/
 │   ├── agents/
@@ -252,8 +276,6 @@ IntelliFlow/
 │   ├── baselines/
 │   │   ├── actuated.py                              # Dynamic sensor-actuated baseline
 │   │   └── fixed_time.py                            # Webster fixed-time baseline
-│   ├── dashboard/
-│   │   └── app.py                                   # Streamlit telemetry web application
 │   ├── environment/
 │   │   └── sumo_env.py                              # Custom Gymnasium SUMO TraCI environment
 │   ├── evaluation/
@@ -310,11 +332,12 @@ IntelliFlow/
   - [x] 24-Hour Diurnal Google Maps traffic generation using BPR capacity-delay functions.
   - [x] Calibrated Morning Peak (8:00 AM – 10:30 AM) and Evening Peak (5:30 PM – 8:30 PM) scenarios.
   - [x] Automated 4/4 pytest regression suite verifying all environments and routes.
-- [x] **Phase 5: Computer Vision, Web Dashboard & Green AI Ledger**
-  - [x] Edge YOLOv8 camera vision bridge for real-time queue length estimation from video feeds.
-  - [x] Live interactive Streamlit telemetry dashboard.
-  - [x] Green AI carbon emissions and economic benefit analysis (₹2.48 Crores annual commuter savings).
+- [x] **Phase 5: Operations UI & Green AI Ledger**
+  - [x] React 19 + TypeScript + Tailwind v4 Operations Console (`frontend/`) featuring a Split-Screen "AI vs. Legacy" Traffic Duel, 60fps Canvas mixed-traffic flow, Animated Haldwani City Map, Team #54 Page, Light & Dark modes, 5-Axis Controller Radar, and BPR Stress-Tester.
+  - [x] Green AI carbon emissions and economic benefit analysis (₹2.48+ Crores annual commuter savings).
   - [x] Google Colab cloud GPU training notebook with pretrained weights auto-detection.
+- [ ] **Phase 6 (Future Hardware Roadmap): Edge Computer Vision Deployment**
+  - [ ] Physical pole-mounted CCTV RTSP ingestion via TensorRT YOLOv8 (`scripts/yolo_traffic_detector.py` prototype ready for later hardware integration).
 
 ---
 
@@ -322,10 +345,10 @@ IntelliFlow/
 
 | Name | University Roll No. (URN) | Section | Project Role |
 | :--- | :---: | :---: | :--- |
-| **Piyush Karnatak** *(Lead)* | 2361393 | B | Deep RL Architecture, SUMO Modeling & Colab Pipeline |
-| **Rahul Bhakuni** | 2361432 | B | Microscopic Traffic Simulation & Network Optimization |
-| **Vishal Joshi** | 2361588 | B | Empirical Evaluation, Statistical Rigor & Data Science |
-| **Lalit Joshi** | 2361296 | F | Edge YOLOv8 Vision Integration & System Documentation |
+| **Piyush Karnatak** *(Lead)* | 2361393 | B | Deep Learning & Reinforcement Learning (DL/RL) & Colab Pipeline |
+| **Rahul Bhakuni** | 2361432 | B | SUMO Microscopic Traffic Simulation & Network Modeling |
+| **Vishal Joshi** | 2361588 | B | YOLOv8 Computer Vision Integration & Empirical Evaluation |
+| **Lalit Joshi** | 2361296 | F | Bridge Engineer, Automated Testing (`tests/*.py`) & Lifecycle Tooling (`run.bat`) |
 
 *B.Tech Final Year Capstone Project · Computer Science & Engineering (AI/ML) · Project Code: CSP-701 / MPP-I (2026–27)*
 

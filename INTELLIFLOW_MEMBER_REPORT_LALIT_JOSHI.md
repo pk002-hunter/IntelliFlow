@@ -3,242 +3,186 @@
 **Individual Member Contribution & End-to-End Pipeline Mastery Dossier**  
 **Team #54** · B.Tech Computer Science & Engineering (Artificial Intelligence & Machine Learning)  
 **Member Profile:** **Lalit Joshi** (Roll / URN: 2361296 · Section F)  
-**Designated Role:** **System Integration, Edge YOLOv8 Vision & Tooling Lead**  
-**Project Lead:** Piyush Karnatak (RL Lead) · **Co-Members:** Rahul Bhakuni (Simulation Lead), Vishal Joshi (Data & Evaluation Lead)  
-**Course:** CSP-701 Major Project · **Academic Year:** 2026–2027  
+**Designated Role:** **Bridge Engineer, Automated Testing (`tests/*.py`) & Lifecycle Tooling (`run.bat`) Lead**  
+**Team Lead:** Piyush Karnatak (DL & RL) · **Co-Members:** Rahul Bhakuni (SUMO Simulation), Vishal Joshi (YOLOv8 Vision & Evaluation)  
+**Course:** CSP-701 / MPP-I Major Project · **Academic Year:** 2026–2027  
 
 ---
 
-## 1. Executive Summary & Purpose of this Dossier
+## 1. Executive Summary & Team Division of Work
 
-In a 4-member Capstone Major Project, examiners evaluate each student on **two strict criteria**:
-1. **Individual Module Ownership:** Did you personally engineer a substantial, independent piece of the software?
-2. **End-to-End Pipeline Fluency:** Do you understand the entire project from data gathering to cloud training and deployment?
+In Capstone Major Project vivas, examiners evaluate each team member on **individual ownership of engineering modules** and **fluency across the entire end-to-end pipeline**.
 
 > [!IMPORTANT]
-> **Team #54 Official Division of Work:**
-> * **Piyush Karnatak (2361421):** Deep RL Core (PPO & Double DQN), Gymnasium MDP Formulation, Quadratic Reward Function, Google Colab 100k Training.
-> * **Rahul Bhakuni (2361432):** Microscopic Traffic Simulation (Eclipse SUMO Network Geometry, 10-Lane Mukhani Chauraha, 37,000+ OSM streets, 0.8m Sublane Physics).
-> * **Vishal Joshi (2361588):** Data & Evaluation Lead (Webster & Sensor-Actuated Baseline Implementation, Mann-Whitney U Hypothesis Testing).
-> * **Lalit Joshi (2361296):** **System Integration, Edge YOLOv8 Vision Bridge, Automated Testing Harness & Interactive TOC Dashboard Tooling.**
-
-This dossier equips **Lalit Joshi** with full technical mastery over his personal contributions, the end-to-end engineering pipeline, exact speaking scripts, and model viva answers.
+> **Team #54 Official Division of Responsibilities:**
+> * **Piyush Karnatak (2361393, Sec B — Team Lead):** **Deep Learning & Reinforcement Learning (DL/RL)** — Gymnasium MDP wrapper (`sumo_env.py`), multi-objective reward shaping, PPO (100,096-step Colab policy) & Double DQN training pipelines.
+> * **Rahul Bhakuni (2361432, Sec B):** **SUMO Traffic Simulation** — 10-lane Mukhani Chauraha, full Haldwani 37,000+ street OSM extraction, 0.8m sublane Indian mixed-traffic physics, 24h BPR routes, and classical baselines.
+> * **Vishal Joshi (2361588, Sec B):** **Computer Vision (YOLOv8) & Empirical Evaluation** — Whole YOLOv8 CCTV vehicle detector (`yolo_traffic_detector.py`), Indian PCU aggregation, Mann-Whitney U & Welch's t-test verification, and HBEFA3 fuel savings ledger.
+> * **Lalit Joshi (2361296, Sec F):** **Bridge Engineer, Automated Testing (`tests/*.py`) & Lifecycle Tooling (`run.bat` / `stop.bat`)** — TraCI live orchestration bridge (`demo.py`, `sumo_utils.py`), full `pytest` verification suite (`test_sumo_env.py`, `test_mukhani_env.py`, `test_haldwani_env.py`), one-click Windows automation, and React 19 Operations Console integration.
 
 ---
 
-## 2. Lalit Joshi’s Core Contributions & Module Ownership
+## 2. Lalit Joshi’s Core Contributions & Owned Subsystems
 
-Lalit is the **bridge engineer** of Team #54 who connected the microscopic traffic simulation (built by Rahul), the reinforcement learning models (trained by Piyush), and the baseline evaluation data (verified by Vishal) into a production-ready, deployable software suite.
+Lalit is the **Bridge Engineer & Systems Reliability Lead** of Team #54. Without your integration bridge, automated test harness, and lifecycle scripts, Rahul's SUMO maps, Vishal's YOLO detector, and Piyush's PyTorch models could not run together reliably or be demonstrated safely in front of examiners.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                   LALIT JOSHI (2361296) — TECHNICAL OWNERSHIP MATRIX                   │
+│                    LALIT JOSHI (2361296) — TECHNICAL OWNERSHIP MATRIX                  │
 ├───────────────────────────────────────────┬────────────────────────────────────────────┤
-│ 1. Edge Computer Vision (YOLOv8) Bridge   │ 2. Traffic Operations Center (TOC) UI      │
-│ • Pole-mounted CCTV stream ingestion      │ • Modern dark-mode Streamlit architecture  │
-│ • Real-time Indian multi-class detector   │ • Real-time TraCI telemetry visualizer     │
-│ • Approach bounding boxes & PCU weighting │ • Emergency preemption injection panel     │
-│ • scripts/yolo_traffic_detector.py        │ • src/dashboard/app.py & components        │
+│ 1. Bridge Engineer (TraCI Orchestration)  │ 2. Automated Test Suite (tests/*.py)       │
+│ • Live AI ↔ SUMO-GUI bridge (demo.py)     │ • test_sumo_env.py (SB3 & 35D bounds)      │
+│ • Cross-platform SUMO path finder utils   │ • test_mukhani_env.py (10-lane 43D test)   │
+│ • Multi-agent fallback (PPO/DQN/Fixed/Act)│ • test_haldwani_env.py (City network test) │
+│ • scripts/demo.py & src/utils/sumo_utils  │ • 4/4 Automated Pytest Checks Passing      │
 ├───────────────────────────────────────────┼────────────────────────────────────────────┤
-│ 3. System Lifecycle & Desktop Tooling     │ 4. Automated Unit Testing & CI Harness     │
-│ • 1-click master launcher (run.bat)       │ • Pytest test suite across environments    │
-│ • Safe process cleanup script (stop.bat)  │ • Observation bounds & SB3 compliance      │
-│ • Live TraCI desktop visualizer (demo.py) │ • tests/test_mukhani_env.py (4/4 Passing)  │
-├───────────────────────────────────────────┴────────────────────────────────────────────┤
-│ 5. Edge Deployment & Hardware Fail-Safe Architecture                                   │
-│ • NVIDIA Jetson Orin Nano / Intel NUC edge deployment specification (<1.8ms inference) │
-│ • 3-Tier hardware safety interlock (5s min green, 3s yellow clearance, 120s starvation)│
-└────────────────────────────────────────────────────────────────────────────────────────┘
+│ 3. Lifecycle Automation (run.bat/stop.bat)│ 4. React 19 Operations UI Integration      │
+│ • 12-option 1-click CLI launcher (run.bat)│ • Split-Screen "AI vs. Legacy" Duel UI     │
+│ • Safe TCP port & process cleanup (stop)  │ • Interactive Haldwani Map & Team #54 page │
+│ • Venv Python / Node / SUMO path routing  │ • Real CSV telemetry wiring (frontend/src) │
+└───────────────────────────────────────────┴────────────────────────────────────────────┘
 ```
 
 ---
 
-### Module 1: Edge Computer Vision (YOLOv8) & Perception-to-Control Bridge
-* **File:** [`scripts/yolo_traffic_detector.py`](file:///d:/final%20year/project/scripts/yolo_traffic_detector.py)
-* **What you built:** Real-world traffic signals do not have direct access to SUMO's internal state. You engineered the **computer vision perception bridge** that extracts traffic state directly from pole-mounted 1080p RTSP camera streams at 30 FPS.
+### Module 1: Bridge Engineer (TraCI & Runtime Orchestration)
+* **Owned Files:** [`scripts/demo.py`](file:///d:/final%20year/project/scripts/demo.py), [`src/utils/sumo_utils.py`](file:///d:/final%20year/project/src/utils/sumo_utils.py)
+* **What you engineered:** Built the live runtime bridge connecting Piyush's trained PyTorch models (`intelliflow_ppo_haldwani_v2.zip`, `dqn_final.zip`) and classical controllers (`fixed`, `actuated`) to Rahul's SUMO-GUI networks over TraCI sockets.
 * **Technical Details:**
-  * Configured a custom-tuned **YOLOv8n** model to detect 5 Indian vehicle classes: motorcycles, auto-rickshaws, cars, buses, and ambulances.
-  * Defined **virtual approach polygons** extending 150 meters back from the Mukhani Chauraha stop lines.
-  * Weighted detections by Indian Passenger Car Units (**PCUs**): 0.5 for two-wheelers, 0.8 for Vikrams, 1.0 for cars, 3.0 for buses.
-  * Synthesized the **43-dimensional observation vector** in real time and passed it to the PPO actor network with an inference latency of **$< 1.8\text{ ms}$**.
+  * Configured automatic checkpoint resolution prioritizing the 100k-step Colab policy (`intelliflow_ppo_haldwani_v2.zip`) with fallback to local checkpoints.
+  * Engineered action-space bridging (`int(raw_action) % 2`) so 3-phase Colab models execute seamlessly inside the 2-axis Mukhani/Haldwani Gymnasium wrapper.
+  * Built live console telemetry printing real-time active phases, halting queues, mean speed (km/h), and emergency ambulance tracking (`vClass="emergency"`).
+  * Created `sumo_utils.py` cross-platform executable discovery (`sumo.exe` / `sumo-gui.exe` via `SUMO_HOME`, PATH, and standard Windows install locations).
 
 ---
 
-### Module 2: Traffic Operations Center (TOC) Dashboard & UI Engineering
-* **Files:** [`src/dashboard/app.py`](file:///d:/final%20year/project/src/dashboard/app.py), [`src/dashboard/styles.py`](file:///d:/final%20year/project/src/dashboard/styles.py), [`src/dashboard/components.py`](file:///d:/final%20year/project/src/dashboard/components.py)
-* **What you built:** Engineered the mission-critical web interface modeled after modern Urban Traffic Management Centers (UTMC) and Google Project Green Light.
+### Module 2: Automated Verification Suite (`tests/*.py`)
+* **Owned Files:** [`tests/test_sumo_env.py`](file:///d:/final%20year/project/tests/test_sumo_env.py), [`tests/test_mukhani_env.py`](file:///d:/final%20year/project/tests/test_mukhani_env.py), [`tests/test_haldwani_env.py`](file:///d:/final%20year/project/tests/test_haldwani_env.py)
+* **What you engineered:** Authored the entire automated `pytest` testing harness guaranteeing every code edit preserves environment stability.
 * **Technical Details:**
-  * Built an obsidian dark-mode interface with live status beacons (`TraCI v1.19 / PORT 8813`).
-  * **Digital Twin Split View:** Interactive SVG visualizer of Mukhani Chauraha displaying live phase states (🟢 45s East-West, 🔴 30s North-South).
-  * **Interactive Scenario Injection Panel:** Added buttons enabling examiners to dynamically inject emergency ambulances heading to Dr. Susheela Tiwari Hospital (STH) or trigger evening peak surges.
-  * **Telemetry Charts:** Integrated Plotly timeseries charts displaying live queue spikes and velocity improvements.
+  * **`test_sumo_env.py`:** Runs two tests (`test_env_sb3_compliance` using Stable-Baselines3 `check_env(env, warn=True)` and `test_env_step_and_observation_bounds`), strictly verifying the `35`-dimensional `float32` observation shape, exact `[0.0, 1.0]` normalization bounds, reward types, and yellow transition (`action_switched is True`).
+  * **`test_mukhani_env.py`:** Validates the 10-lane Mukhani Chauraha topology (`KW2M`, `KE2M`, `CN2M`, `CS2M`), verifying the `43`-dimensional state vector ($10 \times 4 + 3 = 43$) and East-West / North-South phase switching.
+  * **`test_haldwani_env.py`:** Validates full city arterial environment instantiation via `make_env(network="haldwani")`, confirming step metrics (`total_halting`, `mean_speed`) without simulation crashes.
+  * **Verified Status:** **4/4 tests passing in ~10.5 seconds.**
 
 ---
 
-### Module 3: System Lifecycle Tooling & Live Demo Automation
-* **Files:** [`run.bat`](file:///d:/final%20year/project/run.bat), [`stop.bat`](file:///d:/final%20year/project/stop.bat), [`scripts/demo.py`](file:///d:/final%20year/project/scripts/demo.py)
-* **What you built:** Created the single-click master execution harness so the entire multi-process pipeline (SUMO-GUI, TraCI socket, Python virtual environment, Streamlit server) runs seamlessly without manual terminal typing.
+### Module 3: Windows Master Automation & Process Lifecycle (`run.bat` & `stop.bat`)
+* **Owned Files:** [`run.bat`](file:///d:/final%20year/project/run.bat), [`stop.bat`](file:///d:/final%20year/project/stop.bat)
+* **What you engineered:** Eliminated manual CLI complexity during project evaluation by engineering the 12-option interactive launcher and safety teardown script.
 * **Technical Details:**
-  * Engineered [`run.bat`](file:///d:/final%20year/project/run.bat) with a 12-option interactive CLI menu.
-  * Updated [`scripts/demo.py`](file:///d:/final%20year/project/scripts/demo.py) to automatically detect and load the newly trained 100k-step model ([`intelliflow_ppo_haldwani_v2.zip`](file:///d:/final%20year/project/results/models/ppo/intelliflow_ppo_haldwani_v2.zip)).
-  * Built [`stop.bat`](file:///d:/final%20year/project/stop.bat) to cleanly kill orphaned background `sumo.exe` or `streamlit.exe` tasks and prevent Windows port-locking.
+  * **`run.bat`:** Automatically detects `venv\Scripts\python.exe`, `sumo-gui.exe`, and `npm`, offering direct one-click shortcuts for:
+    * Options 1–5: Live SUMO-GUI comparisons (**PPO AI** vs **Webster Fixed-Time** vs **Sensor-Actuated** vs **Double DQN** vs **Full Haldwani Corridors**).
+    * Options 6–8: Standalone SUMO-GUI views (37,000+ OSM city network, Morning Peak, Evening Peak).
+    * Option 9: Vishal's **YOLOv8 Computer Vision Bridge** (`yolo_traffic_detector.py morning`).
+    * Option 10: **React 19 + TypeScript Operations UI** (`http://localhost:5173`).
+    * Options 11–12: Empirical Benchmark statistical suite (`evaluate.py`) & Automated `pytest` Suite (`tests/`).
+  * **`stop.bat`:** Safely terminates orphaned background `sumo.exe`, `sumo-gui.exe`, Python TraCI servers, or Node/Vite UI processes to prevent port-locking between runs.
 
 ---
 
-### Module 4: Automated Testing & Continuous Verification Suite
-* **Directory:** [`tests/`](file:///d:/final%20year/project/tests/) (`test_sumo_env.py`, `test_mukhani_env.py`, `test_haldwani_env.py`)
-* **What you built:** Established the automated `pytest` test suite to guarantee software reliability.
-* **Technical Details:**
-  * Verified that the custom environment strictly complies with the **Gymnasium API** (`reset()`, `step()`, action and observation spaces).
-  * Enforced observation boundary assertion: checks that all 43 state variables stay strictly bounded within $[0.0, 1.0]$.
-  * Result: **4/4 unit tests passing cleanly in 10.46 seconds**.
+### Module 4: Full-Stack Operations UI Integration (`frontend/`)
+* **Owned Directory:** [`frontend/src/`](file:///d:/final%20year/project/frontend/src/)
+* **What you integrated:** Connected telemetry CSV outputs, benchmark metrics, and live team subsystem specifications into the **React 19 + TypeScript + Tailwind v4 Operations Console** (`frontend/`), including the Split-Screen "AI vs. Legacy" Traffic Duel, animated Haldwani Corridor Map, and Team #54 Contributions page.
 
 ---
 
-### Module 5: Edge Hardware Deployment & Safety Interlock Matrix
-* **What you built:** Formulated the real-world deployment specification for municipal deployment.
-* **Technical Details:**
-  * **Target Hardware:** NVIDIA Jetson Orin Nano (8GB) or Intel NUC Edge Box.
-  * **3-Tier Hardware Safety Interlock:**
-    1. *Minimum Green Lock (5s):* Prevents rapid phase flapping.
-    2. *Mandatory Yellow Clearance (3s):* Enforces safe stopping interval before axis changes.
-    3. *Failsafe Fallback:* If TraCI socket or AI agent drops, hardware defaults to GPS-synchronized Webster fixed-time offset plans.
+## 3. Complete End-to-End Project Pipeline (From Start to Finish)
 
----
-
-## 3. The Complete Project Pipeline (From Start to End)
-
-When a teacher asks: *"Lalit, explain the entire project process from start to end,"* narrate this exact 5-stage engineering lifecycle:
+When a teacher asks: *"Lalit, walk me through the whole IntelliFlow pipeline from start to end,"* follow these 5 interconnected stages:
 
 ```mermaid
 flowchart TD
-    subgraph S1 ["Stage 1: Ground Truth & Traffic Simulation (Rahul Bhakuni)"]
-        A["Haldwani Traffic Survey"] --> B["SUMO XML Network: Mukhani 10-Lane"]
-        B --> C["0.8m Sublane Indian PCU Fleet Calibration"]
+    subgraph S1 ["Stage 1: SUMO Traffic Simulation (Rahul Bhakuni)"]
+        A["Haldwani Road Geometry & OSM"] --> B["10-Lane Mukhani & 37k+ City Net"]
+        B --> C["0.8m Sublane Indian PCU Physics + 24h BPR & Baselines"]
     end
 
-    subgraph S2 ["Stage 2: Baselines & Data Ingestion (Vishal Joshi)"]
-        C --> D["Webster Fixed-Time & Sensor-Actuation Models"]
-        D --> E["24h Google Maps BPR Volume-Delay Ingestion"]
+    subgraph S2 ["Stage 2: YOLOv8 Vision & Evaluation (Vishal Joshi)"]
+        C --> D["YOLOv8 CCTV Multi-Class Detection"]
+        D --> E["Virtual Polygons & Indian PCU Counts"]
     end
 
-    subgraph S3 ["Stage 3: Deep RL & Reward Formulation (Piyush Karnatak)"]
-        E --> F["Gymnasium 43D Continuous State Space"]
-        F --> G["Quadratic Reward: -0.5*Q^1.5 - 50*D_amb"]
-        G --> H["Google Colab PPO Training (100k Steps)"]
+    subgraph S3 ["Stage 3: Deep Learning & RL Core (Piyush Karnatak)"]
+        E --> F["Gymnasium 43D State Space & Quadratic Reward"]
+        F --> G["100k-Step PPO Policy (Colab) & Double DQN"]
     end
 
-    subgraph S4 ["Stage 4: Edge Vision & Perception Bridge (Lalit Joshi)"]
-        H --> I["YOLOv8 Real-Time CCTV Vehicle Detector"]
-        I --> J["Approach Polygons & 43D State Synthesis (<1.8ms)"]
+    subgraph S4 ["Stage 4: Bridge & Automated Testing (Lalit Joshi)"]
+        G --> H["TraCI Live Runtime Bridge (demo.py & sumo_utils.py)"]
+        H --> I["4/4 Pytest Verification Suite (tests/test_*.py)"]
     end
 
-    subgraph S5 ["Stage 5: Integration, Testing & Dashboard (Lalit Joshi)"]
-        J --> K["3-Tier Safety Interlock & TraCI Controller"]
-        K --> L["4/4 Pytest Verification Harness"]
-        L --> M["TOC Streamlit Dashboard & 1-Click Launcher (run.bat)"]
+    subgraph S5 ["Stage 5: Operations UI & Lifecycle Delivery (Lalit + Vishal)"]
+        I --> J["12-Option Launcher (run.bat / stop.bat)"]
+        J --> K["React 19 Operations UI & Mann-Whitney U Proof (p < 10⁻²⁰)"]
     end
 ```
 
-### Detailed Pipeline Narrative:
-1. **Field Ground Truth & Simulation Modeling:**  
-   Rahul Bhakuni built the 10-lane Mukhani Chauraha digital twin in Eclipse SUMO (`mukhani.net.xml`), configuring 0.8m sublane lateral physics to allow two-wheelers and auto-rickshaws to weave realistically.
-2. **Classical Baselines & Demand Ingestion:**  
-   Vishal Joshi implemented Webster's Fixed-Time (1958) and Sensor-Actuated baselines, proving that loop sensors fail in India (23.9% worse delay). He also ingested 24-hour Google Maps congestion probes using the inverse BPR function.
-3. **Deep RL Environment & Cloud Training:**  
-   Piyush Karnatak formulated the Gymnasium MDP wrapper with a 43D state vector and an anti-starvation quadratic reward ($-0.5 \cdot Q^{1.5} - 50 \cdot D_{\text{amb}}$). He trained the PPO Actor-Critic policy for 100,096 timesteps on Google Colab.
-4. **Edge Computer Vision Bridge:**  
-   **Lalit Joshi** integrated the perception bridge using YOLOv8n to detect vehicles from CCTV streams, compute approach PCU loads, and feed states to the PPO model in $<1.8\text{ ms}$.
-5. **System Integration, Safety Guardrails & TOC Dashboard:**  
-   **Lalit Joshi** tied the entire ecosystem together: added the 3-tier safety interlock, built the 4/4 automated `pytest` test harness, developed the interactive Streamlit Traffic Operations Center dashboard, and created [`run.bat`](file:///d:/final%20year/project/run.bat) for one-click live demonstrations.
+1. **SUMO Simulation Foundation (Rahul Bhakuni):** Builds the realistic 10-lane Mukhani Chauraha and 37,000+ street Haldwani network with 0.8m lateral sublane filtering, RTO UK-04 fleet distributions, 24h Google Maps BPR demands, and Webster/Actuated baselines.
+2. **Computer Vision & Statistical Proof (Vishal Joshi):** Owns the YOLOv8 detection pipeline (`yolo_traffic_detector.py`) converting camera frames into Indian PCU-weighted approach loads, plus runs statistical validation (`evaluate.py`: Mann-Whitney U $p = 5.78 \times 10^{-21}$) and HBEFA3 economic savings calculations.
+3. **Deep Learning & Reinforcement Learning (Piyush Karnatak):** Wraps the simulation into a Gymnasium MDP (`sumo_env.py`) with a 43D normalized state vector, quadratic anti-starvation reward ($-0.5 Q_t^{1.5} - 50 D_{\text{amb}}$), and trains the 100k-step PPO model (`intelliflow_ppo_haldwani_v2.zip`) and Double DQN baseline.
+4. **System Bridging & Automated Verification (Lalit Joshi):** Acts as the Bridge Engineer (`demo.py`, `sumo_utils.py`) coupling trained RL weights and baseline heuristics into live TraCI SUMO-GUI playback, while enforcing correctness via the `tests/*.py` suite (4/4 passing).
+5. **One-Click Execution & Operations UI (Lalit Joshi):** Packages the entire system behind `run.bat` / `stop.bat` and integrates the interactive React 19 Operations UI (`frontend/`) so examiners can inspect live AI vs. Legacy traffic duels side-by-side.
 
 ---
 
-## 4. Current Progress Summary: What is Done Today
+## 4. Progress Up Till Now (Current Project Status)
 
-* **Phase 1 (Microscopic Modeling):** 10-Lane Mukhani Chauraha and full Haldwani arterial network complete.
-* **Phase 2 (Indian Traffic Physics):** 0.8m sublane weaving and 5-class heterogeneous fleet complete.
-* **Phase 3 (Baselines & Verification):** Webster and Sensor-Actuated baselines logged and benchmarked.
-* **Phase 4 (24h Diurnal Demand):** Real-world Google Maps BPR curves calibrated for morning and evening peaks.
-* **Phase 5 (Cloud Deep RL):** 100k-step PPO policy trained, reducing queues by **95.9%** ($p = 5.78 \times 10^{-21}$).
-* **Tooling & Dashboard:** Automated `pytest` suite passing (4/4), TOC Dashboard operational, and `run.bat` live demo active.
-
----
-
-## 5. Technical Cheat Sheet for Lalit
-
-### 1. YOLOv8 Edge Vision Pipeline
-* **Model:** YOLOv8n (nano variant, 3.2M parameters).
-* **Frame Rate & Latency:** 30 FPS processing, forward pass latency **1.8 milliseconds** on edge GPU.
-* **PCU Conversion:** Two-wheeler ($0.5$), Auto-rickshaw ($0.8$), Passenger car ($1.0$), Bus/Truck ($3.0$).
-
-### 2. The 43D State Vector ($\mathbf{s}_t \in \mathbb{R}^{43}$)
-* **40 Lane Dimensions:** 10 lanes $\times$ 4 metrics (Queue $Q_i / 25$, Speed $v_i / 13.89$, Density $\rho_i / 30$, Wait $W_i / 120$).
-* **3 Signal Dimensions:** Active phase index, elapsed phase time, yellow clearance flag.
-
-### 3. Safety Interlock Guardrails
-* **Minimum Green:** 5 seconds (prevents rapid phase oscillation).
-* **Yellow Clearance:** 3 seconds (enforces amber clearance before axis switches).
-* **Starvation Threshold:** 120 seconds (triggers penalty if minor roads wait too long).
-
-### 4. Key Performance Metrics
-* **Queue Reduction:** **95.9%** vs. Webster (dropped from 7.80 to 0.32 vehicles).
-* **Speed Increase:** **42.88 km/h** vs. 36.92 km/h under fixed timing.
-* **Ambulance Delay:** **0.0 seconds** (100% preemption efficiency to STH Hospital).
-* **Commuter Savings:** **₹2.48+ Crores annually** (412 liters of fuel conserved daily).
+| Project Phase | Description | Status | Verified Output / Evidence |
+| :--- | :--- | :---: | :--- |
+| **Phase 1: Baselines** | Webster Fixed-Time (81s) & Inductive Loop Sensor-Actuated | **100% Complete** | Actuated failed by **+23.9% worse queues** (9.67 vs 7.80) due to 2W sublane chatter |
+| **Phase 2: Deep RL Core** | Gymnasium 35D/43D MDP + PPO & Double DQN agents | **100% Complete** | **-95.9% queue reduction** (0.32 vehs), speed boosted to **42.88 km/h** |
+| **Phase 3: Mukhani 10-Lane** | Sublane 0.8m physics + 100k Colab PPO checkpoint (`v2`) | **100% Complete** | Deployed at `results/models/ppo/intelliflow_ppo_haldwani_v2.zip` |
+| **Phase 4: Haldwani Network** | 37k+ OSM streets, 8 hospitals, 24h Google Maps BPR curve | **100% Complete** | `haldwani_osm_real.net.xml.gz` + peak route profiles |
+| **Phase 5: Bridge, UI & Tests** | `run.bat`/`stop.bat`, `tests/*.py`, React 19 Ops Console, Stats | **100% Complete** | **4/4 pytest passing**, React `vite build` clean, Mann-Whitney $p = 5.78 \times 10^{-21}$ |
+| **Phase 6: Physical Edge CCTV**| Live hardware RTSP CCTV deployment on Jetson (Prototype ready) | **Roadmap** | `scripts/yolo_traffic_detector.py` prototype verified locally |
 
 ---
 
-## 6. Lalit's Exact Speaking Scripts for Presentation & Viva
+## 5. Lalit's Exact Speaking Scripts for Presentation & Viva
 
-### Script 1: "Lalit, what was your role in this project?"
-> *"Good morning, respected panel. In our project IntelliFlow, my primary responsibility was **System Integration, Edge YOLOv8 Vision Integration, and Full-Stack Lifecycle Tooling**.*  
+### Script 1: "Lalit, what was your work in this project?"
+> *"Good morning, respected panel. In Team #54, my role is **Bridge Engineer, Automated Testing, and Lifecycle Tooling Lead**.*  
 >  
-> *While Rahul engineered our SUMO simulation network, Vishal developed the classical baselines, and Piyush trained our Deep RL models, I built the software bridge that ties everything into an operational, deployable system.*  
+> *While Rahul built our SUMO traffic networks, Vishal led the YOLOv8 computer vision and statistical evaluation, and Piyush designed our Deep RL models, I engineered the integration bridge and reliability layer that holds the whole system together.*  
 >  
-> *Specifically, I developed our edge computer vision bridge in `scripts/yolo_traffic_detector.py`, using YOLOv8 to detect Indian mixed vehicles from CCTV camera streams and compute real-time approach queues in under 1.8 milliseconds. I engineered our Traffic Operations Center (TOC) interactive web dashboard in Streamlit, implemented our automated 4/4 pytest verification suite, built our 3-tier hardware safety interlocks, and created our master automation launcher `run.bat` that powers our live demonstrations."*
+> *Specifically, I wrote the automated `pytest` verification files in `tests/` (`test_sumo_env.py`, `test_mukhani_env.py`, `test_haldwani_env.py`) running 4 compliance checks on Gymnasium bounds, yellow clearances, and Haldwani topologies. I built the TraCI demo bridge (`scripts/demo.py` and `sumo_utils.py`) allowing us to switch dynamically between PPO, Double DQN, Webster Fixed-Time, and Sensor-Actuated controllers live inside SUMO-GUI. Finally, I authored our 12-option master Windows launcher `run.bat`, cleanup script `stop.bat`, and helped wire our React 19 Operations UI."*
+
+### Script 2: "How does the entire project work from start to end?"
+> *"IntelliFlow runs as a closed-loop cyber-physical pipeline:*  
+> *First, Rahul modeled Haldwani's 10-lane Mukhani junction in SUMO with 0.8m sublane physics and 24-hour BPR peak demands. Second, Vishal's YOLOv8 pipeline estimates vehicle classes and PCU counts from traffic feeds and validates controller performance using Mann-Whitney U testing. Third, Piyush wrapped SUMO into a 43D Gymnasium environment with a quadratic anti-starvation reward and trained a 100,000-step PPO policy on Google Colab. Finally, my TraCI runtime bridge, `run.bat` orchestration, `pytest` test suite, and React Operations Console tie all modules together—delivering a 95.9% reduction in halting queues and ₹2.48+ Crores in projected annual commuter fuel savings."*
 
 ---
 
-### Script 2: "Walk us through the entire pipeline from start to end."
-> *"Our project follows an end-to-end cyber-physical pipeline across five stages:*  
->  
-> *1. **Simulation & Digital Twin:** Rahul Bhakuni modeled the 10-lane Mukhani junction in Eclipse SUMO with 0.8-meter sublane physics to accurately reflect Indian vehicles weaving without lane discipline.*  
-> *2. **Baselines & Ingestion:** Vishal Joshi implemented Webster Fixed-Time and Sensor-Actuated baselines, proving that loop sensors fail in India. He also ingested 24-hour Google Maps congestion probes using the inverse BPR function.*  
-> *3. **Deep RL Training:** Piyush Karnatak formulated the Gymnasium environment with a 43-dimensional state vector and a quadratic anti-starvation reward, training a PPO policy for over 100,000 steps in Google Colab.*  
-> *4. **Edge Vision Bridge:** I connected roadside CCTV camera feeds using YOLOv8, converting raw video into real-time vehicle counts and approach PCU loads.*  
-> *5. **Integration & Validation:** Finally, I integrated the system with a 3-tier hardware safety interlock, built our automated pytest test harness, and deployed the Traffic Operations Center dashboard, validating a 95.9% queue reduction with p < 10⁻²⁰."*
+## 6. Top 10 Viva Questions for Lalit Joshi (Bridge, Testing & Tooling)
 
----
+### Q1: "What do your three test files in `tests/` actually check?"
+* **Answer:** *"`test_sumo_env.py` runs Stable-Baselines3 `check_env()` compliance and verifies that the 35D observation array stays strictly bounded inside `[0.0, 1.0]` as `float32`. `test_mukhani_env.py` checks the 43D state vector ($10\text{ lanes} \times 4 + 3$) and confirms phase-switching sets `action_switched=True` with 3s yellow transitions. `test_haldwani_env.py` verifies `make_env('haldwani')` initializes and steps cleanly across the arterial city network. All 4 checks pass under `pytest`."*
 
-## 7. Top 10 Tough Viva Questions Directed at Lalit (With Model Answers)
+### Q2: "Why did you need a Bridge Engineer (`demo.py` & `sumo_utils.py`) between RL and SUMO?"
+* **Answer:** *"Colab models and local SUMO installations differ in path layout, discrete action indexing (3-phase Colab models vs. 2-axis local environments), and Windows TCP socket handling. `demo.py` bridges those differences by resolving `intelliflow_ppo_haldwani_v2.zip` automatically, mapping actions safely (`action % 2`), scanning for `SUMO_HOME` paths via `sumo_utils.py`, and streaming emergency ambulance status to the terminal."*
 
-### Q1: "Why did you use YOLOv8 instead of traditional OpenCV background subtraction?"
-* **Lalit's Answer:** *"Background subtraction only detects movement blobs and cannot distinguish between a motorcycle, an auto-rickshaw, a bus, or tree shadows. In Indian traffic, different vehicles have vastly different Passenger Car Units (PCU)—a bus consumes 6 times more road space than a motorcycle. YOLOv8 provides real-time multi-class object detection, enabling accurate PCU-weighted state estimation regardless of lighting or congestion."*
+### Q3: "What happens in `run.bat` when we select Option 1, 2, or 3?"
+* **Answer:** *"`run.bat` routes directly through the isolated `venv` Python interpreter to `scripts/demo.py` on the `mukhani` network, switching `--agent` between `ppo` (Option 1: Piyush's 100k model), `fixed` (Option 2: Webster 45s/30s cycles), and `actuated` (Option 3: Inductive loop gap-out), enabling a fair live side-by-side comparison inside SUMO-GUI."*
 
-### Q2: "Can your vision pipeline run in real time on edge hardware?"
-* **Lalit's Answer:** *"Yes. We selected the YOLOv8n (nano) variant, which has only 3.2 million parameters. Combined with our compact 2-layer MLP Actor network, total inference latency is under 1.8 milliseconds. On an embedded edge board like an NVIDIA Jetson Orin Nano, the entire perception-to-control loop runs at 30 FPS comfortably."*
+### Q4: "Why did you create `stop.bat`?"
+* **Answer:** *"Because SUMO runs as a separate background binary connected to Python over TraCI TCP sockets, crashing or force-closing a run can leave orphaned `sumo-gui.exe` or Node/Vite processes holding ports open. `stop.bat` terminates any lingering processes cleanly so subsequent tests or demos start without port conflicts."*
 
-### Q3: "What happens if a camera gets blocked or it rains heavily?"
-* **Lalit's Answer:** *"IntelliFlow includes a 3-tier hardware fail-safe. If camera confidence drops or the TraCI socket fails to deliver a state update within 500 milliseconds, the local controller hardware instantly reverts to GPS-synchronized Webster fixed-time offset plans. Traffic continues flowing safely without interruption."*
+### Q5: "How does your `run.bat` launch Vishal's YOLO script and the React UI?"
+* **Answer:** *"Option 9 runs Vishal's `scripts/yolo_traffic_detector.py morning` using the project virtual environment, while Option 10 verifies `npm` is available, installs `node_modules` in `frontend/` if missing, and starts the React 19 + Vite server on `localhost:5173`."*
 
-### Q4: "What does your pytest test suite actually verify?"
-* **Lalit's Answer:** *"Our test suite in `tests/` runs 4 comprehensive checks: it tests Gymnasium API compliance, ensures action execution triggers proper 3-second yellow transitions, validates that observation values remain strictly normalized within $[0.0, 1.0]$, and verifies that the multi-scenario route switcher functions correctly across Mukhani and Haldwani."*
+### Q6: "Why test observation normalization bounds `[0.0, 1.0]` inside `test_sumo_env.py`?"
+* **Answer:** *"Neural networks in PPO use Tanh activations and Adam gradients; unnormalized or NaN sensor spikes from TraCI (e.g., if queue counts exceed nominal lane capacity) would destabilize gradients. Testing `[0.0, 1.0]` bounds guarantees clamping (`min(..., 1.0)`) works under step execution."*
 
-### Q5: "How does the Streamlit TOC Dashboard interact with the simulation?"
-* **Lalit's Answer:** *"The dashboard reads real-time simulation step logs, renders an interactive SVG digital twin of Mukhani Chauraha, displays live telemetry graphs, and features an interactive scenario injector where users can simulate an ambulance approach or evening rush hour with a single click."*
+### Q7: "How does `demo.py` verify emergency ambulance preemption visually?"
+* **Answer:** *"On every simulation step, `demo.py` queries TraCI vehicle IDs for `vClass == 'emergency'` and inspects `getWaitingTime()`. In the terminal table, it prints whether the ambulance is `FLOWING (Priority Green)` or `APPROACHING`, proving live priority clearing."*
 
-### Q6: "Why did you create `stop.bat` alongside `run.bat`?"
-* **Lalit's Answer:** *"SUMO-GUI and TraCI communicate over TCP sockets. If a user closes the simulation abruptly, orphaned background `sumo.exe` processes can lock socket ports (e.g., port 8813), causing subsequent runs to crash. `stop.bat` forcefully cleans up orphaned Python, SUMO, and Streamlit processes, ensuring the environment is always clean."*
+### Q8: "What tech stack powers the Operations UI (`frontend/`)?"
+* **Answer:** *"It uses React 19, TypeScript, Tailwind CSS v4, Vite, and Lucide icons. It reads calibrated simulation metrics and telemetry JSON directly without needing complex database infrastructure, ensuring instant startup during live demos."*
 
-### Q7: "What are Passenger Car Units (PCUs) and how did you use them in vision?"
-* **Lalit's Answer:** *"PCU is a metric used in traffic engineering to assess the impact of dissimilar vehicles on highway capacity. A passenger car is 1.0 PCU. In our vision bridge, when YOLOv8 detects a vehicle, it scales its contribution: 0.5 for two-wheelers, 0.8 for auto-rickshaws, and 3.0 for buses, giving the RL agent an accurate representation of physical road occupancy."*
+### Q9: "How does the team prevent Git conflicts when 4 members work simultaneously?"
+* **Answer:** *"We use isolated Git feature branches (e.g., `piyush-karnatak-work`, `feature/ui-development`) keeping `main` protected, and enforce `.gitignore` rules for files over 100 MB (compressing the 105 MB OSM network into `haldwani_osm_real.net.xml.gz` at 11.9 MB)."*
 
-### Q8: "Why does your system enforce a 5-second minimum green time?"
-* **Lalit's Answer:** *"Reinforcement learning agents can exhibit high-frequency phase flapping—switching green lights back and forth every 1 or 2 seconds. In the real world, this would cause severe rear-end collisions. Our 5-second minimum green lock ensures vehicles have adequate time to accelerate before any transition is permitted."*
-
-### Q9: "What role does TraCI play in your system architecture?"
-* **Lalit's Answer:** *"TraCI (Traffic Control Interface) is the TCP socket protocol that provides real-time bidirectional communication with SUMO. It allows our Python scripts to retrieve live vehicle positions and speeds, and inject phase change commands dynamically into the running simulation."*
-
-### Q10: "How does your team ensure reproducibility across different machines?"
-* **Lalit's Answer:** *"We maintain strict dependency specifications in `requirements.txt`, isolate our environment in a Python virtual environment, enforce reproducible random seeds (`seed=42`) across PyTorch, Gymnasium, and SUMO, and manage isolated feature branches on GitHub."*
+### Q10: "How do you validate that your environment follows Gymnasium and Stable-Baselines3 standards?"
+* **Answer:** *"We invoke `stable_baselines3.common.env_checker.check_env(env, warn=True)` inside every test module (`test_sumo_env.py`, `test_mukhani_env.py`, `test_haldwani_env.py`), proving standardized `reset()` / `step()` signatures, seed determinism, and space containment."*
