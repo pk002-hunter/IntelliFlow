@@ -237,6 +237,9 @@ For high-speed GPU training and headless evaluation, open the canonical notebook
 
 ```
 IntelliFlow/
+├── docs/
+│   └── report/                                      # Project Viva Reports & Team Member Dossiers (PDF/MD)
+│
 ├── frontend/                                        # React 19 + TypeScript + Tailwind v4 Operations UI
 │   ├── src/
 │   │   ├── components/ui/                           # shadcn/ui primitives (button, card, input, label, select, tabs)
@@ -260,9 +263,11 @@ IntelliFlow/
 │
 ├── results/
 │   ├── metrics/                                     # CSV benchmark & evaluation logs
+│   ├── models/                                      # Saved PPO (100k Colab & Mukhani) & Double DQN weights
 │   └── plots/                                       # Generated queue, speed, and radar plots
 │
 ├── scripts/
+│   ├── build_pdf_report.py                          # Markdown-to-PDF Viva report compiler
 │   ├── demo.py                                      # Live AI control runner via TraCI
 │   ├── train.py                                     # Training script for PPO & DQN
 │   ├── evaluate.py                                  # Statistical evaluation & plotting
@@ -307,6 +312,8 @@ IntelliFlow/
 ├── .gitignore
 ├── LICENSE
 ├── requirements.txt
+├── run.bat                                          # 1-Click Master Launcher CLI
+├── stop.bat                                         # Process cleanup utility
 └── README.md
 ```
 
