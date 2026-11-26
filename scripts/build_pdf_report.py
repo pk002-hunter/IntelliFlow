@@ -10,8 +10,8 @@ import markdown
 import sys
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-DEFAULT_MD_PATH = os.path.join(PROJECT_ROOT, "INTELLIFLOW_VIVA_AND_PROJECT_REPORT.md")
-DEFAULT_PDF_PATH = os.path.join(PROJECT_ROOT, "INTELLIFLOW_VIVA_AND_PROJECT_REPORT.pdf")
+DEFAULT_MD_PATH = os.path.join(PROJECT_ROOT, "docs", "report", "INTELLIFLOW_VIVA_AND_PROJECT_REPORT.md")
+DEFAULT_PDF_PATH = os.path.join(PROJECT_ROOT, "docs", "report", "INTELLIFLOW_VIVA_AND_PROJECT_REPORT.pdf")
 
 def build_pdf(md_path=None, pdf_path=None, title=None):
     md_file = os.path.abspath(md_path) if md_path else DEFAULT_MD_PATH
