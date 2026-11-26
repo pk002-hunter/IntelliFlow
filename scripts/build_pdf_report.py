@@ -7,14 +7,20 @@ import re
 import subprocess
 import markdown
 
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-MD_PATH = os.path.join(PROJECT_ROOT, "INTELLIFLOW_VIVA_AND_PROJECT_REPORT.md")
-PDF_PATH = os.path.join(PROJECT_ROOT, "INTELLIFLOW_VIVA_AND_PROJECT_REPORT.pdf")
-HTML_PATH = os.path.join(PROJECT_ROOT, "scratch_report.html")
+import sys
 
-def build_pdf():
-    print(f"Reading markdown from: {MD_PATH}")
-    with open(MD_PATH, "r", encoding="utf-8") as f:
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+DEFAULT_MD_PATH = os.path.join(PROJECT_ROOT, "INTELLIFLOW_VIVA_AND_PROJECT_REPORT.md")
+DEFAULT_PDF_PATH = os.path.join(PROJECT_ROOT, "INTELLIFLOW_VIVA_AND_PROJECT_REPORT.pdf")
+
+def build_pdf(md_path=None, pdf_path=None, title=None):
+    md_file = os.path.abspath(md_path) if md_path else DEFAULT_MD_PATH
+    pdf_file = os.path.abspath(pdf_path) if pdf_path else DEFAULT_PDF_PATH
+    html_file = os.path.abspath(os.path.join(PROJECT_ROOT, f"scratch_{os.path.splitext(os.path.basename(md_file))[0]}.html"))
+    doc_title = title or "IntelliFlow - Technical Report & Viva Defense Dossier"
+
+    print(f"Reading markdown from: {md_file}")
+    with open(md_file, "r", encoding="utf-8") as f:
         text = f.read()
 
     # Clean up mermaid blocks into pre tags
@@ -178,7 +184,7 @@ hr {{
 </body>
 </html>"""
 
-    with open(HTML_PATH, "w", encoding="utf-8") as f:
+    with open(html_file, "w", encoding="utf-8") as f:
         f.write(full_html)
 
     # Locate Chrome or Edge
@@ -202,19 +208,21 @@ hr {{
         "--headless=new",
         "--disable-gpu",
         "--no-pdf-header-footer",
-        f"--print-to-pdf={PDF_PATH}",
-        HTML_PATH
+        f"--print-to-pdf={pdf_file}",
+        html_file
     ]
 
     res = subprocess.run(cmd, capture_output=True, text=True)
-    if os.path.exists(PDF_PATH):
-        size_kb = os.path.getsize(PDF_PATH) / 1024
-        print(f"SUCCESS: PDF created at {PDF_PATH} ({size_kb:.1f} KB)")
+    if os.path.exists(pdf_file):
+        size_kb = os.path.getsize(pdf_file) / 1024
+        print(f"SUCCESS: PDF created at {pdf_file} ({size_kb:.1f} KB)")
     else:
         print(f"Error generating PDF: {res.stderr}")
 
-    if os.path.exists(HTML_PATH):
-        os.remove(HTML_PATH)
+    if os.path.exists(html_file):
+        os.remove(html_file)
 
 if __name__ == "__main__":
-    build_pdf()
+    in_md = sys.argv[1] if len(sys.argv) > 1 else None
+    out_pdf = sys.argv[2] if len(sys.argv) > 2 else None
+    build_pdf(in_md, out_pdf)
